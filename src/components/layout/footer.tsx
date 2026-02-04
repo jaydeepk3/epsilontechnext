@@ -51,14 +51,15 @@ export function Footer() {
                         <ul className="space-y-4 text-slate-400 text-sm">
                             <li><Link href="/about" className="hover:text-sky-400 transition-colors">About Us</Link></li>
                             <li><Link href="/#portfolio" className="hover:text-sky-400 transition-colors">Portfolio</Link></li>
+                            <li><Link href="/faqs" className="hover:text-sky-400 transition-colors">FAQs</Link></li>
+                            <li><Link href="/contacts" className="hover:text-sky-400 transition-colors">Contact Us</Link></li>
                             <li><Link href="/blog" className="hover:text-sky-400 transition-colors">Blog & Insights</Link></li>
-                            <li><Link href="/services/maintenance-support" className="hover:text-sky-400 transition-colors">Support</Link></li>
                         </ul>
                     </div>
 
                     {/* Contact - Updated Title */}
                     <div className="lg:col-span-3">
-                        <h4 className="text-sm font-bold uppercase tracking-widest mb-8 text-slate-200">Global HQ</h4>
+                        <h4 className="text-sm font-bold uppercase tracking-widest mb-8 text-slate-200">Global Presence</h4>
                         <div className="space-y-6 text-slate-400 text-sm">
                             <div className="flex items-start gap-3">
                                 <MapPin size={18} className="text-blue-500 shrink-0 mt-0.5" />

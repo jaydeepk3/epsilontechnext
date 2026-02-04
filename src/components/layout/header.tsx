@@ -44,8 +44,9 @@ export function Header() {
         },
         { name: 'Doctor Marketing', href: '/digital-marketing' },
         { name: 'Portfolio', href: '/#portfolio' },
+
         { name: 'About', href: '/about' },
-        { name: 'Contact', href: '/#contact' },
+        { name: 'Contact', href: '/contacts' },
     ];
 
     return (

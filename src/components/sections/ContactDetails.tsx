@@ -71,12 +71,7 @@ export function ContactDetails() {
                                     <MapPin size={18} className="shrink-0 mt-1 text-slate-400" />
                                     <span>{office.address}</span>
                                 </p>
-                                <p className="flex items-center gap-3">
-                                    <Phone size={18} className="shrink-0 text-slate-400" />
-                                    <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="hover:text-sky-600 transition-colors">
-                                        {office.phone}
-                                    </a>
-                                </p>
+
                                 <p className="flex items-center gap-3">
                                     <Mail size={18} className="shrink-0 text-slate-400" />
                                     <a href={`mailto:${office.email}`} className="hover:text-sky-600 transition-colors lowercase">

@@ -4,7 +4,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, useInView, Variants } from "framer-motion";
 import {
     MessageSquare,
     Zap,
@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 
 // Animation variants for reveal effects
-const fadeIn = {
+const fadeIn: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
         opacity: 1,
@@ -32,7 +32,7 @@ const fadeIn = {
     }
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,

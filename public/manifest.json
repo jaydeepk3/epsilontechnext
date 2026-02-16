@@ -1,0 +1,21 @@
+{
+    "name": "Epsilon Technology",
+    "short_name": "Epsilon",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#0284c7",
+    "description": "Top App Developers & Website Development Services. We build scalable custom applications and ecommerce solutions.",
+    "icons": [
+        {
+            "src": "/logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

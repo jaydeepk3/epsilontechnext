@@ -178,5 +178,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.8,
         },
+        {
+            url: 'https://epsilon-technology.com/blog/the-real-cost-of-custom-application-development-2026',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: 'https://epsilon-technology.com/blog/5-signs-you-need-professional-website-development-services',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: 'https://epsilon-technology.com/blog/mobile-app-creation-services-native-vs-cross-platform',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: 'https://epsilon-technology.com/blog/why-nextjs-is-best-for-ecommerce-website-development',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
     ];
 }

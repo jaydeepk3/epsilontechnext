@@ -15,6 +15,16 @@ export const metadata: Metadata = {
 
 const posts = [
     {
+        title: "Technology Serving Those Who Serve Us: Junagadh Police App Case Study",
+        excerpt: "Epsilon Technology developed a dedicated Mobile Application for the Junagadh Police Department to simplify coordination during Maha Shivratri Mela.",
+        date: "Feb 16, 2026",
+        author: "Jaydeep Kataria",
+        slug: "junagadh-police-bandobast-app-case-study",
+        category: "Case Study",
+        image: "/blog_mobile_app_dev.png",
+        isExternal: false
+    },
+    {
         title: "Web and App Development Trends in 2026: USA tech Industry",
         excerpt: "Explore the latest technologies shaping the web and mobile app landscape in the US market, from AI integration to PWA dominance.",
         date: "Jan 28, 2026",

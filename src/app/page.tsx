@@ -11,18 +11,18 @@ import { Process } from "@/components/sections/it/Process";
 import { FAQ } from "@/components/sections/it/FAQ";
 
 export const metadata: Metadata = {
-  title: "Epsilon Technology | Web Development Company USA, UK & UAE",
-  description: "Epsilon Technology provides premium web & mobile app development services for businesses in the USA, UK, UAE, and Canada. Hire expert developers today.",
+  title: "Top App Developers & Website Development Services | Epsilon Technology",
+  description: "Affordable custom application development and mobile app creation services. We build high-performance websites and apps for businesses worldwide.",
   keywords: [
+    "website development services",
+    "custom application development",
+    "ecommerce website development",
+    "mobile app development",
+    "affordable app developers",
+    "mobile app creation services",
+    "top app developers",
     "Web Development Company USA",
-    "Mobile App Development Services",
-    "Ecommerce Developers for Hire",
-    "Custom Software Development Agency UK",
-    "Mobile App Developers Canada",
-    "Web Development Company UAE",
-    "React Native Development",
-    "Next.js Experts",
-    "Global IT Services"
+    "React Native Development"
   ],
   openGraph: {
     title: "Epsilon Technology | Premium IT Services Globally",

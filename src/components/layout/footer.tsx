@@ -41,6 +41,7 @@ export function Footer() {
                             <li><Link href="/services/web-development" className="hover:text-sky-400 transition-colors">Web Development</Link></li>
                             <li><Link href="/services/ecommerce-development" className="hover:text-sky-400 transition-colors">eCommerce</Link></li>
                             <li><Link href="/services/custom-software" className="hover:text-sky-400 transition-colors">Custom Software</Link></li>
+                            <li><Link href="/services/whatsapp-business-api" className="hover:text-sky-400 transition-colors">WhatsApp Business API</Link></li>
                             <li><Link href="/digital-marketing" className="hover:text-sky-400 transition-colors">Digital Marketing</Link></li>
                         </ul>
                     </div>

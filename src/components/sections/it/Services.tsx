@@ -1,6 +1,6 @@
 "use client";
 
-import { LayoutGrid, Smartphone, Globe, ShoppingCart, Cpu, Code2, ArrowRight } from "lucide-react";
+import { LayoutGrid, Smartphone, Globe, ShoppingCart, Cpu, Code2, ArrowRight, MessageCircle } from "lucide-react";
 import { FadeIn } from "@/components/animations/FadeIn";
 import Link from "next/link";
 
@@ -61,6 +61,15 @@ const services = [
         gradient: "from-rose-50 to-pink-50",
         border: "group-hover:border-rose-200",
         href: "/services/custom-software"
+    },
+    {
+        title: "WhatsApp Business API",
+        description: "Automate customer support and sales with the official WhatsApp Business API. Engage customers on their favorite messaging app.",
+        icon: MessageCircle,
+        color: "bg-green-50 text-green-600",
+        gradient: "from-green-50 to-emerald-50",
+        border: "group-hover:border-green-200",
+        href: "/services/whatsapp-business-api"
     },
 ];
 

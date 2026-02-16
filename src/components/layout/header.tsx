@@ -34,6 +34,7 @@ export function Header() {
         { name: 'Custom Software', href: '/services/custom-software' },
         { name: 'UI/UX Design', href: '/services/ui-ux-design' },
         { name: 'Maintenance & Support', href: '/services/maintenance-support' },
+        { name: 'WhatsApp Business API', href: '/services/whatsapp-business-api' },
     ];
 
     const displayNavLinks = [

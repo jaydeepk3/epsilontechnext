@@ -108,7 +108,7 @@ export default function WhatsAppWebPage() {
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Link
-                                href="/contact"
+                                href="https://whatsapp.epsilon-technology.com"
                                 className="px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-green-500/30 flex items-center gap-2 group"
                             >
                                 Start WhatsApp Automation
@@ -356,7 +356,7 @@ export default function WhatsAppWebPage() {
                             Book Free Demo
                         </Link>
                         <Link
-                            href="/contact"
+                            href="/contacts"
                             className="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-full font-bold text-lg transition-all"
                         >
                             Talk to WhatsApp Expert

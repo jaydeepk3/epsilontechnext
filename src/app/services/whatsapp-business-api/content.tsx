@@ -131,10 +131,10 @@ export default function WhatsAppWebPage() {
                     >
                         <div className="absolute inset-0 bg-gradient-to-tr from-green-500/10 to-transparent mix-blend-overlay pointer-events-none" />
                         <Image
-                            src="/services/whatsapp/dashboard.png"
+                            src="/services/whatsapp/dashboard-v2.png"
                             alt="Epsilon WhatsApp Business API Dashboard"
-                            width={1600}
-                            height={900}
+                            width={1912}
+                            height={692}
                             priority
                             className="w-full h-auto object-cover"
                         />
@@ -227,10 +227,10 @@ export default function WhatsAppWebPage() {
                             <div className="absolute inset-0 bg-[#25D366] blur-[100px] opacity-20 rounded-full" />
                             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-800">
                                 <Image
-                                    src="/services/whatsapp/campaign_builder.png"
+                                    src="/services/whatsapp/campaign-v2.png"
                                     alt="Campaign Builder Interface"
-                                    width={800}
-                                    height={600}
+                                    width={1921}
+                                    height={839}
                                     className="w-full h-auto"
                                 />
                             </div>

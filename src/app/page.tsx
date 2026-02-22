@@ -9,6 +9,7 @@ import { CTA } from "@/components/sections/it/CTA";
 import { TechStack } from "@/components/sections/it/TechStack";
 import { Process } from "@/components/sections/it/Process";
 import { FAQ } from "@/components/sections/it/FAQ";
+import { Packages } from "@/components/sections/it/Packages";
 
 export const metadata: Metadata = {
   title: "Top App Developers & Website Development Services | Epsilon Technology",
@@ -40,6 +41,7 @@ export default function Home() {
       <PainPoints />
       <TechStack />
       <Services />
+      <Packages />
       <Process />
       <WhyChooseUs />
       <Industries />

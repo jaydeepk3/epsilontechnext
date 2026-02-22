@@ -19,11 +19,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://epsilon-technology.com'),
   title: {
-    default: "Epsilon Technology | Doctor Marketing & IT Solutions",
+    default: "Epsilon Technology | Custom Software, App & Web Development, Digital Marketing",
     template: "%s | Epsilon Technology"
   },
-  description: "Epsilon Technology provides specialized social media growth for doctors and custom IT services including React Native and full-stack development.",
-  keywords: ["Doctor Marketing", "Social Media Growth", "Healthcare Marketing", "IT Services", "React Native Development", "Web Development", "App Development", "Epsilon Technology"],
+  description: "Epsilon Technology provides premium digital marketing, custom software development, mobile application development, and website development services to grow your business globally.",
+  keywords: ["Custom Software Development", "Mobile Application Development", "Website Development", "Digital Marketing", "Doctor Marketing", "Social Media Growth", "Healthcare Marketing", "IT Services", "Epsilon Technology"],
   authors: [{ name: "Epsilon Technology" }],
   creator: "Epsilon Technology",
   publisher: "Epsilon Technology",
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://epsilon-technology.com",
     siteName: "Epsilon Technology",
-    title: "Epsilon Technology | Doctor Marketing & IT Solutions",
-    description: "Specialized social media growth for doctors and premium IT software services.",
+    title: "Epsilon Technology | Custom Software, App, Web Development & Digital Marketing",
+    description: "Premium IT software services including custom software, mobile applications, website development, and specialized digital marketing.",
     images: [
       {
         url: "/logo.png",
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Epsilon Technology | Doctor Marketing & IT Solutions",
-    description: "Specialized social media growth for doctors and premium IT software services.",
+    title: "Epsilon Technology | Digital Marketing & IT Solutions",
+    description: "Premium IT software services including custom software, mobile applications, website development, and specialized digital marketing.",
     images: ["/logo.png"], // Ideally this should be a larger banner image
   },
   robots: {

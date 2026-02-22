@@ -35,6 +35,51 @@ export default function Home() {
       <FAQ />
       <Pricing />
       <Booking />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Digital Marketing",
+            "provider": {
+              "@type": "Organization",
+              "name": "Epsilon Technology",
+              "url": "https://epsilon-technology.com"
+            },
+            "areaServed": ["United States", "United Kingdom", "Canada", "India"],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Digital Marketing Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Doctor Social Media Growth"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Healthcare Marketing"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Patient Acquisition Strategies"
+                  }
+                }
+              ]
+            },
+            "description": "Transform your medical practice with Epsilon Technology's patient acquisition strategies. We help doctors and clinics grow their social media presence.",
+            "url": "https://epsilon-technology.com/digital-marketing"
+          })
+        }}
+      />
     </>
   );
 }

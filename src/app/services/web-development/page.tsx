@@ -271,6 +271,58 @@ export default function WebDevelopment() {
                     </div>
                 </div>
             </section>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "serviceType": "Web Development",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Epsilon Technology",
+                            "url": "https://epsilon-technology.com"
+                        },
+                        "areaServed": ["United States", "United Kingdom", "Canada", "United Arab Emirates", "India"],
+                        "hasOfferCatalog": {
+                            "@type": "OfferCatalog",
+                            "name": "Web Development Services",
+                            "itemListElement": [
+                                {
+                                    "@type": "Offer",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Custom Website Development"
+                                    }
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Web Application Development"
+                                    }
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "eCommerce Solutions"
+                                    }
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "CMS Development"
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "Expert web development services using Next.js and React. We build fast, scalable, and SEO-optimized professional websites.",
+                        "url": "https://epsilon-technology.com/services/web-development"
+                    })
+                }}
+            />
         </main>
     );
 }

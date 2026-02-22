@@ -265,6 +265,51 @@ export default function CustomSoftware() {
                     </div>
                 </div>
             </section>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "serviceType": "Custom Software Development",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Epsilon Technology",
+                            "url": "https://epsilon-technology.com"
+                        },
+                        "areaServed": ["United States", "United Kingdom", "Canada", "United Arab Emirates", "India"],
+                        "hasOfferCatalog": {
+                            "@type": "OfferCatalog",
+                            "name": "Custom Software Development Services",
+                            "itemListElement": [
+                                {
+                                    "@type": "Offer",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Enterprise Software Development"
+                                    }
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "SaaS Product Development"
+                                    }
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "API Integration"
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "Leading custom software development agency providing tailored enterprise solutions, SaaS development, and cloud migration services.",
+                        "url": "https://epsilon-technology.com/services/custom-software"
+                    })
+                }}
+            />
         </main>
     );
 }

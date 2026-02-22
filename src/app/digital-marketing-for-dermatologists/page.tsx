@@ -10,8 +10,11 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Digital Marketing for Dermatologists | Aesthetic Growth Guide",
         description: "Helping skin specialists showcase their clinical results and dominate local search.",
-        url: "https://epsilon-technology.com/digital-marketing-for-dermatologists",
+        url: "https://epsilon-technology.com/digital-marketing-for-dermatologists/",
         images: ["/logo.png"]
+    },
+    alternates: {
+        canonical: '/digital-marketing-for-dermatologists/',
     }
 };
 

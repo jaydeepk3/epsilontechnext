@@ -19,12 +19,15 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
-    title: "Custom Software Development | Software Agency UK & USA",
-    description: "Leading software development agency offering custom software solutions for enterprises. We solve complex business problems with tailored technology.",
+    title: "Custom Software Development Company | Enterprise Solutions UK & USA",
+    description: "Leading software development agency providing tailored enterprise solutions. We solve complex business challenges with scalable, secure, and modern technology.",
     keywords: ["custom software development", "software development agency UK", "enterprise software", "SaaS development", "cloud migration services"],
     openGraph: {
         title: "Custom Software Development | Epsilon Technology",
-        description: "Tailored software solutions designed to streamline your unique business operations.",
+        description: "Tailored software solutions designed to streamline your unique business operations and drive efficiency.",
+    },
+    alternates: {
+        canonical: '/services/custom-software/',
     }
 };
 

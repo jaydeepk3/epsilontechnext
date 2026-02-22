@@ -19,12 +19,15 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
-    title: "Website Maintenance & Support Services | 24/7 Monitoring",
-    description: "Reliable website maintenance and support services. We ensure your site is secure, fast, and up-to-date with 24/7 monitoring and regular backups.",
+    title: "Professional Website Maintenance & Support | 24/7 Security Monitoring",
+    description: "Ensure your website is always secure, fast, and updated. We provide expert maintenance, regular backups, and 24/7 monitoring for peace of mind.",
     keywords: ["website maintenance services", "app support", "wordpress maintenance", "server monitoring", "security updates"],
     openGraph: {
         title: "Website Maintenance & Support Services | Epsilon Technology",
-        description: "Keep your digital presence secure and high-performing with our expert support.",
+        description: "Keep your digital presence secure and high-performing with our proactive expert support and 24/7 monitoring.",
+    },
+    alternates: {
+        canonical: '/services/maintenance-support/',
     }
 };
 

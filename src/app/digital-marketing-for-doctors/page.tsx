@@ -10,8 +10,11 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Digital Marketing for Doctors: The Complete Educational Guide",
         description: "Everything you need to know about growing your medical practice through digital channels.",
-        url: "https://epsilon-technology.com/digital-marketing-for-doctors",
+        url: "https://epsilon-technology.com/digital-marketing-for-doctors/",
         images: ["/logo.png"]
+    },
+    alternates: {
+        canonical: '/digital-marketing-for-doctors/',
     }
 };
 

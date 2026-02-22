@@ -13,6 +13,9 @@ export const metadata: Metadata = {
         description: "Building scalable digital products and IT solutions for global businesses.",
         images: ["/images/jayde.png"],
         type: 'profile',
+    },
+    alternates: {
+        canonical: '/about/',
     }
 };
 

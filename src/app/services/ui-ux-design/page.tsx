@@ -19,12 +19,15 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
-    title: "UI/UX Design Services Services | Web & Mobile App Design",
-    description: "Create engaging user experiences with our UI/UX design services. We design intuitive, accessible, and beautiful interfaces for web and mobile.",
-    keywords: ["UI/UX design agency", "web design services", "mobile app design", "user interface design", "accessible web design"],
+    title: "UI/UX Design Services | Modern Web & Mobile App Design Agency",
+    description: "Create engaging user experiences with our UI/UX design services. We design intuitive, accessible, and beautiful interfaces for web and mobile. Top-rated design agency.",
+    keywords: ["UI/UX design agency", "web design services", "mobile app design", "user interface design", "accessible web design", "product design company"],
     openGraph: {
         title: "UI/UX Design Services | Epsilon Technology",
-        description: "We merge aesthetics with functionality to create products users love.",
+        description: "We merge aesthetics with functionality to create products users love. Expert UI/UX design for startups and enterprises.",
+    },
+    alternates: {
+        canonical: '/services/ui-ux-design/',
     }
 };
 

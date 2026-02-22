@@ -19,12 +19,15 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
-    title: "Custom Web Development Services USA & UK | High-Performance Websites",
-    description: "Top-rated web development company serving USA, UK, & UAE. We build fast, scalable, and SEO-optimized websites using Next.js, React, and Node.js.",
+    title: "Expert Web Development Services | Custom Next.js & React Solutions",
+    description: "Top-rated web development company building fast, scalable, and SEO-optimized websites. We specialize in Next.js, React, and modern tech stacks for global businesses.",
     keywords: ["custom web development services", "web development company USA", "Next.js developers", "React development agency", "corporate website development", "SEO friendly websites"],
     openGraph: {
-        title: "Custom Web Development Services | Epsilon Technology",
-        description: "We build fast, scalable, and SEO-optimized websites that help businesses grow.",
+        title: "Expert Web Development Services | Epsilon Technology",
+        description: "Scale your business with high-performance, custom-built websites designed for conversion.",
+    },
+    alternates: {
+        canonical: '/services/web-development/',
     }
 };
 

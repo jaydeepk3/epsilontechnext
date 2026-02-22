@@ -10,8 +10,11 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Digital Marketing for IVF Doctors | Comprehensive SEO Guide",
         description: "Helping fertility specialists build a trusted digital presence in a sensitive medical field.",
-        url: "https://epsilon-technology.com/digital-marketing-for-ivf-doctors",
+        url: "https://epsilon-technology.com/digital-marketing-for-ivf-doctors/",
         images: ["/logo.png"]
+    },
+    alternates: {
+        canonical: '/digital-marketing-for-ivf-doctors/',
     }
 };
 

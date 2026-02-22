@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Epsilon Technology Blog | Tech & Marketing Insights",
         description: "Stay ahead with expert articles on technology and healthcare marketing.",
+    },
+    alternates: {
+        canonical: '/blog/',
     }
 };
 

@@ -10,8 +10,11 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Digital Marketing for General Surgeons | Professional Growth Guide",
         description: "Helping general surgeons build a dominant, authoritative, and visible digital presence for elective and emergency cases.",
-        url: "https://epsilon-technology.com/digital-marketing-for-general-surgeons",
+        url: "https://epsilon-technology.com/digital-marketing-for-general-surgeons/",
         images: ["/logo.png"]
+    },
+    alternates: {
+        canonical: '/digital-marketing-for-general-surgeons/',
     }
 };
 

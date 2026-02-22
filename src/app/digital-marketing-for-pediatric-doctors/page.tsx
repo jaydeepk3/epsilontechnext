@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Digital Marketing for Pediatric Doctors | Professional Growth Guide",
         description: "Helping pediatricians build a reliable, visible, and trusted digital presence for parents.",
-        url: "https://epsilon-technology.com/digital-marketing-for-pediatric-doctors",
+        url: "https://epsilon-technology.com/digital-marketing-for-pediatric-doctors/",
         images: ["/logo.png"]
     }
 };

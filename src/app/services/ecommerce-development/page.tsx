@@ -19,12 +19,15 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
-    title: "eCommerce Developers for Hire | Online Store Development",
-    description: "Expert eCommerce development services. We build high-converting online stores using Shopify, WooCommerce, and custom Next.js solutions.",
+    title: "Hire Expert eCommerce Developers | Custom Online Store Development",
+    description: "Boost your sales with expert eCommerce development services. We build high-converting online stores using Shopify, WooCommerce, and custom Next.js headless solutions.",
     keywords: ["ecommerce developers for hire", "ecommerce website development", "Shopify experts", "custom ecommerce solutions", "online store builders"],
     openGraph: {
         title: "eCommerce Development Services | Epsilon Technology",
-        description: "Scale your online business with our robust ecommerce solutions.",
+        description: "Scale your online brand with robust, high-performance ecommerce solutions built for conversion.",
+    },
+    alternates: {
+        canonical: '/services/ecommerce-development/',
     }
 };
 

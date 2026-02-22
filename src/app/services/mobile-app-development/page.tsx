@@ -19,12 +19,15 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
-    title: "Mobile App Development Services Canada & USA | React Native Experts",
-    description: "Top-rated mobile app development company serving Canada, USA, & UK. We build high-performance iOS and Android apps using React Native and Flutter.",
+    title: "Expert Mobile App Development Agency | React Native & Flutter Experts",
+    description: "Leading mobile app development company serving Canada, USA, and UK. We build scalable, high-performance iOS and Android apps using React Native and Flutter.",
     keywords: ["mobile app developers Canada", "custom app development services", "React Native developers", "iOS app development", "Android app development agency"],
     openGraph: {
         title: "Mobile App Development Services | Epsilon Technology",
-        description: "We build scalable, high-performance mobile apps for startups and enterprises.",
+        description: "Transform your ideas into reality with scalable, high-performance mobile apps for startups and enterprises.",
+    },
+    alternates: {
+        canonical: '/services/mobile-app-development/',
     }
 };
 

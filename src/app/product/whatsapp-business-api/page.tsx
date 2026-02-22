@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         description: 'Automate conversations and scale your business with official Meta Tech Provider solutions.',
     },
     alternates: {
-        canonical: '/services/whatsapp-business-api/',
+        canonical: '/product/whatsapp-business-api/',
     }
 };
 

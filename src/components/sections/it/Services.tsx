@@ -69,7 +69,7 @@ const services = [
         color: "bg-green-50 text-green-600",
         gradient: "from-green-50 to-emerald-50",
         border: "group-hover:border-green-200",
-        href: "/services/whatsapp-business-api"
+        href: "/product/whatsapp-business-api"
     },
 ];
 

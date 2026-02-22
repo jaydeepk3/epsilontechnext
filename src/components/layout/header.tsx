@@ -34,14 +34,24 @@ export function Header() {
         { name: 'Custom Software', href: '/services/custom-software' },
         { name: 'UI/UX Design', href: '/services/ui-ux-design' },
         { name: 'Maintenance & Support', href: '/services/maintenance-support' },
-        { name: 'WhatsApp Business API', href: '/services/whatsapp-business-api' },
+    ];
+
+    const products = [
+        { name: 'WhatsApp Business API', href: '/product/whatsapp-business-api' },
     ];
 
     const displayNavLinks = [
         {
             name: 'Services',
             href: '#',
-            isDropdown: true
+            isDropdown: true,
+            dropdownItems: services
+        },
+        {
+            name: 'Products',
+            href: '#',
+            isDropdown: true,
+            dropdownItems: products
         },
         { name: 'Doctor Marketing', href: '/digital-marketing' },
         { name: 'Portfolio', href: '/#portfolio' },
@@ -100,13 +110,13 @@ export function Header() {
                                     className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left"
                                 >
                                     <div className="py-2">
-                                        {services.map((service) => (
+                                        {link.dropdownItems?.map((item) => (
                                             <Link
-                                                key={service.name}
-                                                href={service.href}
+                                                key={item.name}
+                                                href={item.href}
                                                 className="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
                                             >
-                                                {service.name}
+                                                {item.name}
                                             </Link>
                                         ))}
                                     </div>
@@ -150,14 +160,14 @@ export function Header() {
                                                 {link.name}
                                             </div>
                                             <div className="pl-4 flex flex-col gap-2 border-l-2 border-slate-100 ml-1">
-                                                {services.map((service) => (
+                                                {link.dropdownItems?.map((item) => (
                                                     <Link
-                                                        key={service.name}
-                                                        href={service.href}
+                                                        key={item.name}
+                                                        href={item.href}
                                                         className="text-base font-medium text-slate-600 py-2"
                                                         onClick={() => setMobileMenuOpen(false)}
                                                     >
-                                                        {service.name}
+                                                        {item.name}
                                                     </Link>
                                                 ))}
                                             </div>

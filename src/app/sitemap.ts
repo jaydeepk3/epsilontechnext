@@ -245,7 +245,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
-            url: 'https://epsilon-technology.com/services/whatsapp-business-api/',
+            url: 'https://epsilon-technology.com/product/whatsapp-business-api/',
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.9,

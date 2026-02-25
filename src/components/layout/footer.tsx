@@ -1,17 +1,126 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, Phone, MapPin, Instagram, Linkedin, Dribbble } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Linkedin, Dribbble, ArrowRight, Cpu, Stethoscope, Building2, BookOpen, ChevronRight } from 'lucide-react';
+
+const footerLinks = [
+    {
+        icon: Cpu,
+        title: 'IT Services',
+        links: [
+            { label: 'Web Development', href: '/services/web-development' },
+            { label: 'Mobile App Development', href: '/services/mobile-app-development' },
+            { label: 'eCommerce Development', href: '/services/ecommerce-development' },
+            { label: 'Custom Software', href: '/services/custom-software' },
+            { label: 'UI/UX Design', href: '/services/ui-ux-design' },
+            { label: 'Maintenance & Support', href: '/services/maintenance-support' },
+            { label: 'IT Services Overview', href: '/it-services' },
+            { label: 'WhatsApp Business API', href: '/product/whatsapp-business-api' },
+        ],
+    },
+    {
+        icon: Stethoscope,
+        title: 'Doctor Marketing',
+        links: [
+            { label: 'Doctor Marketing Hub', href: '/digital-marketing' },
+            { label: 'Spine Specialists', href: '/digital-marketing-for-spine-specialists' },
+            { label: 'Pediatric Doctors', href: '/digital-marketing-for-pediatric-doctors' },
+            { label: 'Surgeon Doctors', href: '/digital-marketing-for-surgeon-doctors' },
+            { label: 'Orthopedic Doctors', href: '/digital-marketing-for-orthopedic-doctors' },
+            { label: 'Digital Marketing Junagadh', href: '/digital-marketing-in-junagadh' },
+            { label: 'Doctor Marketing Rajkot', href: '/doctor-marketing-in-rajkot' },
+            { label: 'Doctor Marketing Morbi', href: '/doctor-marketing-in-morbi' },
+        ],
+    },
+    {
+        icon: Building2,
+        title: 'Company',
+        links: [
+            { label: 'About Us', href: '/about' },
+            { label: 'Portfolio', href: '/#portfolio' },
+            { label: 'FAQs', href: '/faqs' },
+            { label: 'Contact Us', href: '/contacts' },
+        ],
+        extra: {
+            icon: BookOpen,
+            title: 'Blog & Resources',
+            links: [
+                { label: 'All Articles', href: '/blog' },
+                { label: 'Mobile App Guide 2026', href: '/blog/mobile-app-development-guide-2026' },
+                { label: 'Cost of App Development', href: '/blog/the-real-cost-of-custom-application-development-2026' },
+                { label: '5 Signs You Need a Pro Website', href: '/blog/5-signs-you-need-professional-website-development-services' },
+                { label: 'Digital Transformation Guide', href: '/blog/digital-transformation-guide' },
+                { label: 'Doctor Marketing Ideas', href: '/blog/doctor-marketing-ideas-junagadh' },
+                { label: 'Why Next.js for eCommerce', href: '/blog/why-nextjs-is-best-for-ecommerce-website-development' },
+            ],
+        },
+    },
+];
+
+const socials = [
+    {
+        href: 'https://www.instagram.com/epsilontechnology/',
+        label: 'Instagram',
+        icon: Instagram,
+        hoverColor: 'hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 hover:border-pink-500',
+    },
+    {
+        href: 'https://www.linkedin.com/company/epsilon-technology8',
+        label: 'LinkedIn',
+        icon: Linkedin,
+        hoverColor: 'hover:bg-blue-600 hover:border-blue-500',
+    },
+    {
+        href: 'https://dribbble.com/epsilontech',
+        label: 'Dribbble',
+        icon: Dribbble,
+        hoverColor: 'hover:bg-[#ea4c89] hover:border-[#ea4c89]',
+    },
+];
 
 export function Footer() {
     return (
-        <footer className="bg-slate-950 text-white pt-20 pb-10 border-t border-slate-900">
-            <div className="container mx-auto px-4 md:px-6">
+        <footer className="relative bg-slate-950 text-white overflow-hidden">
 
-                {/* Main Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 mb-16">
+            {/* Top glow accent */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[2px] bg-gradient-to-r from-transparent via-sky-500/70 to-transparent" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-40 bg-sky-500/5 blur-3xl rounded-full pointer-events-none" />
 
-                    {/* Brand */}
-                    <div className="col-span-2 md:col-span-3 lg:col-span-2">
+            {/* CTA Strip */}
+            <div className="relative border-b border-slate-800/60">
+                <div className="container mx-auto px-4 md:px-6 py-10">
+                    <div className="relative rounded-2xl bg-gradient-to-r from-sky-600/20 via-blue-600/10 to-slate-900 border border-sky-500/20 px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden">
+                        {/* Subtle inner glow */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-transparent pointer-events-none" />
+                        <div className="absolute -top-10 -left-10 w-40 h-40 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+
+                        <div className="relative z-10">
+                            <p className="text-xs font-semibold uppercase tracking-widest text-sky-400 mb-1">Let's Build Something Great</p>
+                            <h3 className="text-xl md:text-2xl font-bold text-white leading-snug">
+                                Ready to grow your business with us?
+                            </h3>
+                            <p className="text-slate-400 text-sm mt-1">
+                                From custom software to doctor marketing — we deliver results.
+                            </p>
+                        </div>
+                        <Link
+                            href="/contacts"
+                            className="relative z-10 flex-shrink-0 inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-white font-semibold text-sm px-6 py-3 rounded-xl transition-all duration-300 shadow-lg shadow-sky-500/20 hover:shadow-sky-400/30 hover:scale-105 group"
+                        >
+                            Get a Free Quote
+                            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
+            {/* Main Content */}
+            <div className="container mx-auto px-4 md:px-6 pt-16 pb-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+
+                    {/* Brand Column */}
+                    <div className="lg:col-span-2">
                         <div className="relative h-12 w-48 mb-6">
                             <Image
                                 src="/logo.png"
@@ -20,104 +129,136 @@ export function Footer() {
                                 className="object-contain object-left brightness-0 invert"
                             />
                         </div>
-                        <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
-                            Leading IT services company providing scalable digital products and specialized marketing for healthcare professionals.
+                        <p className="text-slate-400 text-sm leading-relaxed mb-7 max-w-sm">
+                            A leading IT services company delivering scalable digital products and specialized marketing for healthcare professionals across India.
                         </p>
-                        <div className="flex gap-3 mb-6">
-                            <Link href="https://www.instagram.com/epsilontechnology/" target="_blank" aria-label="Instagram" className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all">
-                                <Instagram size={16} />
-                            </Link>
-                            <Link href="https://www.linkedin.com/company/epsilon-technology8" target="_blank" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all">
-                                <Linkedin size={16} />
-                            </Link>
-                            <Link href="https://dribbble.com/epsilontech" target="_blank" aria-label="Dribbble" className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-[#ea4c89] hover:text-white hover:border-[#ea4c89] transition-all">
-                                <Dribbble size={16} />
-                            </Link>
+
+                        {/* Social Icons */}
+                        <div className="flex gap-3 mb-8">
+                            {socials.map(({ href, label, icon: Icon, hoverColor }) => (
+                                <Link
+                                    key={label}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={label}
+                                    title={label}
+                                    className={`w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 hover:shadow-lg ${hoverColor}`}
+                                >
+                                    <Icon size={16} />
+                                </Link>
+                            ))}
                         </div>
-                        <div className="space-y-3 text-slate-400 text-sm">
-                            <div className="flex items-start gap-2">
-                                <MapPin size={15} className="text-blue-500 shrink-0 mt-0.5" />
-                                <p>Junagadh, Gujarat, India – 362001</p>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Mail size={15} className="text-blue-500 shrink-0" />
-                                <a href="mailto:contact@epsilon-technology.com" className="hover:text-white transition-colors">contact@epsilon-technology.com</a>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Phone size={15} className="text-blue-500 shrink-0" />
-                                <a href="tel:+918160881461" className="hover:text-white transition-colors">+91 81608 81461</a>
-                            </div>
+
+                        {/* Contact Info */}
+                        <div className="space-y-3 text-sm">
+                            <a
+                                href="https://maps.google.com/?q=Junagadh,Gujarat,India"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors group"
+                            >
+                                <span className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center flex-shrink-0 group-hover:border-sky-500/50 transition-colors">
+                                    <MapPin size={13} className="text-sky-500" />
+                                </span>
+                                <span>Junagadh, Gujarat, India – 362001</span>
+                            </a>
+                            <a
+                                href="mailto:contact@epsilon-technology.com"
+                                className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
+                            >
+                                <span className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center flex-shrink-0 group-hover:border-sky-500/50 transition-colors">
+                                    <Mail size={13} className="text-sky-500" />
+                                </span>
+                                contact@epsilon-technology.com
+                            </a>
+                            <a
+                                href="tel:+918160881461"
+                                className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
+                            >
+                                <span className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center flex-shrink-0 group-hover:border-sky-500/50 transition-colors">
+                                    <Phone size={13} className="text-sky-500" />
+                                </span>
+                                +91 81608 81461
+                            </a>
                         </div>
                     </div>
 
-                    {/* Services */}
-                    <div>
-                        <h4 className="text-xs font-bold uppercase tracking-widest mb-5 text-slate-200">IT Services</h4>
-                        <ul className="space-y-3 text-slate-400 text-sm">
-                            <li><Link href="/services/web-development" className="hover:text-sky-400 transition-colors">Web Development</Link></li>
-                            <li><Link href="/services/mobile-app-development" className="hover:text-sky-400 transition-colors">Mobile App Development</Link></li>
-                            <li><Link href="/services/ecommerce-development" className="hover:text-sky-400 transition-colors">eCommerce Development</Link></li>
-                            <li><Link href="/services/custom-software" className="hover:text-sky-400 transition-colors">Custom Software</Link></li>
-                            <li><Link href="/services/ui-ux-design" className="hover:text-sky-400 transition-colors">UI/UX Design</Link></li>
-                            <li><Link href="/services/maintenance-support" className="hover:text-sky-400 transition-colors">Maintenance &amp; Support</Link></li>
-                            <li><Link href="/it-services" className="hover:text-sky-400 transition-colors">IT Services Overview</Link></li>
-                            <li><Link href="/product/whatsapp-business-api" className="hover:text-sky-400 transition-colors">WhatsApp Business API</Link></li>
-                        </ul>
-                    </div>
+                    {/* Link Columns */}
+                    {footerLinks.map(({ icon: ColIcon, title, links, extra }) => (
+                        <div key={title}>
+                            {/* Section Header */}
+                            <div className="flex items-center gap-2 mb-5">
+                                <ColIcon size={14} className="text-sky-500 flex-shrink-0" />
+                                <h4 className="text-xs font-bold uppercase tracking-widest text-slate-200">{title}</h4>
+                            </div>
+                            <ul className="space-y-2.5">
+                                {links.map(({ label, href }) => (
+                                    <li key={href}>
+                                        <Link
+                                            href={href}
+                                            className="flex items-center gap-1.5 text-slate-400 text-sm hover:text-sky-400 transition-colors group"
+                                        >
+                                            <ChevronRight
+                                                size={12}
+                                                className="text-slate-700 group-hover:text-sky-500 group-hover:translate-x-0.5 transition-all duration-200 flex-shrink-0"
+                                            />
+                                            {label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
 
-                    {/* Doctor Marketing */}
-                    <div>
-                        <h4 className="text-xs font-bold uppercase tracking-widest mb-5 text-slate-200">Doctor Marketing</h4>
-                        <ul className="space-y-3 text-slate-400 text-sm">
-                            <li><Link href="/digital-marketing" className="hover:text-sky-400 transition-colors">Doctor Marketing Hub</Link></li>
-                            <li><Link href="/digital-marketing-for-spine-specialists" className="hover:text-sky-400 transition-colors">Spine Specialists</Link></li>
-                            <li><Link href="/digital-marketing-for-pediatric-doctors" className="hover:text-sky-400 transition-colors">Pediatric Doctors</Link></li>
-                            <li><Link href="/digital-marketing-for-surgeon-doctors" className="hover:text-sky-400 transition-colors">Surgeon Doctors</Link></li>
-                            <li><Link href="/digital-marketing-for-orthopedic-doctors" className="hover:text-sky-400 transition-colors">Orthopedic Doctors</Link></li>
-                            <li><Link href="/digital-marketing-in-junagadh" className="hover:text-sky-400 transition-colors">Digital Marketing Junagadh</Link></li>
-                            <li><Link href="/doctor-marketing-in-junagadh" className="hover:text-sky-400 transition-colors">Doctor Marketing Junagadh</Link></li>
-                            <li><Link href="/doctor-marketing-in-rajkot" className="hover:text-sky-400 transition-colors">Doctor Marketing Rajkot</Link></li>
-                            <li><Link href="/doctor-marketing-in-morbi" className="hover:text-sky-400 transition-colors">Doctor Marketing Morbi</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Company + Blog */}
-                    <div>
-                        <h4 className="text-xs font-bold uppercase tracking-widest mb-5 text-slate-200">Company</h4>
-                        <ul className="space-y-3 text-slate-400 text-sm mb-8">
-                            <li><Link href="/about" className="hover:text-sky-400 transition-colors">About Us</Link></li>
-                            <li><Link href="/#portfolio" className="hover:text-sky-400 transition-colors">Portfolio</Link></li>
-                            <li><Link href="/faqs" className="hover:text-sky-400 transition-colors">FAQs</Link></li>
-                            <li><Link href="/contacts" className="hover:text-sky-400 transition-colors">Contact Us</Link></li>
-                        </ul>
-
-                        <h4 className="text-xs font-bold uppercase tracking-widest mb-5 text-slate-200">Blog &amp; Resources</h4>
-                        <ul className="space-y-3 text-slate-400 text-sm">
-                            <li><Link href="/blog" className="hover:text-sky-400 transition-colors">All Articles</Link></li>
-                            <li><Link href="/blog/mobile-app-development-guide-2026" className="hover:text-sky-400 transition-colors">Mobile App Guide 2026</Link></li>
-                            <li><Link href="/blog/the-real-cost-of-custom-application-development-2026" className="hover:text-sky-400 transition-colors">Cost of App Development</Link></li>
-                            <li><Link href="/blog/5-signs-you-need-professional-website-development-services" className="hover:text-sky-400 transition-colors">5 Signs You Need a Pro Website</Link></li>
-                            <li><Link href="/blog/business-solutions-through-technology" className="hover:text-sky-400 transition-colors">Business Solutions via Tech</Link></li>
-                            <li><Link href="/blog/digital-transformation-guide" className="hover:text-sky-400 transition-colors">Digital Transformation Guide</Link></li>
-                            <li><Link href="/blog/doctor-marketing-ideas-junagadh" className="hover:text-sky-400 transition-colors">Doctor Marketing Ideas</Link></li>
-                            <li><Link href="/blog/why-nextjs-is-best-for-ecommerce-website-development" className="hover:text-sky-400 transition-colors">Why Next.js for eCommerce</Link></li>
-                        </ul>
-                    </div>
-
+                            {/* Extra sub-section (Blog) */}
+                            {extra && (
+                                <div className="mt-8">
+                                    <div className="flex items-center gap-2 mb-5">
+                                        <extra.icon size={14} className="text-sky-500 flex-shrink-0" />
+                                        <h4 className="text-xs font-bold uppercase tracking-widest text-slate-200">{extra.title}</h4>
+                                    </div>
+                                    <ul className="space-y-2.5">
+                                        {extra.links.map(({ label, href }) => (
+                                            <li key={href}>
+                                                <Link
+                                                    href={href}
+                                                    className="flex items-center gap-1.5 text-slate-400 text-sm hover:text-sky-400 transition-colors group"
+                                                >
+                                                    <ChevronRight
+                                                        size={12}
+                                                        className="text-slate-700 group-hover:text-sky-500 group-hover:translate-x-0.5 transition-all duration-200 flex-shrink-0"
+                                                    />
+                                                    {label}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    ))}
                 </div>
+
+                {/* Divider */}
+                <div className="h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent mb-8" />
 
                 {/* Bottom Bar */}
-                <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-xs">
-                    <p>© {new Date().getFullYear()} Epsilon Technology. All rights reserved.</p>
-                    <div className="flex flex-wrap gap-6 justify-center">
-                        <Link href="/about" className="hover:text-white transition-colors">The Founder</Link>
-                        <Link href="/blog" className="hover:text-white transition-colors">Resources</Link>
-                        <Link href="/faqs" className="hover:text-white transition-colors">FAQs</Link>
-                        <Link href="/contacts" className="hover:text-white transition-colors">Contact</Link>
-                        <Link href="/sitemap.xml" className="hover:text-white transition-colors">Sitemap</Link>
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-xs">
+                    <p className="flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse" />
+                        © {new Date().getFullYear()} Epsilon Technology. All rights reserved.
+                    </p>
+                    <div className="flex flex-wrap gap-5 justify-center items-center">
+                        <Link href="/about" className="hover:text-sky-400 transition-colors">The Founder</Link>
+                        <span className="text-slate-800">|</span>
+                        <Link href="/blog" className="hover:text-sky-400 transition-colors">Resources</Link>
+                        <span className="text-slate-800">|</span>
+                        <Link href="/faqs" className="hover:text-sky-400 transition-colors">FAQs</Link>
+                        <span className="text-slate-800">|</span>
+                        <Link href="/contacts" className="hover:text-sky-400 transition-colors">Contact</Link>
+                        <span className="text-slate-800">|</span>
+                        <Link href="/sitemap.xml" className="hover:text-sky-400 transition-colors">Sitemap</Link>
                     </div>
                 </div>
-
             </div>
         </footer>
     );

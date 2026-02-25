@@ -4,7 +4,8 @@ import { Activity, Search, MapPin, Video, ClipboardCheck, Info, UserCheck, Heart
 import { FAQ } from '@/components/sections/FAQ';
 
 export const metadata: Metadata = {
-    title: "Digital Marketing for Spine Specialists: The Authority Guide (2025)",
+    metadataBase: new URL('https://epsilon-technology.com'),
+    title: "Digital Marketing for Spine Specialists: The Authority Guide (2026)",
     description: "Learn how digital marketing for spine specialists can improve surgical case flow and clinic appointments. A guide on spine surgery SEO and high-trust marketing.",
     keywords: ["digital marketing for spine specialists", "spine surgery marketing", "spine specialist SEO", "back pain clinic marketing", "patient acquisition for spine surgeons"],
     openGraph: {
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
         description: "Helping spine surgeons navigate the complex digital landscape and build patient trust.",
         url: "https://epsilon-technology.com/digital-marketing-for-spine-specialists/",
         images: ["/logo.png"]
+    },
+    alternates: {
+        canonical: '/digital-marketing-for-spine-specialists/',
     }
 };
 

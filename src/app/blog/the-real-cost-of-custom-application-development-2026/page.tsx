@@ -11,15 +11,20 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://epsilon-technology.com'),
     title: "The Real Cost of Custom Application Development in 2026 | Price Guide",
     description: "How much does custom application development cost in 2026? A detailed breakdown of pricing factors for startups and enterprises.",
     keywords: ["custom application development", "app development cost", "software development pricing", "mobile app cost 2026", "enterprise software cost"],
     openGraph: {
         title: "The Real Cost of Custom Application Development in 2026",
         description: "Everything you need to know about budgeting for your next custom software project.",
+        url: "https://epsilon-technology.com/blog/the-real-cost-of-custom-application-development-2026/",
         type: "article",
         publishedTime: "2026-02-17T10:00:00.000Z",
         authors: ["Epsilon Technology Team"],
+    },
+    alternates: {
+        canonical: '/blog/the-real-cost-of-custom-application-development-2026/',
     }
 };
 

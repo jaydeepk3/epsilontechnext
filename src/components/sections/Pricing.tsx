@@ -13,7 +13,7 @@ const plans = [
         description: "Perfect for doctors starting their digital journey.",
         features: [
             "6 Custom Instagram Images/Carousels",
-            "3 Edited Reels",
+            "2 Edited Reels",
             "Profile Bio, Highlights & Grid Revamp",
             "Local Growth Strategy + Hashtag Research",
             "Scheduled Posting + Monthly Performance Check-In"

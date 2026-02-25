@@ -4,8 +4,18 @@ import { Button } from "@/components/ui/button";
 import { MessageSquare, Mail, Phone, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://epsilon-technology.com'),
     title: "Contact Us | Epsilon Technology",
     description: "Get in touch with Epsilon Technology. We have offices in Junagadh, Ahmedabad, and the Netherlands to serve your global IT needs.",
+    keywords: ["Contact Epsilon Technology", "IT company contact Junagadh", "hire web developer India", "digital marketing agency contact"],
+    openGraph: {
+        title: "Contact Us | Epsilon Technology",
+        description: "Get in touch with our expert team for web development, mobile apps, and digital marketing.",
+        url: "https://epsilon-technology.com/contacts/",
+    },
+    alternates: {
+        canonical: '/contacts/',
+    }
 };
 
 export default function ContactPage() {
@@ -65,14 +75,14 @@ export default function ContactPage() {
                                     <Phone className="shrink-0 mt-1" />
                                     <div>
                                         <p className="text-sky-100 text-sm">Call us at</p>
-                                        <p className="font-bold">+91 91066 98776</p>
+                                        <p className="font-bold">+91 81608 81461</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <MessageSquare className="shrink-0 mt-1" />
                                     <div>
                                         <p className="text-sky-100 text-sm">WhatsApp</p>
-                                        <p className="font-bold">+91 91066 98776</p>
+                                        <p className="font-bold">+91 81608 81461</p>
                                     </div>
                                 </div>
                             </div>

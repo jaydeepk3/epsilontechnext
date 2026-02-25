@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://epsilon-technology.com'),
     title: "Why Next.js is Best for Ecommerce Website Development in 2026",
     description: "Looking for the best ecommerce website development stack? Discover why Next.js outperforms Shopify and WooCommerce for speed, SEO, and scalability.",
     keywords: ["ecommerce website development", "next.js ecommerce", "next.js vs shopify", "headless commerce", "custom ecommerce development"],
@@ -20,6 +21,10 @@ export const metadata: Metadata = {
         type: "article",
         publishedTime: "2026-02-20T10:00:00.000Z",
         authors: ["Epsilon Technology Team"],
+        url: "https://epsilon-technology.com/blog/why-nextjs-is-best-for-ecommerce-website-development/",
+    },
+    alternates: {
+        canonical: '/blog/why-nextjs-is-best-for-ecommerce-website-development/',
     }
 };
 

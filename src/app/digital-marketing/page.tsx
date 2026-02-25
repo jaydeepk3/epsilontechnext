@@ -2,12 +2,17 @@ import { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://epsilon-technology.com'),
   title: "Doctor Social Media Growth & Marketing | Epsilon Technology",
   description: "Transform your medical practice with Epsilon Technology's patient acquisition strategies. We help doctors and clinics grow their social media presence and get more appointments.",
   keywords: ["Doctor Marketing", "Medical Social Media", "Clinic Growth", "Patient Acquisition", "Healthcare Marketing Agency"],
   openGraph: {
     title: "Doctor Social Media Growth & Marketing",
     description: "Transform your medical practice with Epsilon Technology's patient acquisition strategies.",
+    url: "https://epsilon-technology.com/digital-marketing/",
+  },
+  alternates: {
+    canonical: '/digital-marketing/',
   }
 };
 import { IsThisForYou } from "@/components/sections/IsThisForYou";

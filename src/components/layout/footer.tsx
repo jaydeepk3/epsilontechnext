@@ -72,7 +72,7 @@ export function Footer() {
                             </div>
                             <div className="flex items-center gap-3">
                                 <Phone size={18} className="text-blue-500 shrink-0" />
-                                <a href="tel:+919106698776" className="hover:text-white transition-colors">+91 91066 98776</a>
+                                <a href="tel:+918160881461" className="hover:text-white transition-colors">+91 81608 81461</a>
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,8 @@ import { Activity, Search, MapPin, Video, AlertCircle, CheckCircle2, Info, BookO
 import { FAQ } from '@/components/sections/FAQ';
 
 export const metadata: Metadata = {
-    title: "Digital Marketing for Orthopedic Doctors: The Complete Guide (2025)",
+    metadataBase: new URL('https://epsilon-technology.com'),
+    title: "Digital Marketing for Orthopedic Doctors: The Complete Guide (2026)",
     description: "Learn how digital marketing for orthopedic doctors can grow surgery volumes and clinic appointments. A deep dive into SEO, patient behavior, and trust-building.",
     keywords: ["digital marketing for orthopedic doctors", "orthopedic marketing strategies", "SEO for orthopedic surgeons", "orthopedic clinic advertising", "patient acquisition for orthopedists"],
     openGraph: {
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
         description: "Educational strategies for orthopedic surgeons looking to dominate local search and build patient trust.",
         url: "https://epsilon-technology.com/digital-marketing-for-orthopedic-doctors/",
         images: ["/logo.png"]
+    },
+    alternates: {
+        canonical: '/digital-marketing-for-orthopedic-doctors/',
     }
 };
 

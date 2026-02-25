@@ -7,14 +7,18 @@ import { Testimonials } from '@/components/sections/Testimonials';
 import { DoctorsWeWorkWith } from '@/components/sections/DoctorsWeWorkWith';
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://epsilon-technology.com'),
     title: "Doctor Marketing in Rajkot | Grow Your Clinic with Epsilon Technology",
     description: "Best doctor marketing agency in Rajkot. We help doctors and hospitals increase patient footfall, build brand authority, and rank locally.",
     keywords: ["Doctor Marketing in Rajkot", "Clinic Marketing Rajkot", "Medical Marketing Agency Rajkot", "Hospital Marketing Rajkot", "SEO for Doctors Rajkot"],
     openGraph: {
         title: "Doctor Marketing in Rajkot | Epsilon Technology",
         description: "Grow your medical practice in Rajkot with specialized marketing strategies.",
-        url: "https://epsilon-technology.com/doctor-marketing-in-rajkot",
+        url: "https://epsilon-technology.com/doctor-marketing-in-rajkot/",
         images: ["/logo.png"]
+    },
+    alternates: {
+        canonical: '/doctor-marketing-in-rajkot/',
     }
 };
 

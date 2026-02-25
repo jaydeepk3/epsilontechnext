@@ -5,9 +5,21 @@ import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://epsilon-technology.com'),
     title: "How to Build a Scalable Mobile App in 2026 | Epsilon Technology",
     description: "A comprehensive guide for startups on building successful mobile apps. Learn about tech stacks (React Native vs Native), costs, and the development process.",
     keywords: ["Mobile App Development Guide", "React Native Development", "Startup App Development", "App Development Cost", "Epsilon Technology"],
+    openGraph: {
+        title: "How to Build a Scalable Mobile App in 2026 | Epsilon Technology",
+        description: "A startup founder's guide to building scalable mobile apps with React Native.",
+        url: "https://epsilon-technology.com/blog/mobile-app-development-guide-2026/",
+        type: "article",
+        publishedTime: "2026-01-26T10:00:00.000Z",
+        authors: ["Jaydeep Kataria"],
+    },
+    alternates: {
+        canonical: '/blog/mobile-app-development-guide-2026/',
+    }
 };
 
 export default function BlogPost() {

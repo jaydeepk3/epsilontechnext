@@ -10,15 +10,20 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://epsilon-technology.com'),
     title: "5 Signs You Need Professional Website Development Services vs. DIY",
     description: "Are you outgrowing your Wix or Squarespace site? Here are 5 critical signs that it's time to hire professional website development services.",
     keywords: ["website development services", "custom website vs diy", "professional web design", "web development agency", "business website scaling"],
     openGraph: {
         title: "DIY Websites vs. Professional Development: When to Upgrade",
         description: "Your business is growing. Is your website holding you back?",
+        url: "https://epsilon-technology.com/blog/5-signs-you-need-professional-website-development-services/",
         type: "article",
         publishedTime: "2026-02-18T10:00:00.000Z",
         authors: ["Epsilon Technology Team"],
+    },
+    alternates: {
+        canonical: '/blog/5-signs-you-need-professional-website-development-services/',
     }
 };
 

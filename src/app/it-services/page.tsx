@@ -7,12 +7,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata = {
+    metadataBase: new URL('https://epsilon-technology.com'),
     title: "IT Services - React Native & Full-Stack Development | Epsilon Technology",
     description: "Expert React Native, mobile app, and web development for global startups and businesses. Production-ready code, scalable architecture, and reliable delivery.",
     keywords: ["React Native", "Mobile App Development", "Full Stack Development", "SaaS Development", "Next.js Developers", "E-commerce Solutions"],
     openGraph: {
         title: "IT Services - React Native & Full-Stack Development",
         description: "Expert React Native, mobile app, and web development for global startups and businesses.",
+    },
+    alternates: {
+        canonical: '/it-services/',
     }
 };
 

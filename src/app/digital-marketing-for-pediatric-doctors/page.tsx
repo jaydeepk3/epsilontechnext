@@ -4,6 +4,7 @@ import { Baby, Search, MapPin, Smartphone, ClipboardCheck, Info, UserCheck, Hear
 import { FAQ } from '@/components/sections/FAQ';
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://epsilon-technology.com'),
     title: "Digital Marketing for Pediatric Doctors: Building Trust with Parents",
     description: "Learn how digital marketing for pediatric doctors can grow your clinic. A deep dive into pediatric SEO, local visibility, and trust-building for child healthcare.",
     keywords: ["digital marketing for pediatric doctors", "pediatric marketing agency", "SEO for pediatricians", "pediatric clinic marketing", "trust building in pediatrics"],
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
         description: "Helping pediatricians build a reliable, visible, and trusted digital presence for parents.",
         url: "https://epsilon-technology.com/digital-marketing-for-pediatric-doctors/",
         images: ["/logo.png"]
+    },
+    alternates: {
+        canonical: '/digital-marketing-for-pediatric-doctors/',
     }
 };
 

@@ -6,19 +6,19 @@ import { getButtonClasses } from '@/components/ui/button';
 import { CalendarDays, Clock, Share2, ArrowLeft, CheckCircle2, XCircle, TrendingUp, Users, Database } from 'lucide-react';
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://epsilon-technology.com'),
+    metadataBase: new URL('https://www.epsilon-technology.com'),
     title: "Solving Business Pain Points Through Custom Software | Epsilon Technology",
     description: "Learn how custom software solutions can eliminate operational inefficiencies, automate workflows, and increase ROI for growing businesses.",
     keywords: ["custom software benefits", "business process automation", "software ROI", "enterprise software solutions"],
     openGraph: {
         title: "Solving Business Pain Points Through Custom Software",
-        url: "https://epsilon-technology.com/blog/business-solutions-through-technology/",
+        url: "https://www.epsilon-technology.com/blog/business-solutions-through-technology/",
         type: 'article',
         publishedTime: '2026-01-27',
         authors: ['Jaydeep Kataria'],
     },
     alternates: {
-        canonical: '/blog/business-solutions-through-technology/',
+        canonical: 'https://www.epsilon-technology.com/blog/business-solutions-through-technology/',
     }
 };
 

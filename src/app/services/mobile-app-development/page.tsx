@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         description: "Transform your ideas into reality with scalable, high-performance mobile apps for startups and enterprises.",
     },
     alternates: {
-        canonical: '/services/mobile-app-development/',
+        canonical: 'https://www.epsilon-technology.com/services/mobile-app-development/',
     }
 };
 
@@ -280,7 +280,7 @@ export default function MobileAppServices() {
                         "provider": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
-                            "url": "https://epsilon-technology.com"
+                            "url": "https://www.epsilon-technology.com"
                         },
                         "areaServed": ["Unites States", "United Kingdom", "Canada", "United Arab Emirates"],
                         "hasOfferCatalog": {
@@ -311,7 +311,7 @@ export default function MobileAppServices() {
                             ]
                         },
                         "description": "Top-rated mobile app development services for startups and enterprises. Specializing in React Native, iOS, and Android apps.",
-                        "url": "https://epsilon-technology.com/services/mobile-app-development"
+                        "url": "https://www.epsilon-technology.com/services/mobile-app-development"
                     })
                 }}
             />

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         description: "Stay ahead with expert articles on technology and healthcare marketing.",
     },
     alternates: {
-        canonical: '/blog/',
+        canonical: 'https://www.epsilon-technology.com/blog/',
     }
 };
 

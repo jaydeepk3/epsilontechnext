@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         description: "Scale your online brand with robust, high-performance ecommerce solutions built for conversion.",
     },
     alternates: {
-        canonical: '/services/ecommerce-development/',
+        canonical: 'https://www.epsilon-technology.com/services/ecommerce-development/',
     }
 };
 

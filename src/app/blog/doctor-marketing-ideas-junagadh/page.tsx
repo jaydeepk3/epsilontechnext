@@ -4,7 +4,7 @@ import { ArrowLeft, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://epsilon-technology.com'),
+    metadataBase: new URL('https://www.epsilon-technology.com'),
     title: "7 Proven Marketing Ideas for Doctors in Junagadh | Epsilon Technology",
     description: "Learn how to grow your medical practice in Junagadh with these 7 specialized marketing strategies. From Local SEO to Instagram Reels.",
     keywords: ["Doctor Marketing Junagadh", "Clinic Promotion Ideas", "Healthcare Marketing Strategies", "Medical SEO Junagadh"],
@@ -13,10 +13,10 @@ export const metadata: Metadata = {
         description: "Grow your clinic in Junagadh with these 7 actionable strategies.",
         type: "article",
         authors: ["Jaydeep Kataria"],
-        url: "https://epsilon-technology.com/blog/doctor-marketing-ideas-junagadh/",
+        url: "https://www.epsilon-technology.com/blog/doctor-marketing-ideas-junagadh/",
     },
     alternates: {
-        canonical: '/blog/doctor-marketing-ideas-junagadh/',
+        canonical: 'https://www.epsilon-technology.com/blog/doctor-marketing-ideas-junagadh/',
     }
 };
 

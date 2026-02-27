@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         description: "We merge aesthetics with functionality to create products users love. Expert UI/UX design for startups and enterprises.",
     },
     alternates: {
-        canonical: '/services/ui-ux-design/',
+        canonical: 'https://www.epsilon-technology.com/services/ui-ux-design/',
     }
 };
 

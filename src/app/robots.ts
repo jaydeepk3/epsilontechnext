@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://epsilon-technology.com/sitemap.xml',
+        sitemap: 'https://www.epsilon-technology.com/sitemap.xml',
     };
 }

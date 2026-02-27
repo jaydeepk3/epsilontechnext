@@ -2,17 +2,17 @@ import { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://epsilon-technology.com'),
+  metadataBase: new URL('https://www.epsilon-technology.com'),
   title: "Doctor Social Media Growth & Marketing | Epsilon Technology",
   description: "Transform your medical practice with Epsilon Technology's patient acquisition strategies. We help doctors and clinics grow their social media presence and get more appointments.",
   keywords: ["Doctor Marketing", "Medical Social Media", "Clinic Growth", "Patient Acquisition", "Healthcare Marketing Agency"],
   openGraph: {
     title: "Doctor Social Media Growth & Marketing",
     description: "Transform your medical practice with Epsilon Technology's patient acquisition strategies.",
-    url: "https://epsilon-technology.com/digital-marketing/",
+    url: "https://www.epsilon-technology.com/digital-marketing/",
   },
   alternates: {
-    canonical: '/digital-marketing/',
+    canonical: 'https://www.epsilon-technology.com/digital-marketing/',
   }
 };
 import { IsThisForYou } from "@/components/sections/IsThisForYou";
@@ -50,7 +50,7 @@ export default function Home() {
             "provider": {
               "@type": "Organization",
               "name": "Epsilon Technology",
-              "url": "https://epsilon-technology.com"
+              "url": "https://www.epsilon-technology.com"
             },
             "areaServed": ["United States", "United Kingdom", "Canada", "India"],
             "hasOfferCatalog": {
@@ -81,7 +81,7 @@ export default function Home() {
               ]
             },
             "description": "Transform your medical practice with Epsilon Technology's patient acquisition strategies. We help doctors and clinics grow their social media presence.",
-            "url": "https://epsilon-technology.com/digital-marketing"
+            "url": "https://www.epsilon-technology.com/digital-marketing"
           })
         }}
       />

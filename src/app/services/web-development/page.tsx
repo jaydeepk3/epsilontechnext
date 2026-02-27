@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         description: "Scale your business with high-performance, custom-built websites designed for conversion.",
     },
     alternates: {
-        canonical: '/services/web-development/',
+        canonical: 'https://www.epsilon-technology.com/services/web-development/',
     }
 };
 
@@ -281,7 +281,7 @@ export default function WebDevelopment() {
                         "provider": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
-                            "url": "https://epsilon-technology.com"
+                            "url": "https://www.epsilon-technology.com"
                         },
                         "areaServed": ["United States", "United Kingdom", "Canada", "United Arab Emirates", "India"],
                         "hasOfferCatalog": {
@@ -319,7 +319,7 @@ export default function WebDevelopment() {
                             ]
                         },
                         "description": "Expert web development services using Next.js and React. We build fast, scalable, and SEO-optimized professional websites.",
-                        "url": "https://epsilon-technology.com/services/web-development"
+                        "url": "https://www.epsilon-technology.com/services/web-development"
                     })
                 }}
             />

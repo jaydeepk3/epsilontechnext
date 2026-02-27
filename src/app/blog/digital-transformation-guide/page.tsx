@@ -6,19 +6,19 @@ import { getButtonClasses } from '@/components/ui/button';
 import { CalendarDays, Clock, Share2, ArrowLeft, Users, Repeat, Cog, Box, AlertTriangle, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://epsilon-technology.com'),
+    metadataBase: new URL('https://www.epsilon-technology.com'),
     title: "The Ultimate Guide to Digital Transformation | Epsilon Technology",
     description: "A comprehensive guide for businesses looking to digitize operations, adopt cloud technologies, and stay competitive in the digital age.",
     keywords: ["digital transformation guide", "business digitization", "cloud migration strategies", "legacy modernization"],
     openGraph: {
         title: "The Ultimate Guide to Digital Transformation",
-        url: "https://epsilon-technology.com/blog/digital-transformation-guide/",
+        url: "https://www.epsilon-technology.com/blog/digital-transformation-guide/",
         type: 'article',
         publishedTime: '2026-01-25',
         authors: ['Jaydeep Kataria'],
     },
     alternates: {
-        canonical: '/blog/digital-transformation-guide/',
+        canonical: 'https://www.epsilon-technology.com/blog/digital-transformation-guide/',
     }
 };
 

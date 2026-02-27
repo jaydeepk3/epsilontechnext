@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Digital Marketing for Ayurvedic Doctors | Educational Growth Guide",
         description: "Helping Ayurvedic practitioners build a trusted, authoritative, and visible digital brand.",
-        url: "https://epsilon-technology.com/digital-marketing-for-ayurvedic-doctors/",
+        url: "https://www.epsilon-technology.com/digital-marketing-for-ayurvedic-doctors/",
         images: ["/logo.png"]
     },
     alternates: {
-        canonical: '/digital-marketing-for-ayurvedic-doctors/',
+        canonical: 'https://www.epsilon-technology.com/digital-marketing-for-ayurvedic-doctors/',
     }
 };
 

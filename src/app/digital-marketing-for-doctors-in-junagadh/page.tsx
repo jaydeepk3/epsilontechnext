@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Digital Marketing for Doctors in Junagadh | Educational Guide",
         description: "Everything Junagadh-based doctors need to know about growing their practice online.",
-        url: "https://epsilon-technology.com/digital-marketing-for-doctors-in-junagadh/",
+        url: "https://www.epsilon-technology.com/digital-marketing-for-doctors-in-junagadh/",
         images: ["/logo.png"]
     },
     alternates: {
-        canonical: '/digital-marketing-for-doctors-in-junagadh/',
+        canonical: 'https://www.epsilon-technology.com/digital-marketing-for-doctors-in-junagadh/',
     }
 };
 

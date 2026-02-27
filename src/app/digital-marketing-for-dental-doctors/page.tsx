@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Digital Marketing for Dental Doctors | Healthcare Growth Guide",
         description: "Helping dentists dominate local search and showcase their clinical excellence online.",
-        url: "https://epsilon-technology.com/digital-marketing-for-dental-doctors/",
+        url: "https://www.epsilon-technology.com/digital-marketing-for-dental-doctors/",
         images: ["/logo.png"]
     },
     alternates: {
-        canonical: '/digital-marketing-for-dental-doctors/',
+        canonical: 'https://www.epsilon-technology.com/digital-marketing-for-dental-doctors/',
     }
 };
 

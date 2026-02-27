@@ -10,20 +10,20 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://epsilon-technology.com'),
+    metadataBase: new URL('https://www.epsilon-technology.com'),
     title: "5 Signs You Need Professional Website Development Services vs. DIY",
     description: "Are you outgrowing your Wix or Squarespace site? Here are 5 critical signs that it's time to hire professional website development services.",
     keywords: ["website development services", "custom website vs diy", "professional web design", "web development agency", "business website scaling"],
     openGraph: {
         title: "DIY Websites vs. Professional Development: When to Upgrade",
         description: "Your business is growing. Is your website holding you back?",
-        url: "https://epsilon-technology.com/blog/5-signs-you-need-professional-website-development-services/",
+        url: "https://www.epsilon-technology.com/blog/5-signs-you-need-professional-website-development-services/",
         type: "article",
         publishedTime: "2026-02-18T10:00:00.000Z",
         authors: ["Epsilon Technology Team"],
     },
     alternates: {
-        canonical: '/blog/5-signs-you-need-professional-website-development-services/',
+        canonical: 'https://www.epsilon-technology.com/blog/5-signs-you-need-professional-website-development-services/',
     }
 };
 
@@ -205,25 +205,25 @@ export default function BlogProfessionalVsDIY() {
                         "@type": "BlogPosting",
                         "headline": "5 Signs You Need Professional Website Development Services vs. DIY",
                         "description": "5 critical signs that it's time to upgrade from DIY builders to professional website development services for better speed, SEO, and security.",
-                        "image": "https://epsilon-technology.com/blog_web_development.png",
+                        "image": "https://www.epsilon-technology.com/blog_web_development.png",
                         "author": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
-                            "url": "https://epsilon-technology.com"
+                            "url": "https://www.epsilon-technology.com"
                         },
                         "publisher": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
                             "logo": {
                                 "@type": "ImageObject",
-                                "url": "https://epsilon-technology.com/logo.png"
+                                "url": "https://www.epsilon-technology.com/logo.png"
                             }
                         },
                         "datePublished": "2026-02-18",
                         "dateModified": "2026-02-18",
                         "mainEntityOfPage": {
                             "@type": "WebPage",
-                            "@id": "https://epsilon-technology.com/blog/5-signs-you-need-professional-website-development-services"
+                            "@id": "https://www.epsilon-technology.com/blog/5-signs-you-need-professional-website-development-services"
                         }
                     })
                 }}

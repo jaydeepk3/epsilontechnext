@@ -7,18 +7,18 @@ import { Testimonials } from '@/components/sections/Testimonials';
 import { DoctorsWeWorkWith } from '@/components/sections/DoctorsWeWorkWith';
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://epsilon-technology.com'),
+    metadataBase: new URL('https://www.epsilon-technology.com'),
     title: "Doctor Marketing in Morbi | Grow Your Clinic with Epsilon Technology",
     description: "Expert doctor marketing agency in Morbi. We help doctors and clinics in Morbi attract more patients and build a strong local brand.",
     keywords: ["Doctor Marketing in Morbi", "Clinic Marketing Morbi", "Medical Marketing Agency Morbi", "Hospital Marketing Morbi", "SEO for Doctors Morbi"],
     openGraph: {
         title: "Doctor Marketing in Morbi | Epsilon Technology",
         description: "Grow your medical practice in Morbi with specialized marketing strategies.",
-        url: "https://epsilon-technology.com/doctor-marketing-in-morbi/",
+        url: "https://www.epsilon-technology.com/doctor-marketing-in-morbi/",
         images: ["/logo.png"]
     },
     alternates: {
-        canonical: '/doctor-marketing-in-morbi/',
+        canonical: 'https://www.epsilon-technology.com/doctor-marketing-in-morbi/',
     }
 };
 

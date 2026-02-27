@@ -6,18 +6,18 @@ import { Link } from 'lucide-react';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://epsilon-technology.com'),
+    metadataBase: new URL('https://www.epsilon-technology.com'),
     title: "Digital Marketing & Advertising in Junagadh | Epsilon Technology",
     description: "Leading Digital Marketing Company in Junagadh. We offer SEO, Social Media Marketing, Web Design, and Branding services to grow your business.",
     keywords: ["Digital Marketing in Junagadh", "Advertising Agency Junagadh", "SEO Company Junagadh", "Social Media Marketing Junagadh", "Web Design Junagadh", "Branding Agency Junagadh"],
     openGraph: {
         title: "Digital Marketing & Advertising in Junagadh | Epsilon Technology",
         description: "Grow your business in Junagadh with expert digital marketing strategies.",
-        url: "https://epsilon-technology.com/digital-marketing-in-junagadh/",
+        url: "https://www.epsilon-technology.com/digital-marketing-in-junagadh/",
         images: ["/logo.png"]
     },
     alternates: {
-        canonical: '/digital-marketing-in-junagadh/',
+        canonical: 'https://www.epsilon-technology.com/digital-marketing-in-junagadh/',
     }
 };
 

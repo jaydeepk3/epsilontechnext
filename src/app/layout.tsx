@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://epsilon-technology.com'),
+  metadataBase: new URL('https://www.epsilon-technology.com'),
   title: {
     default: "Epsilon Technology | Custom Software, App & Web Development, Digital Marketing",
     template: "%s | Epsilon Technology"
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://epsilon-technology.com",
+    url: "https://www.epsilon-technology.com",
     siteName: "Epsilon Technology",
     title: "Epsilon Technology | Custom Software, App, Web Development & Digital Marketing",
     description: "Premium IT software services including custom software, mobile applications, website development, and specialized digital marketing.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.epsilon-technology.com/',
   },
   icons: {
     icon: '/logo.png',
@@ -94,10 +94,10 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "Organization",
-                  "@id": "https://epsilon-technology.com/#organization",
+                  "@id": "https://www.epsilon-technology.com/#organization",
                   "name": "Epsilon Technology",
-                  "url": "https://epsilon-technology.com",
-                  "logo": "https://epsilon-technology.com/logo.png",
+                  "url": "https://www.epsilon-technology.com",
+                  "logo": "https://www.epsilon-technology.com/logo.png",
                   "description": "Specialized social media growth for doctors and premium IT software services.",
                   "contactPoint": {
                     "@type": "ContactPoint",
@@ -111,18 +111,18 @@ export default function RootLayout({
                   "founder": {
                     "@type": "Person",
                     "name": "Jaydeep Kataria",
-                    "url": "https://epsilon-technology.com/about"
+                    "url": "https://www.epsilon-technology.com/about"
                   }
                 },
                 {
                   "@type": "SoftwareHouse",
-                  "@id": "https://epsilon-technology.com/#software",
+                  "@id": "https://www.epsilon-technology.com/#software",
                   "name": "Epsilon Technology - IT Services",
                   "parentOrganization": {
-                    "@id": "https://epsilon-technology.com/#organization"
+                    "@id": "https://www.epsilon-technology.com/#organization"
                   },
                   "description": "Global mobile app development, ecommerce solutions, and custom software company.",
-                  "url": "https://epsilon-technology.com",
+                  "url": "https://www.epsilon-technology.com",
                   "address": {
                     "@type": "PostalAddress",
                     "addressCountry": "IN"

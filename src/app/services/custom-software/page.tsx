@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         description: "Tailored software solutions designed to streamline your unique business operations and drive efficiency.",
     },
     alternates: {
-        canonical: '/services/custom-software/',
+        canonical: 'https://www.epsilon-technology.com/services/custom-software/',
     }
 };
 
@@ -275,7 +275,7 @@ export default function CustomSoftware() {
                         "provider": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
-                            "url": "https://epsilon-technology.com"
+                            "url": "https://www.epsilon-technology.com"
                         },
                         "areaServed": ["United States", "United Kingdom", "Canada", "United Arab Emirates", "India"],
                         "hasOfferCatalog": {
@@ -306,7 +306,7 @@ export default function CustomSoftware() {
                             ]
                         },
                         "description": "Leading custom software development agency providing tailored enterprise solutions, SaaS development, and cloud migration services.",
-                        "url": "https://epsilon-technology.com/services/custom-software"
+                        "url": "https://www.epsilon-technology.com/services/custom-software"
                     })
                 }}
             />

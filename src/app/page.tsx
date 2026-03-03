@@ -1,57 +1,33 @@
 import { Metadata } from "next";
-import { Hero } from "@/components/sections/it/Hero";
-import { Services } from "@/components/sections/it/Services";
-import { WhyChooseUs } from "@/components/sections/it/WhyChooseUs";
-import { Portfolio } from "@/components/sections/it/Portfolio";
-import { Industries } from "@/components/sections/it/Industries";
-import { Testimonials } from "@/components/sections/it/Testimonials";
-import { CTA } from "@/components/sections/it/CTA";
-import { TechStack } from "@/components/sections/it/TechStack";
-import { Process } from "@/components/sections/it/Process";
-import { FAQ } from "@/components/sections/it/FAQ";
-import { Packages } from "@/components/sections/it/Packages";
+import HomeLandingClient from "./HomeLandingClient";
 
 export const metadata: Metadata = {
-  title: "Top App Developers & Website Development Services | Epsilon Technology",
-  description: "Affordable custom application development and mobile app creation services. We build high-performance websites and apps for businesses worldwide.",
+  title: "Epsilon Technology — Web, Mobile App, eCommerce & Doctor Marketing Agency India",
+  description: "Grow your business digitally with Epsilon Technology. We build websites, mobile apps, eCommerce stores, manage doctor digital marketing & provide WhatsApp Business API. 50+ clients globally. Get a free consultation.",
   keywords: [
-    "website development services",
-    "custom application development",
+    "web development company india",
+    "mobile app development india",
     "ecommerce website development",
-    "mobile app development",
-    "affordable app developers",
-    "mobile app creation services",
-    "top app developers",
-    "Web Development Company USA",
-    "React Native Development"
+    "digital marketing for doctors",
+    "whatsapp business api india",
+    "IT company india",
+    "website development packages",
+    "affordable app development",
+    "doctor marketing agency",
+    "epsilon technology",
   ],
   openGraph: {
-    title: "Epsilon Technology | Premium IT Services Globally",
-    description: "Building scalable digital products for businesses in USA, UK, UAE & Canada.",
+    title: "Epsilon Technology — Web, Apps, eCommerce & Doctor Marketing Agency",
+    description: "Websites, Mobile Apps, eCommerce, Doctor Marketing & WhatsApp API. Packages starting ₹9,999. Trusted by 50+ clients in India, USA, UK & UAE.",
+    url: "https://epsilon-technology.com/",
+    type: "website",
     images: ["/logo.png"],
   },
   alternates: {
-    canonical: 'https://epsilon-technology.com/',
-  }
+    canonical: "https://epsilon-technology.com/",
+  },
 };
 
-import { PainPoints } from "@/components/sections/it/PainPoints";
-
 export default function Home() {
-  return (
-    <>
-      <Hero />
-      <PainPoints />
-      <TechStack />
-      <Services />
-      <Packages />
-      <Process />
-      <WhyChooseUs />
-      <Industries />
-      <Portfolio />
-      <Testimonials />
-      <FAQ />
-      <CTA />
-    </>
-  );
+  return <HomeLandingClient />;
 }

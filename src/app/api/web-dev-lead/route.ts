@@ -24,7 +24,7 @@ export async function POST(request: Request) {
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: 'contact@epsilon-technology.com',
-            subject: `🚀 New Web Dev Lead: ${name} — Package: ${pkg || 'Not specified'}`,
+            subject: ` New Web Dev Lead: ${name} — Package: ${pkg || 'Not specified'}`,
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f8fafc; border-radius: 12px;">
                     <h2 style="color: #1e40af; border-bottom: 2px solid #3b82f6; padding-bottom: 10px;">🌐 New Website Development Lead</h2>

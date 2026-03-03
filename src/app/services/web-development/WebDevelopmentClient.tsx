@@ -413,7 +413,7 @@ export default function WebDevelopmentLanding() {
                             {/* Badge */}
                             <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
                                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                                <span>🎯 Limited Slots Available This Month</span>
+                                <span>Limited Slots Available This Month</span>
                             </div>
 
                             {/* Headline */}

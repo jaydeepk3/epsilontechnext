@@ -6,21 +6,21 @@ export async function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl
 
     // Protect all /admin routes except /admin/login
-    if (pathname.startsWith('/admin') && pathname !== '/admin/login') {
+    if (pathname.startsWith('/admin') && !pathname.startsWith('/admin/login')) {
         const token = request.cookies.get('adminToken')?.value
         if (!token) {
-            return NextResponse.redirect(new URL('/admin/login', request.url))
+            return NextResponse.redirect(new URL('/admin/login/', request.url))
         }
 
         const payload = await verifyToken(token)
         if (!payload) {
-            return NextResponse.redirect(new URL('/admin/login', request.url))
+            return NextResponse.redirect(new URL('/admin/login/', request.url))
         }
     }
 
     // Redirect /admin to /admin/blogs
-    if (pathname === '/admin') {
-        return NextResponse.redirect(new URL('/admin/blogs', request.url))
+    if (pathname === '/admin' || pathname === '/admin/') {
+        return NextResponse.redirect(new URL('/admin/blogs/', request.url))
     }
 
     return NextResponse.next()

@@ -54,7 +54,7 @@ const portfolioItems = [
         category: "Public Sector • Mobile App",
         image: "/portfolio/junagadhpolice.png",
         description: "Official mobile application for Junagadh Police, designed to facilitate citizen services and improve community safety.",
-        link: "#"
+        link: "https://play.google.com/store/apps/details?id=com.jnd.police.bandobast"
     },
 ];
 

@@ -20,6 +20,9 @@ export const metadata: Metadata = {
         type: "article",
         publishedTime: "2026-02-19T10:00:00.000Z",
         authors: ["Epsilon Technology Team"],
+    },
+    alternates: {
+        canonical: 'https://epsilon-technology.com/blog/mobile-app-creation-services-native-vs-cross-platform/',
     }
 };
 

@@ -15,6 +15,9 @@ export const metadata: Metadata = {
         type: 'article',
         publishedTime: '2026-01-28',
         authors: ['Jaydeep Kataria'],
+    },
+    alternates: {
+        canonical: 'https://epsilon-technology.com/blog/web-app-development-trends-usa-2026/',
     }
 };
 

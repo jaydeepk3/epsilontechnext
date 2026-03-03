@@ -60,9 +60,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  alternates: {
-    canonical: 'https://epsilon-technology.com/',
-  },
   icons: {
     icon: '/logo.png',
     apple: '/logo.png',

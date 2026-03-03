@@ -18,6 +18,9 @@ export const metadata: Metadata = {
         publishedTime: "2026-02-16T12:00:00.000Z",
         authors: ["Epsilon Technology Team"],
         images: ["/blog_mobile_app_dev.png"], // Placeholder
+    },
+    alternates: {
+        canonical: 'https://epsilon-technology.com/blog/junagadh-police-bandobast-app-case-study/',
     }
 };
 
@@ -155,7 +158,7 @@ export default function BlogJunagadhPoliceApp() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
-                            href="/contact"
+                            href="/contacts"
                             className={getButtonClasses({ variant: 'primary', size: 'lg', className: 'bg-white text-slate-900 hover:bg-slate-100' })}
                         >
                             Contact Us

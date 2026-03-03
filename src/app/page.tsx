@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     title: "Epsilon Technology | Premium IT Services Globally",
     description: "Building scalable digital products for businesses in USA, UK, UAE & Canada.",
     images: ["/logo.png"],
+  },
+  alternates: {
+    canonical: 'https://epsilon-technology.com/',
   }
 };
 

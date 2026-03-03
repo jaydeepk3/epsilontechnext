@@ -28,6 +28,9 @@ export const metadata: Metadata = {
         type: "article",
         publishedTime: "2026-02-16T10:00:00.000Z",
         authors: ["Epsilon Technology Team"],
+    },
+    alternates: {
+        canonical: 'https://epsilon-technology.com/blog/top-affordable-app-developers-2026/',
     }
 };
 

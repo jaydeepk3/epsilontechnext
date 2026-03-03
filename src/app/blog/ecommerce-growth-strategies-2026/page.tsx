@@ -14,6 +14,9 @@ export const metadata: Metadata = {
         type: 'article',
         publishedTime: '2026-01-25',
         authors: ['Jaydeep Kataria'],
+    },
+    alternates: {
+        canonical: 'https://epsilon-technology.com/blog/ecommerce-growth-strategies-2026/',
     }
 };
 

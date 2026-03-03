@@ -381,19 +381,22 @@ export default function HomeLandingClient() {
                 </section>
 
                 {/* ═══════════════════════════════════════ STATS ═══════════════════════════════════════ */}
-                <section className="bg-blue-600 py-8">
-                    <div className="container mx-auto px-4">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <section className="bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-700 py-12 relative overflow-hidden shadow-inner">
+                    <div className="absolute inset-0 bg-white/5 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px] opacity-20"></div>
+                    <div className="container mx-auto px-4 relative z-10">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-5xl mx-auto">
                             {[
-                                { icon: Award, value: "5+", label: "Years Experience" },
-                                { icon: Code2, value: "100+", label: "Projects Delivered" },
-                                { icon: Users, value: "50+", label: "Happy Clients" },
-                                { icon: Star, value: "4.9★", label: "Average Rating" },
-                            ].map(({ icon: Icon, value, label }) => (
-                                <div key={label} className="text-center text-white">
-                                    <Icon size={20} className="text-blue-200 mx-auto mb-1.5" />
-                                    <div className="text-2xl font-bold">{value}</div>
-                                    <div className="text-blue-200 text-xs mt-0.5">{label}</div>
+                                { icon: Award, value: "5+", label: "Years Experience", color: "text-amber-400" },
+                                { icon: Code2, value: "100+", label: "Projects Delivered", color: "text-emerald-400" },
+                                { icon: Users, value: "50+", label: "Happy Clients", color: "text-fuchsia-400" },
+                                { icon: Star, value: "4.9★", label: "Average Rating", color: "text-yellow-400" },
+                            ].map(({ icon: Icon, value, label, color }) => (
+                                <div key={label} className="text-center group flex flex-col items-center">
+                                    <div className="mb-4 p-4 rounded-2xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20 group-hover:-translate-y-1 transition-transform duration-300">
+                                        <Icon size={32} className={`${color} drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]`} />
+                                    </div>
+                                    <div className="text-4xl md:text-5xl font-extrabold text-white mb-2 drop-shadow-md tracking-tight">{value}</div>
+                                    <div className="text-blue-100 text-sm md:text-base font-medium uppercase tracking-wider">{label}</div>
                                 </div>
                             ))}
                         </div>
@@ -401,10 +404,12 @@ export default function HomeLandingClient() {
                 </section>
 
                 {/* ═══════════════════════════════════ TRUSTED BY CLIENTS ══════════════════════════════════════ */}
-                <section className="py-12 bg-white border-y border-slate-100 overflow-hidden">
-                    <div className="container mx-auto px-4 mb-8 text-center">
-                        <p className="text-slate-400 text-xs font-semibold uppercase tracking-widest">
-                            Trusted by businesses across India &amp; beyond
+                <section className="py-16 bg-slate-50 border-y border-slate-200 overflow-hidden relative">
+                    <div className="container mx-auto px-4 mb-10 text-center relative z-10">
+                        <h3 className="text-slate-800 text-xl font-bold mb-3">Trusted by leading businesses</h3>
+                        <div className="w-16 h-1 bg-blue-500 mx-auto rounded-full mb-4"></div>
+                        <p className="text-slate-500 text-sm max-w-xl mx-auto">
+                            Empowering startups and established enterprises across the globe with robust digital solutions.
                         </p>
                     </div>
                     {/* Marquee track */}
@@ -422,23 +427,23 @@ export default function HomeLandingClient() {
                             {[...Array(2)].map((_, pass) => (
                                 <div key={pass} className="flex gap-10 items-center shrink-0">
                                     {[
-                                        { src: "/clientlogo/FieldR Icon-(BLACK) 1.png", name: "FieldR", bg: "bg-slate-100", pad: "p-4" },
+                                        { src: "/clientlogo/FieldR Icon-(BLACK) 1.png", name: "FieldR", bg: "bg-white", pad: "p-4" },
                                         { src: "/clientlogo/Flexmot logo final.png", name: "Flexmot", bg: "bg-white", pad: "p-3" },
-                                        { src: "/clientlogo/Flique.png", name: "Flique", bg: "bg-white", pad: "p-1" },
-                                        { src: "/clientlogo/Pistol.jpg", name: "Pistol Films", bg: "bg-slate-100", pad: "p-4" },
-                                        { src: "/clientlogo/Sangani-Hospital-Logo-Gujarati 2 copy.png", name: "Sangani Hospital", bg: "bg-white", pad: "p-2" },
-                                        { src: "/clientlogo/aiow.png", name: "Aiow", bg: "bg-white", pad: "p-1" },
-                                        { src: "/clientlogo/dhartiagro.png", name: "Dharti Agro", bg: "bg-white", pad: "p-2" },
-                                        { src: "/clientlogo/dotcube.png", name: "DotCube", bg: "bg-white", pad: "p-2" },
-                                        { src: "/clientlogo/trimurti_hospital.png", name: "Trimurti Hospitals", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/Flique.png", name: "Flique", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/Pistol.jpg", name: "Pistol Films", bg: "bg-white", pad: "p-4" },
+                                        { src: "/clientlogo/Sangani-Hospital-Logo-Gujarati 2 copy.png", name: "Sangani Hospital", bg: "bg-white", pad: "p-3" },
+                                        { src: "/clientlogo/aiow.png", name: "Aiow", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/dhartiagro.png", name: "Dharti Agro", bg: "bg-white", pad: "p-3" },
+                                        { src: "/clientlogo/dotcube.png", name: "DotCube", bg: "bg-white", pad: "p-3" },
+                                        { src: "/clientlogo/trimurti_hospital.png", name: "Trimurti Hospitals", bg: "bg-white", pad: "p-3" },
                                     ].map((logo) => (
                                         <div key={logo.name + pass}
-                                            className={`flex items-center justify-center h-16 w-40 rounded-2xl border border-slate-100 shadow-sm ${logo.bg} ${logo.pad} shrink-0 hover:shadow-md transition-shadow duration-300 grayscale hover:grayscale-0 transition-all`}>
+                                            className={`flex items-center justify-center h-20 w-48 rounded-2xl bg-white shadow-sm border border-slate-200 ${logo.pad} shrink-0 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group`}>
                                             {/* eslint-disable-next-line @next/next/no-img-element */}
                                             <img
                                                 src={logo.src}
                                                 alt={logo.name}
-                                                className="max-h-full max-w-full object-contain"
+                                                className="max-h-full max-w-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                                             />
                                         </div>
                                     ))}
@@ -631,7 +636,7 @@ export default function HomeLandingClient() {
                         {/* Google Rating Hero Badge */}
                         <div className="flex justify-center mb-12">
                             <a
-                                href="https://search.google.com/local/reviews?placeid=ChIJoSZhLlgBWDkRty2tJ7rOdDg"
+                                href="https://www.google.com/search?q=epsilon-technology&oq=epsilon-technology&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgYIAhBFGDwyBggDEEUYPDIGCAQQIxgnMgYIBRAAGB4yBggGEEUYPDIGCAcQRRg80gEINjA5MmowajSoAgCwAgE&sourceid=chrome&ie=UTF-8#mpd=~8897672357773143821/customers/reviews"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="group inline-flex items-center gap-5 bg-white border-2 border-yellow-200 rounded-3xl px-8 py-5 shadow-lg hover:shadow-2xl hover:border-yellow-300 transition-all duration-300 hover:-translate-y-1"
@@ -724,7 +729,7 @@ export default function HomeLandingClient() {
                                 <h3 className="text-slate-900 font-bold text-xl mb-2">Happy with our work?</h3>
                                 <p className="text-slate-500 text-sm mb-6 max-w-xs">Your Google review helps other businesses find and trust us. It takes less than 60 seconds!</p>
                                 <a
-                                    href="https://search.google.com/local/writereview?placeid=ChIJoSZhLlgBWDkRty2tJ7rOdDg"
+                                    href="https://g.page/r/CbetrSe6znc4EAI/review"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-700 text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:scale-105 shadow-lg text-sm"

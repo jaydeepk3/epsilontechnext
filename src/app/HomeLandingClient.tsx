@@ -400,6 +400,60 @@ export default function HomeLandingClient() {
                     </div>
                 </section>
 
+                {/* ═══════════════════════════════════ TRUSTED BY CLIENTS ══════════════════════════════════════ */}
+                <section className="py-12 bg-white border-y border-slate-100 overflow-hidden">
+                    <div className="container mx-auto px-4 mb-8 text-center">
+                        <p className="text-slate-400 text-xs font-semibold uppercase tracking-widest">
+                            Trusted by businesses across India &amp; beyond
+                        </p>
+                    </div>
+                    {/* Marquee track */}
+                    <div className="relative">
+                        {/* Fade edges */}
+                        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+                        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+                        <div className="flex gap-10 items-center"
+                            style={{
+                                animation: "marqueeScroll 30s linear infinite",
+                                width: "max-content",
+                            }}>
+                            {/* Render logos twice for seamless infinite loop */}
+                            {[...Array(2)].map((_, pass) => (
+                                <div key={pass} className="flex gap-10 items-center shrink-0">
+                                    {[
+                                        { src: "/clientlogo/FieldR Icon-(BLACK) 1.png", name: "FieldR", bg: "bg-slate-100", pad: "p-4" },
+                                        { src: "/clientlogo/Flexmot logo final.png", name: "Flexmot", bg: "bg-white", pad: "p-3" },
+                                        { src: "/clientlogo/Flique.png", name: "Flique", bg: "bg-white", pad: "p-1" },
+                                        { src: "/clientlogo/Pistol.jpg", name: "Pistol Films", bg: "bg-slate-100", pad: "p-4" },
+                                        { src: "/clientlogo/Sangani-Hospital-Logo-Gujarati 2 copy.png", name: "Sangani Hospital", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/aiow.png", name: "Aiow", bg: "bg-white", pad: "p-1" },
+                                        { src: "/clientlogo/dhartiagro.png", name: "Dharti Agro", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/dotcube.png", name: "DotCube", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/trimurti_hospital.png", name: "Trimurti Hospitals", bg: "bg-white", pad: "p-2" },
+                                    ].map((logo) => (
+                                        <div key={logo.name + pass}
+                                            className={`flex items-center justify-center h-16 w-40 rounded-2xl border border-slate-100 shadow-sm ${logo.bg} ${logo.pad} shrink-0 hover:shadow-md transition-shadow duration-300 grayscale hover:grayscale-0 transition-all`}>
+                                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                                            <img
+                                                src={logo.src}
+                                                alt={logo.name}
+                                                className="max-h-full max-w-full object-contain"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <style>{`
+                        @keyframes marqueeScroll {
+                            0% { transform: translateX(0); }
+                            100% { transform: translateX(-50%); }
+                        }
+                    `}</style>
+                </section>
+
                 {/* ═══════════════════════════════════════ TABBED SERVICES ═══════════════════════════════════════ */}
                 <section ref={servicesRef} id="services" className="py-16 bg-slate-50">
                     <div className="container mx-auto px-4">
@@ -563,31 +617,129 @@ export default function HomeLandingClient() {
                     </div>
                 </section>
 
-                {/* ═══════════════════════════════════════ TESTIMONIALS ═══════════════════════════════════════ */}
-                <section className="py-16 bg-slate-50">
-                    <div className="container mx-auto px-4">
-                        <div className="text-center mb-12">
-                            <p className="text-blue-600 font-bold text-xs uppercase tracking-widest mb-2">Real Reviews</p>
-                            <h2 className="text-3xl font-bold text-slate-900 mb-1">What Our Clients Say</h2>
-                            <p className="text-slate-500 text-sm">5★ verified reviews from clients across India, USA, UK & UAE</p>
+                {/* ═══════════════════════════════════════ SOCIAL PROOF: GOOGLE REVIEWS + VIDEO ════════════════ */}
+                <section className="py-20 bg-slate-50">
+                    <div className="container mx-auto px-4 max-w-6xl">
+
+                        {/* Section Header */}
+                        <div className="text-center mb-14">
+                            <p className="text-blue-600 font-bold text-xs uppercase tracking-widest mb-2">Verified Reviews</p>
+                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Real People. Real Results.</h2>
+                            <p className="text-slate-500 text-sm max-w-md mx-auto">Verified reviews from Google &amp; direct clients across India, USA, UK &amp; UAE.</p>
                         </div>
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
-                            {testimonials.map((t, i) => (
-                                <div key={i} className="bg-white rounded-2xl p-5 border border-slate-200 hover:shadow-lg transition-shadow">
-                                    <div className="flex mb-3">{[1, 2, 3, 4, 5].map(s => <Star key={s} size={14} className="text-yellow-400 fill-yellow-400" />)}</div>
-                                    <p className="text-slate-600 text-sm leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
-                                    <div className="flex items-center gap-3 pt-3 border-t border-slate-100">
-                                        <div className="w-9 h-9 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xs shrink-0">
-                                            {t.name[0]}
-                                        </div>
-                                        <div>
-                                            <p className="font-semibold text-slate-900 text-sm">{t.name}</p>
-                                            <p className="text-slate-500 text-xs">{t.role}</p>
+
+                        {/* Google Rating Hero Badge */}
+                        <div className="flex justify-center mb-12">
+                            <a
+                                href="https://search.google.com/local/reviews?placeid=ChIJoSZhLlgBWDkRty2tJ7rOdDg"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group inline-flex items-center gap-5 bg-white border-2 border-yellow-200 rounded-3xl px-8 py-5 shadow-lg hover:shadow-2xl hover:border-yellow-300 transition-all duration-300 hover:-translate-y-1"
+                            >
+                                <svg className="w-10 h-10 shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M43.6 20.5H24v7.6h11.3C33.9 33.3 29.5 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.3 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c11 0 19.6-7.7 19.6-20 0-1.2-.1-2.4-.4-3.5z" fill="#FFC107" />
+                                    <path d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.3 29.3 4 24 4 16.3 4 9.6 8.3 6.3 14.7z" fill="#FF3D00" />
+                                    <path d="M24 44c5.2 0 9.9-1.9 13.5-5l-6.2-5.2C29.5 35.3 26.9 36 24 36c-5.5 0-9.8-3.6-11.3-8.6L6 32.3C9.3 39 16 44 24 44z" fill="#4CAF50" />
+                                    <path d="M43.6 20.5H24v7.6h11.3C34.5 31 31.8 33.1 29.3 34.8l6.2 5.2C40.5 36.5 44 30.8 44 24c0-1.2-.1-2.4-.4-3.5z" fill="#1565C0" />
+                                </svg>
+                                <div>
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <span className="text-3xl font-extrabold text-slate-900 leading-none">4.9</span>
+                                        <div className="flex gap-0.5">
+                                            {[1, 2, 3, 4, 5].map(s => <Star key={s} size={20} className="text-yellow-400 fill-yellow-400" />)}
                                         </div>
                                     </div>
+                                    <p className="text-slate-500 text-sm font-medium">on <strong className="text-slate-800">Google Reviews</strong> &middot; 35+ reviews</p>
+                                </div>
+                                <div className="hidden sm:flex items-center gap-1.5 bg-blue-600 text-white text-xs font-bold px-4 py-2 rounded-full group-hover:bg-blue-700 transition-colors ml-2">
+                                    See All Reviews
+                                    <ArrowRight size={12} />
+                                </div>
+                            </a>
+                        </div>
+
+                        {/* Review Cards Grid */}
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+                            {testimonials.map((t, i) => (
+                                <div key={i} className="bg-white rounded-2xl p-5 border border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0"
+                                                style={{ background: `hsl(${i * 55 + 200}, 65%, 50%)` }}>
+                                                {t.name[0]}
+                                            </div>
+                                            <div>
+                                                <p className="font-semibold text-slate-900 text-sm leading-tight">{t.name}</p>
+                                                <p className="text-slate-400 text-xs">{t.role}</p>
+                                            </div>
+                                        </div>
+                                        <svg className="w-5 h-5 opacity-30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M43.6 20.5H24v7.6h11.3C33.9 33.3 29.5 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.3 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c11 0 19.6-7.7 19.6-20 0-1.2-.1-2.4-.4-3.5z" fill="#FFC107" />
+                                            <path d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.3 29.3 4 24 4 16.3 4 9.6 8.3 6.3 14.7z" fill="#FF3D00" />
+                                            <path d="M24 44c5.2 0 9.9-1.9 13.5-5l-6.2-5.2C29.5 35.3 26.9 36 24 36c-5.5 0-9.8-3.6-11.3-8.6L6 32.3C9.3 39 16 44 24 44z" fill="#4CAF50" />
+                                            <path d="M43.6 20.5H24v7.6h11.3C34.5 31 31.8 33.1 29.3 34.8l6.2 5.2C40.5 36.5 44 30.8 44 24c0-1.2-.1-2.4-.4-3.5z" fill="#1565C0" />
+                                        </svg>
+                                    </div>
+                                    <div className="flex gap-0.5 mb-3">
+                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={13} className="text-yellow-400 fill-yellow-400" />)}
+                                    </div>
+                                    <p className="text-slate-600 text-sm leading-relaxed italic">&ldquo;{t.text}&rdquo;</p>
                                 </div>
                             ))}
                         </div>
+
+                        {/* Video Testimonial + Leave a Review CTA */}
+                        <div className="grid md:grid-cols-2 gap-8">
+
+                            {/* Real Client Video Testimonial */}
+                            <div className="bg-slate-900 rounded-3xl overflow-hidden shadow-lg border border-slate-800 flex flex-col pt-5">
+                                <div className="px-6 mb-4 flex items-center gap-3">
+                                    <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
+                                        <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </div>
+                                    <div className="text-left">
+                                        <h3 className="text-white font-bold text-sm leading-tight">Video Testimonial</h3>
+                                        <p className="text-slate-400 text-xs">Hear directly from our client</p>
+                                    </div>
+                                </div>
+                                <div className="flex-1 bg-black flex items-center justify-center relative min-h-[220px]">
+                                    <video
+                                        src="/video/WhatsApp Video 2026-03-03 at 8.43.41 PM.mp4"
+                                        controls
+                                        className="w-full h-full max-h-[300px] object-contain"
+                                        preload="metadata"
+                                    >
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+
+                            {/* Leave a Review CTA */}
+                            <div className="bg-white border-2 border-slate-100 rounded-3xl p-8 flex flex-col items-center justify-center text-center">
+                                <div className="flex gap-1 mb-4">
+                                    {[1, 2, 3, 4, 5].map(s => <Star key={s} size={28} className="text-yellow-400 fill-yellow-400" />)}
+                                </div>
+                                <h3 className="text-slate-900 font-bold text-xl mb-2">Happy with our work?</h3>
+                                <p className="text-slate-500 text-sm mb-6 max-w-xs">Your Google review helps other businesses find and trust us. It takes less than 60 seconds!</p>
+                                <a
+                                    href="https://search.google.com/local/writereview?placeid=ChIJoSZhLlgBWDkRty2tJ7rOdDg"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-700 text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:scale-105 shadow-lg text-sm"
+                                >
+                                    <svg className="w-4 h-4" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M43.6 20.5H24v7.6h11.3C33.9 33.3 29.5 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.3 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c11 0 19.6-7.7 19.6-20 0-1.2-.1-2.4-.4-3.5z" fill="#FFC107" />
+                                        <path d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.3 29.3 4 24 4 16.3 4 9.6 8.3 6.3 14.7z" fill="#FF3D00" />
+                                        <path d="M24 44c5.2 0 9.9-1.9 13.5-5l-6.2-5.2C29.5 35.3 26.9 36 24 36c-5.5 0-9.8-3.6-11.3-8.6L6 32.3C9.3 39 16 44 24 44z" fill="#4CAF50" />
+                                        <path d="M43.6 20.5H24v7.6h11.3C34.5 31 31.8 33.1 29.3 34.8l6.2 5.2C40.5 36.5 44 30.8 44 24c0-1.2-.1-2.4-.4-3.5z" fill="#1565C0" />
+                                    </svg>
+                                    Write a Google Review
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 

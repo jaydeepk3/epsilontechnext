@@ -51,7 +51,7 @@ export function Header() {
             dropdownItems: products
         },
         { name: 'Doctor Marketing', href: '/digital-marketing' },
-        { name: 'Portfolio', href: '/#portfolio' },
+        { name: 'Portfolio', href: '/portfolio' },
 
         { name: 'About', href: '/about' },
         { name: 'Contact', href: '/contacts' },

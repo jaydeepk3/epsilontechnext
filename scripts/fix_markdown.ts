@@ -10,7 +10,7 @@ const turndownService = new TurndownService();
 // Ignore react components mostly
 turndownService.addRule('removeComponents', {
     filter: (node) => {
-        return node.nodeName && node.nodeName.match(/^[A-Z]/) !== null;
+        return Boolean(node.nodeName && node.nodeName.match(/^[A-Z]/));
     },
     replacement: () => ''
 });

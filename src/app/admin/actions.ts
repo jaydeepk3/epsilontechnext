@@ -18,7 +18,7 @@ async function checkAuth() {
 export async function uploadImage(formData: FormData) {
     try {
         await checkAuth()
-        const file = formData.get('file') as File
+        const file = formData.get('imageFile') as File
         if (!file) throw new Error('No file provided')
 
         // In a real Vercel app, this uses @vercel/blob

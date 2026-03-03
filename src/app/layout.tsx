@@ -67,6 +67,7 @@ export const metadata: Metadata = {
 };
 
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export default function RootLayout({
   children,
@@ -131,6 +132,7 @@ export default function RootLayout({
           }}
         />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -31,9 +31,6 @@ export function Header() {
         { name: 'Web Development', href: '/services/web-development' },
         { name: 'Mobile App Development', href: '/services/mobile-app-development' },
         { name: 'eCommerce Development', href: '/services/ecommerce-development' },
-        { name: 'Custom Software', href: '/services/custom-software' },
-        { name: 'UI/UX Design', href: '/services/ui-ux-design' },
-        { name: 'Maintenance & Support', href: '/services/maintenance-support' },
     ];
 
     const products = [

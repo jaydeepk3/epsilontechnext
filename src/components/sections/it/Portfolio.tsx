@@ -49,6 +49,13 @@ const portfolioItems = [
         description: "Serene wellness platform for yoga classes, workshops, and holistic health.",
         link: "https://yogawellnessbyaditi.com/"
     },
+    {
+        title: "Junagadh Police App",
+        category: "Public Sector • Mobile App",
+        image: "/portfolio/junagadhpolice.png",
+        description: "Official mobile application for Junagadh Police, designed to facilitate citizen services and improve community safety.",
+        link: "#"
+    },
 ];
 
 export function Portfolio() {

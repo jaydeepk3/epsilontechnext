@@ -216,25 +216,25 @@ export default function BlogTopAffordableDevelopers() {
                         "@type": "BlogPosting",
                         "headline": "How to Find Top & Affordable App Developers in 2026",
                         "description": "A comprehensive guide to finding high-quality, cost-effective mobile app development partners. Learn how to balance cost, quality, and speed.",
-                        "image": "https://www.epsilon-technology.com/blog_mobile_app_dev.png",
+                        "image": "https://epsilon-technology.com/blog_mobile_app_dev.png",
                         "author": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
-                            "url": "https://www.epsilon-technology.com"
+                            "url": "https://epsilon-technology.com"
                         },
                         "publisher": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
                             "logo": {
                                 "@type": "ImageObject",
-                                "url": "https://www.epsilon-technology.com/logo.png"
+                                "url": "https://epsilon-technology.com/logo.png"
                             }
                         },
                         "datePublished": "2026-02-16",
                         "dateModified": "2026-02-16",
                         "mainEntityOfPage": {
                             "@type": "WebPage",
-                            "@id": "https://www.epsilon-technology.com/blog/top-affordable-app-developers-2026"
+                            "@id": "https://epsilon-technology.com/blog/top-affordable-app-developers-2026"
                         }
                     })
                 }}

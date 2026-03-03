@@ -8,18 +8,18 @@ import { DoctorsWeWorkWith } from '@/components/sections/DoctorsWeWorkWith';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://www.epsilon-technology.com'),
+    metadataBase: new URL('https://epsilon-technology.com'),
     title: "Doctor Marketing in Junagadh | Grow Your Clinic with Epsilon Technology",
     description: "Specialized doctor marketing agency in Junagadh. We help doctors and clinics increase OPD footfall, build trust, and rank locally.",
     keywords: ["Doctor Marketing in Junagadh", "Clinic Marketing Junagadh", "Medical Marketing Agency Junagadh", "Hospital Marketing Junagadh", "SEO for Doctors Junagadh"],
     openGraph: {
         title: "Doctor Marketing in Junagadh | Epsilon Technology",
         description: "Grow your medical practice in Junagadh with specialized marketing strategies.",
-        url: "https://www.epsilon-technology.com/doctor-marketing-in-junagadh/",
+        url: "https://epsilon-technology.com/doctor-marketing-in-junagadh/",
         images: ["/logo.png"]
     },
     alternates: {
-        canonical: 'https://www.epsilon-technology.com/doctor-marketing-in-junagadh/',
+        canonical: 'https://epsilon-technology.com/doctor-marketing-in-junagadh/',
     }
 };
 

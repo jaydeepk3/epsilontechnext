@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         description: "Keep your digital presence secure and high-performing with our proactive expert support and 24/7 monitoring.",
     },
     alternates: {
-        canonical: 'https://www.epsilon-technology.com/services/maintenance-support/',
+        canonical: 'https://epsilon-technology.com/services/maintenance-support/',
     }
 };
 

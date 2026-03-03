@@ -172,25 +172,25 @@ export default function BlogJunagadhPoliceApp() {
                         "@type": "BlogPosting",
                         "headline": "Technology Serving Those Who Serve Us: Junagadh Police App Case Study",
                         "description": "Epsilon Technology developed a dedicated Mobile Application for the Junagadh Police Department to simplify coordination during Maha Shivratri Mela.",
-                        "image": "https://www.epsilon-technology.com/blog_mobile_app_dev.png", // Update if we get a real image
+                        "image": "https://epsilon-technology.com/blog_mobile_app_dev.png", // Update if we get a real image
                         "author": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
-                            "url": "https://www.epsilon-technology.com"
+                            "url": "https://epsilon-technology.com"
                         },
                         "publisher": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
                             "logo": {
                                 "@type": "ImageObject",
-                                "url": "https://www.epsilon-technology.com/logo.png"
+                                "url": "https://epsilon-technology.com/logo.png"
                             }
                         },
                         "datePublished": "2026-02-16",
                         "dateModified": "2026-02-16",
                         "mainEntityOfPage": {
                             "@type": "WebPage",
-                            "@id": "https://www.epsilon-technology.com/blog/junagadh-police-bandobast-app-case-study"
+                            "@id": "https://epsilon-technology.com/blog/junagadh-police-bandobast-app-case-study"
                         }
                     })
                 }}

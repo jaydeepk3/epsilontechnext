@@ -11,20 +11,20 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://www.epsilon-technology.com'),
+    metadataBase: new URL('https://epsilon-technology.com'),
     title: "The Real Cost of Custom Application Development in 2026 | Price Guide",
     description: "How much does custom application development cost in 2026? A detailed breakdown of pricing factors for startups and enterprises.",
     keywords: ["custom application development", "app development cost", "software development pricing", "mobile app cost 2026", "enterprise software cost"],
     openGraph: {
         title: "The Real Cost of Custom Application Development in 2026",
         description: "Everything you need to know about budgeting for your next custom software project.",
-        url: "https://www.epsilon-technology.com/blog/the-real-cost-of-custom-application-development-2026/",
+        url: "https://epsilon-technology.com/blog/the-real-cost-of-custom-application-development-2026/",
         type: "article",
         publishedTime: "2026-02-17T10:00:00.000Z",
         authors: ["Epsilon Technology Team"],
     },
     alternates: {
-        canonical: 'https://www.epsilon-technology.com/blog/the-real-cost-of-custom-application-development-2026/',
+        canonical: 'https://epsilon-technology.com/blog/the-real-cost-of-custom-application-development-2026/',
     }
 };
 
@@ -206,25 +206,25 @@ export default function BlogCostOfCustomApp() {
                         "@type": "BlogPosting",
                         "headline": "The Real Cost of Custom Application Development in 2026",
                         "description": "A detailed breakdown of pricing factors for custom application development in 2026. Learn about costs for MVPs, mid-level apps, and enterprise solutions.",
-                        "image": "https://www.epsilon-technology.com/blog_mobile_app_dev.png",
+                        "image": "https://epsilon-technology.com/blog_mobile_app_dev.png",
                         "author": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
-                            "url": "https://www.epsilon-technology.com"
+                            "url": "https://epsilon-technology.com"
                         },
                         "publisher": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
                             "logo": {
                                 "@type": "ImageObject",
-                                "url": "https://www.epsilon-technology.com/logo.png"
+                                "url": "https://epsilon-technology.com/logo.png"
                             }
                         },
                         "datePublished": "2026-02-17",
                         "dateModified": "2026-02-17",
                         "mainEntityOfPage": {
                             "@type": "WebPage",
-                            "@id": "https://www.epsilon-technology.com/blog/the-real-cost-of-custom-application-development-2026"
+                            "@id": "https://epsilon-technology.com/blog/the-real-cost-of-custom-application-development-2026"
                         }
                     })
                 }}

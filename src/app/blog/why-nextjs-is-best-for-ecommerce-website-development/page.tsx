@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://www.epsilon-technology.com'),
+    metadataBase: new URL('https://epsilon-technology.com'),
     title: "Why Next.js is Best for Ecommerce Website Development in 2026",
     description: "Looking for the best ecommerce website development stack? Discover why Next.js outperforms Shopify and WooCommerce for speed, SEO, and scalability.",
     keywords: ["ecommerce website development", "next.js ecommerce", "next.js vs shopify", "headless commerce", "custom ecommerce development"],
@@ -21,10 +21,10 @@ export const metadata: Metadata = {
         type: "article",
         publishedTime: "2026-02-20T10:00:00.000Z",
         authors: ["Epsilon Technology Team"],
-        url: "https://www.epsilon-technology.com/blog/why-nextjs-is-best-for-ecommerce-website-development/",
+        url: "https://epsilon-technology.com/blog/why-nextjs-is-best-for-ecommerce-website-development/",
     },
     alternates: {
-        canonical: 'https://www.epsilon-technology.com/blog/why-nextjs-is-best-for-ecommerce-website-development/',
+        canonical: 'https://epsilon-technology.com/blog/why-nextjs-is-best-for-ecommerce-website-development/',
     }
 };
 
@@ -195,25 +195,25 @@ export default function BlogNextJsEcommerce() {
                         "@type": "BlogPosting",
                         "headline": "Why Next.js is Best for Ecommerce Website Development in 2026",
                         "description": "Discover the SEO and performance benefits of using Next.js for your online store. Compare Headless Commerce vs traditional platforms.",
-                        "image": "https://www.epsilon-technology.com/blog_ecommerce_growth.png",
+                        "image": "https://epsilon-technology.com/blog_ecommerce_growth.png",
                         "author": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
-                            "url": "https://www.epsilon-technology.com"
+                            "url": "https://epsilon-technology.com"
                         },
                         "publisher": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
                             "logo": {
                                 "@type": "ImageObject",
-                                "url": "https://www.epsilon-technology.com/logo.png"
+                                "url": "https://epsilon-technology.com/logo.png"
                             }
                         },
                         "datePublished": "2026-02-20",
                         "dateModified": "2026-02-20",
                         "mainEntityOfPage": {
                             "@type": "WebPage",
-                            "@id": "https://www.epsilon-technology.com/blog/why-nextjs-is-best-for-ecommerce-website-development"
+                            "@id": "https://epsilon-technology.com/blog/why-nextjs-is-best-for-ecommerce-website-development"
                         }
                     })
                 }}

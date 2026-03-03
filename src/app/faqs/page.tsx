@@ -3,17 +3,17 @@ import { FAQ } from '@/components/sections/it/FAQ';
 import { CTA } from '@/components/sections/it/CTA';
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://www.epsilon-technology.com'),
+    metadataBase: new URL('https://epsilon-technology.com'),
     title: "Frequently Asked Questions | Epsilon Technology",
     description: "Find answers to common questions about our web development, mobile app development, and digital marketing services.",
     keywords: ["FAQ", "Epsilon Technology FAQ", "web development questions", "mobile app development FAQ", "digital marketing questions"],
     openGraph: {
         title: "Frequently Asked Questions | Epsilon Technology",
         description: "Find answers to common questions about our services.",
-        url: "https://www.epsilon-technology.com/faqs/",
+        url: "https://epsilon-technology.com/faqs/",
     },
     alternates: {
-        canonical: 'https://www.epsilon-technology.com/faqs/',
+        canonical: 'https://epsilon-technology.com/faqs/',
     }
 };
 

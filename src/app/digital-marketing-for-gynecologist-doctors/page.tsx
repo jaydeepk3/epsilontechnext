@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Digital Marketing for Gynecologist Doctors | Educational Guide",
         description: "Helping gynecologists provide a safe, trusted, and educational space for women's healthcare online.",
-        url: "https://www.epsilon-technology.com/digital-marketing-for-gynecologist-doctors/",
+        url: "https://epsilon-technology.com/digital-marketing-for-gynecologist-doctors/",
         images: ["/logo.png"]
     },
     alternates: {
-        canonical: 'https://www.epsilon-technology.com/digital-marketing-for-gynecologist-doctors/',
+        canonical: 'https://epsilon-technology.com/digital-marketing-for-gynecologist-doctors/',
     }
 };
 

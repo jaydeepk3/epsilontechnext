@@ -219,25 +219,25 @@ export default function BlogNativeVsCross() {
                         "@type": "BlogPosting",
                         "headline": "Mobile App Creation Services: Native vs. Cross-Platform Guide",
                         "description": "Native vs. Cross-Platform mobile development guide. Compare cost, speed, and performance to choose the right tech stack for your app.",
-                        "image": "https://www.epsilon-technology.com/blog_mobile_app_dev.png",
+                        "image": "https://epsilon-technology.com/blog_mobile_app_dev.png",
                         "author": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
-                            "url": "https://www.epsilon-technology.com"
+                            "url": "https://epsilon-technology.com"
                         },
                         "publisher": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
                             "logo": {
                                 "@type": "ImageObject",
-                                "url": "https://www.epsilon-technology.com/logo.png"
+                                "url": "https://epsilon-technology.com/logo.png"
                             }
                         },
                         "datePublished": "2026-02-19",
                         "dateModified": "2026-02-19",
                         "mainEntityOfPage": {
                             "@type": "WebPage",
-                            "@id": "https://www.epsilon-technology.com/blog/mobile-app-creation-services-native-vs-cross-platform"
+                            "@id": "https://epsilon-technology.com/blog/mobile-app-creation-services-native-vs-cross-platform"
                         }
                     })
                 }}

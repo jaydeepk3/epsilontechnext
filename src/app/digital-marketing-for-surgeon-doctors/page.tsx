@@ -4,18 +4,18 @@ import { Activity, Search, MapPin, Video, ClipboardCheck, Info, UserCheck, Heart
 import { FAQ } from '@/components/sections/FAQ';
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://www.epsilon-technology.com'),
+    metadataBase: new URL('https://epsilon-technology.com'),
     title: "Digital Marketing for Surgeon Doctors: Building Clinical Authority Online",
     description: "Discover how digital marketing for surgeon doctors can enhance professional visibility and build patient trust. An educational guide on surgical SEO and high-intent marketing.",
     keywords: ["digital marketing for surgeon doctors", "marketing for surgeons", "surgical specialized SEO", "building surgeon authority online", "patient acquisition for surgeons"],
     openGraph: {
         title: "Digital Marketing for Surgeon Doctors | Professional SEO Guide",
         description: "Helping surgeons translate their clinical excellence into a trusted digital reputation.",
-        url: "https://www.epsilon-technology.com/digital-marketing-for-surgeon-doctors/",
+        url: "https://epsilon-technology.com/digital-marketing-for-surgeon-doctors/",
         images: ["/logo.png"]
     },
     alternates: {
-        canonical: 'https://www.epsilon-technology.com/digital-marketing-for-surgeon-doctors/',
+        canonical: 'https://epsilon-technology.com/digital-marketing-for-surgeon-doctors/',
     }
 };
 

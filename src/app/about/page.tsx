@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { CheckCircle2, Instagram, Linkedin } from 'lucide-react';
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://www.epsilon-technology.com'),
+    metadataBase: new URL('https://epsilon-technology.com'),
     title: "About Jaydeep Kataria | Full-Stack Developer & Tech Founder",
     description: "Meet Jaydeep Kataria, Founder of Epsilon Technology. Expert in Full-Stack Development (Next.js, Node.js), Mobile Apps, and Scalable Digital Solutions.",
     openGraph: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         type: 'profile',
     },
     alternates: {
-        canonical: 'https://www.epsilon-technology.com/about/',
+        canonical: 'https://epsilon-technology.com/about/',
     }
 };
 
@@ -123,10 +123,10 @@ export default function AboutPage() {
                         "worksFor": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
-                            "url": "https://www.epsilon-technology.com"
+                            "url": "https://epsilon-technology.com"
                         },
-                        "url": "https://www.epsilon-technology.com/about",
-                        "image": "https://www.epsilon-technology.com/images/jayde.png",
+                        "url": "https://epsilon-technology.com/about",
+                        "image": "https://epsilon-technology.com/images/jayde.png",
                         "description": "Jaydeep Kataria is a specialized doctor marketing expert and founder of Epsilon Technology, helping clinics in Gujarat grow.",
                         "address": {
                             "@type": "PostalAddress",

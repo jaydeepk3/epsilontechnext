@@ -55,6 +55,9 @@ export async function createBlog(formData: FormData) {
     const metaTitle = formData.get('metaTitle') as string
     const metaDescription = formData.get('metaDescription') as string
     const keywords = formData.get('keywords') as string
+    const category = formData.get('category') as string
+    const author = formData.get('author') as string
+    const isExternal = formData.get('isExternal') === 'true'
     const published = formData.get('published') === 'true'
 
     let imageUrl = formData.get('imageUrl') as string;
@@ -72,6 +75,9 @@ export async function createBlog(formData: FormData) {
             metaTitle,
             metaDescription,
             keywords,
+            category,
+            author,
+            isExternal,
             imageUrl,
             published,
         },
@@ -91,6 +97,9 @@ export async function updateBlog(id: string, formData: FormData) {
     const metaTitle = formData.get('metaTitle') as string
     const metaDescription = formData.get('metaDescription') as string
     const keywords = formData.get('keywords') as string
+    const category = formData.get('category') as string
+    const author = formData.get('author') as string
+    const isExternal = formData.get('isExternal') === 'true'
     const published = formData.get('published') === 'true'
 
     let imageUrl = formData.get('imageUrl') as string;
@@ -109,6 +118,9 @@ export async function updateBlog(id: string, formData: FormData) {
             metaTitle,
             metaDescription,
             keywords,
+            category,
+            author,
+            isExternal,
             imageUrl,
             published,
         },

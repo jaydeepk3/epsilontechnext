@@ -87,6 +87,30 @@ export default function BlogForm({ blog }: { blog?: any }) {
                 </div>
 
                 <div className="space-y-6">
+                    <div className="space-y-4 border border-slate-200 p-5 rounded-xl bg-slate-50">
+                        <h3 className="font-semibold text-slate-800 border-b border-slate-200 pb-2">Properties</h3>
+                        <div className="space-y-1">
+                            <label htmlFor="category" className="block text-sm text-slate-600 font-medium">Category</label>
+                            <input
+                                type="text"
+                                name="category"
+                                id="category"
+                                defaultValue={blog?.category || 'Latest Insight'}
+                                className="w-full px-3 py-1.5 text-sm border border-slate-300 rounded focus:ring-1 focus:ring-sky-500"
+                            />
+                        </div>
+                        <div className="space-y-1">
+                            <label htmlFor="author" className="block text-sm text-slate-600 font-medium">Author</label>
+                            <input
+                                type="text"
+                                name="author"
+                                id="author"
+                                defaultValue={blog?.author || 'Epsilon Admin'}
+                                className="w-full px-3 py-1.5 text-sm border border-slate-300 rounded focus:ring-1 focus:ring-sky-500"
+                            />
+                        </div>
+                    </div>
+
                     <div className="space-y-1 border border-slate-200 p-5 rounded-xl bg-slate-50">
                         <label className="block text-sm font-semibold text-slate-700 mb-3">Featured Image</label>
 
@@ -147,6 +171,16 @@ export default function BlogForm({ blog }: { blog?: any }) {
                     </div>
 
                     <div className="border border-slate-200 p-5 rounded-xl bg-slate-50 space-y-4">
+                        <label className="flex items-center gap-3">
+                            <input
+                                type="checkbox"
+                                name="isExternal"
+                                value="true"
+                                defaultChecked={blog?.isExternal}
+                                className="w-5 h-5 text-sky-600 rounded border-slate-300 focus:ring-sky-500"
+                            />
+                            <span className="font-semibold text-slate-800 text-sm">Is External standalone link</span>
+                        </label>
                         <label className="flex items-center gap-3">
                             <input
                                 type="checkbox"

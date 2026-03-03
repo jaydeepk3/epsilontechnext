@@ -19,6 +19,9 @@ model Blog {
   metaDescription String?
   keywords        String?
   imageUrl        String?
+  category        String   @default("Latest Insight")
+  author          String   @default("Epsilon Admin")
+  isExternal      Boolean  @default(false)
   published       Boolean  @default(false)
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt

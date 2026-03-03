@@ -62,15 +62,7 @@ const services = [
         border: "group-hover:border-rose-200",
         href: "/services/custom-software"
     },
-    {
-        title: "WhatsApp Business API",
-        description: "Automate customer support and sales with the official WhatsApp Business API. Engage customers on their favorite messaging app.",
-        icon: MessageCircle,
-        color: "bg-green-50 text-green-600",
-        gradient: "from-green-50 to-emerald-50",
-        border: "group-hover:border-green-200",
-        href: "/product/whatsapp-business-api"
-    },
+
 ];
 
 export function Services() {

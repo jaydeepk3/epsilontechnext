@@ -208,7 +208,30 @@ const posts = [
     },
 ];
 
-export default function BlogIndex() {
+import prisma from '@/lib/prisma';
+
+export default async function BlogIndex() {
+    // Fetch dynamic blogs from the database
+    const dbBlogs = await prisma.blog.findMany({
+        where: { published: true },
+        orderBy: { createdAt: 'desc' }
+    });
+
+    // Map dynamic blogs to match the static posts structure
+    const formattedDbBlogs = dbBlogs.map((blog: any) => ({
+        title: blog.title,
+        excerpt: blog.metaDescription || "Click to read more about this insight.",
+        date: new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        author: "Admin",
+        slug: blog.slug,
+        category: "Latest Insight",
+        image: blog.imageUrl || "/blog_medical_marketing.png",
+        isExternal: false
+    }));
+
+    // Combine db blogs with static blogs (db blogs first)
+    const allPosts = [...formattedDbBlogs, ...posts];
+
     return (
         <main className="min-h-screen bg-slate-50 pt-32 pb-20">
             <div className="container mx-auto px-4 md:px-6">
@@ -222,15 +245,14 @@ export default function BlogIndex() {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    {posts.map((post, i) => (
+                    {allPosts.map((post, i) => (
                         <Link
                             href={post.isExternal ? `/${post.slug}` : `/blog/${post.slug}`}
                             key={i}
-                            className="group cursor-pointer"
+                            className="group cursor-pointer flex flex-col h-full"
                         >
                             <article className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-slate-100 h-full flex flex-col">
                                 <div className="h-48 bg-blue-100 relative overflow-hidden">
-                                    {/* Placeholder for blog image */}
                                     <Image
                                         src={post.image || "/blog_medical_marketing.png"}
                                         alt={post.title}
@@ -252,7 +274,7 @@ export default function BlogIndex() {
                                     <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
                                         {post.excerpt}
                                     </p>
-                                    <div className="flex items-center text-blue-600 font-medium text-sm">
+                                    <div className="flex items-center text-blue-600 font-medium text-sm mt-auto">
                                         Read Article <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                                     </div>
                                 </div>

@@ -26,9 +26,9 @@ const footerLinks = [
             { label: 'Pediatric Doctors', href: '/digital-marketing-for-pediatric-doctors' },
             { label: 'Surgeon Doctors', href: '/digital-marketing-for-surgeon-doctors' },
             { label: 'Orthopedic Doctors', href: '/digital-marketing-for-orthopedic-doctors' },
-            { label: 'Digital Marketing Junagadh', href: '/digital-marketing-in-junagadh' },
-            { label: 'Doctor Marketing Rajkot', href: '/doctor-marketing-in-rajkot' },
-            { label: 'Doctor Marketing Morbi', href: '/doctor-marketing-in-morbi' },
+            { label: 'Digital Marketing Junagadh', href: '/digital-marketing-in-junagadh', hideOnUAE: true },
+            { label: 'Doctor Marketing Rajkot', href: '/doctor-marketing-in-rajkot', hideOnUAE: true },
+            { label: 'Doctor Marketing Morbi', href: '/doctor-marketing-in-morbi', hideOnUAE: true },
         ],
     },
     {
@@ -79,8 +79,7 @@ const socials = [
 
 export function Footer() {
     const pathname = usePathname();
-    const isUAE = pathname === '/uae';
-    const timeText = isUAE ? '9AM–7PM GST (UAE Time)' : '9AM–7PM IST';
+    const isUAE = pathname?.startsWith('/uae');
 
     return (
         <footer className="relative bg-slate-950 text-white overflow-hidden">
@@ -192,7 +191,7 @@ export function Footer() {
                                 <span>💬 WhatsApp: +91 81608 81461</span>
                             </a>
                             <div className="flex items-center gap-3 text-slate-400 transition-colors pt-1">
-                                <span>🕐 Available: {timeText} · We respond within 4 hours</span>
+                                <span>🕐 Available: 9AM–7PM GST (UAE Time) · We respond within 4 hours</span>
                             </div>
                         </div>
                     </div>
@@ -206,7 +205,7 @@ export function Footer() {
                                 <h4 className="text-xs font-bold uppercase tracking-widest text-slate-200">{title}</h4>
                             </div>
                             <ul className="space-y-2.5">
-                                {links.map(({ label, href }) => (
+                                {links.filter((l: any) => !(isUAE && l.hideOnUAE)).map(({ label, href }) => (
                                     <li key={href}>
                                         <Link
                                             href={href}

@@ -66,7 +66,7 @@ export default function UAEPage() {
                             for <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">UAE Businesses</span>
                         </h1>
 
-                        <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto">
+                        <p className="text-base sm:text-lg md:text-xl text-slate-200 md:text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto">
                             We build high-performance websites, mobile apps, eCommerce stores, and WhatsApp Business automation for restaurants, clinics, retail stores, and startups across the UAE — at a fraction of local agency cost, with zero compromise on quality.
                         </p>
 
@@ -196,18 +196,7 @@ export default function UAEPage() {
                         {/* Portfolio Item 1 */}
                         <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-sm border border-slate-200 group">
                             <div className="relative h-60 w-full overflow-hidden bg-slate-200">
-                                <Image src="/portfolio/shreeram-clinic.png" alt="Shreeram Clinic" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-                            </div>
-                            <div className="p-5">
-                                <h3 className="font-bold text-slate-900 text-lg">Hospital Website</h3>
-                                <p className="text-slate-500 text-sm">Responsive Next.js website with fast loading times.</p>
-                            </div>
-                        </div>
-
-                        {/* Portfolio Item 2 */}
-                        <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-sm border border-slate-200 group">
-                            <div className="relative h-60 w-full overflow-hidden bg-slate-200">
-                                <Image src="/portfolio/ontapp.png" alt="Ontapp Menu" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                                <Image src="/portfolio/ontapp.png" alt="Ontapp Menu App" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                             </div>
                             <div className="p-5">
                                 <h3 className="font-bold text-slate-900 text-lg">Restaurant Menu App</h3>
@@ -215,7 +204,7 @@ export default function UAEPage() {
                             </div>
                         </div>
 
-                        {/* Portfolio Item 3 */}
+                        {/* Portfolio Item 2 */}
                         <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-sm border border-slate-200 group">
                             <div className="relative h-60 w-full overflow-hidden bg-slate-200">
                                 <Image src="/portfolio/jewellery-website.webp" alt="eCommerce Store" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
@@ -223,6 +212,17 @@ export default function UAEPage() {
                             <div className="p-5">
                                 <h3 className="font-bold text-slate-900 text-lg">eCommerce Store</h3>
                                 <p className="text-slate-500 text-sm">Custom Shopify development with high conversion rates.</p>
+                            </div>
+                        </div>
+
+                        {/* Portfolio Item 3 */}
+                        <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-sm border border-slate-200 group">
+                            <div className="relative h-60 w-full overflow-hidden bg-slate-200">
+                                <Image src="/portfolio/rhodium-website.webp" alt="Corporate B2B Platform" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                            </div>
+                            <div className="p-5">
+                                <h3 className="font-bold text-slate-900 text-lg">Corporate B2B Platform</h3>
+                                <p className="text-slate-500 text-sm">High-performance Next.js website built for enterprise scale.</p>
                             </div>
                         </div>
                     </div>
@@ -241,9 +241,9 @@ export default function UAEPage() {
 
                     <div className="grid md:grid-cols-3 gap-6 mb-12">
                         {[
-                            { initial: "A", name: "Ahmed Al M.", role: "Retail Director", flag: "🇦🇪", quote: "Epsilon delivered a clean, fast website for our Dubai stores. Excellent communication and very patient with our feedback.", color: "bg-blue-600" },
-                            { initial: "R", name: "Restaurant Owner", role: "Brundhavan Restaurant", flag: "🇺🇸", quote: "One heck of an amazing guy — understands and delivers so fast. Created an app for our restaurant seamlessly.", color: "bg-emerald-600" },
-                            { initial: "S", name: "Sarah K.", role: "Clinic Director", flag: "🇦🇪", quote: "We hired them to build our new patient booking portal. It was 60% cheaper than local agencies and honestly much better quality.", color: "bg-indigo-600" }
+                            { initial: "T", name: "Thariq H.", role: "Product Manager, FieldR", flag: "🇺🇸", quote: "Jaydeep's team delivered an exceptional app for our sports tech startup. Passionate leadership and deep understanding of our business goals.", color: "bg-blue-600" },
+                            { initial: "A", name: "Atul K.", role: "Owner, Brundhavan Restaurant", flag: "🇺🇸", quote: "One heck of an amazing guy — understands and delivers so fast. Created an app for our restaurant seamlessly.", color: "bg-emerald-600" },
+                            { initial: "A", name: "Alex B.", role: "CTO, Confidential Tech Startup", flag: "🇺🇸", quote: "Professional approach with an enthusiastic work ethic. Looking forward to working together again!", color: "bg-indigo-600" }
                         ].map((t, i) => (
                             <div key={i} className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all">
                                 <div className="flex items-center gap-3 mb-4">

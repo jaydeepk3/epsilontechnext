@@ -2,23 +2,20 @@ import { Metadata } from "next";
 import HomeLandingClient from "./HomeLandingClient";
 
 export const metadata: Metadata = {
-  title: "Epsilon Technology — Web, Mobile App, eCommerce & Doctor Marketing Agency India",
-  description: "Grow your business digitally with Epsilon Technology. We build websites, mobile apps, eCommerce stores, manage doctor digital marketing & provide WhatsApp Business API. 50+ clients globally. Get a free consultation.",
+  title: "Epsilon Technology — Web, App & eCommerce Agency | UAE · UK · USA",
+  description: "Epsilon Technology builds high-performance websites, mobile apps, eCommerce stores and WhatsApp Business solutions for businesses in UAE, UK, USA and globally. 100+ projects. 4.9★ rated.",
   keywords: [
-    "web development company india",
-    "mobile app development india",
-    "ecommerce website development",
-    "digital marketing for doctors",
-    "whatsapp business api india",
-    "IT company india",
-    "website development packages",
-    "affordable app development",
+    "web development agency UAE",
+    "mobile app development UK",
+    "eCommerce development USA",
+    "WhatsApp Business API agency",
     "doctor marketing agency",
-    "epsilon technology",
+    "Next.js development India",
+    "offshore web development agency",
   ],
   openGraph: {
-    title: "Epsilon Technology — Web, Apps, eCommerce & Doctor Marketing Agency",
-    description: "Websites, Mobile Apps, eCommerce, Doctor Marketing & WhatsApp API. Packages starting ₹9,999. Trusted by 50+ clients in India, USA, UK & UAE.",
+    title: "Epsilon Technology — Web, App & eCommerce Agency | UAE · UK · USA",
+    description: "Trusted by businesses in UAE, UK, and USA. We build websites, apps, eCommerce stores and WhatsApp automation. 100+ projects. 4.9★ rated. Get a free quote.",
     url: "https://epsilon-technology.com/",
     type: "website",
     images: ["/logo.png"],

@@ -27,15 +27,15 @@ const services = [
         ringColor: "ring-blue-500",
         packages: [
             {
-                name: "Starter", price: "₹19,999", usd: "$249", duration: "2–3 weeks", highlight: false,
+                name: "Starter", price: "₹19,999", usd: "$249", intlUsd: "$999", duration: "2–3 weeks", highlight: false,
                 features: ["3–5 Page Responsive Website", "Mobile-First Design", "Basic SEO Setup", "Contact Form Integration", "Domain & Hosting Guidance", "1 Month Free Support"],
             },
             {
-                name: "Professional", price: "₹49,999", usd: "$599", duration: "3–5 weeks", highlight: true,
+                name: "Professional", price: "₹49,999", usd: "$599", intlUsd: "$2,499", duration: "3–5 weeks", highlight: true,
                 features: ["Up to 15 Pages", "Premium Custom UI/UX", "CMS Integration (Next.js/WP)", "Advanced SEO Optimization", "WhatsApp Chat Integration", "Lead Capture Forms", "3 Months Free Support"],
             },
             {
-                name: "Enterprise", price: "₹1,19,999", usd: "$1,499", duration: "6–8 weeks", highlight: false,
+                name: "Enterprise", price: "₹1,19,999", usd: "$1,499", intlUsd: "$4,999", duration: "6–8 weeks", highlight: false,
                 features: ["Unlimited Pages", "Custom Next.js Architecture", "E-commerce / Payment Integration", "Database & API Development", "Premium Animations & UI", "Priority 6 Months Support"],
             },
         ],
@@ -55,15 +55,15 @@ const services = [
         ringColor: "ring-violet-500",
         packages: [
             {
-                name: "Starter", price: "₹59,999", usd: "$749", duration: "4–6 weeks", highlight: false,
+                name: "Starter", price: "₹59,999", usd: "$749", intlUsd: "$2,999", duration: "4–6 weeks", highlight: false,
                 features: ["Single Platform (iOS or Android)", "Basic UI/UX Design", "User Authentication", "Push Notifications", "App Store Submission", "1 Month Bug Support"],
             },
             {
-                name: "Professional", price: "₹1,19,999", usd: "$1,499", duration: "6–10 weeks", highlight: true,
+                name: "Professional", price: "₹1,19,999", usd: "$1,499", intlUsd: "$5,999", duration: "6–10 weeks", highlight: true,
                 features: ["Cross-Platform (React Native)", "Custom UI/UX Design", "Social Login", "Payment Gateway", "In-App Analytics", "Real-Time Notifications", "3 Months Support"],
             },
             {
-                name: "Enterprise", price: "₹2,49,999", usd: "$2,999", duration: "10–16 weeks", highlight: false,
+                name: "Enterprise", price: "₹2,49,999", usd: "$2,999", intlUsd: "$11,999", duration: "10–16 weeks", highlight: false,
                 features: ["High-Performance Cross-Platform", "Custom Node.js Backend", "Real-Time Chat & Sockets", "Complex Database Architecture", "Offline Mode Capability", "6 Months Priority Support"],
             },
         ],
@@ -83,15 +83,15 @@ const services = [
         ringColor: "ring-emerald-500",
         packages: [
             {
-                name: "Starter", price: "₹9,999", usd: "$129", duration: "per month", highlight: false,
+                name: "Starter", price: "₹9,999", usd: "$129", intlUsd: "$499", duration: "per month", highlight: false,
                 features: ["Google My Business Optimization", "8 Social Media Posts/Month", "Basic SEO Setup", "Monthly Performance Report", "Dedicated Account Manager"],
             },
             {
-                name: "Growth", price: "₹19,999", usd: "$249", duration: "per month", highlight: true,
+                name: "Growth", price: "₹19,999", usd: "$249", intlUsd: "$999", duration: "per month", highlight: true,
                 features: ["15 Posts/Month (Reels + Static)", "Meta & Google Ad Campaigns", "Patient Review Management", "2 Blogs/Month for SEO", "Bi-Weekly Strategy Calls", "Conversion Tracking Setup"],
             },
             {
-                name: "Premium", price: "₹34,999", usd: "$429", duration: "per month", highlight: false,
+                name: "Premium", price: "₹34,999", usd: "$429", intlUsd: "$1,499", duration: "per month", highlight: false,
                 features: ["Omnichannel Marketing Strategy", "Advanced Ad Budget Management", "Video Reels Production", "Premium SEO Campaign", "Content Calendar (4 Blogs/Month)", "Real-Time Analytics Dashboard"],
             },
         ],
@@ -111,15 +111,15 @@ const services = [
         ringColor: "ring-orange-500",
         packages: [
             {
-                name: "Starter", price: "₹29,999", usd: "$369", duration: "3–4 weeks", highlight: false,
+                name: "Starter", price: "₹29,999", usd: "$369", intlUsd: "$1,499", duration: "3–4 weeks", highlight: false,
                 features: ["Shopify / WooCommerce Setup", "Up to 50 Products", "Payment Gateway Integration", "Essential Shipping Config", "Mobile-Optimized Design", "1 Month Support"],
             },
             {
-                name: "Professional", price: "₹69,999", usd: "$849", duration: "4–6 weeks", highlight: true,
+                name: "Professional", price: "₹69,999", usd: "$849", intlUsd: "$3,499", duration: "4–6 weeks", highlight: true,
                 features: ["Custom Theme Design", "Up to 500 Products", "CRM Integration", "Abandoned Cart Recovery", "Advanced Inventory Management", "3 Months Support"],
             },
             {
-                name: "Enterprise", price: "₹1,49,999", usd: "$1,799", duration: "6–10 weeks", highlight: false,
+                name: "Enterprise", price: "₹1,49,999", usd: "$1,799", intlUsd: "$6,999", duration: "6–10 weeks", highlight: false,
                 features: ["Headless Commerce Architecture", "Unlimited Products", "Multi-Vendor / Marketplace", "Custom Checkout Flows", "Subscription Models", "Priority 6 Months SLA"],
             },
         ],
@@ -139,15 +139,15 @@ const services = [
         ringColor: "ring-green-500",
         packages: [
             {
-                name: "Basic", price: "₹2,999", usd: "$39", duration: "per month", highlight: false,
+                name: "Basic", price: "₹2,999", usd: "$39", intlUsd: "$99", duration: "per month", highlight: false,
                 features: ["1,000 Conversations/Month", "Chatbot Flow Builder", "Bulk Message Broadcasts", "Basic Analytics Dashboard", "WhatsApp Green Tick Assistance"],
             },
             {
-                name: "Business", price: "₹5,999", usd: "$74", duration: "per month", highlight: true,
+                name: "Business", price: "₹5,999", usd: "$74", intlUsd: "$199", duration: "per month", highlight: true,
                 features: ["5,000 Conversations/Month", "Advanced Chatbot Flows", "CRM Integration", "Multi-Agent Team Inbox", "Campaign Scheduling", "Priority Support"],
             },
             {
-                name: "Enterprise", price: "₹11,999", usd: "$149", duration: "per month", highlight: false,
+                name: "Enterprise", price: "₹11,999", usd: "$149", intlUsd: "$399", duration: "per month", highlight: false,
                 features: ["Unlimited Conversations", "AI-Powered Smart Replies", "Custom API Integrations", "Dedicated Account Manager", "White-Label Option", "24/7 Priority Support"],
             },
         ],
@@ -156,18 +156,18 @@ const services = [
 
 const testimonials = [
     { name: "Thariq H.", role: "Product Manager, FieldR 🇺🇸", text: "Jaydeep's team delivered an exceptional app for our sports tech startup. Passionate leadership and deep understanding of our business goals.", stars: 5 },
+    { name: "Restaurant Owner", role: "Brundhavan, USA 🇺🇸", text: "One heck of an amazing guy — understands and delivers so fast. Created an app for our restaurant seamlessly.", stars: 5 },
+    { name: "CTO", role: "Tech Client, USA 🇺🇸", text: "Professional approach with an enthusiastic work ethic. Looking forward to working together again!", stars: 5 },
     { name: "Palak Sheth", role: "Long-term Client 🇮🇳", text: "Three years of working with Epsilon Technology. Not only skilled but also exceptionally patient. I highly recommend them.", stars: 5 },
     { name: "Deep Karia", role: "Local Guide 🇮🇳", text: "One of the best companies I have worked with. The perfect blend of tech expertise & honesty.", stars: 5 },
     { name: "Harsh Patel", role: "Owner, ShubhCeramics 🇮🇳", text: "Hard working individuals, who give creative opinions and respond in no time to all queries.", stars: 5 },
-    { name: "Restaurant Owner", role: "Brundhavan, USA 🇺🇸", text: "One heck of an amazing guy — understands and delivers so fast. Created an app for our restaurant seamlessly.", stars: 5 },
-    { name: "CTO", role: "Tech Client, USA 🇺🇸", text: "Professional approach with an enthusiastic work ethic. Looking forward to working together again!", stars: 5 },
 ];
 
 const faqs = [
     { q: "How do I get started?", a: "Simply pick any service tab below, choose your package, click 'Apply Now', and fill your details. Our team will call you within 24 hours." },
     { q: "Do I pay the full amount upfront?", a: "No. We work on 50% upfront, 50% on delivery. Flexible payment terms available for larger projects." },
     { q: "Can I see a demo before paying?", a: "Yes! After you apply, we do a free 30-minute discovery call and often share a mockup or preview before any payment." },
-    { q: "Do you work with international clients?", a: "Absolutely. We serve clients in India, USA, UK, UAE & Netherlands, matching your time zone for all meetings." },
+    { q: "Do you work with international clients?", a: "Yes — over 40% of our clients are from UAE, UK, and USA. We work fully remotely with international businesses. We accept payments via Stripe, Wise, and PayPal in USD, GBP, and AED. We sign NDAs, provide US/UK-style contracts, and schedule calls during your timezone. Our founder Jaydeep is available on WhatsApp, Zoom, and email." },
     { q: "Is there support after launch?", a: "Every package includes post-launch support. Long-term maintenance and retainer contracts are also available." },
 ];
 
@@ -300,6 +300,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 export default function HomeLandingClient() {
     const [activeTab, setActiveTab] = useState(0);
+    const [pricingRegion, setPricingRegion] = useState<"intl" | "india">("intl");
     const [modal, setModal] = useState<{ svc: Service; pkg: Pkg } | null>(null);
     const servicesRef = useRef<HTMLElement>(null);
     const activeSvc = services[activeTab];
@@ -322,31 +323,29 @@ export default function HomeLandingClient() {
                         <div className="max-w-5xl mx-auto text-center">
                             <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
                                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                                🎯 India&apos;s Trusted Digital Agency — Web · Apps · Marketing · eCommerce
+                                🌍 Trusted by Businesses in UAE, UK, USA & India
                             </div>
 
                             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-                                Grow Your Business{" "}
-                                <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">Digitally</span>
-                                <br />with Epsilon Technology
+                                We Build <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">Digital Products</span>
+                                <br />That Grow Businesses Globally
                             </h1>
 
                             <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-                                We build <strong className="text-white">Websites</strong>, <strong className="text-white">Mobile Apps</strong>, <strong className="text-white">eCommerce Stores</strong>,
-                                manage <strong className="text-white">Doctor Marketing</strong> & provide <strong className="text-white">WhatsApp Business Solutions</strong> — all under one roof.
+                                From UAE restaurants to US tech startups — Epsilon Technology delivers websites, mobile apps, eCommerce stores, and WhatsApp automation that drive real results.
                             </p>
 
                             <div className="flex flex-wrap justify-center items-center gap-5 mb-10 text-slate-400 text-sm">
                                 <div className="flex items-center gap-1.5">
                                     <div className="flex">{[1, 2, 3, 4, 5].map(i => <Star key={i} size={13} className="text-yellow-400 fill-yellow-400" />)}</div>
-                                    <span className="text-white font-medium">4.9/5</span> on Google & Upwork
+                                    <span className="text-white font-medium">4.9/5</span> Google & Upwork Rating
                                 </div>
                                 <span className="w-px h-4 bg-slate-700" />
-                                <div className="flex items-center gap-1.5"><Shield size={13} className="text-green-400" /> 100% Satisfaction Guarantee</div>
+                                <div className="flex items-center gap-1.5"><Globe size={13} className="text-blue-400" />Clients in <strong className="text-white ml-1">UAE, UK & USA</strong></div>
                                 <span className="w-px h-4 bg-slate-700" />
-                                <div className="flex items-center gap-1.5"><Clock size={13} className="text-blue-400" />Reply in <strong className="text-white ml-1">24 hrs</strong></div>
+                                <div className="flex items-center gap-1.5"><CheckCircle2 size={13} className="text-green-400" /><strong className="text-white ml-1">100+</strong>&nbsp;Projects Delivered</div>
                                 <span className="w-px h-4 bg-slate-700" />
-                                <div className="flex items-center gap-1.5"><Users size={13} className="text-purple-400" /><strong className="text-white">50+</strong>&nbsp;happy clients</div>
+                                <div className="flex items-center gap-1.5"><Zap size={13} className="text-yellow-400" />Reply Within <strong className="text-white ml-1">4 Hours</strong></div>
                             </div>
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -386,10 +385,10 @@ export default function HomeLandingClient() {
                     <div className="container mx-auto px-4 relative z-10">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-5xl mx-auto">
                             {[
-                                { icon: Award, value: "5+", label: "Years Experience", color: "text-amber-400" },
+                                { icon: Award, value: "7+", label: "Years Experience", color: "text-amber-400" },
                                 { icon: Code2, value: "100+", label: "Projects Delivered", color: "text-emerald-400" },
-                                { icon: Users, value: "50+", label: "Happy Clients", color: "text-fuchsia-400" },
-                                { icon: Star, value: "4.9★", label: "Average Rating", color: "text-yellow-400" },
+                                { icon: Users, value: "50+", label: "Happy Clients Globally", color: "text-fuchsia-400" },
+                                { icon: Star, value: "4.9★", label: "Google Rating", color: "text-yellow-400" },
                             ].map(({ icon: Icon, value, label, color }) => (
                                 <div key={label} className="text-center group flex flex-col items-center">
                                     <div className="mb-4 p-4 rounded-2xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20 group-hover:-translate-y-1 transition-transform duration-300">
@@ -409,7 +408,7 @@ export default function HomeLandingClient() {
                         <h3 className="text-slate-800 text-xl font-bold mb-3">Trusted by leading businesses</h3>
                         <div className="w-16 h-1 bg-blue-500 mx-auto rounded-full mb-4"></div>
                         <p className="text-slate-500 text-sm max-w-xl mx-auto">
-                            Empowering startups and established enterprises across the globe with robust digital solutions.
+                            From startups in the USA to clinics in UAE — our clients trust us to deliver on time, every time.
                         </p>
                     </div>
                     {/* Marquee track */}
@@ -493,6 +492,23 @@ export default function HomeLandingClient() {
                         </div>
 
                         {/* ── ACTIVE SERVICE CONTENT ── */}
+                        <div className="flex justify-center mb-8">
+                            <div className="bg-slate-200 p-1 rounded-full flex items-center">
+                                <button
+                                    onClick={() => setPricingRegion("intl")}
+                                    className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${pricingRegion === "intl" ? "bg-white text-slate-900 shadow-md" : "text-slate-600 hover:text-slate-800"}`}
+                                >
+                                    🌍 International Pricing
+                                </button>
+                                <button
+                                    onClick={() => setPricingRegion("india")}
+                                    className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${pricingRegion === "india" ? "bg-white text-slate-900 shadow-md" : "text-slate-600 hover:text-slate-800"}`}
+                                >
+                                    🇮🇳 India Pricing
+                                </button>
+                            </div>
+                        </div>
+
                         <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
 
                             {/* Service header banner */}
@@ -540,10 +556,16 @@ export default function HomeLandingClient() {
                                                 <div className="flex items-start justify-between">
                                                     <div>
                                                         <h4 className="text-lg font-bold text-slate-900">{pkg.name}</h4>
-                                                        <div className="flex items-baseline gap-1.5 mt-1">
-                                                            <span className={`text-3xl font-extrabold ${pkg.highlight ? activeSvc.lightText : "text-slate-900"}`}>{pkg.price}</span>
-                                                            <span className="text-slate-400 text-sm">/ {pkg.usd}</span>
-                                                        </div>
+                                                        {pricingRegion === "intl" ? (
+                                                            <div className="flex items-baseline gap-1.5 mt-1">
+                                                                <span className={`text-3xl font-extrabold ${pkg.highlight ? activeSvc.lightText : "text-slate-900"}`}>{(pkg as any).intlUsd}</span>
+                                                            </div>
+                                                        ) : (
+                                                            <div className="flex items-baseline gap-1.5 mt-1">
+                                                                <span className={`text-3xl font-extrabold ${pkg.highlight ? activeSvc.lightText : "text-slate-900"}`}>{pkg.price}</span>
+                                                                <span className="text-slate-400 text-sm">/ {pkg.usd}</span>
+                                                            </div>
+                                                        )}
                                                     </div>
                                                     <div className={`text-xs font-medium px-2.5 py-1 rounded-full ${activeSvc.lightBg} ${activeSvc.lightText} flex items-center gap-1`}>
                                                         <Clock size={10} /> {pkg.duration}
@@ -575,8 +597,14 @@ export default function HomeLandingClient() {
                                     ))}
                                 </div>
 
+                                {pricingRegion === "intl" && (
+                                    <div className="text-center mt-6 text-sm text-slate-500 font-medium">
+                                        ✓ Prices in USD · Stripe & Wise accepted · NDA available
+                                    </div>
+                                )}
+
                                 {/* Bottom contact strip */}
-                                <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50 rounded-2xl px-5 py-4 border border-slate-100">
+                                <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50 rounded-2xl px-5 py-4 border border-slate-100">
                                     <div className="flex items-center gap-3 text-sm text-slate-600">
                                         <Phone size={16} className="text-slate-400 shrink-0" />
                                         <span>Not sure which package? <strong className="text-slate-900">Call us:</strong></span>
@@ -629,7 +657,7 @@ export default function HomeLandingClient() {
                         {/* Section Header */}
                         <div className="text-center mb-14">
                             <p className="text-blue-600 font-bold text-xs uppercase tracking-widest mb-2">Verified Reviews</p>
-                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Real People. Real Results.</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Real People. Real Results. Across 4 Countries.</h2>
                             <p className="text-slate-500 text-sm max-w-md mx-auto">Verified reviews from Google &amp; direct clients across India, USA, UK &amp; UAE.</p>
                         </div>
 
@@ -767,9 +795,9 @@ export default function HomeLandingClient() {
                             <span className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
                             Limited slots — only 5 new projects this month
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-5 leading-tight">Ready to Grow Your Business?</h2>
-                        <p className="text-blue-100 text-lg mb-10 max-w-xl mx-auto">
-                            Pick your service above, choose a package, and apply. We&apos;ll call you within 24 hours — free of charge.
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-5 leading-tight">Ready to Grow Your Business — Wherever You Are?</h2>
+                        <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">
+                            Whether you're in Dubai, London, New York, or anywhere else — we deliver world-class digital products at a fraction of local agency cost. Free consultation, no upfront full payment.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                             <button onClick={scrollToServices}
@@ -782,8 +810,8 @@ export default function HomeLandingClient() {
                                 <MessageSquare size={20} /> WhatsApp Us Now
                             </a>
                         </div>
-                        <div className="flex flex-wrap justify-center gap-6 text-blue-200 text-sm">
-                            {["✓ Free 30-Min Consultation", "✓ No Full Upfront Payment", "✓ Satisfaction Guarantee", "✓ Reply in 24 Hours"].map(i => <span key={i}>{i}</span>)}
+                        <div className="flex flex-wrap justify-center gap-6 text-blue-200 text-sm mt-8">
+                            {["🇦🇪 UAE Clients Welcome", "🇬🇧 UK Clients Welcome", "🇺🇸 US Clients Welcome"].map(i => <span key={i} className="flex items-center gap-1 bg-white/10 px-3 py-1.5 rounded-full">{i}</span>)}
                         </div>
                     </div>
                 </section>

@@ -127,7 +127,7 @@ export function Footer() {
                             />
                         </div>
                         <p className="text-slate-400 text-sm leading-relaxed mb-7 max-w-sm">
-                            A leading IT services company delivering scalable digital products and specialized marketing for healthcare professionals across India.
+                            A global digital agency delivering websites, mobile apps, eCommerce stores, and WhatsApp automation for businesses in UAE, UK, USA and India. Founded by Jaydeep Kataria — 7 years, 100+ projects, 4 countries.
                         </p>
 
                         {/* Social Icons */}
@@ -178,6 +178,17 @@ export function Footer() {
                                 </span>
                                 +91 81608 81461
                             </a>
+                            <a
+                                href="https://wa.me/918160881461"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
+                            >
+                                <span>💬 WhatsApp: +91 81608 81461</span>
+                            </a>
+                            <div className="flex items-center gap-3 text-slate-400 transition-colors pt-1">
+                                <span>🕐 Available: 9AM–7PM IST · We respond within 4 hours</span>
+                            </div>
                         </div>
                     </div>
 

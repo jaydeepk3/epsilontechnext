@@ -148,10 +148,10 @@ const testimonials = [
 
 // ─── STATS ────────────────────────────────────────────────────────────────────
 const stats = [
-    { value: "5+", label: "Years Experience", icon: Award },
+    { value: "7+", label: "Years Experience", icon: Award },
     { value: "100+", label: "Projects Delivered", icon: Globe },
-    { value: "50+", label: "Happy Clients", icon: Users },
-    { value: "4.9★", label: "Average Rating", icon: Star },
+    { value: "50+", label: "Happy Clients Globally", icon: Users },
+    { value: "4.9★", label: "Google Rating", icon: Star },
 ];
 
 // ─── FAQ ─────────────────────────────────────────────────────────────────────

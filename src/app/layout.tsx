@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://epsilon-technology.com",
     siteName: "Epsilon Technology",
-    title: "Epsilon Technology | Custom Software, App, Web Development & Digital Marketing",
-    description: "Premium IT software services including custom software, mobile applications, website development, and specialized digital marketing.",
+    title: "Epsilon Technology — Web, App & eCommerce Agency | UAE · UK · USA",
+    description: "Trusted by businesses in UAE, UK, and USA. We build websites, apps, eCommerce stores and WhatsApp automation. 100+ projects. 4.9★ rated. Get a free quote.",
     images: [
       {
         url: "/logo.png",

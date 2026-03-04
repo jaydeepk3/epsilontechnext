@@ -11,7 +11,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 export function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
     const pathname = usePathname();
     const isITServices = pathname === '/' || pathname.startsWith('/services');
 
@@ -64,14 +63,19 @@ export function Header() {
         >
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2">
-                    <div className="relative h-10 w-40 md:h-12 md:w-48">
-                        <Image
-                            src="/logo.png"
-                            alt="Epsilon Technology"
-                            fill
-                            className={`object-contain object-left transition-all ${isDarkHero ? 'brightness-0 invert' : ''}`}
-                            priority
-                        />
+                    <div className="flex flex-col">
+                        <div className="relative h-10 w-40 md:h-12 md:w-48">
+                            <Image
+                                src="/logo.png"
+                                alt="Epsilon Technology"
+                                fill
+                                className={`object-contain object-left transition-all ${isDarkHero ? 'brightness-0 invert' : ''}`}
+                                priority
+                            />
+                        </div>
+                        <span className={`text-[10px] md:text-[11px] leading-tight mt-1 opacity-70 ${isDarkHero ? 'text-white' : 'text-slate-500'}`}>
+                            Serving UAE 🇦🇪 · UK 🇬🇧 · USA 🇺🇸 · India 🇮🇳
+                        </span>
                     </div>
                 </Link>
 
@@ -83,8 +87,6 @@ export function Header() {
                                 <button
                                     className={`flex items-center gap-1 font-medium transition-colors ${isDarkHero ? 'text-slate-200 hover:text-white' : 'text-slate-600 hover:text-primary'
                                         }`}
-                                    onMouseEnter={() => setServicesDropdownOpen(true)}
-                                // onMouseLeave is handled by the parent div usually, or we can use CSS hover group
                                 >
                                     {link.name}
                                     <ChevronDown size={14} />
@@ -126,7 +128,7 @@ export function Header() {
                         onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
                         className={isDarkHero ? "bg-white text-slate-900 hover:bg-slate-100" : ""}
                     >
-                        {isITServices ? 'Discuss Project' : 'Book Growth Call'}
+                        {isITServices ? 'Get Free Quote' : 'Book Growth Call'}
                     </Button>
                 </nav>
 
@@ -184,12 +186,13 @@ export function Header() {
                                 setMobileMenuOpen(false);
                                 document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
                             }}>
-                                {isITServices ? 'Discuss Project' : 'Book Free Doctor Growth Consultation'}
+                                {isITServices ? 'Get Free Quote' : 'Book Free Doctor Growth Consultation'}
                             </Button>
                         </div>
                     </motion.div>
-                )}
-            </AnimatePresence>
-        </header>
+                )
+                }
+            </AnimatePresence >
+        </header >
     );
 }

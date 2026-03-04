@@ -130,7 +130,7 @@ export function UAEServicesTabs() {
                                     : "bg-white text-slate-600 hover:text-slate-900 border-slate-200 hover:border-slate-300 hover:shadow-md"
                                 }`}>
                             <Icon size={16} />
-                            <span className="hidden sm:inline">{s.title} {s.emoji}</span>
+                            <span className="hidden sm:inline">{s.title}</span>
                             <span className="sm:hidden">{s.emoji}</span>
                         </button>
                     );

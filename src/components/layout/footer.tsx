@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Mail, Phone, MapPin, Instagram, Linkedin, Dribbble, ArrowRight, Cpu, Stethoscope, Building2, BookOpen, ChevronRight } from 'lucide-react';
 
 const footerLinks = [
@@ -77,6 +78,10 @@ const socials = [
 ];
 
 export function Footer() {
+    const pathname = usePathname();
+    const isUAE = pathname === '/uae';
+    const timeText = isUAE ? '9AM–7PM GST (UAE Time)' : '9AM–7PM IST';
+
     return (
         <footer className="relative bg-slate-950 text-white overflow-hidden">
 
@@ -187,7 +192,7 @@ export function Footer() {
                                 <span>💬 WhatsApp: +91 81608 81461</span>
                             </a>
                             <div className="flex items-center gap-3 text-slate-400 transition-colors pt-1">
-                                <span>🕐 Available: 9AM–7PM IST · We respond within 4 hours</span>
+                                <span>🕐 Available: {timeText} · We respond within 4 hours</span>
                             </div>
                         </div>
                     </div>

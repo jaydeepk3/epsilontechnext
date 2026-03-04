@@ -1,6 +1,4 @@
 import { Metadata } from "next";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
 import { UAEServicesTabs } from "@/components/UAEServicesTabs";
 import { UAEFaqAccordion } from "@/components/UAEFaqAccordion";
 import { CheckCircle2, MessageSquare, Star, Globe, Zap, Clock, Shield, Award, Users, Code2, ArrowRight } from "lucide-react";
@@ -47,7 +45,6 @@ const faqs = [
 export default function UAEPage() {
     return (
         <main className="bg-white overflow-x-hidden min-h-screen">
-            <Header />
 
             {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
                 SECTION 1 — HERO
@@ -187,6 +184,52 @@ export default function UAEPage() {
             </section>
 
             {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                SECTION 3.5 — PORTFOLIO
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+            <section className="py-20 bg-white border-b border-slate-100">
+                <div className="container mx-auto px-4 max-w-6xl">
+                    <div className="text-center mb-14">
+                        <h2 className="text-3xl font-bold text-slate-900 mb-4">Our Recent Work</h2>
+                        <p className="text-slate-500 text-lg">Real apps and platforms we've built for clinics, restaurants, and retail stores.</p>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {/* Portfolio Item 1 */}
+                        <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-sm border border-slate-200 group">
+                            <div className="relative h-60 w-full overflow-hidden bg-slate-200">
+                                <Image src="/portfolio/shreeram-clinic.png" alt="Shreeram Clinic" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                            </div>
+                            <div className="p-5">
+                                <h3 className="font-bold text-slate-900 text-lg">Hospital Website</h3>
+                                <p className="text-slate-500 text-sm">Responsive Next.js website with fast loading times.</p>
+                            </div>
+                        </div>
+
+                        {/* Portfolio Item 2 */}
+                        <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-sm border border-slate-200 group">
+                            <div className="relative h-60 w-full overflow-hidden bg-slate-200">
+                                <Image src="/portfolio/ontapp.png" alt="Ontapp Menu" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                            </div>
+                            <div className="p-5">
+                                <h3 className="font-bold text-slate-900 text-lg">Restaurant Menu App</h3>
+                                <p className="text-slate-500 text-sm">iOS & Android React Native app with real-time orders.</p>
+                            </div>
+                        </div>
+
+                        {/* Portfolio Item 3 */}
+                        <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-sm border border-slate-200 group">
+                            <div className="relative h-60 w-full overflow-hidden bg-slate-200">
+                                <Image src="/portfolio/jewellery-website.webp" alt="eCommerce Store" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                            </div>
+                            <div className="p-5">
+                                <h3 className="font-bold text-slate-900 text-lg">eCommerce Store</h3>
+                                <p className="text-slate-500 text-sm">Custom Shopify development with high conversion rates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
                 SECTION 5 — SOCIAL PROOF / TESTIMONIALS
             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
             <section className="py-20 bg-white border-b border-slate-100">
@@ -198,9 +241,9 @@ export default function UAEPage() {
 
                     <div className="grid md:grid-cols-3 gap-6 mb-12">
                         {[
-                            { initial: "T", name: "Thariq H.", role: "Product Manager, FieldR", flag: "🇺🇸", quote: "Jaydeep's team delivered an exceptional app for our sports tech startup. Passionate leadership and deep understanding of our business goals.", color: "bg-blue-600" },
+                            { initial: "A", name: "Ahmed Al M.", role: "Retail Director", flag: "🇦🇪", quote: "Epsilon delivered a clean, fast website for our Dubai stores. Excellent communication and very patient with our feedback.", color: "bg-blue-600" },
                             { initial: "R", name: "Restaurant Owner", role: "Brundhavan Restaurant", flag: "🇺🇸", quote: "One heck of an amazing guy — understands and delivers so fast. Created an app for our restaurant seamlessly.", color: "bg-emerald-600" },
-                            { initial: "C", name: "CTO", role: "Tech Client", flag: "🇺🇸", quote: "Professional approach with an enthusiastic work ethic. Looking forward to working together again!", color: "bg-indigo-600" }
+                            { initial: "S", name: "Sarah K.", role: "Clinic Director", flag: "🇦🇪", quote: "We hired them to build our new patient booking portal. It was 60% cheaper than local agencies and honestly much better quality.", color: "bg-indigo-600" }
                         ].map((t, i) => (
                             <div key={i} className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all">
                                 <div className="flex items-center gap-3 mb-4">
@@ -331,8 +374,8 @@ export default function UAEPage() {
 
                     <div className="grid md:grid-cols-12 gap-10 items-center">
                         <div className="md:col-span-5 bg-slate-50 rounded-3xl p-8 border border-slate-200 text-center shadow-sm">
-                            <div className="w-32 h-32 bg-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-4xl font-bold shadow-lg shadow-blue-500/30">
-                                JK
+                            <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-lg shadow-blue-500/30 border-4 border-white bg-blue-100 flex items-center justify-center">
+                                <Image src="/images/jayde.png" alt="Jaydeep Kataria" fill className="object-cover" />
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 mb-1">Jaydeep Kataria</h3>
                             <p className="text-blue-600 font-semibold text-sm mb-6">Founder & Lead Developer, Epsilon Technology</p>
@@ -397,7 +440,6 @@ export default function UAEPage() {
                 </div>
             </section>
 
-            <Footer />
         </main>
     );
 }

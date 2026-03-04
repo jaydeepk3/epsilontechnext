@@ -49,6 +49,7 @@ export function Header() {
             isDropdown: true,
             dropdownItems: products
         },
+        { name: '🇦🇪 UAE', href: '/uae' },
         { name: 'Doctor Marketing', href: '/digital-marketing' },
         { name: 'Portfolio', href: '/portfolio' },
 

@@ -323,7 +323,7 @@ export default function HomeLandingClient() {
                         <div className="max-w-5xl mx-auto text-center">
                             <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
                                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                                🌍 Trusted by Businesses in UAE, UK, USA & India
+                                Trusted by Businesses in UAE, UK, USA & India
                             </div>
 
                             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
@@ -427,7 +427,6 @@ export default function HomeLandingClient() {
                                 <div key={pass} className="flex gap-10 items-center shrink-0">
                                     {[
                                         { src: "/clientlogo/FieldR Icon-(BLACK) 1.png", name: "FieldR", bg: "bg-white", pad: "p-4" },
-                                        { src: "/clientlogo/Flexmot logo final.png", name: "Flexmot", bg: "bg-white", pad: "p-3" },
                                         { src: "/clientlogo/Flique.png", name: "Flique", bg: "bg-white", pad: "p-2" },
                                         { src: "/clientlogo/Pistol.jpg", name: "Pistol Films", bg: "bg-white", pad: "p-4" },
                                         { src: "/clientlogo/Sangani-Hospital-Logo-Gujarati 2 copy.png", name: "Sangani Hospital", bg: "bg-white", pad: "p-3" },

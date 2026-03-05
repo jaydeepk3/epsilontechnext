@@ -15,11 +15,11 @@ const stats = [
     { value: "1.1M+", label: "Reel Views Generated", icon: Eye },
     { value: "50+", label: "Doctors Served", icon: Users },
     { value: "4.9 ★", label: "JustDial Rating", icon: Star },
-    { value: "Junagadh", label: "Now Serving Locally", icon: MapPin },
+    { value: "Gujarat", label: "Now Serving Locally", icon: MapPin },
 ];
 
 const trustPoints = [
-    { icon: MapPin, color: "text-blue-600", bg: "bg-blue-50", title: "Local Junagadh Experts", desc: "We understand Junagadh's healthcare landscape — local competition, language, and patient behaviour. Content that resonates here." },
+    { icon: MapPin, color: "text-blue-600", bg: "bg-blue-50", title: "Local Gujarat Experts", desc: "We understand Gujarat's healthcare landscape — local competition, language, and patient behaviour. Content that resonates here." },
     { icon: Shield, color: "text-emerald-600", bg: "bg-emerald-50", title: "Medically Safe Content", desc: "Every post complies with Indian Medical Council (IMC) guidelines. Zero compliance risk for your practice." },
     { icon: Clock, color: "text-violet-600", bg: "bg-violet-50", title: "Results in 45–60 Days", desc: "Our 5-step patient acquisition system — content, reels, ads, funnel & follow-up — delivers real inquiries fast." },
     { icon: BarChart3, color: "text-orange-600", bg: "bg-orange-50", title: "Transparent Reporting", desc: "Bi-weekly reports showing exactly how your investment performs. No black box — full clarity every step." },
@@ -72,72 +72,68 @@ const testimonials = [
     },
 ];
 
-// Junagadh-specific pricing
+// Gujarat-specific pricing
 const plans = [
     {
         id: 'starter', icon: Zap, iconColor: 'text-sky-500', iconBg: 'bg-sky-50',
-        name: 'Junagadh Starter', tagline: 'Build your online presence & attract local Junagadh patients',
+        name: 'Gujarat Starter', tagline: 'Build your online presence & attract local Gujarat patients',
         price: '₹7,000', originalPrice: '₹10,000', savings: 'Save ₹3,000', period: '/month',
         highlight: false, badge: null, accentGradient: 'from-sky-400 to-blue-500',
         features: [
-            { text: '8 Custom Medical Posts / Carousels', bold: true },
-            { text: '3 Professionally Edited Reels', bold: true },
+            { text: '6 Custom Medical Posts / Carousels', bold: true },
+            { text: '2 Professionally Edited Reels', bold: true },
             { text: 'Instagram + Facebook Profile Optimisation' },
             { text: 'Bio, Highlights & Grid Revamp' },
-            { text: 'Local Junagadh Hashtag Strategy' },
+            { text: 'Local Gujarat Hashtag Strategy' },
             { text: 'Scheduled Posting (3–4×/week)' },
             { text: 'Monthly Performance Report' },
             { text: 'Dedicated Account Manager' },
         ],
-        note: 'Ideal for solo practitioners & new clinics in Junagadh',
+        note: 'Ideal for solo practitioners & new clinics in Gujarat',
     },
     {
         id: 'growth', icon: TrendingUp, iconColor: 'text-white', iconBg: 'bg-white/20',
-        name: 'Growth Accelerator', tagline: 'For Junagadh clinics targeting 20–40 new patient inquiries/month',
+        name: 'Growth Accelerator', tagline: 'For Gujarat clinics targeting 20–40 new patient inquiries/month',
         price: '₹10,000', originalPrice: '₹14,000', savings: 'Save ₹4,000', period: '/month',
         highlight: true, badge: 'Most Popular', accentGradient: 'from-blue-600 to-indigo-600',
         features: [
-            { text: '12 High-Converting Medical Posts', bold: true },
-            { text: '5 Viral-Style Educational Reels', bold: true },
+            { text: '10 High-Converting Medical Posts', bold: true },
+            { text: '4 Viral-Style Educational Reels', bold: true },
             { text: 'Instagram Stories + DM Trigger CTAs' },
-            { text: 'Meta Ad Boosting (₹2,000 ad budget incl.)', bold: true },
             { text: 'WhatsApp Inquiry Funnel Setup' },
             { text: 'Bi-Weekly Strategy & Insights Report' },
-            { text: 'Google Business Profile Management' },
-            { text: 'Local Competitor Tracking (Junagadh area)' },
+            { text: 'Local Competitor Tracking (Gujarat area)' },
             { text: 'Priority Account Manager' },
         ],
-        note: '🔥 Most chosen by Junagadh specialist doctors',
+        note: '🔥 Most chosen by Gujarat specialist doctors',
     },
     {
         id: 'leadgen', icon: Rocket, iconColor: 'text-orange-500', iconBg: 'bg-orange-50',
-        name: 'Lead Gen Machine', tagline: 'Full-stack patient acquisition for maximum OPD growth in Junagadh',
+        name: 'Lead Gen Machine', tagline: 'Full-stack patient acquisition for maximum OPD growth in Gujarat',
         price: '₹15,000', originalPrice: '₹21,000', savings: 'Save ₹6,000', period: '/month',
         highlight: false, badge: 'Best Value', accentGradient: 'from-orange-400 to-rose-500',
         features: [
-            { text: '16 Premium Posts + Carousel Infographics', bold: true },
-            { text: '8 Offer-Based & Educational Reels', bold: true },
-            { text: '1 Video Shoot/month (at your Junagadh clinic)', bold: true },
-            { text: 'Full Meta Ads (₹5,000 ad budget incl.)', bold: true },
+            { text: '14 Premium Posts + Carousel Infographics', bold: true },
+            { text: '6 Offer-Based & Educational Reels', bold: true },
             { text: 'WhatsApp / DM Automation Funnel' },
             { text: 'Patient Lead Capture Landing Page' },
             { text: 'Weekly Growth + Lead Tracking Reports' },
             { text: 'Reputation & Review Management' },
-            { text: 'Dedicated Sr. Account Manager' },
+            { text: 'Priority Account Manager' },
         ],
-        note: 'Best for Junagadh clinics wanting maximum appointments',
+        note: 'Best for Gujarat clinics wanting maximum appointments',
     },
 ];
 
 const faqs = [
-    { q: "How quickly will I see real patient inquiries in Junagadh?", a: "Most doctors in Gujarat start seeing WhatsApp inquiries and DMs within 30–45 days. In Junagadh, where competition is still moderate, results often come even faster. Significant OPD growth happens in 60–90 days with consistent execution." },
-    { q: "Do you understand Junagadh's local healthcare market?", a: "Yes! We have worked with clinics across Gujarat and understand local patient behaviour, Gujarati language content preferences, seasonal health trends, and how local patients search for doctors online in Junagadh." },
+    { q: "How quickly will I see real patient inquiries in Gujarat?", a: "Most doctors in Gujarat start seeing WhatsApp inquiries and DMs within 30–45 days. In Gujarat, where competition is still moderate, results often come even faster. Significant OPD growth happens in 60–90 days with consistent execution." },
+    { q: "Do you understand Gujarat's local healthcare market?", a: "Yes! We have worked with clinics across Gujarat and understand local patient behaviour, Gujarati language content preferences, seasonal health trends, and how local patients search for doctors online in Gujarat." },
     { q: "What makes you different from a generic agency?", a: "Generic agencies don't understand medical ethics, patient psychology, or healthcare regulations. We ONLY work with doctors — not salons, restaurants, or startups. Every post is IMC-safe, professionally worded, and designed to attract real patient inquiries, not just likes." },
-    { q: "Do I need to create any content or provide photos?", a: "Not necessarily. Our Starter and Growth plans work with stock medical visuals and your existing clinic photos. The Lead Gen Machine plan includes a monthly video shoot at your Junagadh clinic for authentic, original content." },
+    { q: "Do I need to create any content or provide photos?", a: "Not necessarily. Our Starter and Growth plans work with stock medical visuals and your existing clinic photos. The Lead Gen Machine plan includes a monthly video shoot at your Gujarat clinic for authentic, original content." },
     { q: "Is there a long-term contract or lock-in?", a: "No. All plans are month-to-month. We earn your trust every month with results, not paperwork. That said, most doctors stay with us for 12+ months because they see consistent ROI." },
     { q: "What is the ad budget included in higher plans?", a: "The Growth Accelerator includes ₹2,000/month of Meta (Facebook + Instagram) ad spend managed by our team. The Lead Gen Machine includes ₹5,000/month — fully included in the plan price. You can top up for faster results." },
     { q: "Do you guarantee a certain number of patient leads?", a: "We don't guarantee specific numbers because results depend on your specialty, location, and competition. What we guarantee: a medically-safe proven system, transparent bi-weekly reporting, and a strategy that has delivered results for 50+ doctors across Gujarat." },
-    { q: "Can this work for a hospital or multi-doctor setup in Junagadh?", a: "Absolutely. We have a custom Hospital / Multi-Specialty plan with unlimited content, a dedicated content team, CRM integration, and more. WhatsApp us and we'll build a tailored strategy for your Junagadh setup." },
+    { q: "Can this work for a hospital or multi-doctor setup in Gujarat?", a: "Absolutely. We have a custom Hospital / Multi-Specialty plan with unlimited content, a dedicated content team, CRM integration, and more. WhatsApp us and we'll build a tailored strategy for your Gujarat setup." },
 ];
 
 // ─── FAQ Accordion ────────────────────────────────────────────────────────────
@@ -193,7 +189,7 @@ function FaqItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
 // ─── Lead Form ────────────────────────────────────────────────────────────────
 
 function LeadForm({ dark = false }: { dark?: boolean }) {
-    const [formData, setFormData] = useState({ name: '', whatsapp: '', specialty: '', city: 'Junagadh' });
+    const [formData, setFormData] = useState({ name: '', whatsapp: '', specialty: '', city: 'Gujarat' });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -208,7 +204,7 @@ function LeadForm({ dark = false }: { dark?: boolean }) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name: formData.name, mobile: formData.whatsapp, specialty: formData.specialty, city: formData.city, clinic: '' }),
             });
-            if (res.ok) { setStatus('success'); setFormData({ name: '', whatsapp: '', specialty: '', city: 'Junagadh' }); setTimeout(() => setStatus('idle'), 6000); }
+            if (res.ok) { setStatus('success'); setFormData({ name: '', whatsapp: '', specialty: '', city: 'Gujarat' }); setTimeout(() => setStatus('idle'), 6000); }
             else setStatus('error');
         } catch { setStatus('error'); }
     };
@@ -219,7 +215,7 @@ function LeadForm({ dark = false }: { dark?: boolean }) {
                 <CheckCircle className="text-emerald-600" size={32} />
             </div>
             <h3 className={`text-xl font-bold mb-2 ${dark ? 'text-white' : 'text-slate-900'}`}>You&apos;re in, {formData.name || 'Doctor'}! 🎉</h3>
-            <p className={dark ? 'text-slate-400' : 'text-slate-600'}>We&apos;ll reach out to you on WhatsApp within 4 hours with your personalised Junagadh growth plan!</p>
+            <p className={dark ? 'text-slate-400' : 'text-slate-600'}>We&apos;ll reach out to you on WhatsApp within 4 hours with your personalised Gujarat growth plan!</p>
         </div>
     );
 
@@ -233,7 +229,7 @@ function LeadForm({ dark = false }: { dark?: boolean }) {
             <input type="text" name="name" placeholder="👨‍⚕️ Your Name (Dr. ___) *" required value={formData.name} onChange={handleChange} className={inputClass} />
             <input type="tel" name="whatsapp" placeholder="📱 WhatsApp Number *" required value={formData.whatsapp} onChange={handleChange} className={inputClass} />
             <input type="text" name="specialty" placeholder="🩺 Specialty (e.g. Orthopedics, Dermatology) *" required value={formData.specialty} onChange={handleChange} className={inputClass} />
-            <input type="text" name="city" placeholder="📍 Your City / Area in Junagadh *" required value={formData.city} onChange={handleChange} className={inputClass} />
+            <input type="text" name="city" placeholder="📍 Your City / Area in Gujarat *" required value={formData.city} onChange={handleChange} className={inputClass} />
             <button
                 type="submit"
                 disabled={status === 'loading'}
@@ -262,7 +258,7 @@ function FloatingWhatsApp() {
                 <X size={12} />
             </button>
             <a
-                href="https://wa.me/918160881461?text=Hi%20Epsilon%2C%20I%20am%20a%20doctor%20in%20Junagadh%20and%20want%20to%20grow%20my%20clinic%20patients%20through%20social%20media"
+                href="https://wa.me/918160881461?text=Hi%20Epsilon%2C%20I%20am%20a%20doctor%20in%20Gujarat%20and%20want%20to%20grow%20my%20clinic%20patients%20through%20social%20media"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2.5 bg-emerald-500 text-white font-bold text-sm px-4 py-3 rounded-2xl shadow-xl shadow-emerald-500/30 hover:bg-emerald-600 transition-all hover:-translate-y-0.5"
@@ -276,20 +272,20 @@ function FloatingWhatsApp() {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-export default function JunagadhDoctorMarketingPage() {
+export default function GujaratDoctorMarketingPage() {
     return (
         <div className="font-sans bg-white">
 
             {/* ── Urgency Banner ────────────────────────────────────── */}
             <div className="bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 text-black text-center py-2.5 px-4 text-sm font-bold shadow-sm">
-                ⚡ Only 3 new Junagadh doctor slots available this month —{' '}
+                ⚡ Only 3 new Gujarat doctor slots available this month —{' '}
                 <a href="#contact" className="underline underline-offset-2">Check your availability →</a>
             </div>
 
             {/* ── Location Badge ────────────────────────────────────── */}
             <div className="bg-blue-600 text-white text-center py-2 px-4 text-xs font-semibold flex items-center justify-center gap-2">
                 <MapPin size={13} />
-                Special Junagadh Launch Pricing — Starting at just ₹7,000/month
+                Special Gujarat Launch Pricing — Starting at just ₹7,000/month
             </div>
 
             {/* ── 1. Hero ───────────────────────────────────────────── */}
@@ -304,13 +300,13 @@ export default function JunagadhDoctorMarketingPage() {
                             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
                                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-semibold text-sm mb-6"
                             >
-                                <MapPin size={15} /> Specially for Junagadh Doctors
+                                <MapPin size={15} /> Specially for Gujarat Doctors
                             </motion.div>
 
                             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
                                 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-5 leading-[1.12]"
                             >
-                                Junagadh Doctors —{' '}
+                                Gujarat Doctors —{' '}
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">
                                     Fill Your OPD<br />Every Week
                                 </span>
@@ -319,7 +315,7 @@ export default function JunagadhDoctorMarketingPage() {
                             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
                                 className="text-lg text-slate-600 mb-8 max-w-xl leading-relaxed"
                             >
-                                Done-for-you Instagram & Facebook marketing made for Junagadh clinics. <strong>Local language, local patients, local results.</strong> Plans starting at just ₹7,000/month. No contract. Inquiries start within 30 days.
+                                Done-for-you Instagram & Facebook marketing made for Gujarat clinics. <strong>Local language, local patients, local results.</strong> Plans starting at just ₹7,000/month. No contract. Inquiries start within 30 days.
                             </motion.p>
 
                             {/* Mini trust row */}
@@ -339,13 +335,13 @@ export default function JunagadhDoctorMarketingPage() {
                                 <a href="#contact" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-base px-7 py-4 rounded-2xl hover:from-blue-700 hover:to-indigo-700 transition-all active:scale-95 shadow-xl shadow-blue-600/25">
                                     Book Free Strategy Call <ArrowRight size={18} />
                                 </a>
-                                <a href="https://wa.me/918160881461?text=Hi%20Epsilon%2C%20I%20am%20a%20doctor%20in%20Junagadh%20and%20want%20to%20grow%20my%20clinic" target="_blank" rel="noopener noreferrer"
+                                <a href="https://wa.me/918160881461?text=Hi%20Epsilon%2C%20I%20am%20a%20doctor%20in%20Gujarat%20and%20want%20to%20grow%20my%20clinic" target="_blank" rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center gap-2 bg-emerald-500 text-white font-bold text-base px-7 py-4 rounded-2xl hover:bg-emerald-600 transition-all active:scale-95 shadow-xl shadow-emerald-500/20"
                                 >
                                     <MessageCircle size={18} /> WhatsApp Us Now
                                 </a>
                             </motion.div>
-                            <p className="text-red-500 text-xs font-semibold mt-3">⏳ Only 3 Junagadh slots left this month</p>
+                            <p className="text-red-500 text-xs font-semibold mt-3">⏳ Only 3 Gujarat slots left this month</p>
                         </div>
 
                         {/* Right: Mini Lead Form in hero */}
@@ -356,7 +352,7 @@ export default function JunagadhDoctorMarketingPage() {
                                 <div className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-full mb-3">
                                     <CheckCircle size={12} /> Free · No Obligation · Reply in 4 Hours
                                 </div>
-                                <h2 className="text-xl font-bold text-slate-900 mb-1">Get Your Free Junagadh Growth Plan</h2>
+                                <h2 className="text-xl font-bold text-slate-900 mb-1">Get Your Free Gujarat Growth Plan</h2>
                                 <p className="text-slate-500 text-sm">Takes 30 seconds. We&apos;ll call you back on WhatsApp.</p>
                             </div>
                             <LeadForm />
@@ -389,8 +385,8 @@ export default function JunagadhDoctorMarketingPage() {
             <section className="py-14 px-4 bg-white border-b border-slate-100">
                 <div className="max-w-5xl mx-auto">
                     <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Why Junagadh Doctors Choose Epsilon</h2>
-                        <p className="text-slate-500 text-sm">We're not a generic agency — we're a <strong>doctor-only</strong> patient acquisition team that understands Junagadh</p>
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Why Gujarat Doctors Choose Epsilon</h2>
+                        <p className="text-slate-500 text-sm">We're not a generic agency — we're a <strong>doctor-only</strong> patient acquisition team that understands Gujarat</p>
                     </motion.div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
                         {trustPoints.map((tp, i) => {
@@ -445,7 +441,7 @@ export default function JunagadhDoctorMarketingPage() {
                     </div>
                     <p className="text-center text-slate-400 text-xs mt-8">
                         Results vary by specialty, city, and ad budget.{' '}
-                        <a href="#contact" className="text-blue-600 font-semibold hover:underline">Book a free call to see what&apos;s possible for your Junagadh clinic →</a>
+                        <a href="#contact" className="text-blue-600 font-semibold hover:underline">Book a free call to see what&apos;s possible for your Gujarat clinic →</a>
                     </p>
                 </div>
             </section>
@@ -477,7 +473,7 @@ export default function JunagadhDoctorMarketingPage() {
                     </div>
                     <div className="text-center mt-10">
                         <a href="#contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold px-7 py-3.5 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg shadow-blue-600/20">
-                            Get Reels Like These for My Junagadh Clinic <ArrowRight size={16} />
+                            Get Reels Like These for My Gujarat Clinic <ArrowRight size={16} />
                         </a>
                     </div>
                 </div>
@@ -545,11 +541,11 @@ export default function JunagadhDoctorMarketingPage() {
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-50/40 rounded-full blur-3xl pointer-events-none" />
                 <div className="max-w-6xl mx-auto relative z-10">
                     <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-4">
-                        <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-3">Junagadh Launch Pricing</h2>
-                        <p className="text-slate-500 mb-2">Affordable pricing designed for Junagadh clinics. Cancel anytime.</p>
+                        <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-3">Gujarat Launch Pricing</h2>
+                        <p className="text-slate-500 mb-2">Affordable pricing designed for Gujarat clinics. Cancel anytime.</p>
                         <p className="text-slate-400 text-xs mb-4">All prices shown are exclusive of 18% GST, which will be added at checkout.</p>
                         <span className="inline-block bg-emerald-500 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
-                            🎉 Special Junagadh Launch Offer — Lock in before rates increase
+                            🎉 Special Gujarat Launch Offer — Lock in before rates increase
                         </span>
                     </motion.div>
 
@@ -625,11 +621,11 @@ export default function JunagadhDoctorMarketingPage() {
                                 <Building2 size={24} className="text-violet-600" />
                             </div>
                             <div>
-                                <h3 className="font-bold text-slate-900 text-base">Junagadh Hospital / Multi-Specialty Clinic?</h3>
+                                <h3 className="font-bold text-slate-900 text-base">Gujarat Hospital / Multi-Specialty Clinic?</h3>
                                 <p className="text-slate-500 text-sm mt-0.5">Unlimited posts, dedicated content team (2 creators), full Meta + Google Ads management, CRM integration, monthly strategy calls &amp; more.</p>
                             </div>
                         </div>
-                        <a href="https://wa.me/918160881461?text=Hi%20Epsilon%2C%20I%20need%20a%20custom%20hospital%20plan%20for%20Junagadh" target="_blank" rel="noopener noreferrer"
+                        <a href="https://wa.me/918160881461?text=Hi%20Epsilon%2C%20I%20need%20a%20custom%20hospital%20plan%20for%20Gujarat" target="_blank" rel="noopener noreferrer"
                             className="shrink-0 inline-flex items-center gap-2 bg-violet-600 text-white font-bold text-sm px-5 py-3 rounded-xl hover:bg-violet-700 transition-all whitespace-nowrap"
                         >
                             <MessageCircle size={16} /> Request Custom Plan
@@ -646,7 +642,7 @@ export default function JunagadhDoctorMarketingPage() {
                 <div className="max-w-3xl mx-auto relative z-10">
                     <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-semibold text-xs uppercase tracking-widest mb-5">
-                            <Shield size={13} /> Common Questions from Junagadh Doctors
+                            <Shield size={13} /> Common Questions from Gujarat Doctors
                         </div>
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
                             Everything You Want to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Know Before Starting</span>
@@ -672,7 +668,7 @@ export default function JunagadhDoctorMarketingPage() {
                             <a href="#contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm px-5 py-3 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg">
                                 Book Free Call <ArrowRight size={15} />
                             </a>
-                            <a href="https://wa.me/918160881461?text=Hi%20Epsilon%2C%20I%20am%20a%20Junagadh%20doctor%20and%20have%20a%20question" target="_blank" rel="noopener noreferrer"
+                            <a href="https://wa.me/918160881461?text=Hi%20Epsilon%2C%20I%20am%20a%20Gujarat%20doctor%20and%20have%20a%20question" target="_blank" rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 bg-emerald-500 text-white font-bold text-sm px-5 py-3 rounded-xl hover:bg-emerald-600 transition-all"
                             >
                                 <MessageCircle size={15} /> WhatsApp
@@ -694,19 +690,19 @@ export default function JunagadhDoctorMarketingPage() {
                             <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                                 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug"
                             >
-                                Ready to Fill Your Junagadh OPD with{' '}
+                                Ready to Fill Your Gujarat OPD with{' '}
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Real Patient Inquiries?</span>
                             </motion.h2>
                             <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
                                 className="text-slate-400 text-base mb-8"
                             >
-                                Book a free 20-minute strategy call. We&apos;ll analyze your specialty, your local Junagadh competition, and show you exactly how we&apos;d grow your clinic — starting this month.
+                                Book a free 20-minute strategy call. We&apos;ll analyze your specialty, your local Gujarat competition, and show you exactly how we&apos;d grow your clinic — starting this month.
                             </motion.p>
                             <div className="space-y-4">
                                 {[
                                     { icon: CheckCircle, color: "text-emerald-400", text: "Free analysis of your Instagram & Google presence" },
-                                    { icon: CheckCircle, color: "text-emerald-400", text: "Junagadh competitor map for your specialty" },
-                                    { icon: CheckCircle, color: "text-emerald-400", text: "Patient acquisition plan tailored to your Junagadh clinic" },
+                                    { icon: CheckCircle, color: "text-emerald-400", text: "Gujarat competitor map for your specialty" },
+                                    { icon: CheckCircle, color: "text-emerald-400", text: "Patient acquisition plan tailored to your Gujarat clinic" },
                                     { icon: CheckCircle, color: "text-emerald-400", text: "No obligation — just real, actionable insights" },
                                 ].map((b, i) => (
                                     <motion.div key={i} initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
@@ -721,7 +717,7 @@ export default function JunagadhDoctorMarketingPage() {
                             {/* Alternative CTA */}
                             <div className="mt-8 pt-8 border-t border-slate-800">
                                 <p className="text-slate-500 text-xs mb-3">Prefer to talk directly?</p>
-                                <a href="https://wa.me/918160881461?text=Hi%20Epsilon%2C%20I%20am%20a%20Junagadh%20doctor%20and%20want%20to%20grow%20my%20clinic" target="_blank" rel="noopener noreferrer"
+                                <a href="https://wa.me/918160881461?text=Hi%20Epsilon%2C%20I%20am%20a%20Gujarat%20doctor%20and%20want%20to%20grow%20my%20clinic" target="_blank" rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 bg-emerald-500 text-white font-bold text-sm px-5 py-3 rounded-xl hover:bg-emerald-600 transition-all"
                                 >
                                     <MessageCircle size={16} /> WhatsApp Us Now
@@ -734,7 +730,7 @@ export default function JunagadhDoctorMarketingPage() {
                             className="bg-white rounded-3xl p-8 shadow-2xl"
                         >
                             <div className="mb-6">
-                                <h3 className="text-xl font-bold text-slate-900 mb-1">Claim My Free Junagadh Growth Plan</h3>
+                                <h3 className="text-xl font-bold text-slate-900 mb-1">Claim My Free Gujarat Growth Plan</h3>
                                 <p className="text-slate-500 text-sm">Takes 30 seconds. We reply on WhatsApp within 4 hours.</p>
                             </div>
                             <LeadForm />

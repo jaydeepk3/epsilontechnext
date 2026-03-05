@@ -2,11 +2,11 @@ import { Metadata } from "next";
 import { UAEServicesTabs } from "@/components/UAEServicesTabs";
 import { UAEFaqAccordion } from "@/components/UAEFaqAccordion";
 import { CheckCircle2, MessageSquare, Star, Globe, Zap, Clock, Shield, Award, Users, Code2, ArrowRight } from "lucide-react";
-import Link from "next/link";
+
 import Image from "next/image";
 
 export const metadata: Metadata = {
-    title: "Web & App Development Agency for UAE Businesses | Epsilon Technology",
+    title: { absolute: "Web & App Development Agency for UAE Businesses | Epsilon Technology" },
     description: "Epsilon Technology builds websites, mobile apps, eCommerce stores and WhatsApp Business solutions for businesses in Dubai, Abu Dhabi, Sharjah and across UAE. 7 years experience. 100+ projects. Free consultation.",
     keywords: "web development agency Dubai, mobile app development UAE, eCommerce development Dubai, WhatsApp Business API UAE, website design Abu Dhabi, app development agency UAE",
     openGraph: {
@@ -90,10 +90,10 @@ export default function UAEPage() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/contacts"
+                            <a href="https://calendly.com/jaydeepkataria" target="_blank" rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-9 py-4 rounded-2xl text-lg transition-all hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-0.5">
-                                Get Free UAE Consultation
-                            </Link>
+                                Book Free UAE Consultation
+                            </a>
                             <a href="https://wa.me/918160881461?text=Hi%2C%20I%20am%20a%20UAE%20business%20owner%20and%20I%20want%20to%20discuss%20a%20project."
                                 target="_blank" rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-400 text-white font-bold px-9 py-4 rounded-2xl text-lg transition-all hover:shadow-2xl hover:shadow-green-500/30 hover:-translate-y-0.5">
@@ -421,10 +421,10 @@ export default function UAEPage() {
                     <p className="text-xl text-blue-100/80 mb-10 max-w-2xl mx-auto">Free 30-minute consultation. No commitment. We reply within 4 hours during UAE business hours.</p>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
-                        <Link href="/contacts"
+                        <a href="https://calendly.com/jaydeepkataria" target="_blank" rel="noopener noreferrer"
                             className="bg-white hover:bg-blue-50 text-slate-900 font-bold px-8 py-4 rounded-xl transition-colors shadow-lg text-lg">
                             Book Free Consultation
-                        </Link>
+                        </a>
                         <a href="https://wa.me/918160881461?text=Hi%2C%20I%20am%20a%20UAE%20business%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer"
                             className="border-2 border-white/20 hover:border-white/40 text-white font-bold px-8 py-4 rounded-xl transition-colors flex justify-center items-center gap-2 text-lg">
                             <MessageSquare size={20} /> WhatsApp Us Now

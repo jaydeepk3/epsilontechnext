@@ -20,15 +20,16 @@ const footerLinks = [
     {
         icon: Stethoscope,
         title: 'Doctor Marketing',
+        hideOnUAE: true,
         links: [
             { label: 'Doctor Marketing Hub', href: '/digital-marketing' },
             { label: 'Spine Specialists', href: '/digital-marketing-for-spine-specialists' },
             { label: 'Pediatric Doctors', href: '/digital-marketing-for-pediatric-doctors' },
             { label: 'Surgeon Doctors', href: '/digital-marketing-for-surgeon-doctors' },
             { label: 'Orthopedic Doctors', href: '/digital-marketing-for-orthopedic-doctors' },
-            { label: 'Digital Marketing Junagadh', href: '/digital-marketing-in-junagadh', hideOnUAE: true },
-            { label: 'Doctor Marketing Rajkot', href: '/doctor-marketing-in-rajkot', hideOnUAE: true },
-            { label: 'Doctor Marketing Morbi', href: '/doctor-marketing-in-morbi', hideOnUAE: true },
+            { label: 'Digital Marketing Junagadh', href: '/digital-marketing-in-junagadh' },
+            { label: 'Doctor Marketing Rajkot', href: '/doctor-marketing-in-rajkot' },
+            { label: 'Doctor Marketing Morbi', href: '/doctor-marketing-in-morbi' },
         ],
     },
     {
@@ -49,7 +50,7 @@ const footerLinks = [
                 { label: 'Cost of App Development', href: '/blog/the-real-cost-of-custom-application-development-2026' },
                 { label: '5 Signs You Need a Pro Website', href: '/blog/5-signs-you-need-professional-website-development-services' },
                 { label: 'Digital Transformation Guide', href: '/blog/digital-transformation-guide' },
-                { label: 'Doctor Marketing Ideas', href: '/blog/doctor-marketing-ideas-junagadh' },
+                { label: 'Doctor Marketing Ideas', href: '/blog/doctor-marketing-ideas-junagadh', hideOnUAE: true },
                 { label: 'Why Next.js for eCommerce', href: '/blog/why-nextjs-is-best-for-ecommerce-website-development' },
             ],
         },
@@ -197,7 +198,7 @@ export function Footer() {
                     </div>
 
                     {/* Link Columns */}
-                    {footerLinks.map(({ icon: ColIcon, title, links, extra }) => (
+                    {footerLinks.filter((col: any) => !(isUAE && col.hideOnUAE)).map(({ icon: ColIcon, title, links, extra }) => (
                         <div key={title}>
                             {/* Section Header */}
                             <div className="flex items-center gap-2 mb-5">
@@ -229,7 +230,7 @@ export function Footer() {
                                         <h4 className="text-xs font-bold uppercase tracking-widest text-slate-200">{extra.title}</h4>
                                     </div>
                                     <ul className="space-y-2.5">
-                                        {extra.links.map(({ label, href }) => (
+                                        {extra.links.filter((l: any) => !(isUAE && l.hideOnUAE)).map(({ label, href }) => (
                                             <li key={href}>
                                                 <Link
                                                     href={href}

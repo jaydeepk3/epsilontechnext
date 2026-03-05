@@ -7,9 +7,9 @@ import { motion } from 'framer-motion';
 const plans = [
     {
         name: "Visibility Booster",
-        startingPrice: "Starting from ₹4,999/month",
-        price: "₹7,999",
-        originalPrice: "₹9,000",
+        startingPrice: "Starting from ₹9,999/month",
+        price: "₹9,999",
+        originalPrice: "₹11,000",
         period: "/month",
         description: "Perfect for doctors starting their digital journey.",
         features: [
@@ -24,9 +24,9 @@ const plans = [
     },
     {
         name: "Engagement & Reach Accelerator",
-        startingPrice: "Starting from ₹8,999/month",
-        price: "₹9,999",
-        originalPrice: "₹11,000",
+        startingPrice: "Starting from ₹12,999/month",
+        price: "₹12,999",
+        originalPrice: "₹15,000",
         period: "/month",
         description: "For clinics wanting aggressive local growth.",
         features: [
@@ -41,9 +41,9 @@ const plans = [
     },
     {
         name: "Lead Gen Machine",
-        startingPrice: "Starting from ₹14,999/month",
-        price: "₹14,999",
-        originalPrice: "₹17,000",
+        startingPrice: "Starting from ₹17,999/month",
+        price: "₹17,999",
+        originalPrice: "₹20,000",
         period: "/month",
         description: "Full-stack marketing for maximum appointments.",
         features: [

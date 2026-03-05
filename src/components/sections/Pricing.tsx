@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 const plans = [
     {
         name: "Visibility Booster",
+        startingPrice: "Starting from ₹4,999/month",
         price: "₹7,999",
         originalPrice: "₹9,000",
         period: "/month",
@@ -18,10 +19,12 @@ const plans = [
             "Local Growth Strategy + Hashtag Research",
             "Scheduled Posting + Monthly Performance Check-In"
         ],
-        highlight: false
+        highlight: false,
+        badge: null
     },
     {
         name: "Engagement & Reach Accelerator",
+        startingPrice: "Starting from ₹8,999/month",
         price: "₹9,999",
         originalPrice: "₹11,000",
         period: "/month",
@@ -33,10 +36,12 @@ const plans = [
             "Instagram Stories + CTAs for DM triggers",
             "Bi-weekly Report & Strategic Insights"
         ],
-        highlight: true
+        highlight: true,
+        badge: "Most Popular"
     },
     {
         name: "Lead Gen Machine",
+        startingPrice: "Starting from ₹14,999/month",
         price: "₹14,999",
         originalPrice: "₹17,000",
         period: "/month",
@@ -48,7 +53,8 @@ const plans = [
             "WhatsApp/DM Automation Funnel Setup",
             "Bi-weekly Growth + Lead Tracking Reports"
         ],
-        highlight: false
+        highlight: false,
+        badge: null
     }
 ];
 
@@ -80,13 +86,18 @@ export function Pricing() {
                                 : 'bg-white text-slate-900 shadow-sm border border-slate-200 hover:shadow-xl'
                                 }`}
                         >
-                            {plan.highlight && (
+                            {plan.badge && (
                                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                                    Most Popular
+                                    {plan.badge}
                                 </div>
                             )}
 
-                            <h3 className={`text-xl font-bold mb-6 text-center ${plan.highlight ? 'text-white' : 'text-slate-900'}`}>{plan.name}</h3>
+                            <h3 className={`text-xl font-bold mb-2 text-center ${plan.highlight ? 'text-white' : 'text-slate-900'}`}>{plan.name}</h3>
+
+                            {/* Starting price — the key conversion fix */}
+                            <p className={`text-center text-sm font-semibold mb-6 ${plan.highlight ? 'text-emerald-400' : 'text-emerald-600'}`}>
+                                {plan.startingPrice}
+                            </p>
 
                             <ul className="space-y-4 mb-8 flex-1">
                                 {plan.features.map((feature, f) => (
@@ -98,34 +109,31 @@ export function Pricing() {
                             </ul>
 
                             <div className="border-t border-slate-200/20 pt-6 mt-auto text-center">
-                                {/* <p className={`text-sm mb-1 ${plan.highlight ? 'text-slate-400' : 'text-slate-500'}`}>
-                                    Actual Price: <span className="line-through decoration-red-500 decoration-2">{plan.originalPrice}</span>
-                                </p> */}
-                                {/* <div className="flex items-baseline justify-center gap-1 mb-6">
-                                    <span className="text-3xl font-bold">{plan.price}</span>
-                                    <span className={`text-sm ${plan.highlight ? 'text-slate-400' : 'text-slate-500'}`}>{plan.period}</span>
-                                </div> */}
-
                                 <Button
                                     variant={plan.highlight ? 'primary' : 'outline'}
                                     className="w-full"
                                     onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
                                 >
-                                    Get Started
+                                    Get Started — Check My City&apos;s Availability
                                 </Button>
                             </div>
                         </motion.div>
                     ))}
                 </div>
 
+                {/* Custom plan note */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 }}
-                    className="text-center mt-12 bg-white/50 inline-block px-6 py-3 rounded-xl mx-auto border border-white"
+                    className="text-center mt-10"
                 >
-                    <p className="text-slate-700 font-medium">Custom plans based on specialty & city available.</p>
+                    <p className="text-sm text-slate-500">
+                        Serving doctors across India 🇮🇳 · UAE 🇦🇪 · UK 🇬🇧 · USA 🇺🇸 —{' '}
+                        Custom plans available for your city &amp; specialty.{' '}
+                        <a href="#contact" className="text-blue-600 underline font-medium">Talk to us →</a>
+                    </p>
                 </motion.div>
             </div>
         </section>

@@ -7,16 +7,14 @@ import { MessageCircle, Calendar } from 'lucide-react';
 
 export function Booking() {
     const [formData, setFormData] = useState({
-        name: '',
-        mobile: '',
-        city: '',
+        whatsapp: '',
         specialty: '',
-        clinic: ''
+        city: '',
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setFormData({ ...formData, [e.target.id]: e.target.value });
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -27,14 +25,19 @@ export function Booking() {
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    mobile: formData.whatsapp,
+                    specialty: formData.specialty,
+                    city: formData.city,
+                    name: '',
+                    clinic: '',
+                }),
             });
 
             if (response.ok) {
                 setStatus('success');
-                setFormData({ name: '', mobile: '', city: '', specialty: '', clinic: '' });
-                // Reset success message after 3 seconds
-                setTimeout(() => setStatus('idle'), 3000);
+                setFormData({ whatsapp: '', specialty: '', city: '' });
+                setTimeout(() => setStatus('idle'), 4000);
             } else {
                 setStatus('error');
             }
@@ -86,78 +89,42 @@ export function Booking() {
 
                         <div className="bg-white rounded-2xl p-6 md:p-8 shadow-2xl">
                             <form className="space-y-4" onSubmit={handleSubmit}>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div className="space-y-2">
-                                        <label htmlFor="name" className="text-sm font-medium text-slate-700">Name</label>
-                                        <input
-                                            id="name"
-                                            type="text"
-                                            placeholder="Dr. Name"
-                                            required
-                                            value={formData.name}
-                                            onChange={handleChange}
-                                            className="w-full h-11 px-4 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label htmlFor="mobile" className="text-sm font-medium text-slate-700">WhatsApp Number</label>
-                                        <input
-                                            id="mobile"
-                                            type="tel"
-                                            placeholder="+91 73593 15576"
-                                            required
-                                            value={formData.mobile}
-                                            onChange={handleChange}
-                                            className="w-full h-11 px-4 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                                        />
-                                    </div>
-                                </div>
+                                <input
+                                    type="tel"
+                                    name="whatsapp"
+                                    placeholder="📱 Your WhatsApp Number *"
+                                    required
+                                    value={formData.whatsapp}
+                                    onChange={handleChange}
+                                    className="w-full border border-slate-200 rounded-xl px-4 py-3 text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+                                />
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div className="space-y-2">
-                                        <label htmlFor="city" className="text-sm font-medium text-slate-700">City</label>
-                                        <input
-                                            id="city"
-                                            type="text"
-                                            placeholder="e.g. Mumbai"
-                                            required
-                                            value={formData.city}
-                                            onChange={handleChange}
-                                            className="w-full h-11 px-4 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label htmlFor="specialty" className="text-sm font-medium text-slate-700">Specialty</label>
-                                        <input
-                                            id="specialty"
-                                            type="text"
-                                            placeholder="e.g. Dermatologist"
-                                            required
-                                            value={formData.specialty}
-                                            onChange={handleChange}
-                                            className="w-full h-11 px-4 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                                        />
-                                    </div>
-                                </div>
+                                <input
+                                    type="text"
+                                    name="specialty"
+                                    placeholder="🩺 Your Specialty (e.g. Orthopedic, Pediatric)"
+                                    required
+                                    value={formData.specialty}
+                                    onChange={handleChange}
+                                    className="w-full border border-slate-200 rounded-xl px-4 py-3 text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+                                />
 
-                                <div className="space-y-2">
-                                    <label htmlFor="clinic" className="text-sm font-medium text-slate-700">Clinic Name</label>
-                                    <input
-                                        id="clinic"
-                                        type="text"
-                                        placeholder="Clinic Name"
-                                        value={formData.clinic}
-                                        onChange={handleChange}
-                                        className="w-full h-11 px-4 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                                    />
-                                </div>
+                                <input
+                                    type="text"
+                                    name="city"
+                                    placeholder="📍 Your City & Country"
+                                    required
+                                    value={formData.city}
+                                    onChange={handleChange}
+                                    className="w-full border border-slate-200 rounded-xl px-4 py-3 text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+                                />
 
                                 <Button
-                                    className="w-full text-lg h-12"
+                                    className="w-full text-lg h-14 rounded-xl font-bold"
                                     size="lg"
                                     disabled={status === 'loading' || status === 'success'}
                                 >
-                                    {status === 'loading' ? 'Sending...' : status === 'success' ? 'Request Sent!' : 'Book Free Consultation'}
+                                    {status === 'loading' ? 'Sending...' : status === 'success' ? '✅ Request Sent!' : 'Book My Free Growth Call →'}
                                 </Button>
 
                                 {status === 'error' && (
@@ -166,8 +133,8 @@ export function Booking() {
                                     </p>
                                 )}
 
-                                <p className="text-xs text-center text-slate-400 mt-4">
-                                    By booking, you agree to receive updates via WhatsApp.
+                                <p className="text-center text-xs text-slate-400 mt-3">
+                                    🔒 No spam. We reply on WhatsApp within 4 hours. Available for doctors worldwide.
                                 </p>
                             </form>
                         </div>

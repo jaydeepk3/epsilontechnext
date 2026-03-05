@@ -1,33 +1,31 @@
 'use client';
 
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion"
 import { motion } from "framer-motion";
 
 const defaultFaqs = [
     {
-        question: "Why should I hire a specialized doctor marketing company?",
-        answer: "General marketing agencies often use generic strategies that don't work in healthcare. A specialized doctor marketing company understands medical ethics, patient psychology, and the specific regulations (like MCI guidelines) that doctors must follow. We ensure your growth is safe, professional, and targeted."
+        question: "Do you work with doctors outside India?",
+        answer: "Yes. We serve doctors in India, UAE, UK, and USA. Our strategies are adapted for each market — local language, cultural tone, platform preferences, and healthcare norms. Book a free call and we'll tell you what works in your city."
     },
     {
-        question: "How is your approach different from other healthcare marketing agencies?",
-        answer: "Most agencies focus on 'likes' and 'vanity metrics'. We focus on 'patient inquiries' and 'OPD footfall'. Our strategy combines high-quality video content (Reels) with local SEO and automated WhatsApp funnels to actually convert viewers into patients."
+        question: "Why should I hire a specialized doctor marketing company?",
+        answer: "Generic agencies don't understand medical ethics, patient psychology, or healthcare regulations. We work exclusively with doctors and know exactly what content builds trust — and what destroys it. Every post is medically safe and professionally worded."
+    },
+    {
+        question: "How is your approach different from other agencies?",
+        answer: "Most agencies chase followers and likes. We chase patient inquiries and OPD footfall. Every strategy is tied to one goal: getting real people to book appointments at your clinic."
     },
     {
         question: "Do you guarantee results?",
-        answer: "While no one can ethically guarantee specific medical outcomes, our track record speaks for itself. We have consistently helped doctors increase their patient inquiries by 2x-3x within the first 3-6 months of working with us."
+        answer: "We don't guarantee specific numbers because results depend on your specialty, city, and competition. What we guarantee is a proven system, transparent bi-weekly reporting, and a strategy that has worked for 50+ doctors across multiple countries."
     },
     {
         question: "Is this service suitable for small clinics?",
-        answer: "Absolutely. In fact, our 'Visibility Booster' plan is designed specifically for individual practitioners and small clinics looking to establish a strong digital presence without breaking the bank."
+        answer: "Yes. Even 10–15 new patients/month can be transformational for a solo practitioner. Our Visibility Booster plan is built exactly for this. We've helped small clinics in smaller cities achieve consistent patient flow within 60 days."
     },
     {
-        question: "What is included in your doctor marketing services?",
-        answer: "Our services include Instagram Growth & Management, Video Production (Reels), Local SEO (Google My Business), Facebook/Instagram Ads, and Lead Automation. We are a full-service partner for your clinic's digital growth."
+        question: "What is included in the service?",
+        answer: "Depending on your plan: custom posts, reels, ad campaigns, WhatsApp automation, Instagram stories, hashtag strategy, bi-weekly performance reports, and a dedicated account manager. See our pricing section above for full details."
     }
 ];
 
@@ -56,23 +54,24 @@ export function FAQ({ customFaqs }: FAQProps) {
                     </p>
                 </motion.div>
 
-                <div className="max-w-3xl mx-auto">
-                    <Accordion type="single" collapsible className="w-full space-y-4">
-                        {data.map((faq, i) => (
-                            <AccordionItem
-                                key={i}
-                                value={`item-${i}`}
-                                className="border border-slate-200 bg-white rounded-xl px-6 data-[state=open]:border-blue-200 data-[state=open]:ring-2 data-[state=open]:ring-blue-50 transition-all duration-200 shadow-sm hover:shadow-md"
-                            >
-                                <AccordionTrigger className="text-lg font-semibold text-slate-900 text-left py-6 hover:no-underline hover:text-blue-600 transition-colors">
-                                    {faq.question}
-                                </AccordionTrigger>
-                                <AccordionContent className="text-slate-600 leading-relaxed text-base pb-6">
-                                    {faq.answer}
-                                </AccordionContent>
-                            </AccordionItem>
-                        ))}
-                    </Accordion>
+                <div className="max-w-3xl mx-auto space-y-8">
+                    {data.map((faq, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, delay: i * 0.08 }}
+                            className="border border-slate-200 bg-white rounded-xl px-6 py-6 shadow-sm"
+                        >
+                            <h3 className="text-lg md:text-xl font-semibold text-slate-900 mb-3">
+                                {faq.question}
+                            </h3>
+                            <p className="text-slate-600 leading-relaxed text-base">
+                                {faq.answer}
+                            </p>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>

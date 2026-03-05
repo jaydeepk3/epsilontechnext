@@ -75,6 +75,16 @@ export function DoctorsWeWorkWith() {
                     Doctors We Work With
                 </motion.h2>
 
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="text-center text-slate-500 mb-12 text-base"
+                >
+                    We&apos;ve helped doctors grow their clinics across India, UAE, and beyond.
+                </motion.p>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {doctors.map((doc, i) => (
                         <motion.div

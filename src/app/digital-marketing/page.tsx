@@ -20,6 +20,7 @@ import { Problem } from "@/components/sections/Problem";
 import { Solution } from "@/components/sections/Solution";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Results } from "@/components/sections/Results";
+import { BeforeAfterResults } from "@/components/sections/BeforeAfterResults";
 import { DoctorsWeWorkWith } from "@/components/sections/DoctorsWeWorkWith";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
@@ -35,6 +36,7 @@ export default function Home() {
       <Solution />
       <HowItWorks />
       <Results />
+      <BeforeAfterResults />
       <DoctorsWeWorkWith />
       <Testimonials />
       <FAQ />

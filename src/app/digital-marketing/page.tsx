@@ -34,6 +34,8 @@ const beforeAfterCards = [
 const reels = [
   { title: "Doctor Recommendation", embedUrl: "https://www.instagram.com/reel/DNh44Bissbj/embed", views: "195k+", likes: "512+" },
   { title: "Viral Medical Reel", embedUrl: "https://www.instagram.com/reel/DFX0HANA3e3/embed", views: "1.1M+", likes: "1.4k+" },
+  { title: "Health Awareness", embedUrl: "https://www.instagram.com/reel/DO_M0fLkrm0/embed", views: "420k+", likes: "15.2k+" },
+  { title: "Clinic Transformation", embedUrl: "https://www.instagram.com/reel/DPlJCV1j69W/embed", views: "280k+", likes: "8.9k+" },
   { title: "Free OPD Announcement", embedUrl: "https://www.instagram.com/reel/DRo6ggqE16-/embed", views: "350k+", likes: "13.4k+" },
 ];
 
@@ -490,11 +492,11 @@ export default function DoctorDigitalMarketingPage() {
             <div className="flex gap-1">{[...Array(5)].map((_, i) => <Star key={i} size={20} className="fill-amber-400 text-amber-400" />)}</div>
             <span className="font-bold text-slate-900 text-lg">4.9</span>
             <a
-              href="https://www.google.com/search?q=epsilon-technology&oq=epsilon-technology&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgYIAhBFGDwyBggDEEUYPDIGCAQQIxgnMgYIBRAAGB4yBggGEEUYPDIGCAcQRRg80gEINjA5MmowajSoAgCwAgE&sourceid=chrome&ie=UTF-8#mpd=~8897672357773143821/customers/reviews"
+              href="https://wap.justdial.com/analytics/reviews?el=0&nh=1&rootvc=0&docid=9999PX285.X285.230128100734.H9V1&hide_header=1&m=1&old=1&source=77&tab=reviews&wap=77&jdbusiness=1&ep=quick_links&ln=en"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-500 text-sm hover:text-blue-600 underline underline-offset-2 transition-colors"
-            >· 50+ verified doctor reviews on Google →</a>
+            >· 50+ verified doctor reviews on JustDial →</a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

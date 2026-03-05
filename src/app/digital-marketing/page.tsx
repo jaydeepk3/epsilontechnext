@@ -15,12 +15,12 @@ const stats = [
   { value: "1.1M+", label: "Reel Views Generated", icon: Eye },
   { value: "50+", label: "Doctors Served", icon: Users },
   { value: "4.9 ★", label: "Google Rating", icon: Star },
-  { value: "4 Countries", label: "India · UAE · UK · USA", icon: BadgeCheck },
+  { value: "India", label: "Serving Doctors Nationwide", icon: BadgeCheck },
 ];
 
 const trustPoints = [
   { icon: Shield, color: "text-blue-600", bg: "bg-blue-50", title: "Medically Safe Content", desc: "Every post complies with Indian Medical Council (IMC) guidelines. Zero compliance risk." },
-  { icon: Clock, color: "text-emerald-600", bg: "bg-emerald-50", title: "Results in 30–45 Days", desc: "First patient inquiries typically arrive within your first month. Guaranteed system." },
+  { icon: Clock, color: "text-emerald-600", bg: "bg-emerald-50", title: "Results in 45–60 Days", desc: "The same 5-step patient acquisition system used by 10+ doctors across India — content, ads, funnel, follow-up, and reporting." },
   { icon: BarChart3, color: "text-violet-600", bg: "bg-violet-50", title: "Transparent Reporting", desc: "Bi-weekly reports showing exactly how your investment is performing. No black box." },
   { icon: Users, color: "text-orange-600", bg: "bg-orange-50", title: "Doctor-Only Agency", desc: "We ONLY work with doctors. Not salons, restaurants, or startups — just healthcare." },
 ];
@@ -41,26 +41,31 @@ const testimonials = [
   {
     quote: "Working with Epsilon for 2 years. Patient inquiries went up significantly after they started managing our reels. Jaydeep bhai understands healthcare marketing like no other.",
     author: "Dr. D.P. Vora", role: "Orthopaedic Surgeon, Gujarat", initials: "DV", color: "from-orange-400 to-amber-500",
+    photo: "/images/doctors/dr-dp-vora.png",
     metric: "40+", metricLabel: "Inquiries/month",
   },
   {
     quote: "Mr Jaydeep helped our hospital scale patient footfall like never before. Highly recommend for social media & website development. OPD is 3× what it was.",
     author: "Devam Dave", role: "Shreeji Multispecialty Hospital, Gujarat", initials: "DD", color: "from-blue-500 to-indigo-500",
+    photo: "/images/doctors/dr%20devam%20dave.png",
     metric: "3×", metricLabel: "OPD growth in 60d",
   },
   {
     quote: "Within 45 days we started getting direct WhatsApp inquiries from social media. Very accurate approach, and the content quality is outstanding.",
-    author: "Healthcare Physiotherapy Clinic", role: "Physiotherapy Clinic, Gujarat", initials: "HP", color: "from-emerald-500 to-teal-500",
+    author: "Rainbow Pedia & Physio", role: "Physiotherapy Clinic, Gujarat", initials: "RP", color: "from-emerald-500 to-teal-500",
+    photo: "/images/doctors/rainbow-pedia.jpg",
     metric: "45", metricLabel: "Days to first lead",
   },
   {
     quote: "Epsilon Technology is a one-stop solution for all digital marketing needs. They've helped our clinic scale like never before. Highly recommend for any doctor.",
-    author: "Dr. Hiral", role: "Cosmetologist, Gujarat", initials: "DH", color: "from-purple-500 to-violet-500",
+    author: "Dr. Hiral Vasani", role: "Cosmetologist, Gujarat", initials: "HV", color: "from-purple-500 to-violet-500",
+    photo: "/images/doctors/dr%20hiral%20vasani.png",
     metric: "30–50", metricLabel: "Inquiries/month",
   },
   {
     quote: "Expert and very easy to work with. They know exactly what content doctors need to build trust and attract patients. Reels went from 500 to 100k+ views.",
-    author: "Dr. Dharmesh", role: "Medical Professional, Gujarat", initials: "DD2", color: "from-pink-500 to-rose-500",
+    author: "Dr. Priyank Bagtharia", role: "Medical Professional, Gujarat", initials: "PB", color: "from-pink-500 to-rose-500",
+    photo: "/images/doctors/dr-priyank-bagtharia.png",
     metric: "100k+", metricLabel: "Reel views in 3mo",
   },
 ];
@@ -142,18 +147,39 @@ function FaqItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.35, delay: index * 0.04 }}
-      className={`border rounded-xl overflow-hidden transition-all duration-200 ${open ? 'border-blue-200 shadow-sm shadow-blue-50' : 'border-slate-200 bg-white'}`}
+      className={`rounded-2xl overflow-hidden transition-all duration-300 ${open
+        ? 'bg-slate-800 border border-blue-500/40 shadow-lg shadow-blue-500/10'
+        : 'bg-slate-800/60 border border-slate-700/60 hover:border-slate-600'
+        }`}
     >
-      <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-5 py-4 text-left gap-4 bg-white">
-        <h3 className={`text-sm md:text-base font-semibold leading-snug ${open ? 'text-blue-700' : 'text-slate-900'}`}>{faq.q}</h3>
-        <div className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-colors ${open ? 'bg-blue-100 text-blue-600' : 'bg-slate-100 text-slate-500'}`}>
-          {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center gap-4 px-5 py-4 text-left"
+      >
+        <span className={`shrink-0 w-7 h-7 rounded-lg text-xs font-bold flex items-center justify-center transition-colors ${open ? 'bg-blue-500 text-white' : 'bg-slate-700 text-slate-400'
+          }`}>
+          {String(index + 1).padStart(2, '0')}
+        </span>
+        <h3 className={`flex-1 text-sm md:text-base font-semibold leading-snug transition-colors ${open ? 'text-white' : 'text-slate-200'
+          }`}>
+          {faq.q}
+        </h3>
+        <div className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all ${open ? 'bg-blue-500/20 text-blue-400 rotate-180' : 'bg-slate-700 text-slate-400'
+          }`}>
+          <ChevronDown size={16} />
         </div>
       </button>
       <AnimatePresence>
         {open && (
-          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2 }}>
-            <p className="px-5 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3 bg-white">{faq.a}</p>
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.22 }}
+          >
+            <div className="px-5 pb-5 pt-1 border-t border-slate-700/60 ml-11">
+              <p className="text-slate-300 text-sm leading-relaxed">{faq.a}</p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -164,7 +190,7 @@ function FaqItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
 // ─── Lead Form ────────────────────────────────────────────────────────────────
 
 function LeadForm({ dark = false }: { dark?: boolean }) {
-  const [formData, setFormData] = useState({ whatsapp: '', specialty: '', city: '' });
+  const [formData, setFormData] = useState({ name: '', whatsapp: '', specialty: '', city: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -177,9 +203,9 @@ function LeadForm({ dark = false }: { dark?: boolean }) {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mobile: formData.whatsapp, specialty: formData.specialty, city: formData.city, name: '', clinic: '' }),
+        body: JSON.stringify({ name: formData.name, mobile: formData.whatsapp, specialty: formData.specialty, city: formData.city, clinic: '' }),
       });
-      if (res.ok) { setStatus('success'); setFormData({ whatsapp: '', specialty: '', city: '' }); setTimeout(() => setStatus('idle'), 6000); }
+      if (res.ok) { setStatus('success'); setFormData({ name: '', whatsapp: '', specialty: '', city: '' }); setTimeout(() => setStatus('idle'), 6000); }
       else setStatus('error');
     } catch { setStatus('error'); }
   };
@@ -189,8 +215,8 @@ function LeadForm({ dark = false }: { dark?: boolean }) {
       <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4">
         <CheckCircle className="text-emerald-600" size={32} />
       </div>
-      <h3 className={`text-xl font-bold mb-2 ${dark ? 'text-white' : 'text-slate-900'}`}>You're in! 🎉</h3>
-      <p className={dark ? 'text-slate-400' : 'text-slate-600'}>We'll contact you on WhatsApp within 4 hours. Get ready to grow your clinic!</p>
+      <h3 className={`text-xl font-bold mb-2 ${dark ? 'text-white' : 'text-slate-900'}`}>You&apos;re in, {formData.name || 'Doctor'}! 🎉</h3>
+      <p className={dark ? 'text-slate-400' : 'text-slate-600'}>We&apos;ll reach out to you on WhatsApp within 4 hours with your personalised growth plan!</p>
     </div>
   );
 
@@ -201,9 +227,10 @@ function LeadForm({ dark = false }: { dark?: boolean }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
+      <input type="text" name="name" placeholder="👨‍⚕️ Your Name (Dr. ___) *" required value={formData.name} onChange={handleChange} className={inputClass} />
       <input type="tel" name="whatsapp" placeholder="📱 WhatsApp Number *" required value={formData.whatsapp} onChange={handleChange} className={inputClass} />
       <input type="text" name="specialty" placeholder="🩺 Specialty (e.g. Orthopedics, Dermatology) *" required value={formData.specialty} onChange={handleChange} className={inputClass} />
-      <input type="text" name="city" placeholder="📍 Your City & Country *" required value={formData.city} onChange={handleChange} className={inputClass} />
+      <input type="text" name="city" placeholder="📍 Your City *" required value={formData.city} onChange={handleChange} className={inputClass} />
       <button
         type="submit"
         disabled={status === 'loading'}
@@ -215,7 +242,7 @@ function LeadForm({ dark = false }: { dark?: boolean }) {
       </button>
       {status === 'error' && <p className="text-center text-sm text-red-400">Something went wrong. Please WhatsApp us directly.</p>}
       <p className={`text-center text-xs pt-1 ${dark ? 'text-slate-500' : 'text-slate-400'}`}>
-        🔒 No spam. Reply within 4 hours. Free, no obligation.
+        🔒 No spam. We reply on WhatsApp within 4 hours. Free, no obligation.
       </p>
     </form>
   );
@@ -251,7 +278,7 @@ export default function DoctorDigitalMarketingPage() {
     <div className="font-sans bg-white">
 
       {/* ── Urgency Banner ────────────────────────────────────── */}
-      <div className="bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 text-black text-center py-2.5 px-4 text-sm font-bold sticky top-0 z-50 shadow-sm">
+      <div className="bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 text-black text-center py-2.5 px-4 text-sm font-bold shadow-sm">
         ⚡ Only 5 new doctors accepted this month —{' '}
         <a href="#contact" className="underline underline-offset-2">Check availability for your city →</a>
       </div>
@@ -291,7 +318,7 @@ export default function DoctorDigitalMarketingPage() {
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
                 className="flex flex-wrap gap-3 mb-8"
               >
-                {["50+ Doctors Served", "1.1M+ Reel Views", "4.9★ Google Rating", "No Lock-in Contract"].map((t, i) => (
+                {["50+ Doctors Served", "1.1M+ Reel Views", "4.9★ Google Rating", "No Lock-in Contract", "Only India Doctors"].map((t, i) => (
                   <span key={i} className="inline-flex items-center gap-1.5 text-xs font-semibold bg-white border border-slate-200 rounded-full px-3 py-1.5 shadow-sm">
                     <Check size={12} className="text-emerald-500" /> {t}
                   </span>
@@ -462,7 +489,12 @@ export default function DoctorDigitalMarketingPage() {
           <div className="flex items-center justify-center gap-3 mb-10">
             <div className="flex gap-1">{[...Array(5)].map((_, i) => <Star key={i} size={20} className="fill-amber-400 text-amber-400" />)}</div>
             <span className="font-bold text-slate-900 text-lg">4.9</span>
-            <span className="text-slate-500 text-sm">· 50+ verified doctor reviews</span>
+            <a
+              href="https://www.google.com/search?q=epsilon-technology&oq=epsilon-technology&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgYIAhBFGDwyBggDEEUYPDIGCAQQIxgnMgYIBRAAGB4yBggGEEUYPDIGCAcQRRg80gEINjA5MmowajSoAgCwAgE&sourceid=chrome&ie=UTF-8#mpd=~8897672357773143821/customers/reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-500 text-sm hover:text-blue-600 underline underline-offset-2 transition-colors"
+            >· 50+ verified doctor reviews on Google →</a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -484,7 +516,11 @@ export default function DoctorDigitalMarketingPage() {
                   <p className="text-emerald-800 text-xs font-semibold leading-snug">📈 Real result achieved</p>
                 </div>
                 <div className="flex items-center gap-3 pt-4 border-t border-slate-50">
-                  <div className={`w-9 h-9 rounded-full bg-gradient-to-br ${t.color} text-white flex items-center justify-center font-bold text-xs shrink-0`}>{t.initials.slice(0, 2)}</div>
+                  {t.photo ? (
+                    <img src={t.photo} alt={t.author} className="w-10 h-10 rounded-full object-cover shrink-0 border-2 border-slate-100" />
+                  ) : (
+                    <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.color} text-white flex items-center justify-center font-bold text-xs shrink-0`}>{t.initials.slice(0, 2)}</div>
+                  )}
                   <div>
                     <h4 className="font-bold text-slate-900 text-sm leading-tight">{t.author}</h4>
                     <p className="text-slate-400 text-xs">{t.role}</p>
@@ -502,9 +538,10 @@ export default function DoctorDigitalMarketingPage() {
         <div className="max-w-6xl mx-auto relative z-10">
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-4">
             <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-3">Simple, Transparent Pricing</h2>
-            <p className="text-slate-500 mb-4">Market-benchmarked for Indian doctors. No hidden fees. Cancel anytime.</p>
+            <p className="text-slate-500 mb-2">Market-benchmarked for Indian doctors. Cancel anytime.</p>
+            <p className="text-slate-400 text-xs mb-4">All prices shown are exclusive of 18% GST, which will be added at checkout.</p>
             <span className="inline-block bg-emerald-500 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
-              🎉 Early 2025 Pricing — Lock in before rates increase
+              🎉 Early 2026 Pricing — Lock in before rates increase
             </span>
           </motion.div>
 
@@ -544,7 +581,7 @@ export default function DoctorDigitalMarketingPage() {
                         <span className={`text-3xl font-extrabold ${plan.highlight ? 'text-white' : 'text-slate-900'}`}>{plan.price}</span>
                         <span className={`text-sm mb-1 ${plan.highlight ? 'text-slate-400' : 'text-slate-500'}`}>{plan.period}</span>
                       </div>
-                      <p className={`text-xs mt-0.5 ${plan.highlight ? 'text-slate-500' : 'text-slate-400'}`}>+ 18% GST applicable</p>
+                      <p className={`text-xs mt-0.5 ${plan.highlight ? 'text-slate-500' : 'text-slate-400'}`}>+ GST (disclosed above)</p>
                     </div>
                     <div className={`h-px w-full mb-5 ${plan.highlight ? 'bg-white/10' : 'bg-slate-100'}`} />
                     <ul className="space-y-2.5 flex-1 mb-6">
@@ -593,7 +630,52 @@ export default function DoctorDigitalMarketingPage() {
         </div>
       </section>
 
-      {/* ── 8. Lead Form (Main CTA) ───────────────────────────── */}
+      {/* ── 8. FAQ — Resolve objections BEFORE asking for commitment ── */}
+      <section className="py-20 px-4 bg-slate-900 relative overflow-hidden">
+        {/* Background accents */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-600/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-indigo-600/8 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-3xl mx-auto relative z-10">
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-semibold text-xs uppercase tracking-widest mb-5">
+              <Shield size={13} /> Common Questions
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
+              Everything You Want to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Know Before Starting</span>
+            </h2>
+            <p className="text-slate-400 text-sm max-w-xl mx-auto">
+              50+ doctors asked these exact questions. Here are honest answers — no fluff.
+            </p>
+          </motion.div>
+
+          <div className="space-y-3">
+            {faqs.map((faq, i) => <FaqItem key={i} faq={faq} index={i} />)}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="mt-10 p-6 bg-slate-800/60 border border-slate-700/60 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-5"
+          >
+            <div>
+              <p className="text-white font-semibold text-sm">Still have a question not listed here?</p>
+              <p className="text-slate-400 text-xs mt-0.5">We reply on WhatsApp within 4 hours — guaranteed.</p>
+            </div>
+            <div className="flex gap-3 shrink-0">
+              <a href="#contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm px-5 py-3 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg">
+                Book Free Call <ArrowRight size={15} />
+              </a>
+              <a href="https://wa.me/918160881461" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-emerald-500 text-white font-bold text-sm px-5 py-3 rounded-xl hover:bg-emerald-600 transition-all"
+              >
+                <MessageCircle size={15} /> WhatsApp
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── 9. Lead Form (Main CTA) ───────────────────────────── */}
       <section id="contact" className="py-20 px-4 bg-slate-900 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -611,7 +693,7 @@ export default function DoctorDigitalMarketingPage() {
               <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
                 className="text-slate-400 text-base mb-8"
               >
-                Book a free 20-minute strategy call. We'll analyze your specialty, city, and competition — then show you exactly how we'd grow your clinic.
+                Book a free 20-minute strategy call. We&apos;ll analyze your specialty, city, and competition — then show you exactly how we&apos;d grow your clinic.
               </motion.p>
               <div className="space-y-4">
                 {[
@@ -645,7 +727,7 @@ export default function DoctorDigitalMarketingPage() {
               className="bg-white rounded-3xl p-8 shadow-2xl"
             >
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-slate-900 mb-1">Book Free Strategy Call</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-1">Claim My Free Growth Strategy</h3>
                 <p className="text-slate-500 text-sm">Takes 30 seconds. We reply on WhatsApp within 4 hours.</p>
               </div>
               <LeadForm />
@@ -655,32 +737,9 @@ export default function DoctorDigitalMarketingPage() {
                   {[...Array(5)].map((_, i) => <Star key={i} size={13} className="fill-amber-400 text-amber-400" />)}
                   <span className="text-slate-700 text-sm font-bold">4.9 · 50+ doctor reviews</span>
                 </div>
-                <p className="text-slate-500 text-xs italic">"Best decision for my practice. Patient inquiries went up within 30 days." — Dr. D.P. Vora</p>
+                <p className="text-slate-500 text-xs italic">&quot;Best decision for my practice. Patient inquiries went up within 30 days.&quot; — Dr. D.P. Vora</p>
               </div>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 9. FAQ ────────────────────────────────────────────── */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Frequently Asked Questions</h2>
-            <p className="text-slate-500 text-sm">Everything doctors want to know before working with us.</p>
-          </motion.div>
-          <div className="space-y-2.5">
-            {faqs.map((faq, i) => <FaqItem key={i} faq={faq} index={i} />)}
-          </div>
-          <div className="text-center mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#contact" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm px-6 py-3.5 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg">
-              Book Free Strategy Call <ArrowRight size={16} />
-            </a>
-            <a href="https://wa.me/918160881461" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-emerald-500 text-white font-bold text-sm px-6 py-3.5 rounded-xl hover:bg-emerald-600 transition-all"
-            >
-              <MessageCircle size={16} /> WhatsApp Us
-            </a>
           </div>
         </div>
       </section>

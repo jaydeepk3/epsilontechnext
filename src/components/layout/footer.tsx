@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Mail, Phone, MapPin, Instagram, Linkedin, Dribbble, ArrowRight, Cpu, Stethoscope, Building2, BookOpen, ChevronRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Linkedin, Dribbble, ArrowRight, Cpu, Stethoscope, Building2, BookOpen, ChevronRight, Clock, MessageCircle } from 'lucide-react';
 
 const footerLinks = [
     {
@@ -189,10 +189,16 @@ export function Footer() {
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
                             >
-                                <span>💬 WhatsApp: +91 81608 81461</span>
+                                <span className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center flex-shrink-0 group-hover:border-sky-500/50 transition-colors">
+                                    <MessageCircle size={13} className="text-sky-500" />
+                                </span>
+                                +91 81608 81461 (WhatsApp)
                             </a>
-                            <div className="flex items-center gap-3 text-slate-400 transition-colors pt-1">
-                                <span>🕐 Available: 9AM–7PM GST (UAE Time) · We respond within 4 hours</span>
+                            <div className="flex items-center gap-3 text-slate-400 pt-1">
+                                <span className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center flex-shrink-0">
+                                    <Clock size={13} className="text-sky-500" />
+                                </span>
+                                9AM–7PM IST · Reply within 4 hrs
                             </div>
                         </div>
                     </div>

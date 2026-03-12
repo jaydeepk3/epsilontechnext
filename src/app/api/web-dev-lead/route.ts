@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, mobile, email, business, package: pkg, message } = body;
+        const { name, mobile, email, business, package: pkg, message, budget } = body;
 
         if (!name || !mobile) {
             return NextResponse.json(
@@ -35,6 +35,7 @@ export async function POST(request: Request) {
                         ${email ? `<p><strong style="color: #334155;">📧 Email:</strong> <a href="mailto:${email}">${email}</a></p>` : ''}
                         ${business ? `<p><strong style="color: #334155;">🏢 Business:</strong> ${business}</p>` : ''}
                         <p><strong style="color: #334155;">📦 Package Selected:</strong> <span style="background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-weight: bold;">${pkg || 'Not specified'}</span></p>
+                        ${budget ? `<p><strong style="color: #334155;">💰 Budget:</strong> ${budget}</p>` : ''}
                         ${message ? `<p><strong style="color: #334155;">💬 Message:</strong> ${message}</p>` : ''}
                     </div>
 
@@ -45,11 +46,19 @@ export async function POST(request: Request) {
             `,
         };
 
-        await transporter.sendMail(mailOptions);
+        try {
+            await transporter.sendMail(mailOptions);
+            console.log("Email sent successfully.");
+        } catch (emailError) {
+            console.error("Failed to send email:", emailError);
+            // We do NOT throw an error here, so we still send the lead to Wortal 
+            // and return a success response to the user.
+        }
 
         // ─── Fire Wortal CRM Webhook (non-blocking) ───────────────────────────
         const remarks = [
             `Package: ${pkg || 'Not specified'}`,
+            budget ? `Budget: ${budget}` : '',
             business ? `Business: ${business}` : '',
             message ? `Message: ${message}` : '',
             'Source: Web Development Landing Page (Facebook Ad)',

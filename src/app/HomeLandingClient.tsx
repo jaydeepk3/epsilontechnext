@@ -177,7 +177,7 @@ type Pkg = Service["packages"][0];
 
 function ApplyModal({ svc, pkg, onClose }: { svc: Service; pkg: Pkg; onClose: () => void }) {
     const [form, setForm] = useState({
-        name: "", mobile: "", email: "", business: "", message: "",
+        name: "", mobile: "", email: "", business: "", message: "", budget: "",
         package: `${svc.title} — ${pkg.name} (${pkg.price} ${pkg.duration})`,
     });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -185,7 +185,7 @@ function ApplyModal({ svc, pkg, onClose }: { svc: Service; pkg: Pkg; onClose: ()
 
     async function submit(e: React.FormEvent) {
         e.preventDefault();
-        if (!form.name || !form.mobile) { setErr("Please enter your name and mobile number."); return; }
+        if (!form.name || !form.mobile || !form.budget) { setErr("Please enter your name, mobile number, and budget."); return; }
         setStatus("loading"); setErr("");
         try {
             const res = await fetch("/api/web-dev-lead", {
@@ -254,9 +254,21 @@ function ApplyModal({ svc, pkg, onClose }: { svc: Service; pkg: Pkg; onClose: ()
                                     className="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none text-sm text-slate-900" />
                             </div>
                             <div>
-                                <label className="text-xs font-semibold text-slate-600 block mb-1">Business / Clinic Name</label>
-                                <input type="text" placeholder="e.g. My Store or Dr. Smith Clinic" value={form.business} onChange={e => setForm(p => ({ ...p, business: e.target.value }))}
+                                <label className="text-xs font-semibold text-slate-600 block mb-1">Business Name</label>
+                                <input type="text" placeholder="e.g. My Store" value={form.business} onChange={e => setForm(p => ({ ...p, business: e.target.value }))}
                                     className="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none text-sm text-slate-900" />
+                            </div>
+                            <div>
+                                <label className="text-xs font-semibold text-slate-600 block mb-1">Project Budget <span className="text-red-500">*</span></label>
+                                <select value={form.budget} onChange={e => setForm(p => ({ ...p, budget: e.target.value }))} required
+                                    className="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none text-sm text-slate-900 bg-white"
+                                >
+                                    <option value="" disabled>Select approximate budget</option>
+                                    <option value="Under ₹50k">Under ₹50k</option>
+                                    <option value="₹50k - ₹1 Lakh">₹50k - ₹1 Lakh</option>
+                                    <option value="₹1 Lakh - ₹3 Lakhs">₹1 Lakh - ₹3 Lakhs</option>
+                                    <option value="₹3 Lakhs+">₹3 Lakhs+ (Premium & Custom)</option>
+                                </select>
                             </div>
                             <div>
                                 <label className="text-xs font-semibold text-slate-600 block mb-1">Additional details</label>
@@ -327,8 +339,8 @@ export default function HomeLandingClient() {
                             </div>
 
                             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-                                We Build <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">Digital Products</span>
-                                <br />That Grow Businesses Globally
+                                We Build <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">High-Performance Apps & Websites</span>
+                                <br />That Drive Revenue
                             </h1>
 
                             <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -772,6 +784,57 @@ export default function HomeLandingClient() {
                             </div>
                         </div>
 
+                    </div>
+                </section>
+
+                {/* ═══════════════════════════════════════ WHO WE WORK WITH ═══════════════════════════════════════ */}
+                <section className="py-16 bg-slate-50 border-t border-slate-200">
+                    <div className="container mx-auto px-4 max-w-4xl">
+                        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+                            {/* The Perfect Fit */}
+                            <div className="bg-white rounded-3xl p-8 border-2 border-green-100 shadow-xl shadow-green-900/5 hover:-translate-y-1 transition-transform">
+                                <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mb-6">
+                                    <CheckCircle2 size={24} className="text-green-600" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-slate-900 mb-4">Who we are a perfect fit for:</h3>
+                                <ul className="space-y-4">
+                                    <li className="flex items-start gap-3">
+                                        <CheckCircle2 size={20} className="text-green-500 shrink-0 mt-0.5" />
+                                        <span className="text-slate-600 font-medium">Established businesses looking to scale digital operations and revenue.</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <CheckCircle2 size={20} className="text-green-500 shrink-0 mt-0.5" />
+                                        <span className="text-slate-600 font-medium">Funded startups needing a fast, reliable tech partner.</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <CheckCircle2 size={20} className="text-green-500 shrink-0 mt-0.5" />
+                                        <span className="text-slate-600 font-medium">Healthcare clinics wanting guaranteed patient growth.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            {/* Not a Fit */}
+                            <div className="bg-white rounded-3xl p-8 border-2 border-red-50 shadow-xl shadow-red-900/5 hover:-translate-y-1 transition-transform">
+                                <div className="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center mb-6">
+                                    <X size={24} className="text-red-600" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-slate-900 mb-4">Who we are NOT a fit for:</h3>
+                                <ul className="space-y-4">
+                                    <li className="flex items-start gap-3">
+                                        <X size={20} className="text-red-500 shrink-0 mt-0.5" />
+                                        <span className="text-slate-600 font-medium">College projects or &quot;hobby&quot; apps with no marketing budget.</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <X size={20} className="text-red-500 shrink-0 mt-0.5" />
+                                        <span className="text-slate-600 font-medium">Unfunded ideas looking for &quot;equity partnerships&quot; instead of paying.</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <X size={20} className="text-red-500 shrink-0 mt-0.5" />
+                                        <span className="text-slate-600 font-medium">Those looking for the absolute cheapest $50 website.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </section>
 

@@ -50,7 +50,12 @@ export async function POST(request: Request) {
             `,
         };
 
-        await transporter.sendMail(mailOptions);
+        try {
+            await transporter.sendMail(mailOptions);
+        } catch (emailError) {
+            console.error("Failed to send email to staff:", emailError);
+            // Non-blocking catch: don't throw 500 error to user if email fails
+        }
 
         // ─── Fire Wortal CRM Webhook (non-blocking) ───────────────────────────
         const remarks = [

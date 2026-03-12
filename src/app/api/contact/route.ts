@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-const WORTAL_WEBHOOK_URL = 'https://api.wortal.co/webhook/api/incoming_webhook/qqmo3LH9_732';
+const WORTAL_WEBHOOK_URL = process.env.WORTAL_WEBHOOK_URL || 'https://api.wortal.co/webhook/api/incoming_webhook/qqmo3LH9_732';
 
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, mobile, city, specialty, clinic } = body;
+        const { name, mobile, city, specialty, clinic, email } = body;
 
         // Basic validation — mobile is the key required field for this form
         if (!mobile) {
@@ -67,7 +67,7 @@ export async function POST(request: Request) {
 
         const wortalPayload = {
             name: displayName,
-            email: '',
+            email: email || '',
             phone: mobile,
             display_name: displayName,
             country: '',
@@ -85,13 +85,22 @@ export async function POST(request: Request) {
 
         // Fire-and-forget: do NOT await — we don't want Wortal to delay or
         // break the response if it's slow or temporarily down.
-        fetch(WORTAL_WEBHOOK_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(wortalPayload),
-        })
-            .then(() => console.log('[Wortal] Doctor lead pushed successfully:', mobile))
-            .catch((e: Error) => console.error('[Wortal] Webhook failed:', e.message));
+        // Send payload to Wortal CRM. Await response to ensure delivery; log outcome.
+        try {
+            const response = await fetch(WORTAL_WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(wortalPayload),
+            });
+            if (!response.ok) {
+                const errText = await response.text();
+                console.error('[Wortal] Webhook responded with error:', response.status, errText);
+            } else {
+                console.log('[Wortal] Doctor lead pushed successfully:', mobile);
+            }
+        } catch (e) {
+            console.error('[Wortal] Webhook failed:', (e as Error).message);
+        }
         // ──────────────────────────────────────────────────────────────────────
 
         return NextResponse.json(

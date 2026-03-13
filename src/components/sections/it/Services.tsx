@@ -32,37 +32,6 @@ const services = [
         border: "group-hover:border-indigo-200",
         href: "/services/web-development"
     },
-    {
-        title: "UI/UX Design",
-        description: "Solve complex business problems with powerful web applications. Built on Next.js for speed, scalability, and performance.",
-        icon: LayoutGrid, // Using LayoutGrid for UI/UX
-        color: "bg-blue-50 text-blue-600",
-        gradient: "from-blue-50 to-indigo-50",
-        border: "group-hover:border-blue-200",
-        href: "/services/ui-ux-design"
-    },
-    // Using existing icon logic but linking to new pages or keeping as is if no dedicated page yet
-    // AI & Automation -> Custom Software? Or new page? Request didn't explicitly ask for AI page but "Custom Software" 
-    // I will link AI to Custom Software for now, or just /#contact as fallback, but better to Custom Software
-    {
-        title: "AI & Automation",
-        description: "Leverage the power of AI to automate workflows and enhance decision making. Custom integrations with LLMs and predictive models.",
-        icon: Cpu,
-        color: "bg-purple-50 text-purple-600",
-        gradient: "from-purple-50 to-fuchsia-50",
-        border: "group-hover:border-purple-200",
-        href: "/services/custom-software"
-    },
-    {
-        title: "Custom Software",
-        description: "Tailored software solutions effectively designed to streamline your unique business operations and increase efficiency.",
-        icon: Code2,
-        color: "bg-rose-50 text-rose-600",
-        gradient: "from-rose-50 to-pink-50",
-        border: "group-hover:border-rose-200",
-        href: "/services/custom-software"
-    },
-
 ];
 
 export function Services() {

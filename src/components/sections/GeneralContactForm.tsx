@@ -8,9 +8,11 @@ export function GeneralContactForm() {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
+        mobile: '',
         email: '',
         message: ''
     });
+
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -30,7 +32,8 @@ export function GeneralContactForm() {
 
             if (response.ok) {
                 setStatus('success');
-                setFormData({ firstName: '', lastName: '', email: '', message: '' });
+                setFormData({ firstName: '', lastName: '', mobile: '', email: '', message: '' });
+
             } else {
                 setStatus('error');
             }
@@ -83,7 +86,7 @@ export function GeneralContactForm() {
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 outline-none transition-all" 
                 />
             </div>
-            <div className="space-y-2 sm:col-span-2">
+            <div className="space-y-2 sm:col-span-1">
                 <label className="text-sm font-medium text-slate-700">Email Address *</label>
                 <input 
                     type="email" 
@@ -95,6 +98,19 @@ export function GeneralContactForm() {
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 outline-none transition-all" 
                 />
             </div>
+            <div className="space-y-2 sm:col-span-1">
+                <label className="text-sm font-medium text-slate-700">WhatsApp Number *</label>
+                <input 
+                    type="tel" 
+                    name="mobile"
+                    placeholder="+91 81608 81461" 
+                    required
+                    value={formData.mobile}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 outline-none transition-all" 
+                />
+            </div>
+
             <div className="space-y-2 sm:col-span-2">
                 <label className="text-sm font-medium text-slate-700">What can we help you with? *</label>
                 <textarea 

@@ -6,14 +6,15 @@ const WORTAL_WEBHOOK_URL = process.env.WORTAL_WEBHOOK_URL || 'https://api.wortal
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { firstName, lastName, email, message } = body;
+        const { firstName, lastName, mobile, email, message } = body;
 
-        if (!firstName || !email || !message) {
+        if (!firstName || !email || !mobile || !message) {
             return NextResponse.json(
-                { status: 'error', message: 'First Name, Email, and Message are required' },
+                { status: 'error', message: 'First Name, Email, Mobile, and Message are required' },
                 { status: 400 }
             );
         }
+
 
         const fullName = `${firstName} ${lastName}`.trim();
 
@@ -36,8 +37,10 @@ export async function POST(request: Request) {
  
                     <div style="background: white; border-radius: 8px; padding: 20px; margin-top: 16px; border: 1px solid #e2e8f0;">
                         <p><strong style="color: #334155;">👤 Name:</strong> ${fullName}</p>
+                        <p><strong style="color: #334155;">📱 Mobile:</strong> <a href="tel:${mobile}">${mobile}</a></p>
                         <p><strong style="color: #334155;">📧 Email:</strong> <a href="mailto:${email}">${email}</a></p>
                         <p><strong style="color: #334155;">💬 Message:</strong></p>
+
                         <div style="background: #f1f5f9; padding: 12px; border-radius: 6px; color: #475569; font-style: italic;">
                             ${message}
                         </div>
@@ -62,8 +65,9 @@ export async function POST(request: Request) {
         const wortalPayload = {
             name: fullName,
             email: email,
-            phone: '', // General form doesn't have phone, but Wortal might want email as backup
+            phone: mobile,
             display_name: fullName,
+
             product: 'General Inquiry',
             desc: remarks,
             remark: remarks,

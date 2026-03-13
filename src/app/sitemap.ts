@@ -48,24 +48,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'weekly',
             priority: 0.9,
         },
-        {
-            url: 'https://epsilon-technology.com/services/custom-software/',
-            lastModified: STABLE_DATE,
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://epsilon-technology.com/services/ui-ux-design/',
-            lastModified: STABLE_DATE,
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://epsilon-technology.com/services/maintenance-support/',
-            lastModified: STABLE_DATE,
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
+
+
         {
             url: 'https://epsilon-technology.com/digital-marketing-for-general-surgeons/',
             lastModified: STABLE_DATE,

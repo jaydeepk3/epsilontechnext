@@ -82,17 +82,26 @@ export async function POST(request: Request) {
             remark: remarks,
         };
 
-        const WORTAL_WEBHOOK_URL = 'https://api.wortal.co/webhook/api/incoming_webhook/qqmo3LH9_732';
+        const WORTAL_WEBHOOK_URL = process.env.WORTAL_WEBHOOK_URL || 'https://api.wortal.co/webhook/api/incoming_webhook/qqmo3LH9_732';
 
-        // Fire-and-forget: do NOT await — we don't want Wortal to delay or
-        // break the response if it's slow or temporarily down.
-        fetch(WORTAL_WEBHOOK_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(wortalPayload),
-        })
-            .then(() => console.log('[Wortal] Lead pushed successfully:', name))
-            .catch((e: Error) => console.error('[Wortal] Webhook failed:', e.message));
+
+        // ─── Fire Wortal CRM Webhook (blocking await) ────────────────────────
+        try {
+            const response = await fetch(WORTAL_WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(wortalPayload),
+            });
+
+            if (!response.ok) {
+                const errText = await response.text();
+                console.error('[Wortal] Webhook responded with error:', response.status, errText);
+            } else {
+                console.log('[Wortal] Lead pushed successfully:', name);
+            }
+        } catch (e) {
+            console.error('[Wortal] Webhook failed:', (e as Error).message);
+        }
         // ──────────────────────────────────────────────────────────────────────
 
         return NextResponse.json(

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { ContactDetails } from '@/components/sections/ContactDetails';
-import { Button } from "@/components/ui/button";
+import { GeneralContactForm } from '@/components/sections/GeneralContactForm';
 import { MessageSquare, Mail, Phone, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default function ContactPage() {
                 <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-sky-900/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-3xl">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6">Let's Build Something <span className="text-sky-400">Great Together</span></h1>
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6">Let&apos;s Build Something <span className="text-sky-400">Great Together</span></h1>
                         <p className="text-xl text-slate-400 mb-8 leading-relaxed">
                             Have a project in mind? Looking to scale your existing digital product? Our global team is ready to help you navigate the technical landscape.
                         </p>
@@ -89,29 +89,7 @@ export default function ContactPage() {
                         </div>
                         <div className="md:w-2/3 p-8 md:p-12">
                             <h3 className="text-2xl font-bold text-slate-900 mb-6">Send us a Message</h3>
-                            <form className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-slate-700">First Name</label>
-                                    <input type="text" placeholder="John" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 outline-none transition-all" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-slate-700">Last Name</label>
-                                    <input type="text" placeholder="Doe" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 outline-none transition-all" />
-                                </div>
-                                <div className="space-y-2 sm:col-span-2">
-                                    <label className="text-sm font-medium text-slate-700">Email Address</label>
-                                    <input type="email" placeholder="john@example.com" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 outline-none transition-all" />
-                                </div>
-                                <div className="space-y-2 sm:col-span-2">
-                                    <label className="text-sm font-medium text-slate-700">What can we help you with?</label>
-                                    <textarea rows={4} placeholder="Tell us about your project or inquiry..." className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 outline-none transition-all"></textarea>
-                                </div>
-                                <div className="sm:col-span-2">
-                                    <Button size="lg" className="w-full bg-slate-900 hover:bg-slate-800 text-white py-6 rounded-xl text-lg font-bold">
-                                        Send Message
-                                    </Button>
-                                </div>
-                            </form>
+                            <GeneralContactForm />
                         </div>
                     </div>
                 </div>

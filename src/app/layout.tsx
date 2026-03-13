@@ -131,7 +131,8 @@ export default function RootLayout({
             })
           }}
         />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
+        <GoogleAnalytics gaId="G-JD0HV8PBLB" />
+
         <SpeedInsights />
       </body>
     </html>

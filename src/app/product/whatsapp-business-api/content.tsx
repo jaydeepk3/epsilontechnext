@@ -115,11 +115,12 @@ export default function WhatsAppWebPage() {
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </Link>
                             <Link
-                                href="/demo"
+                                href="/contacts/"
                                 className="px-8 py-4 bg-white text-slate-700 hover:text-[#25D366] border border-slate-200 hover:border-green-200 rounded-full font-bold text-lg transition-all shadow-sm hover:shadow-md"
                             >
                                 Book a Demo
                             </Link>
+
                         </div>
                     </motion.div>
 
@@ -350,17 +351,18 @@ export default function WhatsAppWebPage() {
 
                     <div className="flex flex-col sm:flex-row gap-5 justify-center">
                         <Link
-                            href="/demo"
+                            href="/contacts/"
                             className="px-8 py-4 bg-white text-green-700 hover:bg-green-50 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
                         >
                             Book Free Demo
                         </Link>
                         <Link
-                            href="/contacts"
+                            href="/contacts/"
                             className="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-full font-bold text-lg transition-all"
                         >
                             Talk to WhatsApp Expert
                         </Link>
+
                     </div>
                 </div>
             </section>

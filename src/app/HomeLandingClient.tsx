@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Link from 'next/link';
 import {
+
     Globe, Smartphone, TrendingUp, ShoppingCart, MessageCircle,
     CheckCircle2, ArrowRight, Star, Shield, Zap, Clock, Users,
     Award, Phone, MessageSquare, ChevronDown, Sparkles, X,
@@ -17,6 +19,7 @@ const services = [
         icon: Globe,
         emoji: "🌐",
         title: "Website Development",
+        href: "/services/web-development/",
         tagline: "Fast, mobile-first, SEO-ready websites",
         description: "We build high-performance websites using Next.js & React that rank on Google, look stunning on every device, and convert visitors into customers.",
         highlights: ["Google PageSpeed 95+", "Mobile-First Design", "SEO-Ready Structure", "Delivered in 2–8 weeks"],
@@ -45,6 +48,7 @@ const services = [
         icon: Smartphone,
         emoji: "📱",
         title: "Mobile App Development",
+        href: "/services/mobile-app-development/",
         tagline: "iOS & Android apps that users love",
         description: "From idea to App Store — we build fast, feature-rich mobile apps in React Native and Flutter that scale with your business.",
         highlights: ["iOS + Android", "React Native / Flutter", "App Store Submission", "4–16 week delivery"],
@@ -73,6 +77,7 @@ const services = [
         icon: TrendingUp,
         emoji: "🏥",
         title: "Doctor Digital Marketing",
+        href: "/digital-marketing/",
         tagline: "More patients. More appointments. Guaranteed.",
         description: "Specialized digital marketing for doctors and clinics — Google Ads, Meta Ads, SEO, and social media management that brings you real patients.",
         highlights: ["Patient-Focused Strategy", "Google & Meta Ads", "SEO + Social Media", "Monthly Reports"],
@@ -101,6 +106,7 @@ const services = [
         icon: ShoppingCart,
         emoji: "🛒",
         title: "eCommerce Development",
+        href: "/services/ecommerce-development/",
         tagline: "Online stores that sell 24/7",
         description: "We build fast, conversion-optimized eCommerce stores on Shopify, WooCommerce, or custom platforms that turn browsers into buyers.",
         highlights: ["Shopify / WooCommerce", "Payment Gateway Setup", "Mobile-Optimized", "3–10 week delivery"],
@@ -129,6 +135,7 @@ const services = [
         icon: MessageCircle,
         emoji: "💬",
         title: "WhatsApp Business API",
+        href: "/product/whatsapp-business-api/",
         tagline: "Automate conversations. Convert more leads.",
         description: "Our WhatsApp Business API platform helps you automate customer conversations, send bulk campaigns, and manage leads — all from one dashboard.",
         highlights: ["Bulk Broadcasts", "Chatbot Builder", "CRM Integration", "Green Tick Assistance"],
@@ -153,6 +160,7 @@ const services = [
         ],
     },
 ];
+
 
 const testimonials = [
     { name: "Thariq H.", role: "Product Manager, FieldR 🇺🇸", text: "Jaydeep's team delivered an exceptional app for our sports tech startup. Passionate leadership and deep understanding of our business goals.", stars: 5 },
@@ -602,7 +610,14 @@ export default function HomeLandingClient() {
                                                         }`}>
                                                     Apply Now <ArrowRight size={15} />
                                                 </button>
+                                                <Link
+                                                    href={activeSvc.href}
+                                                    className={`mt-4 text-center text-sm font-semibold flex items-center justify-center gap-1.5 transition-colors ${activeSvc.lightText} hover:underline`}
+                                                >
+                                                    View Service Details <ArrowRight size={14} />
+                                                </Link>
                                                 <p className="text-center text-xs text-slate-400 mt-2">Free consultation · No upfront full payment</p>
+
                                             </div>
                                         </div>
                                     ))}

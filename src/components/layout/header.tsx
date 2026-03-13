@@ -9,30 +9,36 @@ import { Menu, X, ChevronDown, Globe, Smartphone, ShoppingCart, MessageSquare, S
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Pages whose hero sections have a dark/navy background — header needs light text
-const DARK_HERO_PATHS = ['/', '/uae', '/it-services'];
+const DARK_HERO_PATHS = ['/', '/uae/', '/it-services/'];
 
 const services = [
     {
+        name: 'IT Services Overview',
+        href: '/it-services/',
+        icon: Globe,
+        desc: 'Comprehensive technology solutions',
+    },
+    {
         name: 'Web Development',
-        href: '/services/web-development',
+        href: '/services/web-development/',
         icon: Globe,
         desc: 'Custom websites & landing pages',
     },
     {
         name: 'Mobile App Development',
-        href: '/services/mobile-app-development',
+        href: '/services/mobile-app-development/',
         icon: Smartphone,
         desc: 'iOS & Android apps for your business',
     },
     {
         name: 'eCommerce Development',
-        href: '/services/ecommerce-development',
+        href: '/services/ecommerce-development/',
         icon: ShoppingCart,
         desc: 'Online stores that convert visitors',
     },
     {
         name: 'Doctor Marketing',
-        href: '/digital-marketing',
+        href: '/digital-marketing/',
         icon: Stethoscope,
         desc: 'Social media growth for clinics',
     },
@@ -41,7 +47,7 @@ const services = [
 const products = [
     {
         name: 'WhatsApp Business API',
-        href: '/product/whatsapp-business-api',
+        href: '/product/whatsapp-business-api/',
         icon: MessageSquare,
         desc: 'Automate conversations at scale',
     },
@@ -150,15 +156,15 @@ export function Header() {
                     <NavDropdown label="Products" items={products} />
 
                     <Link
-                        href="/uae"
+                        href="/uae/"
                         className={`font-medium text-sm transition-colors flex items-center gap-1.5 ${textColor}`}
                     >
                         🇦🇪 UAE
                     </Link>
 
                     <Link
-                        href="/portfolio"
-                        className={`font-medium text-sm transition-colors ${pathname === '/portfolio'
+                        href="/portfolio/"
+                        className={`font-medium text-sm transition-colors ${pathname === '/portfolio' || pathname === '/portfolio/'
                                 ? 'text-blue-600 font-semibold'
                                 : textColor
                             }`}
@@ -167,8 +173,18 @@ export function Header() {
                     </Link>
 
                     <Link
-                        href="/about"
-                        className={`font-medium text-sm transition-colors ${pathname === '/about'
+                        href="/blog/"
+                        className={`font-medium text-sm transition-colors ${pathname === '/blog' || pathname === '/blog/'
+                                ? 'text-blue-600 font-semibold'
+                                : textColor
+                            }`}
+                    >
+                        Blog
+                    </Link>
+
+                    <Link
+                        href="/about/"
+                        className={`font-medium text-sm transition-colors ${pathname === '/about' || pathname === '/about/'
                                 ? 'text-blue-600 font-semibold'
                                 : textColor
                             }`}
@@ -177,8 +193,8 @@ export function Header() {
                     </Link>
 
                     <Link
-                        href="/contacts"
-                        className={`font-medium text-sm transition-colors ${pathname === '/contacts'
+                        href="/contacts/"
+                        className={`font-medium text-sm transition-colors ${pathname === '/contacts' || pathname === '/contacts/'
                                 ? 'text-blue-600 font-semibold'
                                 : textColor
                             }`}
@@ -288,10 +304,11 @@ export function Header() {
 
                             {/* Flat links */}
                             {[
-                                { name: '🇦🇪 UAE', href: '/uae' },
-                                { name: 'Portfolio', href: '/portfolio' },
-                                { name: 'About', href: '/about' },
-                                { name: 'Contact', href: '/contacts' },
+                                { name: '🇦🇪 UAE', href: '/uae/' },
+                                { name: 'Portfolio', href: '/portfolio/' },
+                                { name: 'Blog', href: '/blog/' },
+                                { name: 'About', href: '/about/' },
+                                { name: 'Contact', href: '/contacts/' },
                             ].map((link) => (
                                 <Link
                                     key={link.name}

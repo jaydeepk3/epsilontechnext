@@ -899,13 +899,14 @@ export default function WebDevelopmentLanding() {
                         "provider": {
                             "@type": "Organization",
                             "name": "Epsilon Technology",
-                            "url": "https://epsilon-technology.com",
+                            "url": "https://epsilon-technology.com/",
                             "telephone": "+918160881461",
                             "email": "contact@epsilon-technology.com"
                         },
                         "areaServed": ["India", "United States", "United Kingdom", "United Arab Emirates"],
                         "description": "Expert web development services in Next.js and React. We build fast, scalable, and SEO-optimized websites.",
-                        "url": "https://epsilon-technology.com/services/web-development",
+                        "url": "https://epsilon-technology.com/services/web-development/",
+
                         "offers": packages.map(p => ({
                             "@type": "Offer",
                             "name": `${p.name} Web Development Package`,

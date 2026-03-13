@@ -4,8 +4,16 @@ import { verifyToken } from './lib/auth'
 
 export async function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl
+    const host = request.headers.get('host');
 
-    // Protect all /admin routes except /admin/login
+    // 1. Enforce non-www redirect for SEO consolidation
+    if (host?.startsWith('www.')) {
+        const url = request.nextUrl.clone();
+        url.host = host.replace('www.', '');
+        return NextResponse.redirect(url, 301);
+    }
+
+    // 2. Protect all /admin routes except /admin/login
     if (pathname.startsWith('/admin') && !pathname.startsWith('/admin/login')) {
         const token = request.cookies.get('adminToken')?.value
         if (!token) {
@@ -27,5 +35,15 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-    matcher: ['/admin/:path*'],
+    matcher: [
+        /*
+         * Match all request paths except for the ones starting with:
+         * - api (API routes)
+         * - _next/static (static files)
+         * - _next/image (image optimization files)
+         * - favicon.ico (favicon file)
+         */
+        '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    ],
 }
+

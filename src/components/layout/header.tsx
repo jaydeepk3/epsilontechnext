@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown, Globe, Smartphone, ShoppingCart, MessageSquare, Stethoscope, Layout } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe, Smartphone, ShoppingCart, MessageSquare, Stethoscope, Layout, Activity } from 'lucide-react';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -41,8 +41,14 @@ const services = [
     {
         name: 'Digital Marketing',
         href: '/lead-generation',
-        icon: Stethoscope,
+        icon: Activity,
         desc: 'Social media growth for business',
+    },
+    {
+        name: 'Digital Marketing for Doctors',
+        href: '/digital-marketing',
+        icon: Stethoscope,
+        desc: 'Social media growth for clinics',
     },
 
 ];

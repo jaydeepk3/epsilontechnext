@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
   ArrowRight, MessageCircle, CheckCircle, Star, Quote,
   Check, Zap, TrendingUp, Rocket, Building2,
@@ -277,7 +277,7 @@ function FloatingWhatsApp() {
 
 export default function LeadGenerationPage() {
   return (
-    <div className="font-sans bg-white">
+    <div className="font-sans bg-white pt-[76px] lg:pt-[88px]">
 
       {/* ── Urgency Banner ────────────────────────────────────── */}
       <div className="bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 text-black text-center py-2.5 px-4 text-sm font-bold shadow-sm">

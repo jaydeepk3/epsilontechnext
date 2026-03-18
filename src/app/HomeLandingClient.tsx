@@ -76,7 +76,7 @@ const services = [
         id: "doctor",
         icon: TrendingUp,
         emoji: "🏥",
-        title: "Doctor Digital Marketing",
+        title: "Digital Marketing",
         href: "/digital-marketing/",
         tagline: "More patients. More appointments. Guaranteed.",
         description: "Specialized digital marketing for doctors and clinics — Google Ads, Meta Ads, SEO, and social media management that brings you real patients.",

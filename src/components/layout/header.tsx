@@ -39,10 +39,10 @@ const services = [
         desc: 'Online stores that convert visitors',
     },
     {
-        name: 'Doctor Marketing',
-        href: '/digital-marketing/',
+        name: 'Digital Marketing',
+        href: '/lead-generation',
         icon: Stethoscope,
-        desc: 'Social media growth for clinics',
+        desc: 'Social media growth for business',
     },
 
 ];
@@ -69,7 +69,7 @@ function NavDropdown({ label, items, textColor, scrolled }: { label: string; ite
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div 
+        <div
             className="relative"
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
@@ -84,7 +84,7 @@ function NavDropdown({ label, items, textColor, scrolled }: { label: string; ite
                     <>
                         {/* Invisible bridge to prevent gap between button and panel */}
                         <div className="absolute top-full left-0 h-4 w-full" />
-                        
+
                         <motion.div
                             initial={{ opacity: 0, y: 10, scale: 0.95 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -148,10 +148,10 @@ export function Header() {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-                    ? 'bg-white/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] py-3 border-b border-slate-200/50'
-                    : isDarkHero
-                        ? 'bg-transparent py-6'
-                        : 'bg-white/80 backdrop-blur-md py-5 border-b border-slate-100/60'
+                ? 'bg-white/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] py-3 border-b border-slate-200/50'
+                : isDarkHero
+                    ? 'bg-transparent py-6'
+                    : 'bg-white/80 backdrop-blur-md py-5 border-b border-slate-100/60'
                 }`}
         >
             <div className="container mx-auto px-4 md:px-8 lg:px-12 flex items-center justify-between">
@@ -217,8 +217,8 @@ export function Header() {
                     <Button
                         size="sm"
                         className={`ml-2 px-6 py-5 rounded-2xl font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5 active:translate-y-0 ${!isScrolled && isDarkHero
-                                ? 'bg-white text-blue-600 hover:bg-blue-50'
-                                : 'bg-blue-600 text-white hover:bg-blue-700'
+                            ? 'bg-white text-blue-600 hover:bg-blue-50'
+                            : 'bg-blue-600 text-white hover:bg-blue-700'
                             }`}
                         onClick={() => {
                             const booking = document.getElementById('booking') || document.getElementById('contact');
@@ -231,8 +231,8 @@ export function Header() {
 
                 {/* Mobile Toggle */}
                 <button
-                    className={`lg:hidden p-2 rounded-2xl transition-all duration-300 ${!isScrolled && isDarkHero 
-                        ? 'bg-white/10 text-white hover:bg-white/20' 
+                    className={`lg:hidden p-2 rounded-2xl transition-all duration-300 ${!isScrolled && isDarkHero
+                        ? 'bg-white/10 text-white hover:bg-white/20'
                         : 'bg-slate-100 text-slate-800 hover:bg-slate-200'
                         }`}
                     aria-label="Toggle menu"

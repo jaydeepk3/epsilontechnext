@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         type: 'profile',
     },
     alternates: {
-        canonical: 'https://epsilon-technology.com/about/',
+        canonical: 'https://epsilon-technology.com/about-us/',
     }
 };
 

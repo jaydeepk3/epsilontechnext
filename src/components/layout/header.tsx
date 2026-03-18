@@ -189,6 +189,14 @@ export function Header() {
                     </Link>
 
                     <Link
+                        href="/pricing/"
+                        className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/pricing' || pathname === '/pricing/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
+                    >
+                        Pricing
+                        <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/pricing') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
+                    </Link>
+
+                    <Link
                         href="/portfolio/"
                         className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/portfolio' || pathname === '/portfolio/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
                     >
@@ -205,8 +213,8 @@ export function Header() {
                     </Link>
 
                     <Link
-                        href="/about/"
-                        className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/about' || pathname === '/about/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
+                        href="/about-us/"
+                        className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/about-us' || pathname === '/about-us/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
                     >
                         About
                         <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/about') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
@@ -338,10 +346,10 @@ export function Header() {
                             {/* Flat links */}
                             <div className="grid grid-cols-2 gap-2 mt-2">
                                 {[
-                                    { name: '🇦🇪 UAE', href: '/uae/' },
+                                    { name: 'Pricing', href: '/pricing/' },
                                     { name: 'Portfolio', href: '/portfolio/' },
                                     { name: 'Blog', href: '/blog/' },
-                                    { name: 'About', href: '/about/' },
+                                    { name: 'About', href: '/about-us/' },
                                     { name: 'Contact', href: '/contacts/' },
                                 ].map((link) => (
                                     <Link

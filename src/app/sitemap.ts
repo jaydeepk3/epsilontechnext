@@ -20,10 +20,16 @@ const STATIC_ROUTES: MetadataRoute.Sitemap = [
         priority: 0.9,
     },
     {
-        url: 'https://epsilon-technology.com/about/',
+        url: 'https://epsilon-technology.com/about-us/',
         lastModified: STABLE_DATE,
         changeFrequency: 'weekly',
         priority: 0.8,
+    },
+    {
+        url: 'https://epsilon-technology.com/pricing/',
+        lastModified: STABLE_DATE,
+        changeFrequency: 'weekly',
+        priority: 0.9,
     },
     {
         url: 'https://epsilon-technology.com/portfolio/',
@@ -165,6 +171,12 @@ const STATIC_ROUTES: MetadataRoute.Sitemap = [
     },
     {
         url: 'https://epsilon-technology.com/digital-marketing/',
+        lastModified: STABLE_DATE,
+        changeFrequency: 'weekly',
+        priority: 0.9,
+    },
+    {
+        url: 'https://epsilon-technology.com/lead-generation/',
         lastModified: STABLE_DATE,
         changeFrequency: 'weekly',
         priority: 0.9,

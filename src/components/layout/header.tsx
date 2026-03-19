@@ -181,20 +181,8 @@ export function Header() {
                     <NavDropdown label="Services" items={services} textColor={textColor} scrolled={isScrolled} />
                     <NavDropdown label="Products" items={products} textColor={textColor} scrolled={isScrolled} />
 
-                    <Link
-                        href="/uae/"
-                        className={`font-semibold text-[13px] tracking-wide transition-all duration-300 flex items-center gap-2 ${textColor} opacity-80 hover:opacity-100`}
-                    >
-                        <span className="text-base leading-none">🇦🇪</span> UAE
-                    </Link>
 
-                    <Link
-                        href="/pricing/"
-                        className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/pricing' || pathname === '/pricing/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
-                    >
-                        Pricing
-                        <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/pricing') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
-                    </Link>
+
 
                     <Link
                         href="/portfolio/"

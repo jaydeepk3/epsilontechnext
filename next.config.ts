@@ -5,6 +5,15 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/about',
+        destination: '/about-us',
+        permanent: true, // 301 redirect (Good for SEO)
+      },
+    ];
+  },
 };
 
 export default nextConfig;

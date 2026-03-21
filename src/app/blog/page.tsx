@@ -52,7 +52,7 @@ export default async function BlogIndex() {
                 {/* Featured Post */}
                 {featuredPost && (
                     <div className="max-w-6xl mx-auto -mt-10 mb-20">
-                        <Link href={`/blog/${featuredPost.slug}`} className="group">
+                        <Link href={featuredPost.isExternal ? `/${featuredPost.slug}` : `/blog/${featuredPost.slug}`} className="group">
                             <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-100 flex flex-col lg:flex-row h-full lg:h-[450px] group-hover:shadow-sky-100/50 transition-all duration-700">
                                 <div className="lg:w-1/2 relative overflow-hidden h-64 lg:h-auto">
                                     <Image

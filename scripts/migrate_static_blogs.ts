@@ -193,7 +193,7 @@ If your business has hit a wall with generic tools, it's time to explore custom 
 
 ---
 
-*Identifying Your Bottlenecks? Let's audit your current processes. We identify where technology can save you money and build exactly what you need. [Explore Custom Solutions](/services/custom-software)*`
+*Identifying Your Bottlenecks? Let's audit your current processes. We identify where technology can save you money and build exactly what you need. [Explore Custom Solutions](/services/web-development)*`
     },
     {
         slug: "mobile-app-development-guide-2026",
@@ -401,7 +401,7 @@ Digital transformation is not a destination; it's a continuous journey. Organiza
 
 ---
 
-*Ready to Start Your Transformation Journey? We help traditional businesses modernize their technology stack with secure, scalable software solutions. [Consult Our Architects](/services/custom-software)*`
+*Ready to Start Your Transformation Journey? We help traditional businesses modernize their technology stack with secure, scalable software solutions. [Consult Our Architects](/services/web-development)*`
     },
     {
         slug: "doctor-marketing-ideas-junagadh",

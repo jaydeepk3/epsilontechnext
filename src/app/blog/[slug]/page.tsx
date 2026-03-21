@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
+import { notFound, permanentRedirect } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
@@ -47,6 +47,10 @@ export default async function DynamicBlogPage({ params }: PageProps) {
 
     if (!blog) {
         notFound()
+    }
+
+    if (blog.isExternal) {
+        permanentRedirect(`/${blog.slug}`)
     }
 
     // Fetch related blogs
@@ -375,7 +379,7 @@ export default async function DynamicBlogPage({ params }: PageProps) {
 
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
                             {relatedBlogs.map((post) => (
-                                <Link key={post.id} href={`/blog/${post.slug}`} className="group h-full">
+                                <Link key={post.id} href={post.isExternal ? `/${post.slug}` : `/blog/${post.slug}`} className="group h-full">
                                     <div className="bg-slate-900/50 rounded-[40px] p-2 border border-slate-900 h-full flex flex-col group-hover:bg-slate-800/50 group-hover:border-slate-700 transition-all duration-500 group-hover:-translate-y-2">
                                         <div className="relative aspect-[16/10] rounded-[32px] overflow-hidden mb-8">
                                             <Image

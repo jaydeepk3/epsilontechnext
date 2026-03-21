@@ -199,7 +199,7 @@ const STATIC_ROUTES: MetadataRoute.Sitemap = [
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     try {
         const blogs = await prisma.blog.findMany({
-            where: { published: true },
+            where: { published: true, isExternal: false },
             select: { slug: true, updatedAt: true },
         });
 

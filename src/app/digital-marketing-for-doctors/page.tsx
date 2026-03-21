@@ -243,7 +243,7 @@ export default function DigitalMarketingForDoctorsGuide() {
                         <Link href="/" className="px-8 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-colors">
                             Explore All Services
                         </Link>
-                        <Link href="/about" className="px-8 py-4 border border-slate-700 text-slate-300 rounded-full font-bold hover:bg-slate-900 transition-colors">
+                        <Link href="/about-us" className="px-8 py-4 border border-slate-700 text-slate-300 rounded-full font-bold hover:bg-slate-900 transition-colors">
                             Meet Our Founder
                         </Link>
                     </div>

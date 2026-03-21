@@ -36,7 +36,7 @@ const footerLinks = [
         icon: Building2,
         title: 'Company',
         links: [
-            { label: 'About Us', href: '/about' },
+            { label: 'About Us', href: '/about-us' },
             { label: 'UAE', href: '/uae' },
             { label: 'Portfolio', href: '/#portfolio' },
             { label: 'FAQs', href: '/faqs' },
@@ -268,7 +268,7 @@ export function Footer() {
                         © {new Date().getFullYear()} Epsilon Technology. All rights reserved.
                     </p>
                     <div className="flex flex-wrap gap-5 justify-center items-center">
-                        <Link href="/about" className="hover:text-sky-400 transition-colors">The Founder</Link>
+                        <Link href="/about-us" className="hover:text-sky-400 transition-colors">The Founder</Link>
                         <span className="text-slate-800">|</span>
                         <Link href="/blog" className="hover:text-sky-400 transition-colors">Resources</Link>
                         <span className="text-slate-800">|</span>

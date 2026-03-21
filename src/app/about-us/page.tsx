@@ -125,7 +125,7 @@ export default function AboutPage() {
                             "name": "Epsilon Technology",
                             "url": "https://epsilon-technology.com"
                         },
-                        "url": "https://epsilon-technology.com/about",
+                        "url": "https://epsilon-technology.com/about-us",
                         "image": "https://epsilon-technology.com/images/jayde.png",
                         "description": "Jaydeep Kataria is a specialized doctor marketing expert and founder of Epsilon Technology, helping clinics in Gujarat grow.",
                         "address": {

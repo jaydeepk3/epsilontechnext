@@ -112,7 +112,7 @@ export default function RootLayout({
                   "founder": {
                     "@type": "Person",
                     "name": "Jaydeep Kataria",
-                    "url": "https://epsilon-technology.com/about"
+                    "url": "https://epsilon-technology.com/about-us"
                   }
                 },
                 {

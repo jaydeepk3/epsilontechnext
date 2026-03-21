@@ -3,8 +3,8 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
-import { 
-    CalendarDays, Clock, Share2, ArrowLeft, ChevronRight, MessageSquare, 
+import {
+    CalendarDays, Clock, Share2, ArrowLeft, ChevronRight, MessageSquare,
     Linkedin, Twitter, Facebook, ExternalLink, Sparkles, ArrowRight,
     Bookmark, ThumbsUp, Eye, Send, Home, Info, HelpCircle
 } from 'lucide-react'
@@ -51,8 +51,8 @@ export default async function DynamicBlogPage({ params }: PageProps) {
 
     // Fetch related blogs
     const relatedBlogs = await prisma.blog.findMany({
-        where: { 
-            published: true, 
+        where: {
+            published: true,
             NOT: { slug: slug },
             category: blog.category
         },
@@ -123,7 +123,7 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div className="flex flex-wrap items-center gap-3 justify-center">
                                 <span className="text-xs font-black text-slate-400 uppercase tracking-widest mr-2">Spread the Word:</span>
                                 {[
@@ -153,12 +153,12 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 opacity-60" />
                                 <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
-                                   <div className="bg-white/20 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/30 text-white text-xs font-bold uppercase tracking-widest">
+                                    <div className="bg-white/20 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/30 text-white text-xs font-bold uppercase tracking-widest">
                                         Verified Expertise
-                                   </div>
-                                   <button className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-sky-600 shadow-2xl hover:bg-sky-50 transition-colors">
+                                    </div>
+                                    <button className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-sky-600 shadow-2xl hover:bg-sky-50 transition-colors">
                                         <Bookmark size={24} />
-                                   </button>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -210,10 +210,10 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                                 prose-hr:border-slate-100 prose-hr:my-24
                                 prose-strong:text-slate-900 prose-strong:font-black
                             ">
-                                <ReactMarkdown 
+                                <ReactMarkdown
                                     remarkPlugins={[remarkGfm]}
                                     components={{
-                                        h2: ({node, ...props}) => {
+                                        h2: ({ node, ...props }) => {
                                             const id = props.children?.toString().toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
                                             return (
                                                 <h2 id={id} className="text-3xl md:text-5xl mt-32 mb-12 scroll-mt-32 flex items-start gap-5 group font-black" {...props}>
@@ -224,16 +224,16 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                                                 </h2>
                                             )
                                         },
-                                        h3: ({node, ...props}) => (
+                                        h3: ({ node, ...props }) => (
                                             <h3 className="text-2xl md:text-3xl mt-20 mb-8 text-slate-900 font-extrabold flex items-center gap-3" {...props}>
                                                 <div className="w-2 h-8 bg-sky-500 rounded-full" />
                                                 {props.children}
                                             </h3>
                                         ),
-                                        ul: ({node, ...props}) => (
+                                        ul: ({ node, ...props }) => (
                                             <ul className="grid gap-5 my-14" {...props} />
                                         ),
-                                        li: ({node, children, ...props}) => (
+                                        li: ({ node, children, ...props }) => (
                                             <li className="flex gap-5 p-6 md:p-8 rounded-[32px] bg-slate-50/50 border border-slate-100 hover:border-sky-200 hover:bg-white hover:shadow-xl hover:shadow-sky-100/50 transition-all duration-500 group" {...props}>
                                                 <div className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-sky-500 shrink-0 group-hover:bg-sky-600 group-hover:text-white group-hover:border-sky-600 transition-all">
                                                     <ArrowRight size={20} className="group-hover:translate-x-0.5 transition-transform" />
@@ -241,7 +241,7 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                                                 <div className="text-slate-800 font-semibold text-lg md:text-xl leading-relaxed">{children}</div>
                                             </li>
                                         ),
-                                        blockquote: ({node, ...props}) => (
+                                        blockquote: ({ node, ...props }) => (
                                             <blockquote className="border-l-0 bg-gradient-to-br from-slate-950 to-slate-900 p-10 md:p-14 rounded-[48px] my-20 relative overflow-hidden group text-white shadow-2xl shadow-sky-900/20" {...props}>
                                                 <div className="absolute top-0 right-0 p-10 opacity-10 text-sky-400 group-hover:rotate-12 transition-transform duration-1000">
                                                     <Sparkles size={120} />
@@ -255,7 +255,7 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                                                 </div>
                                             </blockquote>
                                         ),
-                                        img: ({node, ...props}) => (
+                                        img: ({ node, ...props }) => (
                                             <div className="my-20 flex flex-col items-center">
                                                 <img {...props} className="rounded-[40px] shadow-2xl border border-slate-100 max-h-[700px] object-cover hover:scale-[1.02] transition-transform duration-700" />
                                                 {props.alt && (
@@ -265,7 +265,7 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                                                 )}
                                             </div>
                                         ),
-                                        p: ({node, ...props}) => {
+                                        p: ({ node, ...props }) => {
                                             // Enhanced CTA component
                                             if (props.children?.toString().includes('Audit')) {
                                                 return (
@@ -305,7 +305,7 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                                     <Link href="/contacts" className="px-8 py-3 bg-sky-600 text-white rounded-2xl font-bold hover:bg-sky-700 transition-all shadow-lg shadow-sky-200 flex items-center gap-2">
                                         Partner with Us <Send size={16} />
                                     </Link>
-                                    <Link href="/about" className="px-8 py-3 bg-white border border-slate-200 text-slate-600 rounded-2xl font-bold hover:bg-slate-100 transition-all">
+                                    <Link href="/about-us" className="px-8 py-3 bg-white border border-slate-200 text-slate-600 rounded-2xl font-bold hover:bg-slate-100 transition-all">
                                         View Bio
                                     </Link>
                                 </div>
@@ -319,12 +319,12 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                                 <h4 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-8">Navigation</h4>
                                 <nav className="space-y-5">
                                     {headings.map((h, i) => (
-                                        <a 
-                                            key={i} 
+                                        <a
+                                            key={i}
                                             href={`#${h.id}`}
                                             className="group flex gap-3 text-sm font-bold text-slate-500 hover:text-sky-600 transition-all items-start"
                                         >
-                                            <span className="text-sky-300 group-hover:text-sky-600 transition-colors">0{i+1}</span>
+                                            <span className="text-sky-300 group-hover:text-sky-600 transition-colors">0{i + 1}</span>
                                             <span className="line-clamp-2 leading-snug">{h.text}</span>
                                         </a>
                                     ))}
@@ -350,13 +350,13 @@ export default async function DynamicBlogPage({ params }: PageProps) {
             </div>
 
             {/* Sticky Mobile Share Bar */}
-                <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-slate-900/90 backdrop-blur-xl rounded-2xl p-4 flex items-center justify-between z-50 shadow-2xl border border-white/10 lg:hidden">
-                    <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-sky-600 flex items-center justify-center text-white font-black text-xs">E</div>
-                        <div className="text-white text-[10px] font-bold uppercase tracking-widest leading-tight">Reading:<br /><span className="text-sky-400 truncate w-32 inline-block">{blog.title}</span></div>
-                    </div>
-                    <Link href="/contacts" className="px-5 py-2.5 bg-sky-600 text-white rounded-xl text-xs font-black uppercase tracking-widest hover:bg-sky-500 transition-colors">Contact</Link>
+            <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-slate-900/90 backdrop-blur-xl rounded-2xl p-4 flex items-center justify-between z-50 shadow-2xl border border-white/10 lg:hidden">
+                <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-sky-600 flex items-center justify-center text-white font-black text-xs">E</div>
+                    <div className="text-white text-[10px] font-bold uppercase tracking-widest leading-tight">Reading:<br /><span className="text-sky-400 truncate w-32 inline-block">{blog.title}</span></div>
                 </div>
+                <Link href="/contacts" className="px-5 py-2.5 bg-sky-600 text-white rounded-xl text-xs font-black uppercase tracking-widest hover:bg-sky-500 transition-colors">Contact</Link>
+            </div>
 
             {/* Related Posts: High Contrast Finish */}
             {relatedBlogs.length > 0 && (
@@ -372,17 +372,17 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                                 Explorer Hub <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                             </Link>
                         </div>
-                        
+
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
                             {relatedBlogs.map((post) => (
                                 <Link key={post.id} href={`/blog/${post.slug}`} className="group h-full">
                                     <div className="bg-slate-900/50 rounded-[40px] p-2 border border-slate-900 h-full flex flex-col group-hover:bg-slate-800/50 group-hover:border-slate-700 transition-all duration-500 group-hover:-translate-y-2">
                                         <div className="relative aspect-[16/10] rounded-[32px] overflow-hidden mb-8">
-                                            <Image 
-                                                src={post.imageUrl || "/blog_medical_marketing.png"} 
-                                                alt={post.title} 
-                                                fill 
-                                                className="object-cover group-hover:scale-110 transition-transform duration-1000 grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100" 
+                                            <Image
+                                                src={post.imageUrl || "/blog_medical_marketing.png"}
+                                                alt={post.title}
+                                                fill
+                                                className="object-cover group-hover:scale-110 transition-transform duration-1000 grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
                                         </div>

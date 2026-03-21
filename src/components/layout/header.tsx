@@ -205,7 +205,7 @@ export function Header() {
                         className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/about-us' || pathname === '/about-us/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
                     >
                         About
-                        <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/about') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
+                        <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/about-us') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
                     </Link>
 
                     <Link

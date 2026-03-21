@@ -77,7 +77,7 @@ const plans = [
     {
         id: 'starter', icon: Zap, iconColor: 'text-sky-500', iconBg: 'bg-sky-50',
         name: 'Gujarat Starter', tagline: 'Build your online presence & attract local Gujarat patients',
-        price: '₹7,000', originalPrice: '₹10,000', savings: 'Save ₹3,000', period: '/month',
+        price: '₹8,000', originalPrice: '₹10,000', savings: 'Save ₹3,000', period: '/month',
         highlight: false, badge: null, accentGradient: 'from-sky-400 to-blue-500',
         features: [
             { text: '6 Custom Medical Posts / Carousels', bold: true },
@@ -285,7 +285,7 @@ export default function GujaratDoctorMarketingPage() {
             {/* ── Location Badge ────────────────────────────────────── */}
             <div className="bg-blue-600 text-white text-center py-2 px-4 text-xs font-semibold flex items-center justify-center gap-2">
                 <MapPin size={13} />
-                Special Gujarat Launch Pricing — Starting at just ₹7,000/month
+                Special Gujarat Launch Pricing — Starting at just ₹8,000/month
             </div>
 
             {/* ── 1. Hero ───────────────────────────────────────────── */}
@@ -315,14 +315,14 @@ export default function GujaratDoctorMarketingPage() {
                             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
                                 className="text-lg text-slate-600 mb-8 max-w-xl leading-relaxed"
                             >
-                                Done-for-you Instagram & Facebook marketing made for Gujarat clinics. <strong>Local language, local patients, local results.</strong> Plans starting at just ₹7,000/month. No contract. Inquiries start within 30 days.
+                                Done-for-you Instagram & Facebook marketing made for Gujarat clinics. <strong>Local language, local patients, local results.</strong> Plans starting at just ₹8,000/month. No contract. Inquiries start within 30 days.
                             </motion.p>
 
                             {/* Mini trust row */}
                             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
                                 className="flex flex-wrap gap-3 mb-8"
                             >
-                                {["Starts at ₹7,000/month", "50+ Doctors Served", "1.1M+ Reel Views", "4.9★ JustDial Rating", "No Lock-in Contract"].map((t, i) => (
+                                {["Starts at ₹8,000/month", "50+ Doctors Served", "1.1M+ Reel Views", "4.9★ JustDial Rating", "No Lock-in Contract"].map((t, i) => (
                                     <span key={i} className="inline-flex items-center gap-1.5 text-xs font-semibold bg-white border border-slate-200 rounded-full px-3 py-1.5 shadow-sm">
                                         <Check size={12} className="text-emerald-500" /> {t}
                                     </span>

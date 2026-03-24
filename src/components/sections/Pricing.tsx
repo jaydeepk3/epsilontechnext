@@ -53,7 +53,6 @@ const plans = [
             { text: '12 High-Converting Medical Posts', bold: true },
             { text: '5 Viral-Style Educational Reels', bold: true },
             { text: 'Instagram Stories + DM Trigger CTAs' },
-            { text: 'Smart Meta Ad Boosting (₹3,000 ad budget incl.)' },
             { text: 'WhatsApp Inquiry Funnel Setup' },
             { text: 'Bi-Weekly Strategy & Insights Report' },
             { text: 'Competitor Tracking (local area)' },

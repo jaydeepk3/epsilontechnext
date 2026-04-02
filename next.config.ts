@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
         destination: '/about-us',
         permanent: true, // 301 redirect (Good for SEO)
       },
+      {
+        source: '/item/0065998215.html',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 };

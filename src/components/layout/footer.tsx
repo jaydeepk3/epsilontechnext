@@ -37,6 +37,7 @@ const footerLinks = [
         title: 'Company',
         links: [
             { label: 'About Us', href: '/about-us' },
+            { label: 'Pricing', href: '/pricing' },
             { label: 'UAE', href: '/uae' },
             { label: 'Portfolio', href: '/#portfolio' },
             { label: 'FAQs', href: '/faqs' },
@@ -269,6 +270,8 @@ export function Footer() {
                     </p>
                     <div className="flex flex-wrap gap-5 justify-center items-center">
                         <Link href="/about-us" className="hover:text-sky-400 transition-colors">The Founder</Link>
+                        <span className="text-slate-800">|</span>
+                        <Link href="/pricing" className="hover:text-sky-400 transition-colors">Pricing</Link>
                         <span className="text-slate-800">|</span>
                         <Link href="/blog" className="hover:text-sky-400 transition-colors">Resources</Link>
                         <span className="text-slate-800">|</span>

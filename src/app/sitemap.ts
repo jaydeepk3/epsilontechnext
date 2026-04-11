@@ -193,6 +193,18 @@ const STATIC_ROUTES: MetadataRoute.Sitemap = [
         changeFrequency: 'weekly',
         priority: 0.9,
     },
+    {
+        url: 'https://epsilon-technology.com/website-development-company-in-junagadh/',
+        lastModified: STABLE_DATE,
+        changeFrequency: 'weekly',
+        priority: 0.9,
+    },
+    {
+        url: 'https://epsilon-technology.com/how-doctors-in-gujarat-get-patient-inquiries-from-instagram/',
+        lastModified: new Date('2026-04-10'),
+        changeFrequency: 'monthly',
+        priority: 0.8,
+    },
 ];
 
 

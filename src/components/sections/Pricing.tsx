@@ -81,7 +81,7 @@ const plans = [
             { text: '16 Premium Posts + Carousel Infographics', bold: true },
             { text: '8 Offer-Based & Educational Reels', bold: true },
             { text: '2 Local Video Shoots (or guided online)', bold: true },
-            { text: 'Full Meta Ads Management (₹8,000 ad budget incl.)' },
+            { text: 'Full Meta Ads Management (₹3,000 ad budget incl.)' },
             { text: 'WhatsApp / DM Automation Funnel' },
             { text: 'Lead Capture Landing Page' },
             { text: 'Weekly Growth + Lead Tracking Reports' },

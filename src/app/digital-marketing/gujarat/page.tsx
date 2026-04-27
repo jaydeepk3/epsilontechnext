@@ -76,11 +76,11 @@ const testimonials = [
 const plans = [
     {
         id: 'starter', icon: Zap, iconColor: 'text-sky-500', iconBg: 'bg-sky-50',
-        name: 'Gujarat Starter', tagline: 'Build your online presence & attract local Gujarat patients',
-        price: '₹8,000', originalPrice: '₹11,000', savings: 'Save ₹3,000', period: '/month',
+        name: 'Starter', tagline: 'Build your online presence & attract local Gujarat patients',
+        price: '₹7,000', originalPrice: '₹10,000', savings: 'Save ₹3,000', period: '/month',
         highlight: false, badge: null, accentGradient: 'from-sky-400 to-blue-500',
         features: [
-            { text: '8 Custom Medical Posts / Carousels', bold: true },
+            { text: '6 Custom Medical Posts / Carousels', bold: true },
             { text: '2 Professionally Edited Reels', bold: true },
             { text: 'Instagram + Facebook Profile Optimisation' },
             { text: 'Bio, Highlights & Grid Revamp' },
@@ -89,38 +89,54 @@ const plans = [
             { text: 'Monthly Performance Report' },
 
         ],
-        note: 'Ideal for solo practitioners & new clinics in Gujarat',
+        note: 'Ideal for solo practitioners & new clinics',
     },
     {
         id: 'growth', icon: TrendingUp, iconColor: 'text-white', iconBg: 'bg-white/20',
         name: 'Growth Accelerator', tagline: 'For Gujarat clinics targeting 20–40 new patient inquiries/month',
-        price: '₹11,000', originalPrice: '₹15,000', savings: 'Save ₹4,000', period: '/month',
+        price: '₹10,000', originalPrice: '₹14,000', savings: 'Save ₹4,000', period: '/month',
         highlight: true, badge: 'Most Popular', accentGradient: 'from-blue-600 to-indigo-600',
         features: [
             { text: '10 High-Converting Medical Posts', bold: true },
             { text: '4 Viral-Style Educational Reels', bold: true },
-            { text: 'Instagram Stories + One time Shoot' },
+            { text: 'Instagram Stories' },
             { text: 'Monthly Strategy & Insights Report' },
-            { text: 'Local Competitor Tracking (Gujarat area)' },
+            { text: 'Instagram boosting included' },
             { text: 'Account Manager' },
         ],
         note: 'Most chosen by Gujarat specialist doctors',
     },
     {
+        id: 'lead-gen', icon: BarChart3, iconColor: 'text-emerald-500', iconBg: 'bg-emerald-50',
+        name: 'Lead Generation', tagline: 'Performance-driven ads to flood your clinic with patient inquiries',
+        price: '₹10,000', originalPrice: '₹14,000', savings: 'Save ₹4,000', period: '/month',
+        highlight: false, badge: 'Performance', accentGradient: 'from-emerald-400 to-teal-500',
+        features: [
+            { text: 'Meta Ad Account Management', bold: true },
+            { text: 'Strategic Campaign Application', bold: true },
+            { text: 'Continuous Result Monitoring' },
+            { text: 'Lead Tracking Dashboard', bold: true },
+            { text: 'Location Changes Included' },
+            { text: '1-2 AI Posts (if required)' },
+            { text: '1 AI Video for Ad (if required)' },
+        ],
+        note: 'Best for clinics wanting instant results',
+    },
+    {
         id: 'leadgen', icon: Rocket, iconColor: 'text-orange-500', iconBg: 'bg-orange-50',
-        name: 'Lead Gen Machine', tagline: 'Full-stack patient acquisition for maximum OPD growth in Gujarat',
+        name: 'Scaleup', tagline: 'Full-stack patient acquisition for maximum OPD growth in Gujarat',
         price: '₹15,000', originalPrice: '₹21,000', savings: 'Save ₹6,000', period: '/month',
         highlight: false, badge: 'Best Value', accentGradient: 'from-orange-400 to-rose-500',
         features: [
             { text: '14 Premium Posts + Carousel Infographics', bold: true },
             { text: '6 Offer-Based & Educational Reels', bold: true },
-            { text: 'Instagram Stories + DM Trigger CTAs' },
+            { text: 'Instagram Stories' },
             { text: 'One time shoot' },
             { text: 'Monthly Growth + Lead Tracking Reports' },
-            { text: 'Reputation & Review Management' },
+            { text: 'Instagram boosting included' },
             { text: 'Priority Account Manager' },
         ],
-        note: 'Best for Gujarat clinics wanting maximum appointments',
+        note: 'Maximum results for established Gujarat clinics',
     },
 ];
 
@@ -128,9 +144,9 @@ const faqs = [
     { q: "How quickly will I see real patient inquiries in Gujarat?", a: "Most doctors in Gujarat start seeing WhatsApp inquiries and DMs within 30–45 days. In Gujarat, where competition is still moderate, results often come even faster. Significant OPD growth happens in 60–90 days with consistent execution." },
     { q: "Do you understand Gujarat's local healthcare market?", a: "Yes! We have worked with clinics across Gujarat and understand local patient behaviour, Gujarati language content preferences, seasonal health trends, and how local patients search for doctors online in Gujarat." },
     { q: "What makes you different from a generic agency?", a: "Generic agencies don't understand medical ethics, patient psychology, or healthcare regulations. We ONLY work with doctors — not salons, restaurants, or startups. Every post is IMC-safe, professionally worded, and designed to attract real patient inquiries, not just likes." },
-    { q: "Do I need to create any content or provide photos?", a: "Not necessarily. Our Starter and Growth plans work with stock medical visuals and your existing clinic photos. The Lead Gen Machine plan includes a monthly video shoot at your Gujarat clinic for authentic, original content." },
+    { q: "Do I need to create any content or provide photos?", a: "Not necessarily. Our Starter and Growth plans work with stock medical visuals and your existing clinic photos. The Scaleup plan includes a monthly video shoot at your Gujarat clinic for authentic, original content." },
     { q: "Is there a long-term contract or lock-in?", a: "No. All plans are month-to-month. We earn your trust every month with results, not paperwork. That said, most doctors stay with us for 12+ months because they see consistent ROI." },
-    { q: "What is the ad budget included in higher plans?", a: "The Growth Accelerator includes ₹2,000/month of Meta (Facebook + Instagram) ad spend managed by our team. The Lead Gen Machine includes ₹5,000/month — fully included in the plan price. You can top up for faster results." },
+    { q: "What is the ad budget included in higher plans?", a: "The Growth Accelerator includes ₹2,000/month of Meta (Facebook + Instagram) ad spend managed by our team. The Scaleup plan includes ₹5,000/month — fully included in the plan price. You can top up for faster results." },
     { q: "Do you guarantee a certain number of patient leads?", a: "We don't guarantee specific numbers because results depend on your specialty, location, and competition. What we guarantee: a medically-safe proven system, transparent bi-weekly reporting, and a strategy that has delivered results for 50+ doctors across Gujarat." },
     { q: "Can this work for a hospital or multi-doctor setup in Gujarat?", a: "Absolutely. We have a custom Hospital / Multi-Specialty plan with unlimited content, a dedicated content team, CRM integration, and more. WhatsApp us and we'll build a tailored strategy for your Gujarat setup." },
 ];
@@ -284,7 +300,7 @@ export default function GujaratDoctorMarketingPage() {
             {/* ── Location Badge ────────────────────────────────────── */}
             <div className="bg-blue-600 text-white text-center py-2 px-4 text-xs font-semibold flex items-center justify-center gap-2">
                 <MapPin size={13} />
-                Special Gujarat Launch Pricing — Starting at just ₹8,000/month
+                Special Gujarat Launch Pricing — Starting at just ₹7,000/month
             </div>
 
             {/* ── 1. Hero ───────────────────────────────────────────── */}
@@ -314,14 +330,14 @@ export default function GujaratDoctorMarketingPage() {
                             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
                                 className="text-lg text-slate-600 mb-8 max-w-xl leading-relaxed"
                             >
-                                Done-for-you Instagram & Facebook marketing made for Gujarat clinics. <strong>Local language, local patients, local results.</strong> Plans starting at just ₹8,000/month. No contract. Inquiries start within 30 days.
+                                Done-for-you Instagram & Facebook marketing made for Gujarat clinics. <strong>Local language, local patients, local results.</strong> Plans starting at just ₹7,000/month. No contract. Inquiries start within 30 days.
                             </motion.p>
 
                             {/* Mini trust row */}
                             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
                                 className="flex flex-wrap gap-3 mb-8"
                             >
-                                {["Starts at ₹8,000/month", "50+ Doctors Served", "1.1M+ Reel Views", "4.9★ JustDial Rating", "No Lock-in Contract"].map((t, i) => (
+                                {["Starts at ₹7,000/month", "50+ Doctors Served", "1.1M+ Reel Views", "4.9★ JustDial Rating", "No Lock-in Contract"].map((t, i) => (
                                     <span key={i} className="inline-flex items-center gap-1.5 text-xs font-semibold bg-white border border-slate-200 rounded-full px-3 py-1.5 shadow-sm">
                                         <Check size={12} className="text-emerald-500" /> {t}
                                     </span>
@@ -548,7 +564,7 @@ export default function GujaratDoctorMarketingPage() {
                         </span>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
                         {plans.map((plan, i) => {
                             const Icon = plan.icon;
                             return (

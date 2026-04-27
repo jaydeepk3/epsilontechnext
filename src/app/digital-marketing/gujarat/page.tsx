@@ -83,8 +83,6 @@ const plans = [
             { text: '6 Custom Medical Posts / Carousels', bold: true },
             { text: '2 Professionally Edited Reels', bold: true },
             { text: 'Instagram + Facebook Profile Optimisation' },
-
-            { text: 'Scheduled Posting (3–4×/week)' },
             { text: 'Monthly Performance Report' },
 
         ],
@@ -98,7 +96,7 @@ const plans = [
         features: [
             { text: '10 High-Converting Medical Posts', bold: true },
             { text: '4 Viral-Style Educational Reels', bold: true },
-            { text: 'Instagram Stories' },
+            { text: 'Instagram + Facebook Profile Optimisation' },
             { text: 'Monthly Strategy & Insights Report' },
             { text: 'Instagram boosting included' },
             { text: 'Account Manager' },
@@ -113,11 +111,12 @@ const plans = [
         features: [
             { text: 'Meta Ad Account Management', bold: true },
             { text: 'Strategic Campaign Application', bold: true },
-            { text: 'Continuous Result Monitoring' },
+
             { text: 'Lead Tracking Dashboard', bold: true },
+            { text: 'Continuous Result Monitoring' },
             { text: 'Location Changes Included' },
             { text: '1-2 AI Posts (if required)' },
-            { text: '1 AI Video for Ad (if required)' },
+            { text: '1 AI Video or post for Ad (if required)' },
         ],
         note: 'Best for clinics wanting instant results',
     },

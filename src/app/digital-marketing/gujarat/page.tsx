@@ -83,8 +83,7 @@ const plans = [
             { text: '6 Custom Medical Posts / Carousels', bold: true },
             { text: '2 Professionally Edited Reels', bold: true },
             { text: 'Instagram + Facebook Profile Optimisation' },
-            { text: 'Bio, Highlights & Grid Revamp' },
-            { text: 'Local Gujarat Hashtag Strategy' },
+
             { text: 'Scheduled Posting (3–4×/week)' },
             { text: 'Monthly Performance Report' },
 

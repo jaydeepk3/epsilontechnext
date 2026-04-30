@@ -30,7 +30,7 @@ const faqs = [
     },
     {
         q: "How much does digital marketing cost for a Junagadh business?",
-        a: "Packages start from ₹8,000/month for local visibility and basic social media management. For a full breakdown of service-wise pricing, read our complete guide on [digital marketing cost in Junagadh](/blog/digital-marketing-cost-in-junagadh/). We also offer a free audit to help you understand the best ROI for your business."
+        a: "Services start from ₹8,000/month for local visibility and basic social media management. For a full breakdown of service-wise pricing, read our complete guide on [digital marketing cost in Junagadh](/blog/digital-marketing-cost-in-junagadh/). We also offer a free audit to help you understand the best ROI for your business."
     },
     {
         q: "How long before I see results from SEO in Junagadh?",
@@ -321,7 +321,7 @@ export default function DigitalMarketingJunagadhPage() {
                                     <li className="flex items-center gap-3 text-slate-700 font-medium"><CheckCircle2 size={18} className="text-green-500" /> Fast WhatsApp Connectivity</li>
                                 </ul>
                                 <Link href="/services/web-development" className="inline-flex items-center gap-2 text-emerald-600 font-bold hover:gap-3 transition-all">
-                                    View website packages <ArrowRight size={18} />
+                                    View website services <ArrowRight size={18} />
                                 </Link>
                             </div>
 

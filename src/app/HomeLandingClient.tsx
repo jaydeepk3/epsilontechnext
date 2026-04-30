@@ -169,21 +169,21 @@ const testimonials = [
 ];
 
 const faqs = [
-    { q: "How do I get started?", a: "Simply pick any service tab below, choose your package, click 'Apply Now', and fill your details. Our team will call you within 24 hours." },
+    { q: "How do I get started?", a: "Simply pick any service tab below, click 'Request Quote', and fill your details. Our team will call you within 24 hours." },
     { q: "Do I pay the full amount upfront?", a: "No. We work on 50% upfront, 50% on delivery. Flexible payment terms available for larger projects." },
     { q: "Can I see a demo before paying?", a: "Yes! After you apply, we do a free 30-minute discovery call and often share a mockup or preview before any payment." },
     { q: "Do you work with international clients?", a: "Yes — over 40% of our clients are from UAE, UK, and USA. We work fully remotely with international businesses. We accept payments via Stripe, Wise, and PayPal in USD, GBP, and AED. We sign NDAs, provide US/UK-style contracts, and schedule calls during your timezone. Our founder Jaydeep is available on WhatsApp, Zoom, and email." },
-    { q: "Is there support after launch?", a: "Every package includes post-launch support. Long-term maintenance and retainer contracts are also available." },
+    { q: "Is there support after launch?", a: "Every project includes post-launch support. Long-term maintenance and retainer contracts are also available." },
 ];
 
 // ─── APPLY MODAL ─────────────────────────────────────────────────────────────
 type Service = typeof services[0];
 type Pkg = Service["packages"][0];
 
-function ApplyModal({ svc, pkg, onClose }: { svc: Service; pkg: Pkg; onClose: () => void }) {
+function ApplyModal({ svc, onClose }: { svc: Service; onClose: () => void }) {
     const [form, setForm] = useState({
         name: "", mobile: "", email: "", business: "", message: "", budget: "",
-        package: `${svc.title} — ${pkg.name} (${pkg.duration})`,
+        package: `${svc.title} — Custom Project`,
     });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
     const [err, setErr] = useState("");
@@ -214,8 +214,8 @@ function ApplyModal({ svc, pkg, onClose }: { svc: Service; pkg: Pkg; onClose: ()
                         <span className="text-3xl">{svc.emoji}</span>
                         <div>
                             <p className="text-white/60 text-xs uppercase tracking-widest">Applying for</p>
-                            <h3 className="font-bold text-lg leading-tight">{svc.title} — {pkg.name}</h3>
-                            <p className="text-white/80 text-sm font-semibold">{pkg.duration}</p>
+                            <h3 className="font-bold text-lg leading-tight">{svc.title}</h3>
+                            <p className="text-white/80 text-sm font-semibold italic">Custom Project Quote</p>
                         </div>
                     </div>
                     <p className="text-white/60 text-xs mt-3">We&apos;ll call you within 24 hours with your free custom quote.</p>
@@ -317,7 +317,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 export default function HomeLandingClient() {
     const [activeTab, setActiveTab] = useState(0);
-    const [modal, setModal] = useState<{ svc: Service; pkg: Pkg } | null>(null);
+    const [modal, setModal] = useState<{ svc: Service } | null>(null);
     const servicesRef = useRef<HTMLElement>(null);
     const activeSvc = services[activeTab];
 
@@ -325,7 +325,7 @@ export default function HomeLandingClient() {
 
     return (
         <>
-            {modal && <ApplyModal svc={modal.svc} pkg={modal.pkg} onClose={() => setModal(null)} />}
+            {modal && <ApplyModal svc={modal.svc} onClose={() => setModal(null)} />}
 
             <main className="bg-white overflow-x-hidden">
 
@@ -367,7 +367,7 @@ export default function HomeLandingClient() {
                             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                                 <button onClick={scrollToServices}
                                     className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-9 py-4 rounded-2xl text-lg transition-all hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-0.5">
-                                    <Sparkles size={20} /> View Services & Packages
+                                    <Sparkles size={20} /> View Our Services
                                 </button>
                                 <a href={`https://wa.me/${WA}?text=Hi%2C%20I%20saw%20your%20ad%20and%20want%20to%20learn%20more.`}
                                     target="_blank" rel="noopener noreferrer"
@@ -479,10 +479,10 @@ export default function HomeLandingClient() {
 
                         {/* Section title */}
                         <div className="text-center mb-10">
-                            <p className="text-blue-600 font-bold text-xs uppercase tracking-widest mb-2">Our Services & Packages</p>
+                            <p className="text-blue-600 font-bold text-xs uppercase tracking-widest mb-2">Our Services</p>
                             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">What Can We Do For You?</h2>
                             <p className="text-slate-500 text-sm max-w-md mx-auto">
-                                Select any service below — all packages include <strong>free consultation</strong> and dedicated support.
+                                Select any service below — all projects include a <strong>free discovery call</strong> and dedicated support.
                             </p>
                         </div>
 
@@ -534,66 +534,55 @@ export default function HomeLandingClient() {
                                 </div>
                             </div>
 
-                            {/* Packages grid */}
-                            <div className="p-6 md:p-8">
-                                <div className="grid md:grid-cols-3 gap-5">
-                                    {activeSvc.packages.map((pkg) => (
-                                        <div key={pkg.name}
-                                            className={`relative flex flex-col rounded-2xl border-2 overflow-hidden transition-all duration-300
-                                                ${pkg.highlight
-                                                    ? `border-current shadow-xl ring-4 ${activeSvc.ringColor}/20 ring-offset-0`
-                                                    : "border-slate-200 hover:border-slate-300 hover:shadow-lg"
-                                                }`}
-                                            style={pkg.highlight ? { borderColor: "currentColor" } : {}}>
-
-                                            {pkg.highlight && (
-                                                <div className={`absolute top-0 left-0 right-0 py-1.5 flex justify-center bg-gradient-to-r ${activeSvc.color}`}>
-                                                    <span className="text-white text-xs font-bold">🔥 Most Popular</span>
-                                                </div>
-                                            )}
-
-                                            {/* Price header */}
-                                            <div className={`p-5 ${pkg.highlight ? "pt-8" : "pt-5"} ${pkg.highlight ? activeSvc.lightBg : "bg-slate-50"}`}>
-                                                <div className="flex items-start justify-between">
-                                                    <div>
-                                                        <h4 className="text-lg font-bold text-slate-900">{pkg.name}</h4>
-                                                    </div>
-                                                    <div className={`text-xs font-medium px-2.5 py-1 rounded-full ${activeSvc.lightBg} ${activeSvc.lightText} flex items-center gap-1`}>
-                                                        <Clock size={10} /> {pkg.duration}
-                                                    </div>
-                                                </div>
+                            {/* Service details and CTA */}
+                            <div className="p-8 md:p-12">
+                                <div className="max-w-3xl mx-auto text-center">
+                                    <h4 className="text-2xl font-bold text-slate-900 mb-4">Ready to start your {activeSvc.title} project?</h4>
+                                    <p className="text-slate-600 text-lg mb-8">
+                                        We don&apos;t believe in one-size-fits-all. Every business is unique, which is why we offer 
+                                        <strong> custom-tailored solutions</strong> designed to meet your specific goals and budget.
+                                    </p>
+                                    
+                                    <div className="grid sm:grid-cols-2 gap-4 mb-10 text-left">
+                                        {activeSvc.packages[1].features.slice(0, 6).map((f, i) => (
+                                            <div key={i} className="flex items-start gap-3 p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                                                <CheckCircle2 size={20} className={`${activeSvc.lightText} shrink-0 mt-0.5`} />
+                                                <span className="text-slate-700 font-medium text-sm">{f}</span>
                                             </div>
+                                        ))}
+                                    </div>
 
-                                            {/* Features */}
-                                            <div className="p-5 flex-1 flex flex-col bg-white">
-                                                <ul className="space-y-2.5 flex-1 mb-5">
-                                                    {pkg.features.map((f, i) => (
-                                                        <li key={i} className="flex items-start gap-2.5 text-sm text-slate-600">
-                                                            <CheckCircle2 size={14} className={`${activeSvc.lightText} shrink-0 mt-0.5`} />
-                                                            <span>{f}</span>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                                <button onClick={() => setModal({ svc: activeSvc, pkg })}
-                                                    className={`w-full py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all
-                                                        ${pkg.highlight
-                                                            ? `bg-gradient-to-r ${activeSvc.color} text-white hover:opacity-90 shadow-lg`
-                                                            : "bg-slate-900 hover:bg-slate-700 text-white"
-                                                        }`}>
-                                                    Apply Now <ArrowRight size={15} />
-                                                </button>
-                                                <Link
-                                                    href={activeSvc.href}
-                                                    className={`mt-4 text-center text-sm font-semibold flex items-center justify-center gap-1.5 transition-colors ${activeSvc.lightText} hover:underline`}
-                                                >
-                                                    View Service Details <ArrowRight size={14} />
-                                                </Link>
-                                                <p className="text-center text-xs text-slate-400 mt-2">Free consultation · No upfront full payment</p>
+                                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                        <button 
+                                            onClick={() => setModal({ svc: activeSvc })}
+                                            className={`inline-flex items-center justify-center gap-2 px-10 py-4 rounded-2xl font-bold text-white text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 bg-gradient-to-r ${activeSvc.color}`}
+                                        >
+                                            <Sparkles size={20} /> Request a Custom Quote
+                                        </button>
+                                        <a 
+                                            href={`https://wa.me/${WA}?text=Hi, I&apos;m interested in ${encodeURIComponent(activeSvc.title)}`}
+                                            target="_blank" rel="noopener noreferrer"
+                                            className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-2xl font-bold text-slate-900 bg-white border-2 border-slate-200 text-lg hover:bg-slate-50 transition-all hover:border-slate-300"
+                                        >
+                                            <MessageSquare size={20} /> Chat on WhatsApp
+                                        </a>
+                                    </div>
+                                    
+                                    <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-slate-500">
+                                        <div className="flex items-center gap-2"><Clock size={16} className="text-blue-500" /> {activeSvc.packages[1].duration} Average Delivery</div>
+                                        <div className="flex items-center gap-2"><Shield size={16} className="text-green-500" /> 100% Satisfaction Guarantee</div>
+                                    </div>
 
-                                            </div>
-                                        </div>
-                                    ))}
+                                    <div className="mt-8 pt-8 border-t border-slate-100">
+                                        <Link
+                                            href={activeSvc.href}
+                                            className={`text-center text-sm font-semibold flex items-center justify-center gap-1.5 transition-colors ${activeSvc.lightText} hover:underline`}
+                                        >
+                                            View Detailed Service Page <ArrowRight size={14} />
+                                        </Link>
+                                    </div>
                                 </div>
+                            </div>
 
 
 
@@ -601,7 +590,7 @@ export default function HomeLandingClient() {
                                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50 rounded-2xl px-5 py-4 border border-slate-100">
                                     <div className="flex items-center gap-3 text-sm text-slate-600">
                                         <Phone size={16} className="text-slate-400 shrink-0" />
-                                        <span>Not sure which package? <strong className="text-slate-900">Call us:</strong></span>
+                                        <span>Not sure which service? <strong className="text-slate-900">Call us:</strong></span>
                                         <a href="tel:+918160881461" className="font-bold text-blue-600 hover:underline">+91 81608 81461</a>
                                     </div>
                                     <a href={`https://wa.me/${WA}?text=Hi%2C%20I%20want%20to%20know%20more%20about%20${encodeURIComponent(activeSvc.title)}.`}
@@ -625,7 +614,7 @@ export default function HomeLandingClient() {
                         </div>
                         <div className="max-w-4xl mx-auto grid md:grid-cols-4 gap-6">
                             {[
-                                { step: "01", icon: MessageSquare, title: "Apply", desc: "Click 'Apply Now' on any package. Fill a quick 1-minute form.", color: "bg-blue-600" },
+                                { step: "01", icon: MessageSquare, title: "Apply", desc: "Click 'Request Quote' on any service. Fill a quick 1-minute form.", color: "bg-blue-600" },
                                 { step: "02", icon: Users, title: "Free Call", desc: "We schedule a 30-min discovery call to understand your goals.", color: "bg-indigo-600" },
                                 { step: "03", icon: Code2, title: "We Build", desc: "Our team builds with weekly updates & milestone approvals.", color: "bg-violet-600" },
                                 { step: "04", icon: Zap, title: "Go Live 🚀", desc: "We launch, test thoroughly, and hand over with training.", color: "bg-green-600" },
@@ -849,7 +838,7 @@ export default function HomeLandingClient() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                             <button onClick={scrollToServices}
                                 className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-bold px-10 py-4 rounded-2xl text-lg hover:bg-blue-50 transition-all hover:-translate-y-0.5 shadow-xl">
-                                <Sparkles size={20} /> Choose My Package
+                                <Sparkles size={20} /> Get Started Today
                             </button>
                             <a href={`https://wa.me/${WA}?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project.`}
                                 target="_blank" rel="noopener noreferrer"
@@ -867,7 +856,7 @@ export default function HomeLandingClient() {
                 <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t border-slate-200 shadow-2xl px-4 py-3 flex gap-3">
                     <button onClick={scrollToServices}
                         className="flex-1 flex items-center justify-center gap-1.5 bg-blue-600 text-white font-bold py-3 rounded-xl text-sm">
-                        <Sparkles size={14} /> View Packages
+                        <Sparkles size={14} /> View Services
                     </button>
                     <a href={`https://wa.me/${WA}`} target="_blank" rel="noopener noreferrer"
                         className="flex-1 flex items-center justify-center gap-1.5 bg-green-500 text-white font-bold py-3 rounded-xl text-sm">

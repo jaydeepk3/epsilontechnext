@@ -21,7 +21,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Digital Marketing Cost in Junagadh (2026 Guide) | Epsilon Technology",
-  description: "How much does digital marketing cost in Junagadh? Complete 2026 pricing guide — SEO, social media, Google Ads & full-service packages. Free audit included.",
+  description: "How much does digital marketing cost in Junagadh? Complete 2026 pricing guide — SEO, social media, Google Ads & custom service plans. Free audit included.",
   alternates: {
     canonical: 'https://epsilon-technology.com/blog/digital-marketing-cost-in-junagadh/',
   },
@@ -61,7 +61,7 @@ export default function BlogPostCostJunagadh() {
             "name": "How much does digital marketing cost in Junagadh?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Digital marketing costs in Junagadh vary by service. SEO typically ranges from ₹8,000 to ₹25,000 per month, social media management from ₹8,000 to ₹20,000, and full-service packages for growth-oriented SMEs usually fall between ₹25,000 and ₹45,000 per month."
+              "text": "Digital marketing costs in Junagadh vary by service. SEO typically ranges from ₹8,000 to ₹25,000 per month, social media management from ₹8,000 to ₹20,000, and full-service plans for growth-oriented SMEs usually fall between ₹25,000 and ₹45,000 per month."
             }
           },
           {
@@ -355,7 +355,7 @@ export default function BlogPostCostJunagadh() {
                       </tbody>
                     </table>
                   </div>
-                  <p>Beware of ₹5,000 websites — they typically use cheap templates and hurt your SEO. See our [website development packages](/services/web-development/).</p>
+                  <p>Beware of ₹5,000 websites — they typically use cheap templates and hurt your SEO. See our [website development services](/services/web-development/).</p>
 
                   <h2 id="red-flags">Warning Signs of a Low-Quality Agency</h2>
                   <div className="space-y-6 my-14">

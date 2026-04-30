@@ -1,43 +1,27 @@
-import { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
-import { 
-    CheckCircle2, 
-    TrendingUp, 
-    Smartphone, 
-    Globe, 
-    Zap, 
-    MessageSquare, 
-    Star, 
-    ArrowRight, 
-    ChevronDown, 
-    ChevronUp, 
-    Search, 
-    Users, 
-    MapPin, 
-    Mail, 
+import {
+    CheckCircle2,
+    TrendingUp,
+    Smartphone,
+    Globe,
+    Zap,
+    MessageSquare,
+    Star,
+    ArrowRight,
+    ChevronDown,
+    ChevronUp,
+    Search,
+    Users,
+    MapPin,
+    Mail,
     Phone,
     Layout,
     BarChart3
 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-
-// PART 1 — SEO META TAGS
-export const metadata: Metadata = {
-    title: "Digital Marketing Agency in Junagadh | Epsilon Technology",
-    description: "Epsilon Technology is Junagadh's results-driven digital marketing agency. SEO, Google Ads, social media & web development. Free consultation — based in Junagadh.",
-    alternates: {
-        canonical: 'https://epsilon-technology.com/digital-marketing-in-junagadh/',
-    },
-    openGraph: {
-        title: "Digital Marketing Agency in Junagadh | Epsilon Technology",
-        description: "Epsilon Technology is Junagadh's results-driven digital marketing agency. SEO, Google Ads, social media & web development. Free consultation — based in Junagadh.",
-        url: 'https://epsilon-technology.com/digital-marketing-in-junagadh/',
-        siteName: 'Epsilon Technology',
-        locale: 'en_IN',
-        type: 'website',
-    }
-};
 
 const faqs = [
     {
@@ -169,9 +153,9 @@ export default function DigitalMarketingJunagadhPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
             />
-            
+
             <main className="bg-white min-h-screen text-slate-900 font-sans">
-                
+
                 {/* SECTION 1 — HERO */}
                 <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-gradient-to-br from-[#0a192f] via-[#112240] to-[#0a192f] text-white overflow-hidden">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.08),transparent)] pointer-events-none" />
@@ -180,16 +164,16 @@ export default function DigitalMarketingJunagadhPage() {
                             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                             Junagadh&apos;s Trusted Digital Marketing Partner · Since 2017
                         </div>
-                        
+
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight tracking-tight">
                             Digital Marketing Agency in Junagadh — <br className="hidden md:block" />
                             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent italic">Real Results, Not Just Likes</span>
                         </h1>
-                        
+
                         <p className="text-lg md:text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
                             Stop wasting your budget on vanity metrics. Epsilon Technology is a physically based digital marketing agency in Junagadh that delivers measurable outcomes through local SEO, performance-led Google Ads, and high-impact social media. Get your free strategy audit today from the team that knows Junagadh best.
                         </p>
-                        
+
                         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
                             <Link href="/contacts" className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-10 py-5 rounded-2xl text-xl transition-all hover:shadow-2xl hover:shadow-blue-500/40 transform hover:-translate-y-1 flex items-center gap-2">
                                 Get a Free Marketing Audit <ArrowRight size={20} />
@@ -198,7 +182,7 @@ export default function DigitalMarketingJunagadhPage() {
                                 See Our Local Results
                             </a>
                         </div>
-                        
+
                         <p className="text-slate-400 text-sm font-medium">
                             We are based on <span className="text-blue-300">Zanzarda Road, Junagadh</span> — not a Delhi or Rajkot agency with a Junagadh landing page.
                         </p>
@@ -234,7 +218,7 @@ export default function DigitalMarketingJunagadhPage() {
                             </h2>
                             <div className="w-24 h-1.5 bg-blue-600 mx-auto rounded-full" />
                         </div>
-                        
+
                         <div className="prose prose-lg prose-slate max-w-none text-slate-700 leading-relaxed space-y-8">
                             <p>
                                 Junagadh is digitizing rapidly in 2026. Whether you are running a multi-specialty clinic near <strong>Zanzarda Road</strong> or a high-output manufacturing unit in <strong>GIDC</strong>, your customers are searching for you online before they ever step into your office. If you own a jewellery store on <strong>MG Road</strong> or a popular restaurant near <strong>Kalwa Chowk</strong>, your visibility on Google and Instagram is your most valuable business asset.
@@ -444,7 +428,7 @@ export default function DigitalMarketingJunagadhPage() {
                                 <h2 className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight">
                                     Why Choose a Junagadh-Based Agency Over One From Delhi or Rajkot?
                                 </h2>
-                                
+
                                 <div className="space-y-8">
                                     <div className="flex gap-4">
                                         <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center shrink-0 border border-blue-500/30">
@@ -511,7 +495,7 @@ export default function DigitalMarketingJunagadhPage() {
                                         </div>
                                         <div className="flex items-center gap-4 text-slate-300">
                                             <Mail className="text-blue-500 shrink-0" />
-                                            <span>hello@epsilon-technology.com</span>
+                                            <span>jaydeep@epsilon-technology.com</span>
                                         </div>
                                     </div>
                                     <div className="h-48 bg-slate-900/50 rounded-2xl flex items-center justify-center border border-slate-700 border-dashed mb-8">
@@ -537,7 +521,7 @@ export default function DigitalMarketingJunagadhPage() {
                         <div className="space-y-4">
                             {faqs.map((faq, index) => (
                                 <div key={index} className="border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all hover:border-blue-300">
-                                    <button 
+                                    <button
                                         onClick={() => toggleFaq(index)}
                                         className="w-full p-6 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors"
                                     >
@@ -563,7 +547,7 @@ export default function DigitalMarketingJunagadhPage() {
                         <p className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto leading-relaxed">
                             Book your free 30-minute consultation today. No upfront payment required—just a real discussion about your growth. We are physically based in Junagadh and respond within 4 hours.
                         </p>
-                        
+
                         <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
                             <Link href="/contacts" className="bg-white text-blue-900 font-bold px-10 py-5 rounded-2xl text-xl transition-all hover:shadow-2xl hover:shadow-white/20 transform hover:-translate-y-1">
                                 Get My Free Marketing Audit →
@@ -593,7 +577,7 @@ export default function DigitalMarketingJunagadhPage() {
                 <section className="py-12 bg-slate-100 border-t border-slate-200">
                     <div className="container mx-auto px-4 text-center">
                         <p className="text-slate-500 text-sm mb-8">
-                            © {new Date().getFullYear()} Epsilon Technology. Proudly serving Junagadh, Saurashtra, and Gujarat. 
+                            © {new Date().getFullYear()} Epsilon Technology. Proudly serving Junagadh, Saurashtra, and Gujarat.
                             Physically located on Zanzarda Road, Junagadh 362001.
                         </p>
                         <div className="flex justify-center gap-8 text-slate-400">

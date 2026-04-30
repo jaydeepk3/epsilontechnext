@@ -106,29 +106,7 @@ export default function WebDevCityLanding({ city, cityDescription }: WebDevCityL
 
     const whatsappLink = `https://wa.me/918160881461?text=Hi%20Jaydeep%2C%20I'm%20looking%20for%20a%20website%20for%20my%20business%20in%20${city}.%20Can%20we%20discuss%3F`;
 
-    const pricingPlans = [
-        {
-            name: "Starter Site",
-            price: "₹15,000",
-            desc: "Best for clinics, law firms & freelancers",
-            features: ["5 Beautiful Pages", "Mobile Responsive", "WhatsApp Integration", "1 Year Hosting & Domain", "Basic SEO", "7 Days Delivery"],
-            highlight: false
-        },
-        {
-            name: "Business Suite",
-            price: "₹35,000",
-            desc: "Ideal for schools, restaurants & retail shops",
-            features: ["10-15 Pages", "Speed Optimization (Next.js)", "Google Maps Integration", "Lead Generation Forms", "Advance SEO Setup", "Google Business Profile Sync"],
-            highlight: true
-        },
-        {
-            name: "Enterprise/E-com",
-            price: "₹80,000",
-            desc: "Full-scale custom platforms",
-            features: ["Unlimited Products/Services", "Payment Gateway Integration", "Custom Admin Dashboard", "Premium Speed Optimization", "Monthly Maintenance", "Dedicated Support"],
-            highlight: false
-        }
-    ];
+
 
     return (
         <div className="bg-white overflow-x-hidden">
@@ -187,7 +165,7 @@ export default function WebDevCityLanding({ city, cityDescription }: WebDevCityL
                                 </Button>
                             </Link>
                             <p className="text-sm text-slate-500 font-medium">
-                                Fast Delivery in 7–10 Days <br />Starting at ₹15,000
+                                Fast Delivery in 7–10 Days
                             </p>
                         </motion.div>
 
@@ -351,45 +329,6 @@ export default function WebDevCityLanding({ city, cityDescription }: WebDevCityL
                 </div>
             </section>
 
-            {/* --- Pricing Section --- */}
-            <section className="py-24 bg-slate-950 text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
-                <div className="container mx-auto px-4 md:px-6 relative z-10">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold mb-4">Transparent <span className="text-indigo-400">Local Pricing</span></h2>
-                        <p className="text-slate-400 max-w-2xl mx-auto">No hidden fees. Premium quality websites at prices that make sense for Junagadh businesses.</p>
-                    </div>
-                    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                        {pricingPlans.map((plan, i) => (
-                            <motion.div 
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className={`p-10 rounded-[40px] border ${plan.highlight ? 'bg-white text-slate-900 border-indigo-400 scale-105 z-10' : 'bg-slate-900 text-white border-white/10'} flex flex-col`}
-                            >
-                                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                                <div className="text-4xl font-extrabold mb-4">{plan.price}</div>
-                                <p className={`text-sm mb-8 ${plan.highlight ? 'text-slate-500' : 'text-slate-400'}`}>{plan.desc}</p>
-                                <ul className="space-y-4 mb-10 flex-1">
-                                    {plan.features.map((feature, fi) => (
-                                        <li key={fi} className="flex items-center gap-3">
-                                            <CheckCircle2 size={18} className={plan.highlight ? 'text-indigo-600' : 'text-indigo-400'} />
-                                            <span className="text-sm font-medium">{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                                <Link href={whatsappLink} target="_blank">
-                                    <Button className={`w-full py-6 rounded-2xl font-bold ${plan.highlight ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'}`}>
-                                        Choose Plan <ArrowRight className="ml-2" size={16} />
-                                    </Button>
-                                </Link>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* --- FAQ Section --- */}
             <FAQ customFaqs={specializedFaqs} />

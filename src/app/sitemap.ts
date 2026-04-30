@@ -26,12 +26,6 @@ const STATIC_ROUTES: MetadataRoute.Sitemap = [
         priority: 0.8,
     },
     {
-        url: 'https://epsilon-technology.com/pricing/',
-        lastModified: STABLE_DATE,
-        changeFrequency: 'weekly',
-        priority: 0.9,
-    },
-    {
         url: 'https://epsilon-technology.com/portfolio/',
         lastModified: STABLE_DATE,
         changeFrequency: 'monthly',

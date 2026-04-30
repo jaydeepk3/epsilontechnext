@@ -22,7 +22,6 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FAQ } from '@/components/sections/FAQ';
-import { Pricing } from '@/components/sections/Pricing';
 import { Results } from '@/components/sections/Results';
 import { DoctorsWeWorkWith } from '@/components/sections/DoctorsWeWorkWith';
 
@@ -311,8 +310,6 @@ export default function DoctorCityLanding({ city, cityDescription }: DoctorCityL
                 </div>
             </section>
 
-            {/* --- Pricing Section --- */}
-            <Pricing />
 
             {/* --- Doctors & Testimonials --- */}
             <DoctorsWeWorkWith />

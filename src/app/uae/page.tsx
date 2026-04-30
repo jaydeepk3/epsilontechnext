@@ -299,7 +299,7 @@ export default function UAEPage() {
                     <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-6">
                         {[
                             { step: "01", icon: MessageSquare, title: "Free Consultation", desc: "Book a free 30-min Zoom or WhatsApp call. We learn about your business, goals, and timeline. No obligation.", color: "bg-blue-600" },
-                            { step: "02", icon: Shield, title: "Proposal in 48 Hours", desc: "We send a detailed proposal with exact scope, timeline, and pricing in USD/AED. NDA signed before we share any details.", color: "bg-indigo-600" },
+                            { step: "02", icon: Shield, title: "Proposal in 48 Hours", desc: "We send a detailed proposal with exact scope and timeline. NDA signed before we share any details.", color: "bg-indigo-600" },
                             { step: "03", icon: Code2, title: "Build With Weekly Updates", desc: "We build with full transparency. You get weekly Loom video updates and milestone approvals before we move forward.", color: "bg-violet-600" },
                             { step: "04", icon: Zap, title: "Launch & Ongoing Support", desc: "We launch, test on all devices, and hand over with full training. Post-launch support included in every package.", color: "bg-emerald-600" },
                         ].map(({ step, icon: Icon, title, desc, color }, i) => (

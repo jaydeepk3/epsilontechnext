@@ -334,7 +334,6 @@ export function Header() {
                             {/* Flat links */}
                             <div className="grid grid-cols-2 gap-2 mt-2">
                                 {[
-                                    { name: 'Pricing', href: '/pricing/' },
                                     { name: 'Portfolio', href: '/portfolio/' },
                                     { name: 'Blog', href: '/blog/' },
                                     { name: 'About', href: '/about-us/' },

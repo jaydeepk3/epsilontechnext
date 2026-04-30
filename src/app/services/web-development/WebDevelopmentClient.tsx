@@ -16,8 +16,6 @@ const packages = [
         id: "starter",
         name: "Starter",
         tagline: "Perfect for small businesses",
-        price: "₹19,999",
-        priceUSD: "$249",
         duration: "2-3 weeks",
         highlight: false,
         badge: null,
@@ -37,8 +35,6 @@ const packages = [
         id: "professional",
         name: "Professional",
         tagline: "Most chosen by growing businesses",
-        price: "₹49,999",
-        priceUSD: "$599",
         duration: "3-5 weeks",
         highlight: true,
         badge: "🔥 Most Popular",
@@ -59,8 +55,6 @@ const packages = [
         id: "enterprise",
         name: "Enterprise",
         tagline: "For high-performance scaling",
-        price: "₹1,19,999",
-        priceUSD: "$1,499",
         duration: "6-8 weeks",
         highlight: false,
         badge: "⚡ Best Value",
@@ -81,8 +75,6 @@ const packages = [
         id: "custom",
         name: "Custom",
         tagline: "Built exactly for your needs",
-        price: "Let's Talk",
-        priceUSD: "Custom",
         duration: "Flexible",
         highlight: false,
         badge: null,
@@ -587,7 +579,7 @@ export default function WebDevelopmentLanding() {
 
                     <div className="container mx-auto px-4 relative z-10">
                         <div className="text-center mb-16">
-                            <p className="text-blue-600 font-bold text-sm uppercase tracking-widest mb-3">Transparent Pricing</p>
+                            <p className="text-blue-600 font-bold text-sm uppercase tracking-widest mb-3">Service Tiers</p>
                             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
                                 Choose Your Package & Apply
                             </h2>
@@ -622,12 +614,7 @@ export default function WebDevelopmentLanding() {
                                     <div className={`bg-gradient-to-br ${pkg.color} p-6 pt-8 text-white`}>
                                         <h3 className="text-2xl font-bold mb-1">{pkg.name}</h3>
                                         <p className="text-white/70 text-sm mb-4">{pkg.tagline}</p>
-                                        <div className="flex items-end gap-2">
-                                            <span className="text-3xl font-extrabold">{pkg.price}</span>
-                                            {pkg.priceUSD !== pkg.price && (
-                                                <span className="text-white/60 text-sm mb-1">/ {pkg.priceUSD}</span>
-                                            )}
-                                        </div>
+
                                         <div className="flex items-center gap-1.5 mt-2 text-white/70 text-xs">
                                             <Clock size={12} />
                                             <span>Delivery: {pkg.duration}</span>
@@ -910,7 +897,6 @@ export default function WebDevelopmentLanding() {
                         "offers": packages.map(p => ({
                             "@type": "Offer",
                             "name": `${p.name} Web Development Package`,
-                            "price": p.price,
                             "description": p.tagline
                         }))
                     })

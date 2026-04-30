@@ -25,7 +25,7 @@ const defaultFaqs = [
     },
     {
         question: "What is included in the service?",
-        answer: "Depending on your plan: custom posts, reels, ad campaigns, WhatsApp automation, Instagram stories, hashtag strategy, bi-weekly performance reports, and a dedicated account manager. See our pricing section above for full details."
+        answer: "Depending on your plan: custom posts, reels, ad campaigns, WhatsApp automation, Instagram stories, hashtag strategy, bi-weekly performance reports, and a dedicated account manager."
     }
 ];
 

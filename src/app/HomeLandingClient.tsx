@@ -320,7 +320,6 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 export default function HomeLandingClient() {
     const [activeTab, setActiveTab] = useState(0);
-    const [pricingRegion, setPricingRegion] = useState<"intl" | "india">("intl");
     const [modal, setModal] = useState<{ svc: Service; pkg: Pkg } | null>(null);
     const servicesRef = useRef<HTMLElement>(null);
     const activeSvc = services[activeTab];
@@ -512,20 +511,6 @@ export default function HomeLandingClient() {
 
                         {/* ── ACTIVE SERVICE CONTENT ── */}
                         <div className="flex justify-center mb-8">
-                            <div className="bg-slate-200 p-1 rounded-full flex items-center">
-                                <button
-                                    onClick={() => setPricingRegion("intl")}
-                                    className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${pricingRegion === "intl" ? "bg-white text-slate-900 shadow-md" : "text-slate-600 hover:text-slate-800"}`}
-                                >
-                                    🌍 International Pricing
-                                </button>
-                                <button
-                                    onClick={() => setPricingRegion("india")}
-                                    className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${pricingRegion === "india" ? "bg-white text-slate-900 shadow-md" : "text-slate-600 hover:text-slate-800"}`}
-                                >
-                                    🇮🇳 India Pricing
-                                </button>
-                            </div>
                         </div>
 
                         <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
@@ -575,16 +560,6 @@ export default function HomeLandingClient() {
                                                 <div className="flex items-start justify-between">
                                                     <div>
                                                         <h4 className="text-lg font-bold text-slate-900">{pkg.name}</h4>
-                                                        {pricingRegion === "intl" ? (
-                                                            <div className="flex items-baseline gap-1.5 mt-1">
-                                                                <span className={`text-3xl font-extrabold ${pkg.highlight ? activeSvc.lightText : "text-slate-900"}`}>{(pkg as any).intlUsd}</span>
-                                                            </div>
-                                                        ) : (
-                                                            <div className="flex items-baseline gap-1.5 mt-1">
-                                                                <span className={`text-3xl font-extrabold ${pkg.highlight ? activeSvc.lightText : "text-slate-900"}`}>{pkg.price}</span>
-                                                                <span className="text-slate-400 text-sm">/ {pkg.usd}</span>
-                                                            </div>
-                                                        )}
                                                     </div>
                                                     <div className={`text-xs font-medium px-2.5 py-1 rounded-full ${activeSvc.lightBg} ${activeSvc.lightText} flex items-center gap-1`}>
                                                         <Clock size={10} /> {pkg.duration}
@@ -623,11 +598,7 @@ export default function HomeLandingClient() {
                                     ))}
                                 </div>
 
-                                {pricingRegion === "intl" && (
-                                    <div className="text-center mt-6 text-sm text-slate-500 font-medium">
-                                        ✓ Prices in USD · Stripe & Wise accepted · NDA available
-                                    </div>
-                                )}
+
 
                                 {/* Bottom contact strip */}
                                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50 rounded-2xl px-5 py-4 border border-slate-100">

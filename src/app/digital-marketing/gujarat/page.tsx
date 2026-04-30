@@ -72,105 +72,7 @@ const testimonials = [
     },
 ];
 
-// Gujarat-specific pricing
-const smmPlans = [
-    {
-        id: 'starter', icon: Zap, iconColor: 'text-sky-500', iconBg: 'bg-sky-50',
-        name: 'Starter', tagline: 'Build your online presence & attract local Gujarat patients',
-        price: '₹7,000', originalPrice: '₹10,000', savings: 'Save ₹3,000', period: '/month',
-        highlight: false, badge: null, accentGradient: 'from-sky-400 to-blue-500',
-        features: [
-            { text: '6 Custom Medical Posts / Carousels', bold: true },
-            { text: '2 Professionally Edited Reels', bold: true },
-            { text: 'Instagram + Facebook Profile Optimisation' },
-            { text: 'Monthly Performance Report' },
 
-        ],
-        note: 'Ideal for solo practitioners & new clinics',
-    },
-    {
-        id: 'growth', icon: TrendingUp, iconColor: 'text-white', iconBg: 'bg-white/20',
-        name: 'Growth Accelerator', tagline: 'For Gujarat clinics targeting 20–40 new patient inquiries/month',
-        price: '₹10,000', originalPrice: '₹14,000', savings: 'Save ₹4,000', period: '/month',
-        highlight: true, badge: 'Most Popular', accentGradient: 'from-blue-600 to-indigo-600',
-        features: [
-            { text: '10 High-Converting Medical Posts', bold: true },
-            { text: '4 Viral-Style Educational Reels', bold: true },
-            { text: 'Instagram + Facebook Profile Optimisation' },
-            { text: 'Monthly Strategy & Insights Report' },
-            { text: 'Instagram boosting included' },
-            { text: 'Account Manager' },
-        ],
-        note: 'Most chosen by Gujarat specialist doctors',
-    },
-    {
-        id: 'leadgen', icon: Rocket, iconColor: 'text-orange-500', iconBg: 'bg-orange-50',
-        name: 'Scaleup', tagline: 'Full-stack patient acquisition for maximum OPD growth in Gujarat',
-        price: '₹15,000', originalPrice: '₹21,000', savings: 'Save ₹6,000', period: '/month',
-        highlight: false, badge: 'Best Value', accentGradient: 'from-orange-400 to-rose-500',
-        features: [
-            { text: '14 Premium Posts + Carousel Infographics', bold: true },
-            { text: '6 Offer-Based & Educational Reels', bold: true },
-            { text: 'Instagram Stories' },
-            { text: 'One time shoot' },
-            { text: 'Monthly Growth + Lead Tracking Reports' },
-            { text: 'Instagram boosting included' },
-            { text: 'Priority Account Manager' },
-        ],
-        note: 'Maximum results for established Gujarat clinics',
-    },
-];
-
-const leadGenPlans = [
-    {
-        id: 'lead-gen-fb', icon: BarChart3, iconColor: 'text-emerald-500', iconBg: 'bg-emerald-50',
-        name: 'Lead Gen (Meta Ads)', tagline: 'Performance-driven Facebook & Instagram ads to flood your clinic with patient inquiries',
-        price: '₹10,000', originalPrice: '₹14,000', savings: 'Save ₹4,000', period: '/month',
-        highlight: false, badge: 'Facebook Ads', accentGradient: 'from-emerald-400 to-teal-500',
-        features: [
-            { text: 'Meta Ad Account Management', bold: true },
-            { text: 'Strategic Campaign Application', bold: true },
-            { text: 'Lead Tracking Dashboard', bold: true },
-            { text: 'Continuous Result Monitoring' },
-            { text: 'Location Changes Included' },
-            { text: '1-2 AI Posts (if required)' },
-            { text: '1 AI Video for Ad (if required)' },
-        ],
-        note: 'Best for visual medical specialties',
-    },
-    {
-        id: 'lead-gen-google', icon: Search, iconColor: 'text-orange-500', iconBg: 'bg-orange-50',
-        name: 'Lead Gen (Google Ads)', tagline: 'Capture high-intent patients searching for your specialty on Google',
-        price: '₹12,000', originalPrice: '₹16,000', savings: 'Save ₹4,000', period: '/month',
-        highlight: false, badge: 'Google Ads', accentGradient: 'from-orange-400 to-amber-500',
-        features: [
-            { text: 'Google Search Ads Management', bold: true },
-            { text: 'Keyword Research & Selection', bold: true },
-            { text: 'Lead Tracking Dashboard', bold: true },
-            { text: 'Performance-driven Ad Copy' },
-            { text: 'Conversion Rate Monitoring' },
-            { text: 'Monthly ROI Analysis' },
-            { text: 'Location Targeting' },
-        ],
-        note: 'Best for treatments & surgeries',
-    },
-    {
-        id: 'lead-gen-combined', icon: Zap, iconColor: 'text-white', iconBg: 'bg-white/20',
-        name: 'Lead Gen (FB + Google)', tagline: 'Complete dominance across all platforms for maximum patient acquisition',
-        price: '₹20,000', originalPrice: '₹28,000', savings: 'Save ₹8,000', period: '/month',
-        highlight: true, badge: 'Best Performance', accentGradient: 'from-emerald-500 to-teal-600',
-        features: [
-            { text: 'Meta + Google Ads Management', bold: true },
-            { text: 'Omni-channel Lead Strategy', bold: true },
-            { text: 'Unified Lead Dashboard', bold: true },
-            { text: 'Cross-platform Budget Optimization' },
-            { text: 'Priority Lead Monitoring' },
-            { text: 'Dedicated Account Manager' },
-            { text: 'Weekly Strategy Calls' },
-        ],
-        note: 'Maximum patient flow for clinics',
-    },
-];
 
 const faqs = [
     { q: "How quickly will I see real patient inquiries in Gujarat?", a: "Most doctors in Gujarat start seeing WhatsApp inquiries and DMs within 30–45 days. In Gujarat, where competition is still moderate, results often come even faster. Significant OPD growth happens in 60–90 days with consistent execution." },
@@ -317,72 +219,7 @@ function FloatingWhatsApp() {
     );
 }
 
-// ─── Plan Card Component ───────────────────────────────────────────
 
-function PlanCard({ plan, index }: { plan: any; index: number }) {
-    const Icon = plan.icon;
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className={`relative rounded-3xl flex flex-col transition-all duration-300 ${plan.highlight
-                ? 'bg-gradient-to-b from-[#1a2244] to-[#0f1729] text-white shadow-2xl shadow-blue-900/40 ring-2 ring-blue-500 scale-[1.03] z-10'
-                : 'bg-white text-slate-900 shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1'
-                }`}
-        >
-            {plan.badge && (
-                <div className={`absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs font-bold px-4 py-1.5 rounded-full shadow-md ${plan.highlight ? 'bg-gradient-to-r from-blue-500 to-indigo-500 text-white' : 'bg-gradient-to-r from-orange-400 to-rose-400 text-white'}`}>
-                    {plan.badge}
-                </div>
-            )}
-            <div className={`h-1.5 rounded-t-3xl bg-gradient-to-r ${plan.accentGradient}`} />
-            <div className="p-7 flex flex-col flex-1">
-                <div className="flex items-start gap-3 mb-3">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${plan.iconBg}`}>
-                        <Icon size={20} className={plan.iconColor} />
-                    </div>
-                    <div>
-                        <h3 className={`font-bold text-base leading-snug ${plan.highlight ? 'text-white' : 'text-slate-900'}`}>{plan.name}</h3>
-                        <p className="text-xs text-emerald-400 font-medium mt-0.5">{plan.note}</p>
-                    </div>
-                </div>
-                <p className={`text-xs mb-4 leading-relaxed ${plan.highlight ? 'text-slate-400' : 'text-slate-500'}`}>{plan.tagline}</p>
-                <div className="mb-5">
-                    <div className="flex items-center gap-2 mb-0.5">
-                        <span className={`text-sm line-through ${plan.highlight ? 'text-slate-500' : 'text-slate-400'}`}>{plan.originalPrice}</span>
-                        <span className="text-xs bg-emerald-100 text-emerald-700 font-semibold px-2 py-0.5 rounded-full">{plan.savings}</span>
-                    </div>
-                    <div className="flex items-end gap-1">
-                        <span className={`text-3xl font-extrabold ${plan.highlight ? 'text-white' : 'text-slate-900'}`}>{plan.price}</span>
-                        <span className={`text-sm mb-1 ${plan.highlight ? 'text-slate-400' : 'text-slate-500'}`}>{plan.period}</span>
-                    </div>
-                    <p className={`text-xs mt-0.5 ${plan.highlight ? 'text-slate-500' : 'text-slate-400'}`}>+ GST (disclosed above)</p>
-                </div>
-                <div className={`h-px w-full mb-5 ${plan.highlight ? 'bg-white/10' : 'bg-slate-100'}`} />
-                <ul className="space-y-2.5 flex-1 mb-6">
-                    {plan.features.map((f: any, fi: number) => (
-                        <li key={fi} className="flex items-start gap-2.5 text-sm">
-                            <div className={`mt-0.5 w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${plan.highlight ? 'bg-blue-500' : 'bg-emerald-100'}`}>
-                                <Check size={10} className={plan.highlight ? 'text-white' : 'text-emerald-600'} strokeWidth={3} />
-                            </div>
-                            <span className={`${f.bold ? 'font-semibold' : ''} ${plan.highlight ? (f.bold ? 'text-white' : 'text-slate-300') : (f.bold ? 'text-slate-900' : 'text-slate-600')}`}>{f.text}</span>
-                        </li>
-                    ))}
-                </ul>
-                <a href="#contact"
-                    className={`w-full py-3.5 px-4 rounded-2xl font-bold text-sm transition-all duration-200 flex items-center justify-center gap-2 ${plan.highlight
-                        ? 'bg-gradient-to-r from-blue-500 to-indigo-500 text-white hover:from-blue-600 hover:to-indigo-600 shadow-lg shadow-blue-600/30'
-                        : 'border-2 border-slate-200 bg-slate-50 text-slate-900 hover:bg-white hover:border-slate-300 hover:shadow-md'
-                        }`}
-                >
-                    Get Started <ArrowRight size={15} />
-                </a>
-            </div>
-        </motion.div>
-    );
-}
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
@@ -396,11 +233,7 @@ export default function GujaratDoctorMarketingPage() {
                 <a href="#contact" className="underline underline-offset-2">Check your availability →</a>
             </div>
 
-            {/* ── Location Badge ────────────────────────────────────── */}
-            <div className="bg-blue-600 text-white text-center py-2 px-4 text-xs font-semibold flex items-center justify-center gap-2">
-                <MapPin size={13} />
-                Special Gujarat Launch Pricing — Starting at just ₹7,000/month
-            </div>
+
 
             {/* ── 1. Hero ───────────────────────────────────────────── */}
             <section className="relative pt-14 pb-16 lg:pt-20 lg:pb-24 overflow-hidden px-4 bg-gradient-to-b from-slate-50 to-white">
@@ -650,72 +483,7 @@ export default function GujaratDoctorMarketingPage() {
                 </div>
             </section>
 
-            {/* ── 7. Pricing ────────────────────────────────────────── */}
-            <section id="pricing" className="py-20 px-4 bg-white relative overflow-hidden">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-50/40 rounded-full blur-3xl pointer-events-none" />
-                <div className="max-w-6xl mx-auto relative z-10">
-                    <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-4">
-                        <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-3">Gujarat Launch Pricing</h2>
-                        <p className="text-slate-500 mb-2">Affordable pricing designed for Gujarat clinics. Cancel anytime.</p>
-                        <p className="text-slate-400 text-xs mb-4">All prices shown are exclusive of 18% GST, which will be added at checkout.</p>
-                        <span className="inline-block bg-emerald-500 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
-                            🎉 Special Gujarat Launch Offer — Lock in before rates increase
-                        </span>
-                    </motion.div>
 
-                    {/* 1. Social Media Marketing Plans */}
-                    <div className="mb-16">
-                        <div className="flex items-center gap-3 mb-8">
-                            <div className="h-px flex-1 bg-slate-200" />
-                            <h3 className="text-xl font-bold text-slate-800 uppercase tracking-wider px-4 bg-slate-50 py-1 rounded-full border border-slate-200">
-                                Social Media Marketing
-                            </h3>
-                            <div className="h-px flex-1 bg-slate-200" />
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {smmPlans.map((plan, i) => (
-                                <PlanCard key={plan.id} plan={plan} index={i} />
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* 2. Lead Generation Plans */}
-                    <div className="mb-16">
-                        <div className="flex items-center gap-3 mb-8">
-                            <div className="h-px flex-1 bg-slate-200" />
-                            <h3 className="text-xl font-bold text-emerald-700 uppercase tracking-wider px-4 bg-emerald-50 py-1 rounded-full border border-emerald-200">
-                                Lead Generation (Ads Management)
-                            </h3>
-                            <div className="h-px flex-1 bg-slate-200" />
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {leadGenPlans.map((plan, i) => (
-                                <PlanCard key={plan.id} plan={plan} index={i} />
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Hospital plan card */}
-                    <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                        className="mt-8 bg-gradient-to-r from-violet-50 to-purple-50 border border-violet-200 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4"
-                    >
-                        <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-xl bg-violet-100 flex items-center justify-center shrink-0">
-                                <Building2 size={24} className="text-violet-600" />
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-slate-900 text-base">Gujarat Hospital / Multi-Specialty Clinic?</h3>
-                                <p className="text-slate-500 text-sm mt-0.5">Unlimited posts, dedicated content team (2 creators), full Meta + Google Ads management, CRM integration, monthly strategy calls &amp; more.</p>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/918160881461?text=Hi%20Epsilon%2C%20I%20need%20a%20custom%20hospital%20plan%20for%20Gujarat" target="_blank" rel="noopener noreferrer"
-                            className="shrink-0 inline-flex items-center gap-2 bg-violet-600 text-white font-bold text-sm px-5 py-3 rounded-xl hover:bg-violet-700 transition-all whitespace-nowrap"
-                        >
-                            <MessageCircle size={16} /> Request Custom Plan
-                        </a>
-                    </motion.div>
-                </div>
-            </section>
 
             {/* ── 8. FAQ ────────────────────────────────────────────── */}
             <section className="py-20 px-4 bg-slate-900 relative overflow-hidden">

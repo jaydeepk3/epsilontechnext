@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     ],
     openGraph: {
         title: "Website Development Company in Junagadh | Epsilon Technology",
-        description: "Scale your Junagadh business with a modern, SEO-ready website. Next.js & WordPress solutions starting at ₹15,000.",
+        description: "Scale your Junagadh business with a modern, SEO-ready website. Next.js & WordPress solutions.",
         url: "https://epsilon-technology.com/website-development-company-in-junagadh/",
         images: ["/logo.png"]
     },

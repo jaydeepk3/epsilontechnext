@@ -8,6 +8,9 @@ import {
   BarChart3, Eye, Heart, BadgeCheck, Phone, X
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ScarcityReplacement } from '@/components/ui/ScarcityReplacement';
+import { AvailabilityBanner } from '@/components/ui/AvailabilityBanner';
+import Link from 'next/link';
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -78,7 +81,7 @@ const faqs = [
   { q: "What makes you different from a generic digital marketing agency?", a: "Generic agencies don't understand medical ethics, patient psychology, or healthcare regulations. We ONLY work with doctors — not salons, restaurants or startups. Every post is IMC-safe, professionally worded, and designed to attract real patient inquiries, not just likes." },
   { q: "Do I need to create any content or provide photos?", a: "Not necessarily. Our Starter and Growth plans work with stock medical visuals and your existing clinic photos. The Lead Gen Machine plan includes 2 guided video shoots monthly so we can create original, authentic content for your practice." },
   { q: "Is there a long-term contract or lock-in?", a: "No. All plans are month-to-month. We earn your trust every month with results, not paperwork. That said, most doctors stay with us for 12+ months because they see consistent ROI." },
-  { q: "What is the ad budget included in higher plans?", a: "The Engagement Accelerator includes ₹3,000/month of Meta (Facebook + Instagram) ad spend managed by our team. The Lead Gen Machine includes ₹8,000/month. No extra cost — it's fully included. You can top up for faster results." },
+  { q: "What is the ad budget included in higher plans?", a: "The Engagement Accelerator and Lead Gen Machine include a specific Meta (Facebook + Instagram) ad spend managed by our team. No extra cost — it's fully included. You can top up for faster results." },
   { q: "Do you work with doctors outside India?", a: "Yes! We serve doctors in India, UAE, UK, and USA. Our strategies are adapted for each market — local language, cultural tone, platform preferences, and healthcare regulations. Book a free call for your city." },
   { q: "Do you guarantee a certain number of patient leads?", a: "We don't guarantee specific numbers because results depend on your specialty, city, and competition. What we guarantee: a medically-safe proven system, transparent bi-weekly reporting, and a strategy that has worked for 50+ doctors across multiple countries." },
   { q: "Can this work for a hospital or multi-doctor setup?", a: "Absolutely. We have a custom Hospital / Multi-Specialty plan with unlimited content, a dedicated content team, CRM integration, and more. WhatsApp us and we'll build a tailored strategy for your setup." },
@@ -224,10 +227,9 @@ export default function DoctorDigitalMarketingPage() {
   return (
     <div className="font-sans bg-white pt-[76px] lg:pt-[88px]">
 
-      {/* ── Urgency Banner ────────────────────────────────────── */}
-      <div className="bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 text-black text-center py-2.5 px-4 text-sm font-bold shadow-sm">
-        ⚡ Only 5 new doctors accepted this month —{' '}
-        <a href="#contact" className="underline underline-offset-2">Check availability for your city →</a>
+      {/* ── Availability Banner ────────────────────────────────────── */}
+      <div className="bg-slate-50 border-b border-slate-100">
+        <ScarcityReplacement className="py-2.5 px-4" ctaHref="#contact" />
       </div>
 
       {/* ── 1. Hero ───────────────────────────────────────────── */}
@@ -284,7 +286,7 @@ export default function DoctorDigitalMarketingPage() {
                   <MessageCircle size={18} /> WhatsApp Us Now
                 </a>
               </motion.div>
-              <p className="text-red-500 text-xs font-semibold mt-3">⏳ Free strategy call · Limited slots this month</p>
+              <ScarcityReplacement className="mt-4" centered={false} ctaHref="#contact" />
             </div>
 
             {/* Right: Mini Lead Form in hero */}
@@ -592,6 +594,13 @@ export default function DoctorDigitalMarketingPage() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Bottom Availability ────────────────────────────────── */}
+      <section className="py-12 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <AvailabilityBanner variant="full" ctaHref="#contact" />
         </div>
       </section>
 

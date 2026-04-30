@@ -2,13 +2,10 @@
 
 import { useState, useRef } from "react";
 import Link from 'next/link';
+import { AvailabilityBanner } from '@/components/ui/AvailabilityBanner';
 import {
-
-    Globe, Smartphone, TrendingUp, ShoppingCart, MessageCircle,
-    CheckCircle2, ArrowRight, Star, Shield, Zap, Clock, Users,
-    Award, Phone, MessageSquare, ChevronDown, Sparkles, X,
-    AlertCircle, Loader2, Check, Code2
-} from "lucide-react";
+    ArrowRight, Check, CheckCircle2, ChevronDown, Clock, Globe, Loader2, MessageCircle, Phone, Sparkles, Star, X, MessageSquare, Award, Code2, Users, Smartphone, TrendingUp, ShoppingCart, Shield, Zap, AlertCircle
+} from 'lucide-react';
 
 const WA = "918160881461";
 
@@ -30,15 +27,15 @@ const services = [
         ringColor: "ring-blue-500",
         packages: [
             {
-                name: "Starter", price: "₹19,999", usd: "$249", intlUsd: "$999", duration: "2–3 weeks", highlight: false,
+                name: "Starter", duration: "2–3 weeks", highlight: false,
                 features: ["3–5 Page Responsive Website", "Mobile-First Design", "Basic SEO Setup", "Contact Form Integration", "Domain & Hosting Guidance", "1 Month Free Support"],
             },
             {
-                name: "Professional", price: "₹49,999", usd: "$599", intlUsd: "$2,499", duration: "3–5 weeks", highlight: true,
+                name: "Professional", duration: "3–5 weeks", highlight: true,
                 features: ["Up to 15 Pages", "Premium Custom UI/UX", "CMS Integration (Next.js/WP)", "Advanced SEO Optimization", "WhatsApp Chat Integration", "Lead Capture Forms", "3 Months Free Support"],
             },
             {
-                name: "Enterprise", price: "₹1,19,999", usd: "$1,499", intlUsd: "$4,999", duration: "6–8 weeks", highlight: false,
+                name: "Enterprise", duration: "6–8 weeks", highlight: false,
                 features: ["Unlimited Pages", "Custom Next.js Architecture", "E-commerce / Payment Integration", "Database & API Development", "Premium Animations & UI", "Priority 6 Months Support"],
             },
         ],
@@ -59,15 +56,15 @@ const services = [
         ringColor: "ring-violet-500",
         packages: [
             {
-                name: "Starter", price: "₹59,999", usd: "$749", intlUsd: "$2,999", duration: "4–6 weeks", highlight: false,
+                name: "Starter", duration: "4–6 weeks", highlight: false,
                 features: ["Single Platform (iOS or Android)", "Basic UI/UX Design", "User Authentication", "Push Notifications", "App Store Submission", "1 Month Bug Support"],
             },
             {
-                name: "Professional", price: "₹1,19,999", usd: "$1,499", intlUsd: "$5,999", duration: "6–10 weeks", highlight: true,
+                name: "Professional", duration: "6–10 weeks", highlight: true,
                 features: ["Cross-Platform (React Native)", "Custom UI/UX Design", "Social Login", "Payment Gateway", "In-App Analytics", "Real-Time Notifications", "3 Months Support"],
             },
             {
-                name: "Enterprise", price: "₹2,49,999", usd: "$2,999", intlUsd: "$11,999", duration: "10–16 weeks", highlight: false,
+                name: "Enterprise", duration: "10–16 weeks", highlight: false,
                 features: ["High-Performance Cross-Platform", "Custom Node.js Backend", "Real-Time Chat & Sockets", "Complex Database Architecture", "Offline Mode Capability", "6 Months Priority Support"],
             },
         ],
@@ -88,15 +85,15 @@ const services = [
         ringColor: "ring-emerald-500",
         packages: [
             {
-                name: "Starter", price: "₹9,999", usd: "$129", intlUsd: "$499", duration: "per month", highlight: false,
+                name: "Starter", duration: "per month", highlight: false,
                 features: ["Google My Business Optimization", "8 Social Media Posts/Month", "Basic SEO Setup", "Monthly Performance Report", "Dedicated Account Manager"],
             },
             {
-                name: "Growth", price: "₹19,999", usd: "$249", intlUsd: "$999", duration: "per month", highlight: true,
+                name: "Growth", duration: "per month", highlight: true,
                 features: ["15 Posts/Month (Reels + Static)", "Meta & Google Ad Campaigns", "Patient Review Management", "2 Blogs/Month for SEO", "Bi-Weekly Strategy Calls", "Conversion Tracking Setup"],
             },
             {
-                name: "Premium", price: "₹34,999", usd: "$429", intlUsd: "$1,499", duration: "per month", highlight: false,
+                name: "Premium", duration: "per month", highlight: false,
                 features: ["Omnichannel Marketing Strategy", "Advanced Ad Budget Management", "Video Reels Production", "Premium SEO Campaign", "Content Calendar (4 Blogs/Month)", "Real-Time Analytics Dashboard"],
             },
         ],
@@ -117,15 +114,15 @@ const services = [
         ringColor: "ring-orange-500",
         packages: [
             {
-                name: "Starter", price: "₹29,999", usd: "$369", intlUsd: "$1,499", duration: "3–4 weeks", highlight: false,
+                name: "Starter", duration: "3–4 weeks", highlight: false,
                 features: ["Shopify / WooCommerce Setup", "Up to 50 Products", "Payment Gateway Integration", "Essential Shipping Config", "Mobile-Optimized Design", "1 Month Support"],
             },
             {
-                name: "Professional", price: "₹69,999", usd: "$849", intlUsd: "$3,499", duration: "4–6 weeks", highlight: true,
+                name: "Professional", duration: "4–6 weeks", highlight: true,
                 features: ["Custom Theme Design", "Up to 500 Products", "CRM Integration", "Abandoned Cart Recovery", "Advanced Inventory Management", "3 Months Support"],
             },
             {
-                name: "Enterprise", price: "₹1,49,999", usd: "$1,799", intlUsd: "$6,999", duration: "6–10 weeks", highlight: false,
+                name: "Enterprise", duration: "6–10 weeks", highlight: false,
                 features: ["Headless Commerce Architecture", "Unlimited Products", "Multi-Vendor / Marketplace", "Custom Checkout Flows", "Subscription Models", "Priority 6 Months SLA"],
             },
         ],
@@ -146,15 +143,15 @@ const services = [
         ringColor: "ring-green-500",
         packages: [
             {
-                name: "Basic", price: "₹2,999", usd: "$39", intlUsd: "$99", duration: "per month", highlight: false,
+                name: "Basic", duration: "per month", highlight: false,
                 features: ["1,000 Conversations/Month", "Chatbot Flow Builder", "Bulk Message Broadcasts", "Basic Analytics Dashboard", "WhatsApp Green Tick Assistance"],
             },
             {
-                name: "Business", price: "₹5,999", usd: "$74", intlUsd: "$199", duration: "per month", highlight: true,
+                name: "Business", duration: "per month", highlight: true,
                 features: ["5,000 Conversations/Month", "Advanced Chatbot Flows", "CRM Integration", "Multi-Agent Team Inbox", "Campaign Scheduling", "Priority Support"],
             },
             {
-                name: "Enterprise", price: "₹11,999", usd: "$149", intlUsd: "$399", duration: "per month", highlight: false,
+                name: "Enterprise", duration: "per month", highlight: false,
                 features: ["Unlimited Conversations", "AI-Powered Smart Replies", "Custom API Integrations", "Dedicated Account Manager", "White-Label Option", "24/7 Priority Support"],
             },
         ],
@@ -836,13 +833,15 @@ export default function HomeLandingClient() {
                 </section>
 
                 {/* ═══════════════════════════════════════ FINAL CTA ═══════════════════════════════════════ */}
+                <section className="py-12 bg-white">
+                    <div className="container mx-auto px-4">
+                        <AvailabilityBanner variant="full" />
+                    </div>
+                </section>
+
                 <section className="py-20 bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 relative overflow-hidden">
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
                     <div className="container mx-auto px-4 text-center relative z-10">
-                        <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 px-4 py-2 rounded-full text-sm mb-6">
-                            <span className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
-                            Limited slots — only 5 new projects this month
-                        </div>
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-5 leading-tight">Ready to Grow Your Business — Wherever You Are?</h2>
                         <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">
                             Whether you're in Dubai, London, New York, or anywhere else — we deliver world-class digital products at a fraction of local agency cost. Free consultation, no upfront full payment.

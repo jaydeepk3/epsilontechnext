@@ -80,7 +80,7 @@ const faqs = [
     { q: "What makes you different from a generic agency?", a: "Generic agencies don't understand medical ethics, patient psychology, or healthcare regulations. We ONLY work with doctors — not salons, restaurants, or startups. Every post is IMC-safe, professionally worded, and designed to attract real patient inquiries, not just likes." },
     { q: "Do I need to create any content or provide photos?", a: "Not necessarily. Our Starter and Growth plans work with stock medical visuals and your existing clinic photos. The Scaleup plan includes a monthly video shoot at your Gujarat clinic for authentic, original content." },
     { q: "Is there a long-term contract or lock-in?", a: "No. All plans are month-to-month. We earn your trust every month with results, not paperwork. That said, most doctors stay with us for 12+ months because they see consistent ROI." },
-    { q: "What is the ad budget included in higher plans?", a: "The Growth Accelerator includes ₹2,000/month of Meta (Facebook + Instagram) ad spend managed by our team. The Scaleup plan includes ₹5,000/month — fully included in the plan price. You can top up for faster results." },
+    { q: "What is the ad budget included in higher plans?", a: "The Growth Accelerator and Scaleup plan include a specific Meta (Facebook + Instagram) ad spend managed by our team — fully included in the plan. You can top up for faster results." },
     { q: "Do you guarantee a certain number of patient leads?", a: "We don't guarantee specific numbers because results depend on your specialty, location, and competition. What we guarantee: a medically-safe proven system, transparent bi-weekly reporting, and a strategy that has delivered results for 50+ doctors across Gujarat." },
     { q: "Can this work for a hospital or multi-doctor setup in Gujarat?", a: "Absolutely. We have a custom Hospital / Multi-Specialty plan with unlimited content, a dedicated content team, CRM integration, and more. WhatsApp us and we'll build a tailored strategy for your Gujarat setup." },
 ];
@@ -262,14 +262,14 @@ export default function GujaratDoctorMarketingPage() {
                             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
                                 className="text-lg text-slate-600 mb-8 max-w-xl leading-relaxed"
                             >
-                                Done-for-you Instagram & Facebook marketing made for Gujarat clinics. <strong>Local language, local patients, local results.</strong> Plans starting at just ₹7,000/month. No contract. Inquiries start within 30 days.
+                                Done-for-you Instagram & Facebook marketing made for Gujarat clinics. <strong>Local language, local patients, local results.</strong> No contract. Inquiries start within 30 days.
                             </motion.p>
 
                             {/* Mini trust row */}
                             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
                                 className="flex flex-wrap gap-3 mb-8"
                             >
-                                {["Starts at ₹7,000/month", "50+ Doctors Served", "1.1M+ Reel Views", "4.9★ JustDial Rating", "No Lock-in Contract"].map((t, i) => (
+                                {["50+ Doctors Served", "1.1M+ Reel Views", "4.9★ JustDial Rating", "No Lock-in Contract"].map((t, i) => (
                                     <span key={i} className="inline-flex items-center gap-1.5 text-xs font-semibold bg-white border border-slate-200 rounded-full px-3 py-1.5 shadow-sm">
                                         <Check size={12} className="text-emerald-500" /> {t}
                                     </span>

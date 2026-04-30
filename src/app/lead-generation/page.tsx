@@ -8,6 +8,9 @@ import {
   BarChart3, Eye, Heart, BadgeCheck, Phone, X, Briefcase
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ScarcityReplacement } from '@/components/ui/ScarcityReplacement';
+import { AvailabilityBanner } from '@/components/ui/AvailabilityBanner';
+import Link from 'next/link';
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -78,7 +81,7 @@ const faqs = [
   { q: "What makes you different from a generic digital marketing agency?", a: "We don't just focus on likes and vanity metrics. We build performance-driven campaigns designed to attract qualified leads that actually convert into revenue." },
   { q: "Do I need to create any content or provide photos?", a: "Not necessarily. Our Starter and Growth plans work with high-quality stock visuals and your existing brand assets. The Lead Gen Machine plan includes guided video shoots so we can create original, authentic content for your brand." },
   { q: "Is there a long-term contract or lock-in?", a: "No. All plans are month-to-month. We earn your trust every month with results, not paperwork. That said, most clients stay with us for 12+ months because they see consistent ROI." },
-  { q: "What is the ad budget included in higher plans?", a: "The Engagement Accelerator includes ₹5,000/month of Meta (Facebook + Instagram) ad spend managed by our team. The Lead Gen Machine includes ₹10,000/month. No extra cost — it's fully included. You can top up for faster results." },
+  { q: "What is the ad budget included in higher plans?", a: "The Engagement Accelerator and Lead Gen Machine include a specific Meta (Facebook + Instagram) ad spend managed by our team. No extra cost — it's fully included. You can top up for faster results." },
   { q: "Do you work with businesses outside India?", a: "Yes! We serve clients globally. Our strategies are adapted for each market — local language, cultural tone, platform preferences, and industry regulations. Book a free call to discuss your region." },
   { q: "Do you guarantee a certain number of leads?", a: "We don't guarantee specific numbers because results depend on your industry, offer, and competition. What we guarantee: a proven system, transparent bi-weekly reporting, and a strategy that has worked for 100+ businesses." },
   { q: "Can this work for B2B or specialized industries?", a: "Absolutely. We have custom strategies for B2B, real estate, tech, and retail. WhatsApp us and we'll build a tailored strategy for your specific business model." },
@@ -224,10 +227,9 @@ export default function LeadGenerationPage() {
   return (
     <div className="font-sans bg-white pt-[76px] lg:pt-[88px]">
 
-      {/* ── Urgency Banner ────────────────────────────────────── */}
-      <div className="bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 text-black text-center py-2.5 px-4 text-sm font-bold shadow-sm">
-        ⚡ Only limited new clients accepted this month —{' '}
-        <a href="#contact" className="underline underline-offset-2">Check availability for your industry →</a>
+      {/* ── Availability Banner ────────────────────────────────────── */}
+      <div className="bg-slate-50 border-b border-slate-100">
+        <ScarcityReplacement className="py-2.5 px-4" ctaHref="#contact" />
       </div>
 
       {/* ── 1. Hero ───────────────────────────────────────────── */}
@@ -284,7 +286,7 @@ export default function LeadGenerationPage() {
                   <MessageCircle size={18} /> WhatsApp Us Now
                 </a>
               </motion.div>
-              <p className="text-red-500 text-xs font-semibold mt-3">⏳ Free strategy call · Limited slots this month</p>
+              <ScarcityReplacement className="mt-4" centered={false} ctaHref="#contact" />
             </div>
 
             {/* Right: Mini Lead Form in hero */}
@@ -570,6 +572,13 @@ export default function LeadGenerationPage() {
               <LeadForm />
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Bottom Availability ────────────────────────────────── */}
+      <section className="py-12 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <AvailabilityBanner variant="full" ctaHref="#contact" />
         </div>
       </section>
 

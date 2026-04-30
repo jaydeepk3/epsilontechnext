@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         "web development packages",
     ],
     openGraph: {
-        title: "Professional Website Development — Packages Starting ₹19,999 | Epsilon Technology",
+        title: "Professional Website Development | Epsilon Technology",
         description: "Get a fast, mobile-friendly, SEO-ready website. 3 packages to choose from. 50+ happy clients globally. Apply for your free consultation today.",
         url: "https://epsilon-technology.com/services/web-development/",
         type: "website",

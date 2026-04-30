@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { ScarcityReplacement } from '@/components/ui/ScarcityReplacement';
+import { AvailabilityBanner } from '@/components/ui/AvailabilityBanner';
 
 // ─── PACKAGES DATA ────────────────────────────────────────────────────────────
 const packages = [
@@ -402,10 +404,8 @@ export default function WebDevelopmentLanding() {
 
                     <div className="container mx-auto px-4 py-24 relative z-10">
                         <div className="max-w-4xl mx-auto text-center">
-                            {/* Badge */}
-                            <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
-                                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                                <span>Limited Slots Available This Month</span>
+                            <div className="mb-8">
+                                <ScarcityReplacement className="py-2 px-4 bg-blue-500/10 border border-blue-400/30 rounded-full" ctaHref="#packages" />
                             </div>
 
                             {/* Headline */}
@@ -805,16 +805,18 @@ export default function WebDevelopmentLanding() {
                 {/* ══════════════════════════════════════════════════════════
                     9. FINAL CTA
                 ══════════════════════════════════════════════════════════ */}
+                <section className="py-12 bg-white">
+                    <div className="container mx-auto px-4">
+                        <AvailabilityBanner variant="full" ctaHref="#packages" />
+                    </div>
+                </section>
+
                 <section className="py-24 bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 relative overflow-hidden">
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
                     <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
                     <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
 
                     <div className="container mx-auto px-4 text-center relative z-10">
-                        <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 px-4 py-2 rounded-full text-sm mb-8">
-                            <span className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
-                            Limited slots available — only 5 new projects this month
-                        </div>
 
                         <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
                             Ready to Get Your Dream Website?

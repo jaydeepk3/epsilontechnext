@@ -199,6 +199,12 @@ const STATIC_ROUTES: MetadataRoute.Sitemap = [
         changeFrequency: 'monthly',
         priority: 0.8,
     },
+    {
+        url: 'https://epsilon-technology.com/blog/digital-marketing-cost-in-junagadh/',
+        lastModified: new Date('2026-04-30'),
+        changeFrequency: 'weekly',
+        priority: 0.9,
+    },
 ];
 
 

@@ -183,7 +183,7 @@ type Pkg = Service["packages"][0];
 function ApplyModal({ svc, pkg, onClose }: { svc: Service; pkg: Pkg; onClose: () => void }) {
     const [form, setForm] = useState({
         name: "", mobile: "", email: "", business: "", message: "", budget: "",
-        package: `${svc.title} — ${pkg.name} (${pkg.price} ${pkg.duration})`,
+        package: `${svc.title} — ${pkg.name} (${pkg.duration})`,
     });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
     const [err, setErr] = useState("");
@@ -215,7 +215,7 @@ function ApplyModal({ svc, pkg, onClose }: { svc: Service; pkg: Pkg; onClose: ()
                         <div>
                             <p className="text-white/60 text-xs uppercase tracking-widest">Applying for</p>
                             <h3 className="font-bold text-lg leading-tight">{svc.title} — {pkg.name}</h3>
-                            <p className="text-white/80 text-sm font-semibold">{pkg.price} / {pkg.duration}</p>
+                            <p className="text-white/80 text-sm font-semibold">{pkg.duration}</p>
                         </div>
                     </div>
                     <p className="text-white/60 text-xs mt-3">We&apos;ll call you within 24 hours with your free custom quote.</p>

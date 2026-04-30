@@ -30,7 +30,7 @@ const faqs = [
     },
     {
         q: "How much does digital marketing cost for a Junagadh business?",
-        a: "Packages start from ₹8,000/month for local visibility and basic social media management. Full-service growth plans vary by scope. We offer a free audit before any commitment to help you understand what level of investment will deliver the best ROI for your business in Junagadh."
+        a: "Packages start from ₹8,000/month for local visibility and basic social media management. For a full breakdown of service-wise pricing, read our complete guide on [digital marketing cost in Junagadh](/blog/digital-marketing-cost-in-junagadh/). We also offer a free audit to help you understand the best ROI for your business."
     },
     {
         q: "How long before I see results from SEO in Junagadh?",
@@ -529,9 +529,12 @@ export default function DigitalMarketingJunagadhPage() {
                                         {openFaq.includes(index) ? <ChevronUp className="text-blue-600 shrink-0" /> : <ChevronDown className="text-slate-400 shrink-0" />}
                                     </button>
                                     <div className={`overflow-hidden transition-all duration-300 ${openFaq.includes(index) ? 'max-h-96' : 'max-h-0'}`}>
-                                        <div className="p-6 pt-0 text-slate-600 leading-relaxed bg-white">
-                                            {faq.a}
-                                        </div>
+                                        <div 
+                                            className="p-6 pt-0 text-slate-600 leading-relaxed bg-white"
+                                            dangerouslySetInnerHTML={{ 
+                                                __html: faq.a.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-blue-600 font-bold hover:underline">$1</a>') 
+                                            }}
+                                        />
                                     </div>
                                 </div>
                             ))}

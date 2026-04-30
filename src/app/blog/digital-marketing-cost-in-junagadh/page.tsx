@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { 
-  ArrowRight, 
-  CheckCircle2, 
-  AlertCircle, 
-  TrendingUp, 
-  Search, 
-  Share2, 
-  MessageSquare, 
+import {
+  ArrowRight,
+  CheckCircle2,
+  AlertCircle,
+  TrendingUp,
+  Search,
+  Share2,
+  MessageSquare,
   ExternalLink,
   ShieldCheck,
   Calculator,
@@ -114,7 +114,7 @@ export default function BlogPostCostJunagadh() {
         <article className="relative overflow-hidden pb-32">
           {/* Decorative Elements */}
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-sky-50/50 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/4" />
-          
+
           <div className="container mx-auto px-4 md:px-6 pt-16 relative z-10">
             {/* Header Section */}
             <div className="max-w-4xl mx-auto mb-16">
@@ -180,7 +180,7 @@ export default function BlogPostCostJunagadh() {
 
             {/* Content Body */}
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-start">
-              
+
               {/* Main Text */}
               <div className="flex-grow max-w-3xl">
                 <div className="mb-16 p-10 md:p-12 rounded-[40px] bg-gradient-to-br from-slate-50 to-white border border-slate-100 shadow-sm relative overflow-hidden">
@@ -201,18 +201,18 @@ export default function BlogPostCostJunagadh() {
                   <p>
                     Imagine you are a Junagadh business owner looking to grow your local presence. You open Google, search for a "digital marketing agency in Junagadh," and start making calls. By the end of the day, your head is spinning. One agency quoted you ₹3,000 a month for "everything," while another asked for ₹80,000 without explaining exactly where that money goes.
                   </p>
-                  
+
                   <p>
                     This is the reality of <strong>digital marketing</strong> in our city today. Pricing is often a "black box" where confusion reigns, and transparency is rare. Agencies bundle services differently, use various levels of tools, and deliver wildly different qualities of work.
                   </p>
 
                   <p>
-                    We are Epsilon Technology — a digital marketing agency based in <strong>Junagadh</strong> since 2017. We have seen what works and what doesn't for local businesses.
+                    We are Epsilon Technology — a digital marketing agency based in <strong>Junagadh</strong> since 2019. We have seen what works and what doesn't for local businesses.
                   </p>
 
                   <h2 id="factors">What Determines Digital Marketing Pricing in Junagadh?</h2>
                   <p>Several factors influence the final quote you receive from any professional agency in Junagadh.</p>
-                  
+
                   <div className="grid gap-6 my-14">
                     {[
                       { title: "1. Scope of Services", desc: "SEO only vs. a full stack including social media, ads, and content creation." },
@@ -396,7 +396,7 @@ export default function BlogPostCostJunagadh() {
                   <p>
                     Finding the right price for digital marketing in Junagadh doesn't have to be a headache. The best first step is always a free audit — understand where you are before deciding how much to spend.
                   </p>
-                  
+
                   <Link href="/contacts" className="text-2xl font-black text-sky-600 hover:underline flex items-center gap-2">
                     Book a free consultation →
                   </Link>

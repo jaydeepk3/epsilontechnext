@@ -70,7 +70,7 @@ export default function PortfolioPage() {
   const filteredCaseStudies = caseStudies.filter(cs => {
     if (activeTab === 'All') return true;
     if (activeTab === 'Live Projects') return true; // Assuming all case studies are live
-    if (activeTab === 'Concepts') return false; 
+    if (activeTab === 'Concepts') return false;
     return cs.type === activeTab || cs.industry === activeTab;
   });
 
@@ -83,7 +83,7 @@ export default function PortfolioPage() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-blue-500/30">
-      
+
       {/* 1. Page Hero */}
       <section className="pt-32 pb-16 px-6 max-w-7xl mx-auto text-center">
         <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight bg-gradient-to-r from-white via-gray-200 to-gray-500 bg-clip-text text-transparent">
@@ -104,7 +104,7 @@ export default function PortfolioPage() {
           <ul className="space-y-4 text-gray-300 mb-8">
             <li className="flex gap-3">
               <span className="text-blue-500 mt-1">✓</span>
-              <span>We've successfully delivered over 100 projects since 2017—the portfolio below highlights select work where clients have explicitly given us permission to share their stories publicly.</span>
+              <span>We've successfully delivered over 100 projects since 2019—the portfolio below highlights select work where clients have explicitly given us permission to share their stories publicly.</span>
             </li>
             <li className="flex gap-3">
               <span className="text-blue-500 mt-1">✓</span>
@@ -172,7 +172,7 @@ export default function PortfolioPage() {
         <div className="bg-gradient-to-br from-blue-900/40 to-emerald-900/40 border border-white/10 p-12 md:p-20 rounded-[3rem] relative overflow-hidden">
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-500/30 rounded-full blur-[100px]"></div>
           <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-emerald-500/30 rounded-full blur-[100px]"></div>
-          
+
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 relative z-10">Ready to build something extraordinary?</h2>
           <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto relative z-10">
             Tell us about your project requirements and we'll provide a comprehensive technical roadmap and fixed-price quote.

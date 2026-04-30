@@ -162,7 +162,7 @@ export default function DigitalMarketingJunagadhPage() {
                     <div className="container mx-auto px-4 relative z-10 text-center">
                         <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-400/20 text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-8 backdrop-blur-sm shadow-xl">
                             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                            Junagadh&apos;s Trusted Digital Marketing Partner · Since 2017
+                            Junagadh&apos;s Trusted Digital Marketing Partner · Since 2019
                         </div>
 
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight tracking-tight">
@@ -529,10 +529,10 @@ export default function DigitalMarketingJunagadhPage() {
                                         {openFaq.includes(index) ? <ChevronUp className="text-blue-600 shrink-0" /> : <ChevronDown className="text-slate-400 shrink-0" />}
                                     </button>
                                     <div className={`overflow-hidden transition-all duration-300 ${openFaq.includes(index) ? 'max-h-96' : 'max-h-0'}`}>
-                                        <div 
+                                        <div
                                             className="p-6 pt-0 text-slate-600 leading-relaxed bg-white"
-                                            dangerouslySetInnerHTML={{ 
-                                                __html: faq.a.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-blue-600 font-bold hover:underline">$1</a>') 
+                                            dangerouslySetInnerHTML={{
+                                                __html: faq.a.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-blue-600 font-bold hover:underline">$1</a>')
                                             }}
                                         />
                                     </div>

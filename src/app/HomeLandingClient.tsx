@@ -583,26 +583,21 @@ export default function HomeLandingClient() {
                                     </div>
                                 </div>
                             </div>
-
-
-
-                                {/* Bottom contact strip */}
-                                <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50 rounded-2xl px-5 py-4 border border-slate-100">
-                                    <div className="flex items-center gap-3 text-sm text-slate-600">
-                                        <Phone size={16} className="text-slate-400 shrink-0" />
-                                        <span>Not sure which service? <strong className="text-slate-900">Call us:</strong></span>
-                                        <a href="tel:+918160881461" className="font-bold text-blue-600 hover:underline">+91 81608 81461</a>
+                                    <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50 rounded-2xl px-5 py-4 border border-slate-100">
+                                        <div className="flex items-center gap-3 text-sm text-slate-600">
+                                            <Phone size={16} className="text-slate-400 shrink-0" />
+                                            <span>Not sure which service? <strong className="text-slate-900">Call us:</strong></span>
+                                            <a href="tel:+918160881461" className="font-bold text-blue-600 hover:underline">+91 81608 81461</a>
+                                        </div>
+                                        <a href={`https://wa.me/${WA}?text=Hi%2C%20I%20want%20to%20know%20more%20about%20${encodeURIComponent(activeSvc.title)}.`}
+                                            target="_blank" rel="noopener noreferrer"
+                                            className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-colors shrink-0">
+                                            <MessageSquare size={15} /> Ask on WhatsApp
+                                        </a>
                                     </div>
-                                    <a href={`https://wa.me/${WA}?text=Hi%2C%20I%20want%20to%20know%20more%20about%20${encodeURIComponent(activeSvc.title)}.`}
-                                        target="_blank" rel="noopener noreferrer"
-                                        className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-colors shrink-0">
-                                        <MessageSquare size={15} /> Ask on WhatsApp
-                                    </a>
                                 </div>
-                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
                 {/* ═══════════════════════════════════════ HOW IT WORKS ═══════════════════════════════════════ */}
                 <section className="py-16 bg-white">

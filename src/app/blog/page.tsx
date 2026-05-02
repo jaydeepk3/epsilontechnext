@@ -18,6 +18,8 @@ export const metadata: Metadata = {
     }
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function BlogIndex() {
     // Fetch dynamic blogs from the database
     const dbBlogs = await prisma.blog.findMany({

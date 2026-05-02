@@ -1,13 +1,41 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { createBlog, updateBlog } from '../actions'
-import { Save, AlertCircle } from 'lucide-react'
+import { Save, AlertCircle, Upload } from 'lucide-react'
 
 export default function BlogForm({ blog }: { blog?: any }) {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
     const [imagePreview, setImagePreview] = useState(blog?.imageUrl || '')
+    const [isDragging, setIsDragging] = useState(false)
+    const fileInputRef = useRef<HTMLInputElement>(null)
+
+    const handleDragOver = (e: React.DragEvent) => {
+        e.preventDefault()
+        setIsDragging(true)
+    }
+
+    const handleDragLeave = () => {
+        setIsDragging(false)
+    }
+
+    const handleDrop = (e: React.DragEvent) => {
+        e.preventDefault()
+        setIsDragging(false)
+        
+        const file = e.dataTransfer.files?.[0]
+        if (file && file.type.startsWith('image/')) {
+            const url = URL.createObjectURL(file)
+            setImagePreview(url)
+            
+            if (fileInputRef.current) {
+                const dataTransfer = new DataTransfer()
+                dataTransfer.items.add(file)
+                fileInputRef.current.files = dataTransfer.files
+            }
+        }
+    }
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -114,20 +142,50 @@ export default function BlogForm({ blog }: { blog?: any }) {
                     <div className="space-y-1 border border-slate-200 p-5 rounded-xl bg-slate-50">
                         <label className="block text-sm font-semibold text-slate-700 mb-3">Featured Image</label>
 
-                        {imagePreview && (
-                            <div className="mb-4 rounded-lg overflow-hidden border border-slate-200 shadow-sm relative aspect-video bg-white">
-                                <img src={imagePreview} alt="Preview" className="w-full h-full object-cover" />
-                            </div>
-                        )}
+                        <div 
+                            onDragOver={handleDragOver}
+                            onDragLeave={handleDragLeave}
+                            onDrop={handleDrop}
+                            onClick={() => fileInputRef.current?.click()}
+                            className={`
+                                relative border-2 border-dashed rounded-xl transition-all cursor-pointer overflow-hidden
+                                ${isDragging ? 'border-sky-500 bg-sky-50' : 'border-slate-300 hover:border-slate-400 bg-white'}
+                                ${imagePreview ? 'aspect-video' : 'py-10'}
+                            `}
+                        >
+                            {imagePreview ? (
+                                <div className="group relative w-full h-full">
+                                    <img src={imagePreview} alt="Preview" className="w-full h-full object-cover" />
+                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2">
+                                        <div className="bg-white/20 p-2 rounded-full backdrop-blur-sm">
+                                            <Upload className="h-6 w-6 text-white" />
+                                        </div>
+                                        <p className="text-white text-sm font-medium">Click or drag to change</p>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="flex flex-col items-center justify-center gap-3 text-slate-500">
+                                    <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm">
+                                        <Upload className="h-8 w-8 text-sky-500" />
+                                    </div>
+                                    <div className="text-center">
+                                        <p className="text-sm font-semibold text-slate-700">Click to upload or drag & drop</p>
+                                        <p className="text-xs text-slate-400 mt-1">PNG, JPG or WebP (max. 5MB)</p>
+                                    </div>
+                                </div>
+                            )}
+                            
+                            <input
+                                type="file"
+                                name="imageFile"
+                                id="imageFile"
+                                ref={fileInputRef}
+                                accept="image/*"
+                                onChange={handleImageChange}
+                                className="hidden"
+                            />
+                        </div>
 
-                        <input
-                            type="file"
-                            name="imageFile"
-                            id="imageFile"
-                            accept="image/*"
-                            onChange={handleImageChange}
-                            className="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-sky-50 flex file:text-sky-700 hover:file:bg-sky-100 transition"
-                        />
                         {blog?.imageUrl && (
                             <input type="hidden" name="imageUrl" value={blog.imageUrl} />
                         )}

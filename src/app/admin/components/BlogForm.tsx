@@ -1,11 +1,11 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useTransition } from 'react'
 import { createBlog, updateBlog } from '../actions'
 import { Save, AlertCircle, Upload } from 'lucide-react'
 
 export default function BlogForm({ blog }: { blog?: any }) {
-    const [loading, setLoading] = useState(false)
+    const [isPending, startTransition] = useTransition()
     const [error, setError] = useState('')
     const [imagePreview, setImagePreview] = useState(blog?.imageUrl || '')
     const [isDragging, setIsDragging] = useState(false)
@@ -39,20 +39,15 @@ export default function BlogForm({ blog }: { blog?: any }) {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        setLoading(true)
-        setError('')
-
         const formData = new FormData(e.currentTarget)
-        try {
-            if (blog) {
-                await updateBlog(blog.id, formData)
-            } else {
-                await createBlog(formData)
+        
+        startTransition(async () => {
+            setError('')
+            const result = blog ? await updateBlog(blog.id, formData) : await createBlog(formData)
+            if (result && result.error) {
+                setError(result.error)
             }
-        } catch (err: any) {
-            setError(err.message || 'Error saving blog')
-            setLoading(false)
-        }
+        })
     }
 
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -252,10 +247,10 @@ export default function BlogForm({ blog }: { blog?: any }) {
 
                         <button
                             type="submit"
-                            disabled={loading}
+                            disabled={isPending}
                             className="w-full flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-4 rounded-xl shadow-md transition disabled:opacity-70 disabled:cursor-not-allowed"
                         >
-                            {loading ? (
+                            {isPending ? (
                                 <span className="animate-pulse">Saving...</span>
                             ) : (
                                 <>

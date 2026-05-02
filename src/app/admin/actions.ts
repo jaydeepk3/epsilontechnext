@@ -26,11 +26,21 @@ export async function uploadImage(formData: FormData) {
 
     const client = new ftp.Client()
     client.ftp.verbose = true
+    
+    const host = process.env.FTP_HOST
+    const user = process.env.FTP_USER
+    const password = process.env.FTP_PASS
+    
+    if (!host || !user || !password) {
+        throw new Error("FTP configuration is missing in environment variables")
+    }
+
     try {
+        console.log(`Connecting to FTP host: ${host} as ${user}`)
         await client.access({
-            host: process.env.FTP_HOST,
-            user: process.env.FTP_USER,
-            password: process.env.FTP_PASS,
+            host,
+            user,
+            password,
             secure: false
         })
 

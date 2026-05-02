@@ -22,7 +22,7 @@ export default async function BlogIndex() {
     // Fetch dynamic blogs from the database
     const dbBlogs = await prisma.blog.findMany({
         where: { published: true },
-        orderBy: { createdAt: 'desc' }
+        orderBy: { updatedAt: 'desc' }
     });
 
     const featuredPost = dbBlogs[0];
@@ -126,7 +126,7 @@ export default async function BlogIndex() {
                                     <div className="p-8 flex flex-col flex-grow">
                                         <div className="flex items-center gap-4 text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">
                                             <Calendar size={14} className="text-sky-500" />
-                                            {new Date(post.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                                            {new Date(post.updatedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                                         </div>
                                         <h2 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-sky-600 transition-colors leading-snug line-clamp-2">
                                             {post.title}

@@ -44,11 +44,12 @@ export async function uploadImage(formData: FormData) {
             secure: false
         })
 
-        const filename = `${Date.now()}-${file.name.replace(/\s+/g, '-')}`
+        const filename = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`
         const buffer = Buffer.from(await file.arrayBuffer())
         const source = Readable.from(buffer)
 
-        // Upload to the root or specific folder
+        // Upload to the specific folder
+        await client.cd('blog_images')
         await client.uploadFrom(source, filename)
         
         return `${process.env.FTP_BASE_URL}/${filename}`

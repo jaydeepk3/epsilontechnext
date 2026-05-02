@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Plus, Edit3, Trash2 } from 'lucide-react'
+import { Plus, Edit3, Trash2, ImageIcon } from 'lucide-react'
+import Image from 'next/image'
 import prisma from '@/lib/prisma'
 import { deleteBlog } from '../actions'
 
@@ -26,6 +27,7 @@ export default async function AdminBlogsPage() {
                     <table className="w-full text-left">
                         <thead className="bg-slate-50 border-b border-slate-200 text-slate-600 font-medium text-sm">
                             <tr>
+                                <th className="px-6 py-4 w-16">Image</th>
                                 <th className="px-6 py-4">Title</th>
                                 <th className="px-6 py-4">URL Slug</th>
                                 <th className="px-6 py-4">Status</th>
@@ -35,7 +37,23 @@ export default async function AdminBlogsPage() {
                         <tbody className="divide-y divide-slate-100">
                             {blogs.map((blog: any) => (
                                 <tr key={blog.id} className="hover:bg-slate-50/50 transition-colors">
-                                    <td className="px-6 py-4 font-medium text-slate-800">{blog.title}</td>
+                                    <td className="px-6 py-4">
+                                        <div className="w-12 h-12 rounded-lg bg-slate-100 overflow-hidden relative border border-slate-200">
+                                            {blog.imageUrl ? (
+                                                <Image 
+                                                    src={blog.imageUrl} 
+                                                    alt="" 
+                                                    fill 
+                                                    className="object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full flex items-center justify-center text-slate-300">
+                                                    <ImageIcon className="h-5 w-5" />
+                                                </div>
+                                            )}
+                                        </div>
+                                    </td>
+                                    <td className="px-6 py-4 font-medium text-slate-800 line-clamp-2">{blog.title}</td>
                                     <td className="px-6 py-4 text-slate-500 text-sm">/blog/{blog.slug}</td>
                                     <td className="px-6 py-4">
                                         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${blog.published ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'}`}>
@@ -64,7 +82,7 @@ export default async function AdminBlogsPage() {
                             ))}
                             {blogs.length === 0 && (
                                 <tr>
-                                    <td colSpan={4} className="px-6 py-8 text-center text-slate-500">
+                                    <td colSpan={5} className="px-6 py-8 text-center text-slate-500">
                                         No blogs found. Create your first blog post!
                                     </td>
                                 </tr>

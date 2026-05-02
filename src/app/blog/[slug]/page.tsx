@@ -104,8 +104,6 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                             </Badge>
                             <div className="flex items-center gap-2 text-slate-400 text-sm font-medium">
                                 <Clock size={16} className="text-sky-500" /> 5 Min Read
-                                <span className="w-1 h-1 bg-slate-300 rounded-full" />
-                                <Eye size={16} className="text-slate-400" /> 1.2k views
                             </div>
                         </div>
 

@@ -28,19 +28,25 @@ export async function uploadImage(formData: FormData) {
     } catch (error: any) {
         if (error.message.includes('missing BLOB_READ_WRITE_TOKEN')) {
             console.log('Falling back to local upload since Vercel Blob is not configured.')
-            // Basic fallback for local development if BLOB_READ_WRITE_TOKEN is missing
-            // Note: This won't work on Vercel Edge/Serverless, merely for local testing
             const fs = require('fs')
             const path = require('path')
-            const file = formData.get('file') as File
+            const file = formData.get('imageFile') as File
+            if (!file || file.size === 0) return ''
+            
             const buffer = Buffer.from(await file.arrayBuffer())
             const filename = Date.now() + '-' + file.name.replace(/\s+/g, '-')
             const publicPath = path.join(process.cwd(), 'public', 'uploads')
-            if (!fs.existsSync(publicPath)) {
-                fs.mkdirSync(publicPath, { recursive: true })
+            
+            try {
+                if (!fs.existsSync(publicPath)) {
+                    fs.mkdirSync(publicPath, { recursive: true })
+                }
+                fs.writeFileSync(path.join(publicPath, filename), buffer)
+                return `/uploads/${filename}`
+            } catch (fsError) {
+                console.error('Local upload failed:', fsError)
+                throw new Error('Failed to upload image locally')
             }
-            fs.writeFileSync(path.join(publicPath, filename), buffer)
-            return `/uploads/${filename}`
         }
         throw error
     }

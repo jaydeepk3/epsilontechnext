@@ -48,22 +48,14 @@ export async function uploadImage(formData: FormData) {
         const buffer = Buffer.from(await file.arrayBuffer())
         const source = Readable.from(buffer)
 
-        // Try to cd to blog_images, if fails, create it
-        try {
-            await client.cd('blog_images')
-        } catch (e) {
-            console.log("Directory blog_images not found, attempting to create it...")
-            await client.ensureDir('blog_images')
-            await client.cd('blog_images')
-        }
-        
+        // Upload directly to FTP root (FTP_BASE_URL serves files from root)
         await client.uploadFrom(source, filename)
         
         const baseUrl = process.env.FTP_BASE_URL || ''
         const sanitizedBaseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl
         
-        // Return the full URL including the blog_images path
-        const finalUrl = `${sanitizedBaseUrl}/blog_images/${filename}`
+        // Return the direct URL — no subfolder needed
+        const finalUrl = `${sanitizedBaseUrl}/${filename}`
         console.log("Image uploaded successfully. URL:", finalUrl)
         return finalUrl
     } catch (err: any) {

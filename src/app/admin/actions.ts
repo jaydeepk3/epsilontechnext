@@ -48,15 +48,18 @@ export async function uploadImage(formData: FormData) {
         const buffer = Buffer.from(await file.arrayBuffer())
         const source = Readable.from(buffer)
 
-        // Upload directly to FTP root (FTP_BASE_URL serves files from root)
-        await client.uploadFrom(source, filename)
+        // The web domain https://blog.epsilon-technology.com/ serves files
+        // from the 'blog_images' subfolder on the FTP server, NOT from root.
+        // Navigate into blog_images before uploading so the URL resolves correctly.
+        await client.ensureDir('/blog_images')
+        await client.uploadFrom(source, `/blog_images/${filename}`)
         
         const baseUrl = process.env.FTP_BASE_URL || ''
         const sanitizedBaseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl
         
-        // Return the direct URL — no subfolder needed
+        // URL maps directly — blog.epsilon-technology.com/ == /blog_images/ on FTP
         const finalUrl = `${sanitizedBaseUrl}/${filename}`
-        console.log("Image uploaded successfully. URL:", finalUrl)
+        console.log("Image uploaded successfully to /blog_images/. URL:", finalUrl)
         return finalUrl
     } catch (err: any) {
         console.error("FTP Upload Error:", err)

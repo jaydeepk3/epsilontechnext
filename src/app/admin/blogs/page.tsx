@@ -68,10 +68,8 @@ export default async function AdminBlogsPage() {
                                             >
                                                 <Edit3 className="h-4 w-4" /> Edit
                                             </Link>
-                                            <form action={async () => {
-                                                'use server';
-                                                await deleteBlog(blog.id);
-                                            }}>
+                                            <form action={deleteBlog.bind(null, blog.id)}>
+
                                                 <button type="submit" className="text-red-500 hover:text-red-700 flex items-center gap-1 text-sm font-medium transition">
                                                     <Trash2 className="h-4 w-4" /> Delete
                                                 </button>

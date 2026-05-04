@@ -52,7 +52,9 @@ export async function uploadImage(formData: FormData) {
         await client.cd('blog_images')
         await client.uploadFrom(source, filename)
         
-        return `${process.env.FTP_BASE_URL}/${filename}`
+        const baseUrl = process.env.FTP_BASE_URL || ''
+        const sanitizedBaseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl
+        return `${sanitizedBaseUrl}/${filename}`
     } catch (err: any) {
         console.error("FTP Upload Error:", err)
         // Fallback to local only if FTP fails AND it's a local development environment

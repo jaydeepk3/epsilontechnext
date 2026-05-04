@@ -65,10 +65,17 @@ export default async function DynamicBlogPage({ params }: PageProps) {
 
     // Extract headings for Table of Contents
     const headingRegex = /^## (.*$)/gim;
-    const headings = Array.from(blog.content.matchAll(headingRegex)).map(match => ({
-        text: match[1],
-        id: match[1].toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-')
-    }));
+    const headings = Array.from(blog.content.matchAll(headingRegex))
+        .map(match => {
+            const text = match[1]?.trim();
+            if (!text) return null;
+            return {
+                text,
+                id: text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-')
+            };
+        })
+        .filter((h): h is { text: string; id: string } => h !== null);
+
 
     return (
         <main className="bg-white min-h-screen selection:bg-sky-100 selection:text-sky-900">

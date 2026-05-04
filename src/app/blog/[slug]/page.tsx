@@ -223,7 +223,10 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                                     remarkPlugins={[remarkGfm]}
                                     components={{
                                         h2: ({ node, ...props }) => {
-                                            const id = props.children?.toString().toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+                                            const content = Array.isArray(props.children) 
+                                                ? props.children.join('') 
+                                                : props.children?.toString() || '';
+                                            const id = content.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
                                             return (
                                                 <h2 id={id} className="text-3xl md:text-5xl mt-32 mb-12 scroll-mt-32 flex items-start gap-5 group font-black" {...props}>
                                                     <span className="flex items-center justify-center w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 text-sm font-black shadow-sm group-hover:bg-sky-600 group-hover:text-white transition-all mt-1 shrink-0 rotate-3 group-hover:rotate-0">
@@ -276,7 +279,8 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                                         ),
                                         p: ({ node, ...props }) => {
                                             // Enhanced CTA component
-                                            if (props.children?.toString().includes('Audit')) {
+                                            const content = props.children?.toString() || '';
+                                            if (content.includes('Audit')) {
                                                 return (
                                                     <div className="my-24 p-1 rounded-[48px] bg-gradient-to-tr from-sky-400 via-indigo-500 to-purple-600 shadow-2xl shadow-sky-200 animate-gradient-shift">
                                                         <div className="bg-white rounded-[46px] p-12 md:p-20 text-center relative overflow-hidden">

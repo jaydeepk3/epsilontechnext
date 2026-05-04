@@ -48,27 +48,42 @@ export async function uploadImage(formData: FormData) {
         const buffer = Buffer.from(await file.arrayBuffer())
         const source = Readable.from(buffer)
 
-        // Upload to the specific folder
-        await client.cd('blog_images')
+        // Try to cd to blog_images, if fails, create it
+        try {
+            await client.cd('blog_images')
+        } catch (e) {
+            console.log("Directory blog_images not found, attempting to create it...")
+            await client.ensureDir('blog_images')
+            await client.cd('blog_images')
+        }
+        
         await client.uploadFrom(source, filename)
         
         const baseUrl = process.env.FTP_BASE_URL || ''
         const sanitizedBaseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl
-        return `${sanitizedBaseUrl}/${filename}`
+        
+        // Return the full URL including the blog_images path
+        const finalUrl = `${sanitizedBaseUrl}/blog_images/${filename}`
+        console.log("Image uploaded successfully. URL:", finalUrl)
+        return finalUrl
     } catch (err: any) {
         console.error("FTP Upload Error:", err)
         // Fallback to local only if FTP fails AND it's a local development environment
         if (process.env.NODE_ENV === 'development') {
             console.log('Falling back to local upload...')
-            const buffer = Buffer.from(await file.arrayBuffer())
-            const filename = `${Date.now()}-${file.name.replace(/\s+/g, '-')}`
-            const publicPath = path.join(process.cwd(), 'public', 'uploads')
-            
-            if (!fs.existsSync(publicPath)) {
-                fs.mkdirSync(publicPath, { recursive: true })
+            try {
+                const buffer = Buffer.from(await file.arrayBuffer())
+                const filename = `${Date.now()}-${file.name.replace(/\s+/g, '-')}`
+                const publicPath = path.join(process.cwd(), 'public', 'uploads')
+                
+                if (!fs.existsSync(publicPath)) {
+                    fs.mkdirSync(publicPath, { recursive: true })
+                }
+                fs.writeFileSync(path.join(publicPath, filename), buffer)
+                return `/uploads/${filename}`
+            } catch (localErr) {
+                console.error("Local fallback also failed:", localErr)
             }
-            fs.writeFileSync(path.join(publicPath, filename), buffer)
-            return `/uploads/${filename}`
         }
         throw new Error("Failed to upload image to server: " + (err.message || 'Unknown error'))
     } finally {

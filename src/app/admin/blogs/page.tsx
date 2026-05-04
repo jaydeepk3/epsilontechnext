@@ -39,12 +39,13 @@ export default async function AdminBlogsPage() {
                                 <tr key={blog.id} className="hover:bg-slate-50/50 transition-colors">
                                     <td className="px-6 py-4">
                                         <div className="w-12 h-12 rounded-lg bg-slate-100 overflow-hidden relative border border-slate-200">
-                                            {blog.imageUrl ? (
+                                            {blog.imageUrl && (blog.imageUrl.startsWith('http') || blog.imageUrl.startsWith('/')) ? (
                                                 <Image 
                                                     src={blog.imageUrl} 
                                                     alt="" 
                                                     fill 
                                                     className="object-cover"
+                                                    unoptimized
                                                 />
                                             ) : (
                                                 <div className="w-full h-full flex items-center justify-center text-slate-300">
@@ -53,7 +54,9 @@ export default async function AdminBlogsPage() {
                                             )}
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4 font-medium text-slate-800 line-clamp-2">{blog.title}</td>
+                                    <td className="px-6 py-4 font-medium text-slate-800">
+                                        <div className="line-clamp-2">{blog.title}</div>
+                                    </td>
                                     <td className="px-6 py-4 text-slate-500 text-sm">/blog/{blog.slug}</td>
                                     <td className="px-6 py-4">
                                         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${blog.published ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'}`}>

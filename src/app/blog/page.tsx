@@ -55,40 +55,44 @@ export default async function BlogIndex() {
                 {featuredPost && (
                     <div className="max-w-6xl mx-auto -mt-10 mb-20">
                         <Link href={featuredPost.isExternal ? `/${featuredPost.slug}` : `/blog/${featuredPost.slug}`} className="group">
-                            <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-100 flex flex-col lg:flex-row h-full lg:h-[450px] group-hover:shadow-sky-100/50 transition-all duration-700">
-                                <div className="lg:w-1/2 relative overflow-hidden h-64 lg:h-auto">
+                            <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-100 flex flex-col group-hover:shadow-sky-100/50 transition-all duration-700">
+                                <div className="relative overflow-hidden aspect-[21/9]">
                                     <Image
                                         src={featuredPost.imageUrl || "/blog_medical_marketing.png"}
                                         alt={featuredPost.title}
                                         fill
-                                        className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                                        className="object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
                                     />
-                                    <div className="absolute top-6 left-6">
-                                        <Badge className="bg-white/90 backdrop-blur-md text-slate-900 border-none px-4 py-1.5 font-bold shadow-lg">Featured Note</Badge>
+                                    <div className="absolute top-8 left-8 z-20">
+                                        <Badge className="bg-sky-600 text-white border-none px-6 py-2 font-black text-xs uppercase tracking-[0.2em] shadow-2xl">Featured Insight</Badge>
+                                    </div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                                    <div className="absolute bottom-8 left-8 hidden md:flex items-center gap-4 text-white/80 text-xs font-bold uppercase tracking-widest">
+                                        <Clock size={16} className="text-sky-400" /> 5 Min Read
                                     </div>
                                 </div>
-                                <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
-                                    <div className="flex items-center gap-4 text-sm font-semibold text-sky-600 mb-6 uppercase tracking-wider">
-                                       <TrendingUp size={16} /> {featuredPost.category}
+                                <div className="p-8 lg:p-12 flex flex-col">
+                                    <div className="flex items-center gap-4 text-sm font-black text-sky-600 mb-6 uppercase tracking-[0.2em]">
+                                       <TrendingUp size={18} /> {featuredPost.category}
                                     </div>
-                                    <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-6 group-hover:text-sky-600 transition-colors leading-tight">
+                                    <h2 className="text-3xl lg:text-5xl font-black text-slate-900 mb-6 group-hover:text-sky-600 transition-colors leading-tight tracking-tight">
                                         {featuredPost.title}
                                     </h2>
-                                    <p className="text-slate-500 text-lg leading-relaxed mb-8 line-clamp-3">
+                                    <p className="text-slate-500 text-lg lg:text-xl leading-relaxed mb-10 line-clamp-2 max-w-4xl">
                                         {featuredPost.metaDescription}
                                     </p>
-                                    <div className="flex items-center justify-between mt-auto">
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400 border border-slate-200 uppercase">
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex items-center gap-4">
+                                            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center font-black text-white shadow-lg shadow-sky-200 uppercase rotate-3 group-hover:rotate-0 transition-transform">
                                                 {featuredPost.author?.[0] || 'E'}
                                             </div>
                                             <div>
-                                                <p className="font-bold text-slate-900 text-sm">{featuredPost.author || 'Epsilon Team'}</p>
-                                                <p className="text-slate-400 text-xs">{new Date(featuredPost.createdAt).toLocaleDateString()}</p>
+                                                <p className="font-black text-slate-900 text-base">{featuredPost.author || 'Epsilon Team'}</p>
+                                                <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">{new Date(featuredPost.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
                                             </div>
                                         </div>
-                                        <div className="w-12 h-12 rounded-full bg-slate-50 group-hover:bg-sky-600 group-hover:text-white flex items-center justify-center transition-all duration-300">
-                                            <ArrowRight size={20} />
+                                        <div className="flex items-center gap-3 px-6 py-3 bg-slate-50 group-hover:bg-sky-600 group-hover:text-white rounded-2xl transition-all duration-300 font-black text-sm uppercase tracking-widest">
+                                            Read Full Article <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                                         </div>
                                     </div>
                                 </div>
@@ -111,16 +115,17 @@ export default async function BlogIndex() {
                                 key={post.id}
                                 className="group h-full flex flex-col"
                             >
-                                <article className="bg-white rounded-[32px] overflow-hidden border border-slate-100 h-full flex flex-col hover:shadow-xl hover:shadow-slate-100 transition-all duration-500 group-hover:-translate-y-2">
-                                    <div className="h-56 relative overflow-hidden">
+                                <article className="bg-white rounded-[32px] overflow-hidden border border-slate-100 h-full flex flex-col hover:shadow-2xl hover:shadow-sky-100/40 transition-all duration-500 group-hover:-translate-y-2 border-b-4 hover:border-b-sky-500">
+                                    <div className="aspect-[21/9] relative overflow-hidden">
                                         <Image
                                             src={post.imageUrl || "/blog_medical_marketing.png"}
                                             alt={post.title}
                                             fill
                                             className="object-cover group-hover:scale-110 transition-transform duration-1000"
                                         />
-                                        <div className="absolute bottom-4 left-4">
-                                            <Badge className="bg-white/90 backdrop-blur-md text-sky-600 border-none px-3 py-1 font-bold text-xs shadow-sm">
+                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                        <div className="absolute bottom-4 left-4 z-10">
+                                            <Badge className="bg-white/95 backdrop-blur-sm text-sky-600 border-none px-3 py-1 font-black text-[10px] uppercase tracking-widest shadow-lg">
                                                 {post.category || 'Insight'}
                                             </Badge>
                                         </div>

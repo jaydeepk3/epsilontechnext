@@ -8,6 +8,7 @@ async function checkBlogs() {
         });
         blogs.forEach((b, i) => {
             console.log(`[${i}] Title: ${b.title}`);
+            console.log(`    ID: ${b.id}`);
             console.log(`    Slug: ${b.slug}`);
             console.log(`    Image: ${b.imageUrl}`);
             console.log(`    Published: ${b.published}`);

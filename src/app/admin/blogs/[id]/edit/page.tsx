@@ -4,14 +4,18 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import prisma from '@/lib/prisma'
 
-export default async function EditBlogPage({ params }: { params: { id: string } }) {
+export default async function EditBlogPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
+    console.log('Fetching blog for edit, ID:', id)
 
     const blog = await prisma.blog.findUnique({
         where: { id }
     })
 
-    if (!blog) return notFound()
+    if (!blog) {
+        console.log('Blog not found for ID:', id)
+        return notFound()
+    }
 
     return (
         <div>
@@ -22,7 +26,7 @@ export default async function EditBlogPage({ params }: { params: { id: string } 
                 <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight mt-4">Edit Blog</h1>
             </div>
 
-            <BlogForm blog={blog} />
+            <BlogForm blog={JSON.parse(JSON.stringify(blog))} />
         </div>
     )
 }

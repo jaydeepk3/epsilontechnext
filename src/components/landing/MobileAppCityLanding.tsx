@@ -3,17 +3,17 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { 
-    CheckCircle2, 
-    Globe, 
-    Zap, 
-    Smartphone, 
-    Search, 
-    Clock, 
-    ArrowRight, 
-    MessageCircle, 
-    MapPin, 
-    PhoneCall, 
+import {
+    CheckCircle2,
+    Globe,
+    Zap,
+    Smartphone,
+    Search,
+    Clock,
+    ArrowRight,
+    MessageCircle,
+    MapPin,
+    PhoneCall,
     Star,
     ShieldCheck,
     BarChart3,
@@ -35,7 +35,7 @@ interface MobileAppCityLandingProps {
 
 export default function MobileAppCityLanding({ city, cityDescription }: MobileAppCityLandingProps) {
     const citySlug = city.toLowerCase();
-    
+
     const pageKeywords = [
         `best mobile application development company in ${citySlug}`,
         `best mobile app development agency in ${citySlug}`,
@@ -56,8 +56,16 @@ export default function MobileAppCityLanding({ city, cityDescription }: MobileAp
             answer: "React Native and Flutter are modern cross-platform technologies. They allow us to write code once and deploy it to both iOS (Apple) and Android (Google Play Store) simultaneously. This saves you up to 40% in development costs and makes future updates much faster."
         },
         {
+            question: "How do you protect my custom mobile app startup or product idea during development?",
+            answer: "We protect all startup and enterprise app product ideas under a strict Non-Disclosure Agreement (NDA). From codebase ownership to intellectual property (IP) and database credentials, everything is legally transferred to you upon completion."
+        },
+        {
+            question: "Will my mobile app be optimized to appear in Google search and AI tools like ChatGPT?",
+            answer: "Yes. We design search-optimized web landing pages for your mobile app, implement app indexing (deep linking) to let users launch the app directly from search results, and integrate Schema.org structured metadata so search engines and conversational AI engines (like ChatGPT, Gemini, and Perplexity) can crawl, index, and recommend your application."
+        },
+        {
             question: `Where is Epsilon Technology located in ${city}?`,
-            answer: `We are located on Moti Baug Road, Junagadh, Gujarat. Being local means we can sit down together, sketch out your app designs in person, and provide real-time updates without remote communication delays.`
+            answer: `We are located on Zanzerda Cross Road, Junagadh, Gujarat. Being local means we can sit down together, sketch out your app designs in person, and provide real-time updates without remote communication delays.`
         },
         {
             question: "Will you help us upload the app to the Play Store and App Store?",
@@ -79,35 +87,48 @@ export default function MobileAppCityLanding({ city, cityDescription }: MobileAp
         "telephone": "+918160881461",
         "priceRange": "₹40000-₹350000",
         "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Moti Baug Road",
-          "addressLocality": city,
-          "addressRegion": "Gujarat",
-          "postalCode": "362001",
-          "addressCountry": "IN"
+            "@type": "PostalAddress",
+            "streetAddress": "Moti Baug Road",
+            "addressLocality": city,
+            "addressRegion": "Gujarat",
+            "postalCode": "362001",
+            "addressCountry": "IN"
         },
         "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 21.5222,
-          "longitude": 70.4579
+            "@type": "GeoCoordinates",
+            "latitude": 21.5222,
+            "longitude": 70.4579
         },
         "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-          ],
-          "opens": "09:00",
-          "closes": "19:00"
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            ],
+            "opens": "09:00",
+            "closes": "19:00"
         },
         "sameAs": [
-          "https://www.facebook.com/epsilontechnology.in",
-          "https://www.instagram.com/epsilontechnology.in"
+            "https://www.facebook.com/epsilontechnology.in",
+            "https://www.instagram.com/epsilontechnology.in"
         ]
+    };
+
+    const faqSchemaData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": specializedFaqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
     };
 
     const whatsappLink = `https://wa.me/918160881461?text=Hi%20Jaydeep%2C%20I'm%20looking%20for%20a%20mobile%20app%20for%20my%20business%20in%20${city}.%20Can%20we%20discuss%3F`;
@@ -118,12 +139,16 @@ export default function MobileAppCityLanding({ city, cityDescription }: MobileAp
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
             />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }}
+            />
 
             {/* --- Hero Section --- */}
             <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
                 <div className="absolute top-0 right-0 -z-10 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-50 via-white to-white" />
                 <div className="absolute -top-24 -left-20 w-96 h-96 bg-indigo-100/50 rounded-full blur-[100px] -z-10 animate-pulse" />
-                
+
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
                         <motion.div
@@ -182,8 +207,8 @@ export default function MobileAppCityLanding({ city, cityDescription }: MobileAp
                         >
                             <div className="absolute inset-0 bg-blue-600/10 blur-[100px] -z-10 rounded-full scale-110" />
                             <div className="relative rounded-[40px] overflow-hidden border-8 border-slate-900 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] aspect-[9/19] bg-slate-950">
-                                <img 
-                                    src="/blog_mobile_app_dev.png" 
+                                <img
+                                    src="/blog_mobile_app_dev.png"
                                     alt={`Mobile app development in ${city}`}
                                     className="w-full h-full object-cover"
                                 />
@@ -192,7 +217,7 @@ export default function MobileAppCityLanding({ city, cityDescription }: MobileAp
                                     <h4 className="font-extrabold text-lg leading-tight">Scale Your Junagadh Business</h4>
                                 </div>
                             </div>
-                            
+
                             {/* Floating Badges */}
                             <motion.div
                                 animate={{ y: [0, -10, 0] }}
@@ -222,7 +247,7 @@ export default function MobileAppCityLanding({ city, cityDescription }: MobileAp
                                 </div>
                             </motion.div>
                         </motion.div>
-                        
+
                         {/* Features Banner */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
@@ -283,7 +308,7 @@ export default function MobileAppCityLanding({ city, cityDescription }: MobileAp
                                 ))}
                             </div>
                         </motion.div>
-                        
+
                         <motion.div
                             initial={{ opacity: 0, x: 30 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -315,6 +340,67 @@ export default function MobileAppCityLanding({ city, cityDescription }: MobileAp
                                 ))}
                             </div>
                         </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* --- Our Mobile App Development Services in Junagadh --- */}
+            <section className="py-24 bg-slate-50 border-t border-slate-100">
+                <div className="container mx-auto px-4 md:px-6 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="max-w-3xl mx-auto mb-16"
+                    >
+                        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
+                            Best Mobile Application Development Services in {city}
+                        </h2>
+                        <p className="text-slate-600 text-lg">
+                            We build native-performance iOS & Android mobile apps that scale. Whether you need a cross-platform solution to reduce development costs or a complex enterprise app, Epsilon Technology delivers.
+                        </p>
+                    </motion.div>
+                    
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto text-left">
+                        {[
+                            { 
+                                title: "React Native Development", 
+                                desc: "Build once and deploy to both iOS and Android simultaneously. Save 40% in costs with sub-second performance matching pure native code.", 
+                                badge: "Cross-Platform Efficiency" 
+                            },
+                            { 
+                                title: "Flutter App Development", 
+                                desc: "Design-rich, high-performance applications with gorgeous animations. Best for customized UI/UX and rich graphical interfaces.", 
+                                badge: "High-Fidelity Custom UI" 
+                            },
+                            { 
+                                title: "Secure Backend & APIs", 
+                                desc: "We build high-grade database backends using Node.js, Prisma, and PostgreSQL. Securely manage users, push alerts, and CRM integrations.", 
+                                badge: "Node.js & PostgreSQL" 
+                            },
+                            { 
+                                title: "ASO & Search Indexing", 
+                                desc: "We optimize descriptions for Play Store/App Store and configure web deep linking so users can find and launch your app from Google & ChatGPT.", 
+                                badge: "App Store Optimization" 
+                            }
+                        ].map((service, i) => (
+                            <motion.div
+                                key={i}
+                                whileHover={{ y: -5 }}
+                                className="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
+                            >
+                                <div>
+                                    <span className="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full mb-4">
+                                        {service.badge}
+                                    </span>
+                                    <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+                                    <p className="text-slate-500 text-sm leading-relaxed mb-6">{service.desc}</p>
+                                </div>
+                                <Link href={whatsappLink} target="_blank" className="text-blue-600 font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                                    Discuss App Cost <ArrowRight size={16} />
+                                </Link>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -357,13 +443,13 @@ export default function MobileAppCityLanding({ city, cityDescription }: MobileAp
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="bg-slate-100 rounded-[50px] overflow-hidden h-[450px] shadow-inner relative group">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118335.84594185244!2d70.38096185820312!3d21.527443899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3958019e07297e2d%3A0xff3c99df3d21799!2sJunagadh%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1712745000000!5m2!1sen!2sin" 
-                                width="100%" 
-                                height="100%" 
-                                style={{ border: 0 }} 
-                                allowFullScreen 
-                                loading="lazy" 
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118335.84594185244!2d70.38096185820312!3d21.527443899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3958019e07297e2d%3A0xff3c99df3d21799!2sJunagadh%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1712745000000!5m2!1sen!2sin"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                                 className="grayscale hover:grayscale-0 transition-all duration-700"
                             ></iframe>
@@ -426,7 +512,7 @@ export default function MobileAppCityLanding({ city, cityDescription }: MobileAp
             </footer>
 
             {/* Floating WhatsApp CTA */}
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="fixed bottom-6 right-6 z-50"

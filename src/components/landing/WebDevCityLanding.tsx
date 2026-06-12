@@ -50,6 +50,14 @@ export default function WebDevCityLanding({ city, cityDescription }: WebDevCityL
             answer: "Next.js is the most modern web framework. It allows your website to be lightning-fast (which Google loves) and extremely secure. Unlike traditional sites, Next.js sites at Epsilon Technology are built for performance and better SEO rankings."
         },
         {
+            question: "Why should I choose custom development over template site builders like Wix or Squarespace?",
+            answer: "Template builders have limited speed optimization, restrictive SEO options, and cannot be custom-optimized for AI engines like ChatGPT. A custom Next.js website from Epsilon Technology gives you full design control, clean semantic HTML5, custom schema structures, and sub-second loading speeds."
+        },
+        {
+            question: "Will my business website be visible on Google Search and conversational AI like ChatGPT?",
+            answer: "Yes. Every website we build is optimized for traditional SEO (meta tags, fast loading speeds, local schema markup) and Generative Engine Optimization (GEO). We structure content so AI search tools (like ChatGPT Search, Gemini, and Perplexity) can crawl and cite your business when users ask for local services."
+        },
+        {
             question: `Is Epsilon Technology really based in ${city}?`,
             answer: `Yes! We are proud to be locally based in Junagadh, Gujarat. You can visit our office or we can meet at your business location. Being local allows us to understand the Junagadh market better than any remote agency.`
         },
@@ -104,6 +112,19 @@ export default function WebDevCityLanding({ city, cityDescription }: WebDevCityL
         ]
     };
 
+    const faqSchemaData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": specializedFaqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    };
+
     const whatsappLink = `https://wa.me/918160881461?text=Hi%20Jaydeep%2C%20I'm%20looking%20for%20a%20website%20for%20my%20business%20in%20${city}.%20Can%20we%20discuss%3F`;
 
 
@@ -113,6 +134,10 @@ export default function WebDevCityLanding({ city, cityDescription }: WebDevCityL
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }}
             />
 
             {/* --- Hero Section --- */}
@@ -295,6 +320,67 @@ export default function WebDevCityLanding({ city, cityDescription }: WebDevCityL
                                 ))}
                             </div>
                         </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* --- Our Web Development Services in Junagadh --- */}
+            <section className="py-24 bg-slate-50 border-t border-slate-100">
+                <div className="container mx-auto px-4 md:px-6 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="max-w-3xl mx-auto mb-16"
+                    >
+                        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
+                            Best Web Design & Development Services in {city}
+                        </h2>
+                        <p className="text-slate-600 text-lg">
+                            We build sub-second loading websites tailored to your platform of choice. Whether you need a simple WordPress site or a complex Next.js web application, Epsilon Technology delivers premium Saurashtra-based engineering.
+                        </p>
+                    </motion.div>
+                    
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto text-left">
+                        {[
+                            { 
+                                title: "WordPress Web Development", 
+                                desc: "Perfect for local clinics, schools, and real estate. We design custom, high-speed WordPress themes optimized for local SEO.", 
+                                badge: "Affordable & Easy CMS" 
+                            },
+                            { 
+                                title: "eCommerce Website Development", 
+                                desc: "Launch your online store in Junagadh. We build lightning-fast Shopify and WooCommerce stores with secure local payment gateways.", 
+                                badge: "Shopify & WooCommerce" 
+                            },
+                            { 
+                                title: "Custom Next.js & React Apps", 
+                                desc: "For startups and businesses needing advanced dashboards, portals, or database features. Lightning-fast and AI-search optimized.", 
+                                badge: "Enterprise Tech Stack" 
+                            },
+                            { 
+                                title: "Google & ChatGPT SEO (GEO)", 
+                                desc: "We optimize your content and code structure so conversational AI and search engines cite your website on top when clients search local services.", 
+                                badge: "Leads & Rankings" 
+                            }
+                        ].map((service, i) => (
+                            <motion.div
+                                key={i}
+                                whileHover={{ y: -5 }}
+                                className="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
+                            >
+                                <div>
+                                    <span className="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-bold rounded-full mb-4">
+                                        {service.badge}
+                                    </span>
+                                    <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+                                    <p className="text-slate-500 text-sm leading-relaxed mb-6">{service.desc}</p>
+                                </div>
+                                <Link href={whatsappLink} target="_blank" className="text-indigo-600 font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                                    Inquire Pricing <ArrowRight size={16} />
+                                </Link>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>

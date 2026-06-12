@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import MobileAppCityLanding from '@/components/landing/MobileAppCityLanding';
 
 export const metadata: Metadata = {
-    title: "Best Mobile Application Development Company in Junagadh | Epsilon Technology",
-    description: "Looking for the best mobile application development company in Junagadh? Epsilon Technology designs and builds high-performance Android & iOS apps.",
+    title: "Best Mobile App Development Company in Junagadh | Android & iOS",
+    description: "Epsilon Technology is the best mobile application development company in Junagadh. We build custom Android & iOS apps with React Native & Flutter.",
     keywords: [
         "best mobile application development company in junagadh",
         "best mobile application development agency in junagadh",
@@ -12,6 +12,10 @@ export const metadata: Metadata = {
         "android app development junagadh",
         "ios app development junagadh",
         "react native app development junagadh",
+        "flutter app developers junagadh",
+        "mobile app development cost junagadh",
+        "android app developers in junagadh",
+        "custom mobile app creation junagadh",
         "epsilon technology junagadh"
     ],
     openGraph: {

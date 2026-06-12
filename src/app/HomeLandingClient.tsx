@@ -269,10 +269,10 @@ function ApplyModal({ svc, onClose }: { svc: Service; onClose: () => void }) {
                                     className="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none text-sm text-slate-900 bg-white"
                                 >
                                     <option value="" disabled>Select approximate budget</option>
-                                    <option value="Under ₹50k">Under ₹50k</option>
-                                    <option value="₹50k - ₹1 Lakh">₹50k - ₹1 Lakh</option>
-                                    <option value="₹1 Lakh - ₹3 Lakhs">₹1 Lakh - ₹3 Lakhs</option>
-                                    <option value="₹3 Lakhs+">₹3 Lakhs+ (Premium & Custom)</option>
+                                    <option value="Under $600 / AED 2,200 (Under ₹50k)">Under $600 / AED 2,200 (Under ₹50k)</option>
+                                    <option value="$600 - $1,200 / AED 2,200 - 4,400 (₹50k - ₹1 Lakh)">$600 - $1,200 / AED 2,200 - 4,400 (₹50k - ₹1 Lakh)</option>
+                                    <option value="$1,200 - $3,600 / AED 4,400 - 13,000 (₹1 Lakh - ₹3 Lakhs)">$1,200 - $3,600 / AED 4,400 - 13,000 (₹1 Lakh - ₹3 Lakhs)</option>
+                                    <option value="$3,600+ / AED 13,000+ (₹3 Lakhs+ - Custom Enterprise)">$3,600+ / AED 13,000+ (₹3 Lakhs+ - Custom Enterprise)</option>
                                 </select>
                             </div>
                             <div>
@@ -317,6 +317,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 export default function HomeLandingClient() {
     const [activeTab, setActiveTab] = useState(0);
+    const [activePkgIndex, setActivePkgIndex] = useState(1);
     const [modal, setModal] = useState<{ svc: Service } | null>(null);
     const servicesRef = useRef<HTMLElement>(null);
     const activeSvc = services[activeTab];
@@ -381,7 +382,7 @@ export default function HomeLandingClient() {
                                 {services.map((s, i) => {
                                     const Icon = s.icon;
                                     return (
-                                        <button key={s.id} onClick={() => { setActiveTab(i); scrollToServices(); }}
+                                        <button key={s.id} onClick={() => { setActiveTab(i); setActivePkgIndex(1); scrollToServices(); }}
                                             className="flex items-center gap-2 bg-white/5 hover:bg-white/15 border border-white/10 hover:border-white/30 text-slate-300 hover:text-white px-4 py-2.5 rounded-full text-sm font-medium transition-all">
                                             <Icon size={16} /> {s.title}
                                         </button>
@@ -480,7 +481,7 @@ export default function HomeLandingClient() {
                         {/* Section title */}
                         <div className="text-center mb-10">
                             <p className="text-blue-600 font-bold text-xs uppercase tracking-widest mb-2">Our Services</p>
-                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">What Can We Do For You?</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Our Custom Software & Development Services</h2>
                             <p className="text-slate-500 text-sm max-w-md mx-auto">
                                 Select any service below — all projects include a <strong>free discovery call</strong> and dedicated support.
                             </p>
@@ -492,7 +493,7 @@ export default function HomeLandingClient() {
                                 const Icon = s.icon;
                                 const isActive = activeTab === i;
                                 return (
-                                    <button key={s.id} onClick={() => setActiveTab(i)}
+                                    <button key={s.id} onClick={() => { setActiveTab(i); setActivePkgIndex(1); }}
                                         className={`flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 border
                                             ${isActive
                                                 ? `${s.tabColor} text-white shadow-lg border-transparent scale-105`
@@ -511,91 +512,118 @@ export default function HomeLandingClient() {
                         </div>
 
                         <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-
-                            {/* Service header banner */}
-                            <div className={`bg-gradient-to-r ${activeSvc.color} p-6 md:p-8 text-white`}>
-                                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-14 h-14 bg-white/15 rounded-2xl flex items-center justify-center shrink-0">
-                                            <span className="text-3xl">{activeSvc.emoji}</span>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-2xl md:text-3xl font-bold mb-1">{activeSvc.title}</h3>
-                                            <p className="text-white/80 text-sm md:text-base max-w-lg">{activeSvc.description}</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-wrap gap-2 md:shrink-0">
-                                        {activeSvc.highlights.map(h => (
-                                            <span key={h} className="flex items-center gap-1.5 bg-white/10 border border-white/20 text-white/90 text-xs font-medium px-3 py-1.5 rounded-full">
-                                                <Check size={11} className="text-white" /> {h}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Service details and CTA */}
-                            <div className="p-8 md:p-12">
-                                <div className="max-w-3xl mx-auto text-center">
-                                    <h4 className="text-2xl font-bold text-slate-900 mb-4">Ready to start your {activeSvc.title} project?</h4>
-                                    <p className="text-slate-600 text-lg mb-8">
-                                        We don&apos;t believe in one-size-fits-all. Every business is unique, which is why we offer 
-                                        <strong> custom-tailored solutions</strong> designed to meet your specific goals and budget.
-                                    </p>
-                                    
-                                    <div className="grid sm:grid-cols-2 gap-4 mb-10 text-left">
-                                        {activeSvc.packages[1].features.slice(0, 6).map((f, i) => (
-                                            <div key={i} className="flex items-start gap-3 p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                                                <CheckCircle2 size={20} className={`${activeSvc.lightText} shrink-0 mt-0.5`} />
-                                                <span className="text-slate-700 font-medium text-sm">{f}</span>
+                            {services.map((svc, sIdx) => {
+                                const isActive = activeTab === sIdx;
+                                return (
+                                    <div key={svc.id} className={isActive ? "block" : "hidden"}>
+                                        {/* Service header banner */}
+                                        <div className={`bg-gradient-to-r ${svc.color} p-6 md:p-8 text-white`}>
+                                            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                                                <div className="flex items-start gap-4">
+                                                    <div className="w-14 h-14 bg-white/15 rounded-2xl flex items-center justify-center shrink-0">
+                                                        <span className="text-3xl">{svc.emoji}</span>
+                                                    </div>
+                                                    <div>
+                                                        <h3 className="text-2xl md:text-3xl font-bold mb-1">{svc.title}</h3>
+                                                        <p className="text-white/80 text-sm md:text-base max-w-lg">{svc.description}</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex flex-wrap gap-2 md:shrink-0">
+                                                    {svc.highlights.map(h => (
+                                                        <span key={h} className="flex items-center gap-1.5 bg-white/10 border border-white/20 text-white/90 text-xs font-medium px-3 py-1.5 rounded-full">
+                                                            <Check size={11} className="text-white" /> {h}
+                                                        </span>
+                                                    ))}
+                                                </div>
                                             </div>
-                                        ))}
-                                    </div>
-
-                                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                        <button 
-                                            onClick={() => setModal({ svc: activeSvc })}
-                                            className={`inline-flex items-center justify-center gap-2 px-10 py-4 rounded-2xl font-bold text-white text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 bg-gradient-to-r ${activeSvc.color}`}
-                                        >
-                                            <Sparkles size={20} /> Request a Custom Quote
-                                        </button>
-                                        <a 
-                                            href={`https://wa.me/${WA}?text=Hi, I&apos;m interested in ${encodeURIComponent(activeSvc.title)}`}
-                                            target="_blank" rel="noopener noreferrer"
-                                            className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-2xl font-bold text-slate-900 bg-white border-2 border-slate-200 text-lg hover:bg-slate-50 transition-all hover:border-slate-300"
-                                        >
-                                            <MessageSquare size={20} /> Chat on WhatsApp
-                                        </a>
-                                    </div>
-                                    
-                                    <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-slate-500">
-                                        <div className="flex items-center gap-2"><Clock size={16} className="text-blue-500" /> {activeSvc.packages[1].duration} Average Delivery</div>
-                                        <div className="flex items-center gap-2"><Shield size={16} className="text-green-500" /> 100% Satisfaction Guarantee</div>
-                                    </div>
-
-                                    <div className="mt-8 pt-8 border-t border-slate-100">
-                                        <Link
-                                            href={activeSvc.href}
-                                            className={`text-center text-sm font-semibold flex items-center justify-center gap-1.5 transition-colors ${activeSvc.lightText} hover:underline`}
-                                        >
-                                            View Detailed Service Page <ArrowRight size={14} />
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                                    <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50 rounded-2xl px-5 py-4 border border-slate-100">
-                                        <div className="flex items-center gap-3 text-sm text-slate-600">
-                                            <Phone size={16} className="text-slate-400 shrink-0" />
-                                            <span>Not sure which service? <strong className="text-slate-900">Call us:</strong></span>
-                                            <a href="tel:+918160881461" className="font-bold text-blue-600 hover:underline">+91 81608 81461</a>
                                         </div>
-                                        <a href={`https://wa.me/${WA}?text=Hi%2C%20I%20want%20to%20know%20more%20about%20${encodeURIComponent(activeSvc.title)}.`}
-                                            target="_blank" rel="noopener noreferrer"
-                                            className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-colors shrink-0">
-                                            <MessageSquare size={15} /> Ask on WhatsApp
-                                        </a>
+
+                                        {/* Service details and CTA */}
+                                        <div className="p-8 md:p-12">
+                                            <div className="max-w-3xl mx-auto text-center">
+                                                <h4 className="text-2xl font-bold text-slate-900 mb-2">Ready to start your {svc.title} project?</h4>
+                                                <p className="text-slate-600 text-base mb-6">
+                                                    We don&apos;t believe in one-size-fits-all. Choose a package tier below to view features, or request a custom-tailored quote.
+                                                </p>
+                                                
+                                                {/* Space-wise Package Selector Pills */}
+                                                <div className="inline-flex p-1 bg-slate-100 rounded-xl mb-8 border border-slate-200">
+                                                    {svc.packages.map((pkg, pIdx) => {
+                                                        const isPkgActive = activePkgIndex === pIdx;
+                                                        return (
+                                                            <button
+                                                                key={pkg.name}
+                                                                type="button"
+                                                                onClick={() => setActivePkgIndex(pIdx)}
+                                                                className={`px-4 py-2 rounded-lg text-xs font-bold transition-all duration-200 ${
+                                                                    isPkgActive
+                                                                        ? `${svc.tabColor} text-white shadow-sm`
+                                                                        : "text-slate-600 hover:text-slate-900 hover:bg-white/50"
+                                                                }`}
+                                                            >
+                                                                {pkg.name}
+                                                            </button>
+                                                        );
+                                                    })}
+                                                </div>
+                                                
+                                                <div className="grid sm:grid-cols-2 gap-4 mb-10 text-left">
+                                                    {svc.packages[activePkgIndex].features.map((f, i) => (
+                                                        <div key={i} className="flex items-start gap-3 p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                                                            <CheckCircle2 size={20} className={`${svc.lightText} shrink-0 mt-0.5`} />
+                                                            <span className="text-slate-700 font-medium text-sm">{f}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+
+                                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                                    <button 
+                                                        onClick={() => setModal({ svc: svc })}
+                                                        className={`inline-flex items-center justify-center gap-2 px-10 py-4 rounded-2xl font-bold text-white text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 bg-gradient-to-r ${svc.color}`}
+                                                    >
+                                                        <Sparkles size={20} /> Request a Custom Quote
+                                                    </button>
+                                                    <a 
+                                                        href={`https://wa.me/${WA}?text=Hi, I&apos;m interested in ${encodeURIComponent(svc.title)} (${svc.packages[activePkgIndex].name} Package)`}
+                                                        target="_blank" rel="noopener noreferrer"
+                                                        className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-2xl font-bold text-slate-900 bg-white border-2 border-slate-200 text-lg hover:bg-slate-50 transition-all hover:border-slate-300"
+                                                    >
+                                                        <MessageSquare size={20} /> Chat on WhatsApp
+                                                    </a>
+                                                </div>
+                                                
+                                                <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-slate-500">
+                                                    <div className="flex items-center gap-2"><Clock size={16} className="text-blue-500" /> {svc.packages[activePkgIndex].duration} Average Delivery</div>
+                                                    <div className="flex items-center gap-2"><Shield size={16} className="text-green-500" /> 100% Satisfaction Guarantee</div>
+                                                </div>
+
+                                                <div className="mt-8 pt-8 border-t border-slate-100">
+                                                    <Link
+                                                        href={svc.href}
+                                                        className={`text-center text-sm font-semibold flex items-center justify-center gap-1.5 transition-colors ${svc.lightText} hover:underline`}
+                                                    >
+                                                        View Detailed Service Page <ArrowRight size={14} />
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50 rounded-2xl px-5 py-4 border border-slate-100">
+                                            <div className="flex items-center gap-3 text-sm text-slate-600">
+                                                <Phone size={16} className="text-slate-400 shrink-0" />
+                                                <span>Not sure which service? <strong className="text-slate-900">Call us:</strong></span>
+                                                <a href="tel:+918160881461" className="font-bold text-blue-600 hover:underline">+91 81608 81461</a>
+                                            </div>
+                                            <a href={`https://wa.me/${WA}?text=Hi%2C%20I%20want%20to%20know%20more%20about%20${encodeURIComponent(svc.title)}.`}
+                                                target="_blank" rel="noopener noreferrer"
+                                                className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-colors shrink-0">
+                                                <MessageSquare size={15} /> Ask on WhatsApp
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
+                                );
+                            })}
+                        </div>
                         </div>
                     </section>
 
@@ -604,7 +632,7 @@ export default function HomeLandingClient() {
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
                             <p className="text-blue-600 font-bold text-xs uppercase tracking-widest mb-2">Simple Process</p>
-                            <h2 className="text-3xl font-bold text-slate-900">How It Works</h2>
+                            <h2 className="text-3xl font-bold text-slate-900">Our Proven 4-Step App & Web Development Process</h2>
                             <p className="text-slate-500 text-sm mt-2">From application to live product in 4 easy steps</p>
                         </div>
                         <div className="max-w-4xl mx-auto grid md:grid-cols-4 gap-6">
@@ -635,7 +663,7 @@ export default function HomeLandingClient() {
                         {/* Section Header */}
                         <div className="text-center mb-14">
                             <p className="text-blue-600 font-bold text-xs uppercase tracking-widest mb-2">Verified Reviews</p>
-                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Real People. Real Results. Across 4 Countries.</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Client Success Stories & Verified Google Reviews</h2>
                             <p className="text-slate-500 text-sm max-w-md mx-auto">Verified reviews from Google &amp; direct clients across India, USA, UK &amp; UAE.</p>
                         </div>
 
@@ -810,10 +838,29 @@ export default function HomeLandingClient() {
                     <div className="container mx-auto px-4 max-w-2xl">
                         <div className="text-center mb-10">
                             <p className="text-blue-600 font-bold text-xs uppercase tracking-widest mb-2">FAQs</p>
-                            <h2 className="text-3xl font-bold text-slate-900">Common Questions</h2>
+                            <h2 className="text-3xl font-bold text-slate-900">Frequently Asked Questions About Our Services</h2>
                         </div>
                         <div className="space-y-3">{faqs.map(f => <FAQItem key={f.q} q={f.q} a={f.a} />)}</div>
                     </div>
+                    
+                    {/* Dynamic FAQPage Schema */}
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify({
+                                "@context": "https://schema.org",
+                                "@type": "FAQPage",
+                                "mainEntity": faqs.map(f => ({
+                                    "@type": "Question",
+                                    "name": f.q,
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": f.a
+                                    }
+                                }))
+                            })
+                        }}
+                    />
                 </section>
 
                 {/* ═══════════════════════════════════════ FINAL CTA ═══════════════════════════════════════ */}
@@ -826,7 +873,7 @@ export default function HomeLandingClient() {
                 <section className="py-20 bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 relative overflow-hidden">
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
                     <div className="container mx-auto px-4 text-center relative z-10">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-5 leading-tight">Ready to Grow Your Business — Wherever You Are?</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-5 leading-tight">Start Your Web or Mobile App Project Today</h2>
                         <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">
                             Whether you're in Dubai, London, New York, or anywhere else — we deliver world-class digital products at a fraction of local agency cost. Free consultation, no upfront full payment.
                         </p>

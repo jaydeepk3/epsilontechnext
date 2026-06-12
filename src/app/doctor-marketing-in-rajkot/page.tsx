@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         title: "Doctor Marketing in Rajkot | Epsilon Technology",
         description: "Grow your medical practice in Rajkot with specialized marketing strategies.",
         url: "https://epsilon-technology.com/doctor-marketing-in-rajkot/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/doctor-marketing-in-rajkot/',

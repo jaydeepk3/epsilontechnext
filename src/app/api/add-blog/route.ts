@@ -11,7 +11,7 @@ export async function GET() {
             keywords: "how to get more patients for orthopedic clinic, clinic marketing India, increase OPD patients, healthcare marketing Gujarat",
             category: "Healthcare Marketing",
             author: "Jaydeep Kataria",
-            imageUrl: "/blog_medical_marketing.png",
+            imageUrl: "/blog_medical_marketing.webp",
             published: true,
             createdAt: new Date(),
             content: `# 7 Proven Ways: How to Get More Patients for Orthopedic Clinic Today

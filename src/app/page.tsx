@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "Trusted by businesses in UAE, UK, and USA. We build websites, apps, eCommerce stores and WhatsApp automation. 100+ projects. 4.9★ rated. Get a free quote.",
     url: "https://epsilon-technology.com/",
     type: "website",
-    images: ["/logo.png"],
+    images: ["/logo.webp"],
   },
   alternates: {
     canonical: "https://epsilon-technology.com/",

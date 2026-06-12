@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         title: "Digital Marketing for Surgeon Doctors | Professional SEO Guide",
         description: "Helping surgeons translate their clinical excellence into a trusted digital reputation.",
         url: "https://epsilon-technology.com/digital-marketing-for-surgeon-doctors/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/digital-marketing-for-surgeon-doctors/',

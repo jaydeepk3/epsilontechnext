@@ -196,7 +196,7 @@ export default function UAEPage() {
                         {/* Portfolio Item 1 */}
                         <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-sm border border-slate-200 group">
                             <div className="relative h-60 w-full overflow-hidden bg-slate-200">
-                                <Image src="/portfolio/ontapp.png" alt="Ontapp Menu App" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                                <Image src="/portfolio/ontapp.webp" alt="Ontapp Menu App" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                             </div>
                             <div className="p-5">
                                 <h3 className="font-bold text-slate-900 text-lg">Restaurant Menu App</h3>
@@ -375,7 +375,7 @@ export default function UAEPage() {
                     <div className="grid md:grid-cols-12 gap-10 items-center">
                         <div className="md:col-span-5 bg-slate-50 rounded-3xl p-8 border border-slate-200 text-center shadow-sm">
                             <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-lg shadow-blue-500/30 border-4 border-white bg-blue-100 flex items-center justify-center">
-                                <Image src="/images/jayde.png" alt="Jaydeep Kataria" fill className="object-cover" />
+                                <Image src="/images/jayde.webp" alt="Jaydeep Kataria" fill className="object-cover" />
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 mb-1">Jaydeep Kataria</h3>
                             <p className="text-blue-600 font-semibold text-sm mb-6">Founder & Lead Developer, Epsilon Technology</p>

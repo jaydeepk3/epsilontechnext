@@ -35,7 +35,7 @@ const CASE_STUDIES: Record<string, CaseStudyPageProps> = {
     clientRole: "Operations Head",
     clientCompany: "DearPet.in",
     liveUrl: "https://dearpet.in",
-    heroImage: "/portfolio/dearpet.png"
+    heroImage: "/portfolio/dearpet.webp"
   },
   'ontapp': {
     title: "Ontapp.ca",
@@ -69,7 +69,7 @@ const CASE_STUDIES: Record<string, CaseStudyPageProps> = {
     clientRole: "Founder",
     clientCompany: "Ontapp Canada",
     liveUrl: "https://ontapp.ca",
-    heroImage: "/portfolio/ontapp.png"
+    heroImage: "/portfolio/ontapp.webp"
   },
   'junagadh-police': {
     title: "Junagadh Police App",
@@ -102,7 +102,7 @@ const CASE_STUDIES: Record<string, CaseStudyPageProps> = {
     clientName: "Ravi K.",
     clientRole: "SP Office Coordinator",
     clientCompany: "Junagadh Police",
-    heroImage: "/portfolio/junagadh-police.png"
+    heroImage: "/portfolio/junagadh-police.webp"
   },
   'prabhav-lagnam': {
     title: "Prabhav Lagnam",
@@ -135,7 +135,7 @@ const CASE_STUDIES: Record<string, CaseStudyPageProps> = {
     clientName: "Amit P.",
     clientRole: "Community Head",
     clientCompany: "Prabhav Lagnam",
-    heroImage: "/portfolio/prabhav-lagnam.png"
+    heroImage: "/portfolio/prabhav-lagnam.webp"
   }
 };
 

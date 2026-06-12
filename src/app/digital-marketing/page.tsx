@@ -46,7 +46,7 @@ const testimonials = [
   {
     quote: "Working with Epsilon for 2 years. Patient inquiries went up significantly after they started managing our reels. Jaydeep bhai understands healthcare marketing like no other.",
     author: "Dr. D.P. Vora", role: "Orthopaedic Surgeon, Gujarat", initials: "DV", color: "from-orange-400 to-amber-500",
-    photo: "/images/doctors/dr-dp-vora.png",
+    photo: "/images/doctors/dr-dp-vora.webp",
     metric: "40+", metricLabel: "Inquiries/month",
   },
   {
@@ -58,7 +58,7 @@ const testimonials = [
   {
     quote: "Within 45 days we started getting direct WhatsApp inquiries from social media. Very accurate approach, and the content quality is outstanding.",
     author: "Rainbow Pedia & Physio", role: "Physiotherapy Clinic, Gujarat", initials: "RP", color: "from-emerald-500 to-teal-500",
-    photo: "/images/doctors/rainbow-pedia.jpg",
+    photo: "/images/doctors/rainbow-pedia.webp",
     metric: "45", metricLabel: "Days to first lead",
   },
   {
@@ -70,7 +70,7 @@ const testimonials = [
   {
     quote: "Expert and very easy to work with. They know exactly what content doctors need to build trust and attract patients. Reels went from 500 to 100k+ views.",
     author: "Dr. Priyank Bagtharia", role: "Medical Professional, Gujarat", initials: "PB", color: "from-pink-500 to-rose-500",
-    photo: "/images/doctors/dr-priyank-bagtharia.png",
+    photo: "/images/doctors/dr-priyank-bagtharia.webp",
     metric: "100k+", metricLabel: "Reel views in 3mo",
   },
 ];

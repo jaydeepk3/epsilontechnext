@@ -119,7 +119,7 @@ export default function EcommerceDevelopment() {
                         <div className="lg:w-1/2">
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-white p-2">
                                 <Image
-                                    src="/blog_mobile_app_dev.png" // Placeholder
+                                    src="/blog_mobile_app_dev.webp" // Placeholder
                                     alt="eCommerce Development"
                                     width={600}
                                     height={400}

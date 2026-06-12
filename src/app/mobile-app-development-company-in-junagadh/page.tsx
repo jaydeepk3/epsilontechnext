@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         title: "Best Mobile Application Development Company in Junagadh | Epsilon Technology",
         description: "Partner with the best mobile application development company in Junagadh. We build premium iOS & Android apps using React Native and Flutter.",
         url: "https://epsilon-technology.com/mobile-app-development-company-in-junagadh/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/mobile-app-development-company-in-junagadh/',

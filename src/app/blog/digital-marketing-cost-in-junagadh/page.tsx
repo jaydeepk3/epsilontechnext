@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: "A transparent breakdown of digital marketing fees in Junagadh. From SEO to Google Ads, find out what local businesses should realistically pay in 2026.",
     url: 'https://epsilon-technology.com/blog/digital-marketing-cost-in-junagadh/',
     type: 'article',
-    images: [{ url: '/digital_marketing_cost_junagadh_featured.png' }],
+    images: [{ url: '/digital_marketing_cost_junagadh_featured.webp' }],
   }
 };
 
@@ -50,7 +50,7 @@ export default function BlogPostCostJunagadh() {
         "datePublished": "2026-04-30",
         "dateModified": "2026-04-30",
         "mainEntityOfPage": "https://epsilon-technology.com/blog/digital-marketing-cost-in-junagadh/",
-        "image": "https://epsilon-technology.com/digital_marketing_cost_junagadh_featured.png",
+        "image": "https://epsilon-technology.com/digital_marketing_cost_junagadh_featured.webp",
         "description": "A complete 2026 pricing guide for digital marketing services in Junagadh. Includes SEO, Social Media, Google Ads, and full-service package costs."
       },
       {
@@ -163,7 +163,7 @@ export default function BlogPostCostJunagadh() {
             <div className="max-w-6xl mx-auto mb-20">
               <div className="relative w-full aspect-[21/9] rounded-[48px] overflow-hidden shadow-2xl group">
                 <Image
-                  src="/digital_marketing_cost_junagadh_featured.png"
+                  src="/digital_marketing_cost_junagadh_featured.webp"
                   alt="Digital Marketing Cost in Junagadh 2026 Guide"
                   fill
                   className="object-cover transition-transform duration-[2000ms] group-hover:scale-105"

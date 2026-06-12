@@ -126,7 +126,7 @@ export function Footer() {
                     <div className="lg:col-span-2">
                         <div className="relative h-12 w-48 mb-6">
                             <Image
-                                src="/logo.png"
+                                src="/logo.webp"
                                 alt="Epsilon Technology"
                                 fill
                                 className="object-contain object-left brightness-0 invert"

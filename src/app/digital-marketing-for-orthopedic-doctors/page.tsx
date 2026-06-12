@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         title: "Digital Marketing for Orthopedic Doctors | Professional Growth Guide",
         description: "Educational strategies for orthopedic surgeons looking to dominate local search and build patient trust.",
         url: "https://epsilon-technology.com/digital-marketing-for-orthopedic-doctors/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/digital-marketing-for-orthopedic-doctors/',

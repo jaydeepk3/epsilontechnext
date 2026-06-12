@@ -11,7 +11,7 @@ async function main() {
         keywords: "website development company in junagadh, mobile app development in junagadh, web design cost in junagadh, wordpress website development junagadh, best website agency in junagadh",
         category: "Local Tech Guide",
         author: "Jaydeep Kataria",
-        imageUrl: "/blog_web_development.png",
+        imageUrl: "/blog_web_development.webp",
         published: true,
         createdAt: new Date("2026-06-12T12:00:00.000Z"),
         content: `# Web & App Development in Junagadh: The Complete Saurashtra Business Guide (2026)

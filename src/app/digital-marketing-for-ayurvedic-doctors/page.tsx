@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: "Digital Marketing for Ayurvedic Doctors | Educational Growth Guide",
         description: "Helping Ayurvedic practitioners build a trusted, authoritative, and visible digital brand.",
         url: "https://epsilon-technology.com/digital-marketing-for-ayurvedic-doctors/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/digital-marketing-for-ayurvedic-doctors/',

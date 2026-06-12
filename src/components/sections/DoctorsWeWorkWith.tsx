@@ -10,7 +10,7 @@ const doctors = [
         specialty: "Pediatric & Physiotherapy",
         city: "Junagadh",
         result: "Consistent Patient Flow",
-        image: "/images/doctors/rainbow-pedia.jpg",
+        image: "/images/doctors/rainbow-pedia.webp",
         initials: "RP",
         color: "bg-blue-100 text-blue-600"
     },
@@ -19,7 +19,7 @@ const doctors = [
         specialty: "Orthopeadic Surgeon",
         city: "Junagadh",
         result: "High Patient Retention",
-        image: "/images/doctors/dr-dp-vora.png",
+        image: "/images/doctors/dr-dp-vora.webp",
         initials: "DV",
         color: "bg-green-100 text-green-600"
     },
@@ -28,7 +28,7 @@ const doctors = [
         specialty: "Multispecialty Care",
         city: "Junagadh",
         result: "Expanded Brand Reach",
-        image: "/images/doctors/trimurti-hospital.png",
+        image: "/images/doctors/trimurti-hospital.webp",
         initials: "TH",
         color: "bg-purple-100 text-purple-600"
     },
@@ -37,7 +37,7 @@ const doctors = [
         specialty: "Orthopedic Surgeon",
         city: "Junagadh",
         result: "Quality Surgical Leads",
-        image: "/images/doctors/dr-bhavin-kapadiya.jpg",
+        image: "/images/doctors/dr-bhavin-kapadiya.webp",
         initials: "BK",
         color: "bg-orange-100 text-orange-600"
     },
@@ -46,7 +46,7 @@ const doctors = [
         specialty: "Orthopedic Surgeon",
         city: "Junagadh",
         result: "High Engagement Reels",
-        image: "/images/doctors/dr-priyank-bagtharia.png",
+        image: "/images/doctors/dr-priyank-bagtharia.webp",
         initials: "PB",
         color: "bg-pink-100 text-pink-600"
     },
@@ -55,7 +55,7 @@ const doctors = [
         specialty: "Multispecialty Care",
         city: "Junagadh",
         result: "Consistent Patient Inquiries",
-        image: "/images/doctors/shreeji-hospital.png",
+        image: "/images/doctors/shreeji-hospital.webp",
         initials: "SM",
         color: "bg-teal-100 text-teal-600"
     }

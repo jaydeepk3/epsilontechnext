@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: "Digital Marketing for Dermatologists | Aesthetic Growth Guide",
         description: "Helping skin specialists showcase their clinical results and dominate local search.",
         url: "https://epsilon-technology.com/digital-marketing-for-dermatologists/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/digital-marketing-for-dermatologists/',

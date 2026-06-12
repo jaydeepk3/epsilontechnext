@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: "Digital Marketing for Doctors in Junagadh | Educational Guide",
         description: "Everything Junagadh-based doctors need to know about growing their practice online.",
         url: "https://epsilon-technology.com/digital-marketing-for-doctors-in-junagadh/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/digital-marketing-for-doctors-in-junagadh/',

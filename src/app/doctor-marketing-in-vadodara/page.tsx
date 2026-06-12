@@ -9,7 +9,7 @@ export const metadata: Metadata = {
         title: "Doctor Marketing in Vadodara | Get 30–50 Patient Inquiries/Month",
         description: "Transform your Vadodara practice with specialized social media growth and inquiry-focused digital marketing.",
         url: "https://epsilon-technology.com/doctor-marketing-in-vadodara/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/doctor-marketing-in-vadodara/',

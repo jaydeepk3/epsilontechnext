@@ -19,7 +19,7 @@ export default function PortfolioPage() {
       type: "Web App",
       headlineResult: "50+ bookings handled daily · Admin saves 3+ hours/day",
       slug: "dearpet",
-      imageUrl: "/portfolio/dearpet.png"
+      imageUrl: "/portfolio/dearpet.webp"
     },
     {
       title: "Ontapp.ca",
@@ -29,7 +29,7 @@ export default function PortfolioPage() {
       type: "eCommerce",
       headlineResult: "200% increase in weekend orders · Fully compliant age-verification",
       slug: "ontapp",
-      imageUrl: "/portfolio/ontapp.png"
+      imageUrl: "/portfolio/ontapp.webp"
     },
     {
       title: "Junagadh Police App",
@@ -39,7 +39,7 @@ export default function PortfolioPage() {
       type: "Mobile App",
       headlineResult: "1,000+ officers managed · Delivered strictly on time",
       slug: "junagadh-police",
-      imageUrl: "/portfolio/junagadh-police.png"
+      imageUrl: "/portfolio/junagadh-police.webp"
     },
     {
       title: "Prabhav Lagnam",
@@ -49,21 +49,21 @@ export default function PortfolioPage() {
       type: "Mobile App",
       headlineResult: "10,000+ active profiles · Highly engaged user base",
       slug: "prabhav-lagnam",
-      imageUrl: "/portfolio/prabhav-lagnam.png"
+      imageUrl: "/portfolio/prabhav-lagnam.webp"
     }
   ];
 
   // Hardcoded Projects for demonstration
   const projects = [
-    { title: "Feilder Cricket App", description: "Comprehensive cricket scoring and management app.", country: "🇮🇳", industry: "Sports", techStack: ["Flutter", "Firebase", "Node.js"], result: "1M+ matches scored globally", status: "live" as const, liveUrl: "https://play.google.com/store/apps/details?id=com.jnd.police.bandobast", type: "Mobile Apps", imageUrl: "/portfolio/feilder-app.jpeg" },
+    { title: "Feilder Cricket App", description: "Comprehensive cricket scoring and management app.", country: "🇮🇳", industry: "Sports", techStack: ["Flutter", "Firebase", "Node.js"], result: "1M+ matches scored globally", status: "live" as const, liveUrl: "https://play.google.com/store/apps/details?id=com.jnd.police.bandobast", type: "Mobile Apps", imageUrl: "/portfolio/feilder-app.webp" },
     { title: "eBike Rental App", description: "Seamless urban mobility booking experience.", country: "🇺🇸", industry: "Mobility", techStack: ["React Native", "Tailwind", "Stripe"], delivered: "3 weeks · iOS & Android", status: "concept" as const, type: "Mobile Apps", imageUrl: "/portfolio/ebike-app.webp" },
-    { title: "Travel Planning App", description: "AI-assisted itinerary builder for global travelers.", country: "🇬🇧", industry: "Travel", techStack: ["React Native", "OpenAI", "Maps API"], delivered: "4 weeks · UI/UX", status: "concept" as const, type: "Mobile Apps", imageUrl: "/portfolio/travel-app.jpg" },
+    { title: "Travel Planning App", description: "AI-assisted itinerary builder for global travelers.", country: "🇬🇧", industry: "Travel", techStack: ["React Native", "OpenAI", "Maps API"], delivered: "4 weeks · UI/UX", status: "concept" as const, type: "Mobile Apps", imageUrl: "/portfolio/travel-app.webp" },
     { title: "Jewellery eCommerce", description: "High-end luxury jewelry shopping experience.", country: "🇦🇪", industry: "Retail", techStack: ["Next.js", "Shopify", "Framer Motion"], result: "Premium aesthetic achieved with sub-second page loads", status: "concept" as const, type: "eCommerce", imageUrl: "/portfolio/jewellery-website.webp" },
     { title: "Yoga Studio Website", description: "Class booking and studio management portal.", country: "🇺🇸", industry: "Health", techStack: ["Next.js", "TailwindCSS"], delivered: "2 weeks · Web", status: "concept" as const, type: "Web Apps", imageUrl: "/portfolio/yoga-website.webp" },
-    { title: "Speevo Industries", description: "B2B catalog for a leading ceiling fan manufacturer.", country: "🇮🇳", industry: "Manufacturing", techStack: ["Next.js", "Tailwind", "PostgreSQL"], result: "40% increase in wholesale inquiries", status: "live" as const, liveUrl: "https://speevo.com", type: "Web Apps", imageUrl: "/portfolio/speevo.png" },
+    { title: "Speevo Industries", description: "B2B catalog for a leading ceiling fan manufacturer.", country: "🇮🇳", industry: "Manufacturing", techStack: ["Next.js", "Tailwind", "PostgreSQL"], result: "40% increase in wholesale inquiries", status: "live" as const, liveUrl: "https://speevo.com", type: "Web Apps", imageUrl: "/portfolio/speevo.webp" },
     { title: "Tisnix Logistics", description: "Real-time freight tracking and client portal.", country: "🇺🇸", industry: "Logistics", techStack: ["React", "Node.js", "AWS"], result: "Streamlined operations for 50+ fleet vehicles", status: "live" as const, liveUrl: "https://tisnix.com", type: "Web Apps", imageUrl: "/portfolio/tisnix-website.webp" },
     { title: "Rhodium Master", description: "Corporate presence for precious metals refiner.", country: "🇮🇳", industry: "Industrial", techStack: ["Next.js", "Sanity CMS"], result: "Modernized 20-year-old brand identity", status: "live" as const, liveUrl: "https://rhodiummaster.com", type: "Web Apps", imageUrl: "/portfolio/rhodium-website.webp" },
-    { title: "Shreeram Clinic", description: "Patient appointment and marketing portal.", country: "🇮🇳", industry: "Healthcare", techStack: ["WordPress", "Custom Theme"], result: "Ranked #1 locally for top 5 medical keywords", status: "live" as const, liveUrl: "https://shreeramclinic.com", type: "Web Apps", imageUrl: "/portfolio/shreeram-clinic.png" },
+    { title: "Shreeram Clinic", description: "Patient appointment and marketing portal.", country: "🇮🇳", industry: "Healthcare", techStack: ["WordPress", "Custom Theme"], result: "Ranked #1 locally for top 5 medical keywords", status: "live" as const, liveUrl: "https://shreeramclinic.com", type: "Web Apps", imageUrl: "/portfolio/shreeram-clinic.webp" },
   ];
 
   // Filtering Logic

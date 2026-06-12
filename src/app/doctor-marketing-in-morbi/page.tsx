@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         title: "Doctor Marketing in Morbi | Epsilon Technology",
         description: "Grow your medical practice in Morbi with specialized marketing strategies.",
         url: "https://epsilon-technology.com/doctor-marketing-in-morbi/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/doctor-marketing-in-morbi/',

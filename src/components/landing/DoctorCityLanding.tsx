@@ -68,7 +68,7 @@ export default function DoctorCityLanding({ city, cityDescription }: DoctorCityL
             {
                 "@type": "LocalBusiness",
                 "name": `Epsilon Technology - Doctor Marketing in ${city}`,
-                "image": "https://epsilon-technology.com/logo.png",
+                "image": "https://epsilon-technology.com/logo.webp",
                 "@id": `https://epsilon-technology.com/doctor-marketing-in-${citySlug}/#localbusiness`,
                 "url": `https://epsilon-technology.com/doctor-marketing-in-${citySlug}/`,
                 "telephone": "+918160881461",

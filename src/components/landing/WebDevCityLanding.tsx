@@ -75,7 +75,7 @@ export default function WebDevCityLanding({ city, cityDescription }: WebDevCityL
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": `Epsilon Technology - Website Development in ${city}`,
-        "image": "https://epsilon-technology.com/logo.png",
+        "image": "https://epsilon-technology.com/logo.webp",
         "@id": `https://epsilon-technology.com/website-development-in-${citySlug}/#localbusiness`,
         "url": `https://epsilon-technology.com/website-development-in-${citySlug}/`,
         "telephone": "+918160881461",
@@ -204,7 +204,7 @@ export default function WebDevCityLanding({ city, cityDescription }: WebDevCityL
                             <div className="absolute inset-0 bg-indigo-600/10 blur-[100px] -z-10 rounded-full scale-110" />
                             <div className="relative rounded-[32px] overflow-hidden border border-white/20 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)]">
                                 <img 
-                                    src="/landing/junagadh-hero.png" 
+                                    src="/landing/junagadh-hero.webp" 
                                     alt={`Website development in ${city}`}
                                     className="w-full h-auto object-cover"
                                 />

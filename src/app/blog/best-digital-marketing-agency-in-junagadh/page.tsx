@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: "A comprehensive guide on how to evaluate and choose the right digital marketing partner for your business in Junagadh. 8-point checklist included.",
     url: 'https://epsilon-technology.com/blog/best-digital-marketing-agency-in-junagadh/',
     type: 'article',
-    images: [{ url: '/best_digital_marketing_agency_junagadh_featured.png' }],
+    images: [{ url: '/best_digital_marketing_agency_junagadh_featured.webp' }],
   }
 };
 
@@ -57,7 +57,7 @@ export default function BlogPostBestAgencyJunagadh() {
         "datePublished": "2026-04-30",
         "dateModified": "2026-04-30",
         "mainEntityOfPage": "https://epsilon-technology.com/blog/best-digital-marketing-agency-in-junagadh/",
-        "image": "https://epsilon-technology.com/best_digital_marketing_agency_junagadh_featured.png",
+        "image": "https://epsilon-technology.com/best_digital_marketing_agency_junagadh_featured.webp",
         "description": "Finding the right digital marketing partner in Junagadh is critical. This guide provides an 8-point checklist to evaluate local agencies and avoid expensive mistakes."
       },
       {
@@ -197,7 +197,7 @@ export default function BlogPostBestAgencyJunagadh() {
             <div className="max-w-6xl mx-auto mb-20">
               <div className="relative w-full aspect-[21/9] rounded-[64px] overflow-hidden shadow-2xl group">
                 <Image
-                  src="/best_digital_marketing_agency_junagadh_featured.png"
+                  src="/best_digital_marketing_agency_junagadh_featured.webp"
                   alt="Best Digital Marketing Agency in Junagadh 2026 Team collaborating"
                   fill
                   className="object-cover transition-transform duration-[3000ms] group-hover:scale-110"

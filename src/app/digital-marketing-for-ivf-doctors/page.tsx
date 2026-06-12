@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: "Digital Marketing for IVF Doctors | Comprehensive SEO Guide",
         description: "Helping fertility specialists build a trusted digital presence in a sensitive medical field.",
         url: "https://epsilon-technology.com/digital-marketing-for-ivf-doctors/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/digital-marketing-for-ivf-doctors/',

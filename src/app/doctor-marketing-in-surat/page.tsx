@@ -9,7 +9,7 @@ export const metadata: Metadata = {
         title: "Doctor Marketing in Surat | Get 30–50 Patient Inquiries/Month",
         description: "Scale your clinic in Surat using high-impact video marketing and precision-targeted patient ads.",
         url: "https://epsilon-technology.com/doctor-marketing-in-surat/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/doctor-marketing-in-surat/',

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     description: "Trusted by businesses in UAE, UK, and USA. We build websites, apps, eCommerce stores and WhatsApp automation. 100+ projects. 4.9★ rated. Get a free quote.",
     images: [
       {
-        url: "/logo.png",
+        url: "/logo.webp",
         width: 1200,
         height: 630,
         alt: "Epsilon Technology Logo",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Epsilon Technology | Digital Marketing & IT Solutions",
     description: "Premium IT software services including custom software, mobile applications, website development, and specialized digital marketing.",
-    images: ["/logo.png"], // Ideally this should be a larger banner image
+    images: ["/logo.webp"], // Ideally this should be a larger banner image
   },
   robots: {
     index: true,
@@ -64,8 +64,8 @@ export const metadata: Metadata = {
     canonical: 'https://epsilon-technology.com',
   },
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: '/logo.webp',
+    apple: '/logo.webp',
   },
 };
 
@@ -98,7 +98,7 @@ export default function RootLayout({
                   "@id": "https://epsilon-technology.com/#organization",
                   "name": "Epsilon Technology",
                   "url": "https://epsilon-technology.com",
-                  "logo": "https://epsilon-technology.com/logo.png",
+                  "logo": "https://epsilon-technology.com/logo.webp",
                   "description": "Specialized social media growth for doctors and premium IT software services.",
                   "contactPoint": {
                     "@type": "ContactPoint",

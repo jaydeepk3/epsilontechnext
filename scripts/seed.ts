@@ -10,7 +10,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "junagadh-police-bandobast-app-case-study",
         category: "Case Study",
-        image: "/blog_mobile_app_dev.png",
+        image: "/blog_mobile_app_dev.webp",
         isExternal: false
     },
     {
@@ -20,7 +20,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "web-app-development-trends-usa-2026",
         category: "Tech Trends",
-        image: "/blog_mobile_app_dev.png",
+        image: "/blog_mobile_app_dev.webp",
         isExternal: false
     },
     {
@@ -30,7 +30,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "business-solutions-through-technology",
         category: "Business Growth",
-        image: "/blog_mobile_app_dev.png",
+        image: "/blog_mobile_app_dev.webp",
         isExternal: false
     },
     {
@@ -40,7 +40,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "mobile-app-development-guide-2026",
         category: "App Development",
-        image: "/blog_mobile_app_dev.png",
+        image: "/blog_mobile_app_dev.webp",
         isExternal: false
     },
     {
@@ -50,7 +50,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "ecommerce-growth-strategies-2026",
         category: "eCommerce",
-        image: "/blog_mobile_app_dev.png",
+        image: "/blog_mobile_app_dev.webp",
         isExternal: false
     },
     {
@@ -60,7 +60,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "digital-transformation-guide",
         category: "Digital Transformation",
-        image: "/blog_mobile_app_dev.png",
+        image: "/blog_mobile_app_dev.webp",
         isExternal: false
     },
     {
@@ -70,7 +70,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "digital-marketing-for-general-surgeons",
         category: "Surgical",
-        image: "/blog_medical_marketing.png",
+        image: "/blog_medical_marketing.webp",
         isExternal: true
     },
     {
@@ -80,7 +80,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "digital-marketing-for-spine-specialists",
         category: "Spine Care",
-        image: "/blog_medical_marketing.png",
+        image: "/blog_medical_marketing.webp",
         isExternal: true
     },
     {
@@ -90,7 +90,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "digital-marketing-for-ayurvedic-doctors",
         category: "Holistic",
-        image: "/blog_medical_marketing.png",
+        image: "/blog_medical_marketing.webp",
         isExternal: true
     },
     {
@@ -100,7 +100,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "digital-marketing-for-dermatologists",
         category: "Aesthetic",
-        image: "/blog_medical_marketing.png",
+        image: "/blog_medical_marketing.webp",
         isExternal: true
     },
     {
@@ -110,7 +110,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "digital-marketing-for-surgeon-doctors",
         category: "Surgical",
-        image: "/blog_medical_marketing.png",
+        image: "/blog_medical_marketing.webp",
         isExternal: true
     },
     {
@@ -120,7 +120,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "digital-marketing-for-pediatric-doctors",
         category: "Pediatric",
-        image: "/blog_medical_marketing.png",
+        image: "/blog_medical_marketing.webp",
         isExternal: true
     },
     {
@@ -130,7 +130,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "digital-marketing-for-gynecologist-doctors",
         category: "Women's Health",
-        image: "/blog_medical_marketing.png",
+        image: "/blog_medical_marketing.webp",
         isExternal: true
     },
     {
@@ -140,7 +140,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "digital-marketing-for-dental-doctors",
         category: "Dental",
-        image: "/blog_medical_marketing.png",
+        image: "/blog_medical_marketing.webp",
         isExternal: true
     },
     {
@@ -150,7 +150,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "digital-marketing-for-ivf-doctors",
         category: "Fertility",
-        image: "/blog_medical_marketing.png",
+        image: "/blog_medical_marketing.webp",
         isExternal: true
     },
     {
@@ -160,7 +160,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "digital-marketing-for-orthopedic-doctors",
         category: "Specialized",
-        image: "/blog_medical_marketing.png",
+        image: "/blog_medical_marketing.webp",
         isExternal: true
     },
     {
@@ -170,7 +170,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "digital-marketing-for-doctors-in-junagadh",
         category: "Local Guide",
-        image: "/blog_medical_marketing.png",
+        image: "/blog_medical_marketing.webp",
         isExternal: true
     },
     {
@@ -180,7 +180,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "digital-marketing-for-doctors",
         category: "Educational",
-        image: "/blog_medical_marketing.png",
+        image: "/blog_medical_marketing.webp",
         isExternal: true
     },
     {
@@ -190,7 +190,7 @@ const posts = [
         author: "Jaydeep Kataria",
         slug: "doctor-marketing-ideas-junagadh",
         category: "Local SEO",
-        image: "/blog_medical_marketing.png",
+        image: "/blog_medical_marketing.webp",
         isExternal: false
     },
 ];

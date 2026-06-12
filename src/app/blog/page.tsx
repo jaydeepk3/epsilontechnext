@@ -58,7 +58,7 @@ export default async function BlogIndex() {
                             <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-100 flex flex-col group-hover:shadow-sky-100/50 transition-all duration-700">
                                 <div className="relative overflow-hidden aspect-[21/9]">
                                     <Image
-                                        src={featuredPost.imageUrl || "/blog_medical_marketing.png"}
+                                        src={featuredPost.imageUrl || "/blog_medical_marketing.webp"}
                                         alt={featuredPost.title}
                                         fill
                                         className="object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
@@ -118,7 +118,7 @@ export default async function BlogIndex() {
                                 <article className="bg-white rounded-[32px] overflow-hidden border border-slate-100 h-full flex flex-col hover:shadow-2xl hover:shadow-sky-100/40 transition-all duration-500 group-hover:-translate-y-2 border-b-4 hover:border-b-sky-500">
                                     <div className="aspect-[21/9] relative overflow-hidden">
                                         <Image
-                                            src={post.imageUrl || "/blog_medical_marketing.png"}
+                                            src={post.imageUrl || "/blog_medical_marketing.webp"}
                                             alt={post.title}
                                             fill
                                             className="object-cover group-hover:scale-110 transition-transform duration-1000"

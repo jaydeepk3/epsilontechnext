@@ -9,7 +9,7 @@ export const metadata: Metadata = {
         title: "Doctor Marketing in Ahmedabad | Get 30–50 Patient Inquiries/Month",
         description: "Grow your medical practice in Ahmedabad with specialized Instagram Reels and Facebook Ads strategies.",
         url: "https://epsilon-technology.com/doctor-marketing-in-ahmedabad/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/doctor-marketing-in-ahmedabad/',

@@ -392,7 +392,7 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                                     <div className="bg-slate-900/50 rounded-[40px] p-2 border border-slate-900 h-full flex flex-col group-hover:bg-slate-800/50 group-hover:border-slate-700 transition-all duration-500 group-hover:-translate-y-2">
                                         <div className="relative aspect-[16/10] rounded-[32px] overflow-hidden mb-8">
                                             <Image
-                                                src={post.imageUrl || "/blog_medical_marketing.png"}
+                                                src={post.imageUrl || "/blog_medical_marketing.webp"}
                                                 alt={post.title}
                                                 fill
                                                 className="object-cover group-hover:scale-110 transition-transform duration-1000 grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100"

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "About Jaydeep Kataria | Lead Technologist & Founder",
         description: "Building scalable digital products and IT solutions for global businesses.",
-        images: ["/images/jayde.png"],
+        images: ["/images/jayde.webp"],
         type: 'profile',
     },
     alternates: {
@@ -61,7 +61,7 @@ export default function AboutPage() {
                     <div className="flex-1 order-1 md:order-2 flex justify-center">
                         <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] bg-slate-100 rounded-full overflow-hidden border-8 border-white shadow-2xl">
                             <Image
-                                src="/images/jayde.png"
+                                src="/images/jayde.webp"
                                 alt="Jaydeep Kataria"
                                 fill
                                 className="object-cover"
@@ -126,7 +126,7 @@ export default function AboutPage() {
                             "url": "https://epsilon-technology.com"
                         },
                         "url": "https://epsilon-technology.com/about-us",
-                        "image": "https://epsilon-technology.com/images/jayde.png",
+                        "image": "https://epsilon-technology.com/images/jayde.webp",
                         "description": "Jaydeep Kataria is a specialized doctor marketing expert and founder of Epsilon Technology, helping clinics in Gujarat grow.",
                         "address": {
                             "@type": "PostalAddress",

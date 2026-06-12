@@ -166,7 +166,7 @@ export function Header() {
                 <Link href="/" className="flex items-center group">
                     <div className="relative h-9 w-36 md:h-11 md:w-48 transition-transform duration-300 group-hover:scale-105 active:scale-95">
                         <Image
-                            src="/logo.png"
+                            src="/logo.webp"
                             alt="Epsilon Technology"
                             fill
                             className={`object-contain object-left transition-all duration-500 ${logoFilter}`}

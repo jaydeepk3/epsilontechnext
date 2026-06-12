@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: "Digital Marketing for Dental Doctors | Healthcare Growth Guide",
         description: "Helping dentists dominate local search and showcase their clinical excellence online.",
         url: "https://epsilon-technology.com/digital-marketing-for-dental-doctors/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/digital-marketing-for-dental-doctors/',

@@ -16,7 +16,7 @@ const staticBlogs = [
         keywords: "Junagadh Police,Maha Shivratri Mela,Mobile App Development,Police App,Public Safety Technology,GovTech,Epsilon Technology",
         category: "Case Study",
         author: "Jaydeep Kataria",
-        imageUrl: "/blog_mobile_app_dev.png",
+        imageUrl: "/blog_mobile_app_dev.webp",
         published: true,
         createdAt: new Date("2026-02-16T12:00:00.000Z"),
         content: `# Technology Serving Those Who Serve Us: Junagadh Police App Case Study
@@ -87,7 +87,7 @@ The app is live on Google Play Store for use by authorized personnel:
         keywords: "web development trends 2026,app development trends USA,AI in web development,PWA 2026,tech industry insights",
         category: "Tech Trends",
         author: "Jaydeep Kataria",
-        imageUrl: "/blog_mobile_app_dev.png",
+        imageUrl: "/blog_mobile_app_dev.webp",
         published: true,
         createdAt: new Date("2026-01-28T10:00:00.000Z"),
         content: `# Web and App Development Trends in 2026: USA Tech Industry
@@ -138,7 +138,7 @@ The trends of 2026 are not just about new technologies, but about how these tech
         keywords: "custom software benefits,business process automation,software ROI,enterprise software solutions",
         category: "Business Growth",
         author: "Jaydeep Kataria",
-        imageUrl: "/blog_mobile_app_dev.png",
+        imageUrl: "/blog_mobile_app_dev.webp",
         published: true,
         createdAt: new Date("2026-01-27T10:00:00.000Z"),
         content: `# Solving Business Pain Points Through Custom Software Solutions
@@ -203,7 +203,7 @@ If your business has hit a wall with generic tools, it's time to explore custom 
         keywords: "Mobile App Development Guide,React Native Development,Startup App Development,App Development Cost,Epsilon Technology",
         category: "App Development",
         author: "Jaydeep Kataria",
-        imageUrl: "/blog_mobile_app_dev.png",
+        imageUrl: "/blog_mobile_app_dev.webp",
         published: true,
         createdAt: new Date("2026-01-26T10:00:00.000Z"),
         content: `# How to Build a Scalable Mobile App in 2026: A Startup Founder's Guide
@@ -275,7 +275,7 @@ Building an app is a journey. It requires not just code, but strategy, design, a
         keywords: "ecommerce growth strategies,online sales tips 2026,headless commerce,omnichannel retail,shopify growth",
         category: "eCommerce",
         author: "Jaydeep Kataria",
-        imageUrl: "/blog_mobile_app_dev.png",
+        imageUrl: "/blog_mobile_app_dev.webp",
         published: true,
         createdAt: new Date("2026-01-25T10:00:00.000Z"),
         content: `# eCommerce Growth Strategies for 2026: Beyond Basic Stores
@@ -345,7 +345,7 @@ The eCommerce businesses that will dominate in 2026 are those investing today in
         keywords: "digital transformation guide,business digitization,cloud migration strategies,legacy modernization",
         category: "Digital Transformation",
         author: "Jaydeep Kataria",
-        imageUrl: "/blog_mobile_app_dev.png",
+        imageUrl: "/blog_mobile_app_dev.webp",
         published: true,
         createdAt: new Date("2026-01-25T09:00:00.000Z"),
         content: `# The Ultimate Guide to Digital Transformation
@@ -411,7 +411,7 @@ Digital transformation is not a destination; it's a continuous journey. Organiza
         keywords: "Doctor Marketing Junagadh,Clinic Promotion Ideas,Healthcare Marketing Strategies,Medical SEO Junagadh",
         category: "Local SEO",
         author: "Jaydeep Kataria",
-        imageUrl: "/blog_medical_marketing.png",
+        imageUrl: "/blog_medical_marketing.webp",
         published: true,
         createdAt: new Date("2026-01-15T10:00:00.000Z"),
         content: `# 7 Proven Marketing Ideas for Doctors in Junagadh (2025 Guide)
@@ -487,7 +487,7 @@ Must-have pages:
         keywords: "website development services,custom website vs diy,professional web design,web development agency,business website scaling",
         category: "Web Development",
         author: "Jaydeep Kataria",
-        imageUrl: "/blog_web_development.png",
+        imageUrl: "/blog_web_development.webp",
         published: true,
         createdAt: new Date("2026-02-18T10:00:00.000Z"),
         content: `# 5 Signs You Need Professional Website Development Services vs. DIY
@@ -577,7 +577,7 @@ Yes! We build on CMS platforms (like Strapi or Sanity) or easy-to-use frameworks
         keywords: "mobile app creation services,native app development,cross-platform app development,react native vs swift,flutter vs native",
         category: "App Development",
         author: "Jaydeep Kataria",
-        imageUrl: "/blog_mobile_app_dev.png",
+        imageUrl: "/blog_mobile_app_dev.webp",
         published: true,
         createdAt: new Date("2026-02-19T10:00:00.000Z"),
         content: `# Mobile App Creation Services: Native vs. Cross-Platform Guide
@@ -657,7 +657,7 @@ Cross-platform is the gold standard for MVPs. It allows you to launch on both iO
         keywords: "custom application development,app development cost,software development pricing,mobile app cost 2026,enterprise software cost",
         category: "Development Costs",
         author: "Jaydeep Kataria",
-        imageUrl: "/blog_mobile_app_dev.png",
+        imageUrl: "/blog_mobile_app_dev.webp",
         published: true,
         createdAt: new Date("2026-02-17T10:00:00.000Z"),
         content: `# The Real Cost of Custom Application Development in 2026
@@ -732,7 +732,7 @@ Typically, development costs are separate from maintenance. However, we offer su
         keywords: "affordable app developers,top app developers,mobile app creation services,custom application development,website development services",
         category: "App Development",
         author: "Jaydeep Kataria",
-        imageUrl: "/blog_mobile_app_dev.png",
+        imageUrl: "/blog_mobile_app_dev.webp",
         published: true,
         createdAt: new Date("2026-02-16T10:00:00.000Z"),
         content: `# How to Find Top & Affordable App Developers in 2026
@@ -834,7 +834,7 @@ Absolutely. We are a full-service agency offering both mobile app and website de
         keywords: "ecommerce website development,next.js ecommerce,next.js vs shopify,headless commerce,custom ecommerce development",
         category: "eCommerce",
         author: "Jaydeep Kataria",
-        imageUrl: "/blog_mobile_app_dev.png",
+        imageUrl: "/blog_mobile_app_dev.webp",
         published: true,
         createdAt: new Date("2026-02-20T10:00:00.000Z"),
         content: `# Why Next.js is Best for Ecommerce Website Development in 2026

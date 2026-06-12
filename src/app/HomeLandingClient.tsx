@@ -443,14 +443,14 @@ export default function HomeLandingClient() {
                             {[...Array(2)].map((_, pass) => (
                                 <div key={pass} className="flex gap-10 items-center shrink-0">
                                     {[
-                                        { src: "/clientlogo/FieldR Icon-(BLACK) 1.png", name: "FieldR", bg: "bg-white", pad: "p-4" },
-                                        { src: "/clientlogo/Flique.png", name: "Flique", bg: "bg-white", pad: "p-2" },
-                                        { src: "/clientlogo/Pistol.jpg", name: "Pistol Films", bg: "bg-white", pad: "p-4" },
-                                        { src: "/clientlogo/Sangani-Hospital-Logo-Gujarati 2 copy.png", name: "Sangani Hospital", bg: "bg-white", pad: "p-3" },
-                                        { src: "/clientlogo/aiow.png", name: "Aiow", bg: "bg-white", pad: "p-2" },
-                                        { src: "/clientlogo/dhartiagro.png", name: "Dharti Agro", bg: "bg-white", pad: "p-3" },
-                                        { src: "/clientlogo/dotcube.png", name: "DotCube", bg: "bg-white", pad: "p-3" },
-                                        { src: "/clientlogo/trimurti_hospital.png", name: "Trimurti Hospitals", bg: "bg-white", pad: "p-3" },
+                                        { src: "/clientlogo/FieldR Icon-(BLACK) 1.webp", name: "FieldR", bg: "bg-white", pad: "p-4" },
+                                        { src: "/clientlogo/Flique.webp", name: "Flique", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/Pistol.webp", name: "Pistol Films", bg: "bg-white", pad: "p-4" },
+                                        { src: "/clientlogo/Sangani-Hospital-Logo-Gujarati 2 copy.webp", name: "Sangani Hospital", bg: "bg-white", pad: "p-3" },
+                                        { src: "/clientlogo/aiow.webp", name: "Aiow", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/dhartiagro.webp", name: "Dharti Agro", bg: "bg-white", pad: "p-3" },
+                                        { src: "/clientlogo/dotcube.webp", name: "DotCube", bg: "bg-white", pad: "p-3" },
+                                        { src: "/clientlogo/trimurti_hospital.webp", name: "Trimurti Hospitals", bg: "bg-white", pad: "p-3" },
                                     ].map((logo) => (
                                         <div key={logo.name + pass}
                                             className={`flex items-center justify-center h-20 w-48 rounded-2xl bg-white shadow-sm border border-slate-200 ${logo.pad} shrink-0 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group`}>
@@ -735,23 +735,24 @@ export default function HomeLandingClient() {
                                 <div className="px-6 mb-4 flex items-center gap-3">
                                     <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
                                         <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M8 5v14l11-7z" />
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                                         </svg>
                                     </div>
                                     <div className="text-left">
-                                        <h3 className="text-white font-bold text-sm leading-tight">Video Testimonial</h3>
-                                        <p className="text-slate-400 text-xs">Hear directly from our client</p>
+                                        <h3 className="text-white font-bold text-sm leading-tight">Featured Case Study</h3>
+                                        <p className="text-slate-400 text-xs">View on LinkedIn</p>
                                     </div>
                                 </div>
-                                <div className="flex-1 bg-black flex items-center justify-center relative min-h-[220px]">
-                                    <video
-                                        src="/video/WhatsApp Video 2026-03-03 at 8.43.41 PM.mp4"
-                                        controls
-                                        className="w-full h-full max-h-[300px] object-contain"
-                                        preload="metadata"
-                                    >
-                                        Your browser does not support the video tag.
-                                    </video>
+                                <div className="flex-1 bg-black flex items-center justify-center relative min-h-[399px]">
+                                    <iframe
+                                        src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7310298732124606464?compact=1"
+                                        height="399"
+                                        width="504"
+                                        frameBorder={0}
+                                        allowFullScreen
+                                        title="Embedded post"
+                                        className="w-full max-w-full rounded-b-2xl border-none"
+                                    />
                                 </div>
                             </div>
 

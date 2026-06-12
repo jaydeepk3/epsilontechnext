@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
         permanent: true, // 301 redirect (Good for SEO)
       },
       {
-        source: '/item/0065998215.html',
+        source: '/item/:path*',
         destination: '/',
         permanent: true,
       },

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: "Digital Marketing for Doctors: The Complete Educational Guide",
         description: "Everything you need to know about growing your medical practice through digital channels.",
         url: "https://epsilon-technology.com/digital-marketing-for-doctors/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/digital-marketing-for-doctors/',

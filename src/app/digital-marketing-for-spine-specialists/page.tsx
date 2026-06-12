@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         title: "Digital Marketing for Spine Specialists | Professional SEO Guide",
         description: "Helping spine surgeons navigate the complex digital landscape and build patient trust.",
         url: "https://epsilon-technology.com/digital-marketing-for-spine-specialists/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/digital-marketing-for-spine-specialists/',

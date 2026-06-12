@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         title: "Digital Marketing for Gynecologist Doctors | Educational Guide",
         description: "Helping gynecologists provide a safe, trusted, and educational space for women's healthcare online.",
         url: "https://epsilon-technology.com/digital-marketing-for-gynecologist-doctors/",
-        images: ["/logo.png"]
+        images: ["/logo.webp"]
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/digital-marketing-for-gynecologist-doctors/',

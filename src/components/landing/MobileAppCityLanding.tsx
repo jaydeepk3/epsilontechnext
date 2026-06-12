@@ -81,7 +81,7 @@ export default function MobileAppCityLanding({ city, cityDescription }: MobileAp
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": `Epsilon Technology - Mobile App Development in ${city}`,
-        "image": "https://epsilon-technology.com/logo.png",
+        "image": "https://epsilon-technology.com/logo.webp",
         "@id": `https://epsilon-technology.com/mobile-app-development-company-in-${citySlug}/#localbusiness`,
         "url": `https://epsilon-technology.com/mobile-app-development-company-in-${citySlug}/`,
         "telephone": "+918160881461",
@@ -208,7 +208,7 @@ export default function MobileAppCityLanding({ city, cityDescription }: MobileAp
                             <div className="absolute inset-0 bg-blue-600/10 blur-[100px] -z-10 rounded-full scale-110" />
                             <div className="relative rounded-[40px] overflow-hidden border-8 border-slate-900 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] aspect-[9/19] bg-slate-950">
                                 <img
-                                    src="/blog_mobile_app_dev.png"
+                                    src="/blog_mobile_app_dev.webp"
                                     alt={`Mobile app development in ${city}`}
                                     className="w-full h-full object-cover"
                                 />

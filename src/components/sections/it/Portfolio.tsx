@@ -10,7 +10,7 @@ const portfolioItems = [
     {
         title: "FieldR",
         category: "Sports Tech • React Native",
-        image: "/portfolio/feilder-app.jpeg",
+        image: "/portfolio/feilder-app.webp",
         description: "Athlete performance tracking and management platform for sports tech startups.",
         link: "https://play.google.com/store/apps/details?id=com.fieldr"
     },
@@ -31,7 +31,7 @@ const portfolioItems = [
     {
         title: "Antara Health",
         category: "HealthTech • Capacitor",
-        image: "/portfolio/antara-app.png",
+        image: "/portfolio/antara-app.webp",
         description: "Mental health and physiological wellness monitoring application.",
         link: "https://play.google.com/store/apps/details?id=com.antara.health"
     },
@@ -52,7 +52,7 @@ const portfolioItems = [
     {
         title: "Junagadh Police App",
         category: "Public Sector • Mobile App",
-        image: "/portfolio/junagadhpolice.png",
+        image: "/portfolio/junagadhpolice.webp",
         description: "Official mobile application for Junagadh Police, designed to facilitate citizen services and improve community safety.",
         link: "https://play.google.com/store/apps/details?id=com.jnd.police.bandobast"
     },

@@ -2,19 +2,19 @@ import { Metadata } from 'next';
 import WebDevCityLanding from '@/components/landing/WebDevCityLanding';
 
 export const metadata: Metadata = {
-    title: "Web Design & Development Junagadh, Gujarat | Epsilon Technology",
-    description: "Top-rated website development company in Junagadh. Specialized in Next.js, WordPress, & high-performance SEO websites for businesses in Junagadh and Gujarat.",
+    title: "Best Website Development Company in Junagadh | Epsilon Technology",
+    description: "Looking for the best website development company in Junagadh? Epsilon Technology is a top-rated web design agency building fast Next.js & WordPress websites.",
     keywords: [
-        "website development junagadh", 
-        "web design junagadh gujarat", 
+        "best website development company in junagadh",
+        "best website development agency in junagadh",
+        "website development company in junagadh",
+        "web design company junagadh",
         "website design company junagadh",
-        "nextjs developer junagadh",
-        "wordpress development junagadh",
         "epsilon technology junagadh"
     ],
     openGraph: {
-        title: "Website Development Company in Junagadh | Epsilon Technology",
-        description: "Scale your Junagadh business with a modern, SEO-ready website. Next.js & WordPress solutions.",
+        title: "Best Website Development Company in Junagadh | Epsilon Technology",
+        description: "Looking for the best website development company in Junagadh? Epsilon Technology is a top-rated web design agency building fast Next.js & WordPress websites.",
         url: "https://epsilon-technology.com/website-development-company-in-junagadh/",
         images: ["/logo.png"]
     },

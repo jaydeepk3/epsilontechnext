@@ -131,6 +131,7 @@ export function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
     const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+    const [showBanner, setShowBanner] = useState(false);
     const pathname = usePathname();
 
     const isDarkHero = DARK_HERO_PATHS.some(p =>
@@ -143,6 +144,13 @@ export function Header() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        const closed = localStorage.getItem('meta-banner-closed');
+        if (closed !== 'true') {
+            setShowBanner(true);
+        }
+    }, []);
+
     // Close mobile menu on route change
     useEffect(() => {
         setMobileMenuOpen(false);
@@ -152,14 +160,43 @@ export function Header() {
     const logoFilter = (!isScrolled && isDarkHero) ? 'brightness-0 invert' : '';
 
     return (
-        <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-                ? 'bg-white/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] py-3 border-b border-slate-200/50'
-                : isDarkHero
-                    ? 'bg-transparent py-6'
-                    : 'bg-white/80 backdrop-blur-md py-5 border-b border-slate-100/60'
-                }`}
-        >
+        <>
+            {showBanner && (
+                <div className="fixed top-0 left-0 right-0 z-50 h-9 bg-gradient-to-r from-blue-700 via-indigo-800 to-blue-900 text-white text-xs md:text-sm font-semibold flex items-center justify-between px-4 border-b border-blue-500/20">
+                    <div className="flex-1 flex items-center justify-center gap-2 truncate">
+                        <span className="bg-blue-500 text-white text-[9px] uppercase font-extrabold tracking-wider px-2 py-0.5 rounded-full border border-blue-400">Recognition</span>
+                        <span className="truncate">
+                            <span className="hidden md:inline">🏆 Epsilon Technology recognized as Meta &quot;Ads Partner Excellence Impact Leader&quot;.</span>
+                            <span className="inline md:hidden">🏆 Epsilon: Meta Ads Excellence Impact Leader.</span>
+                        </span>
+                        <Link href="/meta-certified-partner/" className="underline hover:text-blue-300 font-extrabold ml-1 transition-colors shrink-0">
+                            Verify Recognition &rarr;
+                        </Link>
+                    </div>
+                    <button 
+                        onClick={() => {
+                            localStorage.setItem('meta-banner-closed', 'true');
+                            setShowBanner(false);
+                        }} 
+                        className="text-white/70 hover:text-white ml-2 transition-colors cursor-pointer shrink-0"
+                        aria-label="Dismiss banner"
+                    >
+                        <X size={14} />
+                    </button>
+                </div>
+            )}
+            <header
+                style={{
+                    transform: showBanner ? 'translateY(36px)' : 'translateY(0px)',
+                    transition: 'transform 0.3s ease, background-color 0.5s ease, padding 0.5s ease'
+                }}
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+                    ? 'bg-white/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] py-3 border-b border-slate-200/50'
+                    : isDarkHero
+                        ? 'bg-transparent py-6'
+                        : 'bg-white/80 backdrop-blur-md py-5 border-b border-slate-100/60'
+                    }`}
+            >
             <div className="container mx-auto px-4 md:px-8 lg:px-12 flex items-center justify-between">
 
                 {/* Logo */}
@@ -368,5 +405,6 @@ export function Header() {
             </AnimatePresence>
 
         </header>
+        </>
     );
 }

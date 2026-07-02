@@ -32,6 +32,12 @@ const STATIC_ROUTES: MetadataRoute.Sitemap = [
         priority: 0.9,
     },
     {
+        url: 'https://epsilon-technology.com/meta-certified-partner/',
+        lastModified: STABLE_DATE,
+        changeFrequency: 'monthly',
+        priority: 0.8,
+    },
+    {
         url: 'https://epsilon-technology.com/services/mobile-app-development/',
         lastModified: STABLE_DATE,
         changeFrequency: 'weekly',

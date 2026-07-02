@@ -29,6 +29,14 @@ const testimonials = [
         result: "📈 Result: 30–50 monthly inquiries from social media"
     },
     {
+        quote: "Our pediatric physiotherapy clinic saw a significant rise in patient inquiries and daily bookings after Epsilon started managing our Instagram reels and local marketing campaigns.",
+        author: "Rainbow Pediatric Clinic",
+        role: "Pediatric Physiotherapy, Gujarat",
+        initials: "RP",
+        color: "bg-teal-100 text-teal-600",
+        result: "📈 Result: 3x OPD Patient Inquiries via Instagram"
+    },
+    {
         quote: "I received a very great experience with the services provided by Epsilon's team. They provided very accurate approach and also gave good ideas. Thank you so much jaydeepbhai and team.",
         author: "Healthcare Physiotherapy Clinic",
         role: "Physiotherapy Clinic, Gujarat",

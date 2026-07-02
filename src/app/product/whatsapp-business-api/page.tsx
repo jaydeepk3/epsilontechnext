@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Official WhatsApp Business API Solutions | Epsilon Technology',
         description: 'Automate conversations and scale your business with official Meta Tech Provider solutions.',
+        url: 'https://epsilon-technology.com/product/whatsapp-business-api/',
+        images: ['/logo.webp'],
     },
     alternates: {
         canonical: 'https://epsilon-technology.com/product/whatsapp-business-api/',

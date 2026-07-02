@@ -180,7 +180,7 @@ const successVideos = [
     {
         title: "Divine Interior",
         industry: "Interior Design & Furniture",
-        result: "📈 40+ Project Leads",
+        result: "Interior Branding",
         platform: "Instagram",
         embedUrl: "https://www.instagram.com/p/DZxITQLzYDj/embed",
         avatar: "DI",
@@ -191,7 +191,7 @@ const successVideos = [
     {
         title: "Rainbow Pediatric Clinic",
         industry: "Pediatric Physiotherapy",
-        result: "📈 Daily OPD Patient Calls",
+        result: "Daily OPD Patient Visit",
         platform: "Instagram",
         embedUrl: "https://www.instagram.com/p/DZ65VRWxQbZ/embed",
         avatar: "RP",
@@ -200,9 +200,9 @@ const successVideos = [
         description: "Rainbow Pediatric Physiotherapy Clinic explains their massive jump in patient bookings and social media engagement."
     },
     {
-        title: "Our Marketing Framework",
-        industry: "Epsilon Technology Overview",
-        result: "📈 24/7 Client Acquisition",
+        title: "Piyu Gruh Udhyog",
+        industry: "Food",
+        result: "Daily Bulk Orders",
         platform: "Instagram",
         embedUrl: "https://www.instagram.com/p/DaQbftaoOVC/embed",
         avatar: "ET",
@@ -211,15 +211,15 @@ const successVideos = [
         description: "Founder Jaydeep Kataria breaks down the exact digital marketing & lead generation funnel we build for clients."
     },
     {
-        title: "Shreeji Multispecialty",
-        industry: "Hospital Case Study",
-        result: "📈 3× OPD Growth in 60d",
+        title: "Ontapp",
+        industry: "eCommerce Project (Canada)",
+        result: "📈 Successful Launch",
         platform: "LinkedIn",
         embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7310298732124606464?compact=1",
-        avatar: "SM",
+        avatar: "ON",
         color: "from-emerald-500 to-teal-600",
         bgLight: "bg-emerald-50 text-emerald-600",
-        description: "Detailed video case study of how we scaled patient footfall and digital brand trust for Shreeji Hospital."
+        description: "Detailed video case study of how we built and scaled the Ontapp eCommerce platform for our Canadian client."
     }
 ];
 
@@ -391,12 +391,12 @@ export default function HomeLandingClient() {
                                     <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                                     Trusted by Businesses in UAE, UK, USA & India
                                 </div>
-                                <Link 
-                                    href="/meta-certified-partner/" 
+                                <Link
+                                    href="/meta-certified-partner/"
                                     className="inline-flex items-center gap-2 bg-indigo-500/20 hover:bg-indigo-500/30 border border-indigo-400/35 hover:border-indigo-400/50 text-indigo-300 px-4 py-2.5 rounded-full text-xs md:text-sm font-semibold backdrop-blur-sm transition-all group"
                                 >
                                     <svg className="w-4 h-4 text-blue-400 shrink-0 transition-transform group-hover:scale-115" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M16.92 5c-1.4 0-2.67.6-3.6 1.6C12.38 5.6 11.11 5 9.7 5c-3.13 0-5.69 2.5-5.69 5.6 0 3.1 2.56 5.6 5.69 5.6 1.4 0 2.67-.6 3.6-1.6.93 1 2.2 1.6 3.61 1.6 3.14 0 5.7-2.5 5.7-5.6 0-3.1-2.56-5.6-5.7-5.6zm.01 9.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.59 1.6 3.59 3.6 0 2-1.61 3.6-3.59 3.6zM9.7 14.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.6 1.6 3.6 3.6 0 2-1.61 3.6-3.6 3.6z"/>
+                                        <path d="M16.92 5c-1.4 0-2.67.6-3.6 1.6C12.38 5.6 11.11 5 9.7 5c-3.13 0-5.69 2.5-5.69 5.6 0 3.1 2.56 5.6 5.69 5.6 1.4 0 2.67-.6 3.6-1.6.93 1 2.2 1.6 3.61 1.6 3.14 0 5.7-2.5 5.7-5.6 0-3.1-2.56-5.6-5.7-5.6zm.01 9.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.59 1.6 3.59 3.6 0 2-1.61 3.6-3.59 3.6zM9.7 14.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.6 1.6 3.6 3.6 0 2-1.61 3.6-3.6 3.6z" />
                                     </svg>
                                     <span>Meta Ads Partner &bull; Excellence Impact Leader &rarr;</span>
                                 </Link>
@@ -600,7 +600,7 @@ export default function HomeLandingClient() {
                                                 <p className="text-slate-600 text-sm mb-4">
                                                     We don&apos;t believe in one-size-fits-all. Choose a package tier below to view features, or request a custom-tailored quote.
                                                 </p>
-                                                
+
                                                 {/* Space-wise Package Selector Pills */}
                                                 <div className="inline-flex p-1 bg-slate-100 rounded-xl mb-6 border border-slate-200">
                                                     {svc.packages.map((pkg, pIdx) => {
@@ -610,18 +610,17 @@ export default function HomeLandingClient() {
                                                                 key={pkg.name}
                                                                 type="button"
                                                                 onClick={() => setActivePkgIndex(pIdx)}
-                                                                className={`px-4 py-2 rounded-lg text-xs font-bold transition-all duration-200 ${
-                                                                    isPkgActive
-                                                                        ? `${svc.tabColor} text-white shadow-sm`
-                                                                        : "text-slate-600 hover:text-slate-900 hover:bg-white/50"
-                                                                }`}
+                                                                className={`px-4 py-2 rounded-lg text-xs font-bold transition-all duration-200 ${isPkgActive
+                                                                    ? `${svc.tabColor} text-white shadow-sm`
+                                                                    : "text-slate-600 hover:text-slate-900 hover:bg-white/50"
+                                                                    }`}
                                                             >
                                                                 {pkg.name}
                                                             </button>
                                                         );
                                                     })}
                                                 </div>
-                                                
+
                                                 <div className="grid sm:grid-cols-2 gap-3 mb-6 text-left">
                                                     {svc.packages[activePkgIndex].features.map((f, i) => (
                                                         <div key={i} className="flex items-start gap-2.5 p-3.5 bg-slate-50 rounded-2xl border border-slate-100">
@@ -632,13 +631,13 @@ export default function HomeLandingClient() {
                                                 </div>
 
                                                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                                                    <button 
+                                                    <button
                                                         onClick={() => setModal({ svc: svc })}
                                                         className={`inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-2xl font-bold text-white text-base transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 bg-gradient-to-r ${svc.color}`}
                                                     >
                                                         <Sparkles size={18} /> Request a Custom Quote
                                                     </button>
-                                                    <a 
+                                                    <a
                                                         href={`https://wa.me/${WA}?text=Hi, I&apos;m interested in ${encodeURIComponent(svc.title)} (${svc.packages[activePkgIndex].name} Package)`}
                                                         target="_blank" rel="noopener noreferrer"
                                                         className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-2xl font-bold text-slate-900 bg-white border-2 border-slate-200 text-base hover:bg-slate-50 transition-all hover:border-slate-300"
@@ -646,7 +645,7 @@ export default function HomeLandingClient() {
                                                         <MessageSquare size={18} /> Chat on WhatsApp
                                                     </a>
                                                 </div>
-                                                
+
                                                 <div className="mt-6 flex flex-wrap justify-center gap-4 text-xs sm:text-sm text-slate-500">
                                                     <div className="flex items-center gap-1.5"><Clock size={14} className="text-blue-500" /> {svc.packages[activePkgIndex].duration} Average Delivery</div>
                                                     <div className="flex items-center gap-1.5"><Shield size={14} className="text-green-500" /> 100% Satisfaction Guarantee</div>
@@ -679,8 +678,8 @@ export default function HomeLandingClient() {
                                 );
                             })}
                         </div>
-                        </div>
-                    </section>
+                    </div>
+                </section>
 
                 {/* ═══════════════════════════════════════ HOW IT WORKS ═══════════════════════════════════════ */}
                 <section className="py-16 bg-white">
@@ -797,21 +796,20 @@ export default function HomeLandingClient() {
                                             <p className="text-slate-400 text-xs">{successVideos[activeVideo].industry}</p>
                                         </div>
                                     </div>
-                                    <span className={`text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider ${
-                                        successVideos[activeVideo].platform === 'Instagram'
+                                    <span className={`text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider ${successVideos[activeVideo].platform === 'Instagram'
                                         ? 'bg-pink-500/10 text-pink-400 border border-pink-500/20'
                                         : successVideos[activeVideo].platform === 'LinkedIn'
-                                        ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
-                                        : 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20'
-                                    }`}>
+                                            ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
+                                            : 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20'
+                                        }`}>
                                         {successVideos[activeVideo].platform}
                                     </span>
                                 </div>
-                                <div className="flex-1 bg-black flex items-center justify-center relative min-h-[420px] sm:min-h-[500px]">
+                                <div className="flex-1 bg-black flex items-center justify-center relative min-h-[500px] sm:min-h-[650px] py-6">
                                     <iframe
                                         key={activeVideo}
                                         src={successVideos[activeVideo].embedUrl}
-                                        className="w-full h-full min-h-[420px] sm:min-h-[500px] border-none rounded-b-2xl"
+                                        className="w-full max-w-[350px] h-[550px] sm:h-[620px] border-none rounded-xl bg-white shadow-2xl mx-auto"
                                         allowFullScreen
                                         scrolling="no"
                                         allowTransparency={true}
@@ -831,11 +829,10 @@ export default function HomeLandingClient() {
                                             <button
                                                 key={idx}
                                                 onClick={() => setActiveVideo(idx)}
-                                                className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3 ${
-                                                    isActive 
-                                                    ? 'bg-blue-50 border-blue-500 shadow-md shadow-blue-500/5 ring-1 ring-blue-500/30' 
+                                                className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3 ${isActive
+                                                    ? 'bg-blue-50 border-blue-500 shadow-md shadow-blue-500/5 ring-1 ring-blue-500/30'
                                                     : 'bg-white hover:bg-slate-50 border-slate-200 hover:border-slate-300'
-                                                }`}
+                                                    }`}
                                             >
                                                 <div className={`w-10 h-10 rounded-full shrink-0 flex items-center justify-center font-bold text-sm bg-gradient-to-br ${video.color} text-white`}>
                                                     {video.avatar}
@@ -943,7 +940,7 @@ export default function HomeLandingClient() {
                         </div>
                         <div className="space-y-3">{faqs.map(f => <FAQItem key={f.q} q={f.q} a={f.a} />)}</div>
                     </div>
-                    
+
                     {/* Dynamic FAQPage Schema */}
                     <script
                         type="application/ld+json"

@@ -509,7 +509,7 @@ export default function HomeLandingClient() {
                                         { src: "/clientlogo/aiow.webp", name: "Aiow", bg: "bg-white", pad: "p-2" },
                                         { src: "/clientlogo/dhartiagro.webp", name: "Dharti Agro", bg: "bg-white", pad: "p-3" },
                                         { src: "/clientlogo/dotcube.webp", name: "DotCube", bg: "bg-white", pad: "p-3" },
-                                        { src: "/clientlogo/trimurti_hospital.webp", name: "Trimurti Hospitals", bg: "bg-white", pad: "p-3" },
+                                        { src: "/clientlogo/trimurti_hospital.webp", name: "Trimurti Hospitals", bg: "bg-white", pad: "p-0 scale-125" },
                                     ].map((logo) => (
                                         <div key={logo.name + pass}
                                             className={`flex items-center justify-center h-20 w-48 rounded-2xl bg-white shadow-sm border border-slate-200 ${logo.pad} shrink-0 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group`}>
@@ -517,7 +517,7 @@ export default function HomeLandingClient() {
                                             <img
                                                 src={logo.src}
                                                 alt={logo.name}
-                                                className="max-h-full max-w-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                                                className="max-h-full max-w-full object-contain transition-all duration-500"
                                             />
                                         </div>
                                     ))}

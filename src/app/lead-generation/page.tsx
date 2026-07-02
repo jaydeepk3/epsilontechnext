@@ -5,12 +5,13 @@ import {
   ArrowRight, MessageCircle, CheckCircle, Star, Quote,
   Check, Zap, TrendingUp, Rocket, Building2,
   ChevronDown, ChevronUp, Shield, Clock, Users,
-  BarChart3, Eye, Heart, BadgeCheck, Phone, X, Briefcase
+  BarChart3, Eye, Heart, BadgeCheck, Phone, X, Briefcase, Award
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ScarcityReplacement } from '@/components/ui/ScarcityReplacement';
 import { AvailabilityBanner } from '@/components/ui/AvailabilityBanner';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -35,14 +36,20 @@ const beforeAfterCards = [
 ];
 
 const reels = [
-  { title: "Service Showcase", embedUrl: "https://www.instagram.com/reel/DNh44Bissbj/embed", views: "195k+", likes: "512+" },
+  { title: "Divine Interior - Lead Gen Success", embedUrl: "https://www.instagram.com/p/DZxITQLzYDj/embed", views: "185k+", likes: "980+" },
+  { title: "Rainbow Pediatric - Patient Inquiries", embedUrl: "https://www.instagram.com/p/DZ65VRWxQbZ/embed", views: "150k+", likes: "1.2k+" },
+  { title: "Epsilon 24/7 Client Machine", embedUrl: "https://www.instagram.com/p/DaQbftaoOVC/embed", views: "200k+", likes: "2.4k+" },
   { title: "Viral Brand Reel", embedUrl: "https://www.instagram.com/reel/DFX0HANA3e3/embed", views: "1.1M+", likes: "1.4k+" },
   { title: "Educational Content", embedUrl: "https://www.instagram.com/reel/DO_M0fLkrm0/embed", views: "420k+", likes: "15.2k+" },
-  { title: "Client Success Story", embedUrl: "https://www.instagram.com/reel/DPlJCV1j69W/embed", views: "280k+", likes: "8.9k+" },
-  { title: "Special Offer Announcement", embedUrl: "https://www.instagram.com/reel/DRo6ggqE16-/embed", views: "350k+", likes: "13.4k+" },
 ];
 
 const testimonials = [
+  {
+    quote: "We generated 40+ high-quality project leads for our interior design and furniture business. Epsilon's lead generation strategy worked incredibly fast. Highly recommended!",
+    author: "Heet Parekh", role: "Owner, Divine Interior", initials: "HP", color: "from-amber-400 to-orange-500",
+    photo: "", 
+    metric: "40+", metricLabel: "Premium leads/month",
+  },
   {
     quote: "Working with Epsilon for 2 years. Verified inquiries went up significantly after they started managing our ads and social media. They understand business growth like no other.",
     author: "Rahul M.", role: "CEO, Tech Solutions", initials: "RM", color: "from-orange-400 to-amber-500",
@@ -242,9 +249,17 @@ export default function LeadGenerationPage() {
             {/* Left: Copy */}
             <div>
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-semibold text-sm mb-6"
+                className="flex flex-wrap items-center gap-2.5 mb-6 animate-fade-in"
               >
-                <BadgeCheck size={15} /> Transforming Brands &amp; Driving Revenue
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-semibold text-sm">
+                  <BadgeCheck size={15} /> Transforming Brands &amp; Revenue
+                </span>
+                <Link href="/meta-certified-partner/" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100 hover:border-indigo-200 text-indigo-600 hover:text-indigo-700 transition-all font-semibold text-sm group">
+                  <svg className="w-4 h-4 text-blue-500 shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16.92 5c-1.4 0-2.67.6-3.6 1.6C12.38 5.6 11.11 5 9.7 5c-3.13 0-5.69 2.5-5.69 5.6 0 3.1 2.56 5.6 5.69 5.6 1.4 0 2.67-.6 3.6-1.6.93 1 2.2 1.6 3.61 1.6 3.14 0 5.7-2.5 5.7-5.6 0-3.1-2.56-5.6-5.7-5.6zm.01 9.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.59 1.6 3.59 3.6 0 2-1.61 3.6-3.59 3.6zM9.7 14.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.6 1.6 3.6 3.6 0 2-1.61 3.6-3.6 3.6z"/>
+                  </svg>
+                  <span>Meta Ads Partner &rarr;</span>
+                </Link>
               </motion.div>
 
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
@@ -322,6 +337,45 @@ export default function LeadGenerationPage() {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Meta Partner Trust Section ────────────────────────── */}
+      <section className="py-14 px-4 bg-slate-50 border-b border-slate-100">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 bg-white border border-slate-150 rounded-[2.5rem] p-8 md:p-10 shadow-sm relative overflow-hidden">
+          {/* Subtle Glow background */}
+          <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500/5 blur-2xl rounded-full pointer-events-none" />
+          
+          <div className="flex-1 space-y-4">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-xs">
+              <Award size={13} /> Official Meta Recognition
+            </div>
+            <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight">
+              Meta Ads Partner Excellence Impact Leader
+            </h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Epsilon Technology has successfully achieved the <strong>Ads Partner Excellence Impact Leader</strong> status in the Meta ads partner excellence program. This recognition guarantees high-converting ad copy, brand-safe execution, and highly optimized ad spend for lead acquisition campaigns.
+            </p>
+            <div className="pt-2">
+              <Link 
+                href="/meta-certified-partner/"
+                className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:text-blue-700 transition-colors group"
+              >
+                Verify Our Official Meta Recognition <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+          
+          <div className="shrink-0 w-full md:w-[260px] aspect-[1.8/1] relative rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-slate-50 group cursor-pointer">
+            <Link href="/meta-certified-partner/">
+              <Image 
+                src="/meta-partner-certificate.png"
+                alt="Meta Certificate of Recognition"
+                fill
+                className="object-cover group-hover:scale-102 transition-transform duration-300"
+              />
+            </Link>
           </div>
         </div>
       </section>

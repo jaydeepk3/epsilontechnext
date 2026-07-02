@@ -176,6 +176,53 @@ const faqs = [
     { q: "Is there support after launch?", a: "Every project includes post-launch support. Long-term maintenance and retainer contracts are also available." },
 ];
 
+const successVideos = [
+    {
+        title: "Divine Interior",
+        industry: "Interior Design & Furniture",
+        result: "📈 40+ Project Leads",
+        platform: "Instagram",
+        embedUrl: "https://www.instagram.com/p/DZxITQLzYDj/embed",
+        avatar: "DI",
+        color: "from-amber-500 to-orange-600",
+        bgLight: "bg-amber-50 text-amber-600",
+        description: "Owner Heet Parekh shares how Epsilon Technology's lead generation strategies delivered high-value interior project enquiries."
+    },
+    {
+        title: "Rainbow Pediatric Clinic",
+        industry: "Pediatric Physiotherapy",
+        result: "📈 Daily OPD Patient Calls",
+        platform: "Instagram",
+        embedUrl: "https://www.instagram.com/p/DZ65VRWxQbZ/embed",
+        avatar: "RP",
+        color: "from-blue-500 to-indigo-600",
+        bgLight: "bg-blue-50 text-blue-600",
+        description: "Rainbow Pediatric Physiotherapy Clinic explains their massive jump in patient bookings and social media engagement."
+    },
+    {
+        title: "Our Marketing Framework",
+        industry: "Epsilon Technology Overview",
+        result: "📈 24/7 Client Acquisition",
+        platform: "Instagram",
+        embedUrl: "https://www.instagram.com/p/DaQbftaoOVC/embed",
+        avatar: "ET",
+        color: "from-purple-500 to-violet-600",
+        bgLight: "bg-purple-50 text-purple-600",
+        description: "Founder Jaydeep Kataria breaks down the exact digital marketing & lead generation funnel we build for clients."
+    },
+    {
+        title: "Shreeji Multispecialty",
+        industry: "Hospital Case Study",
+        result: "📈 3× OPD Growth in 60d",
+        platform: "LinkedIn",
+        embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7310298732124606464?compact=1",
+        avatar: "SM",
+        color: "from-emerald-500 to-teal-600",
+        bgLight: "bg-emerald-50 text-emerald-600",
+        description: "Detailed video case study of how we scaled patient footfall and digital brand trust for Shreeji Hospital."
+    }
+];
+
 // ─── APPLY MODAL ─────────────────────────────────────────────────────────────
 type Service = typeof services[0];
 type Pkg = Service["packages"][0];
@@ -319,6 +366,7 @@ export default function HomeLandingClient() {
     const [activeTab, setActiveTab] = useState(0);
     const [activePkgIndex, setActivePkgIndex] = useState(1);
     const [modal, setModal] = useState<{ svc: Service } | null>(null);
+    const [activeVideo, setActiveVideo] = useState(0);
     const servicesRef = useRef<HTMLElement>(null);
     const activeSvc = services[activeTab];
 
@@ -338,9 +386,20 @@ export default function HomeLandingClient() {
 
                     <div className="container mx-auto px-4 py-24 relative z-10">
                         <div className="max-w-5xl mx-auto text-center">
-                            <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
-                                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                                Trusted by Businesses in UAE, UK, USA & India
+                            <div className="flex flex-wrap justify-center items-center gap-3 mb-8">
+                                <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 text-blue-300 px-4 py-2.5 rounded-full text-xs md:text-sm font-medium backdrop-blur-sm">
+                                    <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                                    Trusted by Businesses in UAE, UK, USA & India
+                                </div>
+                                <Link 
+                                    href="/meta-certified-partner/" 
+                                    className="inline-flex items-center gap-2 bg-indigo-500/20 hover:bg-indigo-500/30 border border-indigo-400/35 hover:border-indigo-400/50 text-indigo-300 px-4 py-2.5 rounded-full text-xs md:text-sm font-semibold backdrop-blur-sm transition-all group"
+                                >
+                                    <svg className="w-4 h-4 text-blue-400 shrink-0 transition-transform group-hover:scale-115" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M16.92 5c-1.4 0-2.67.6-3.6 1.6C12.38 5.6 11.11 5 9.7 5c-3.13 0-5.69 2.5-5.69 5.6 0 3.1 2.56 5.6 5.69 5.6 1.4 0 2.67-.6 3.6-1.6.93 1 2.2 1.6 3.61 1.6 3.14 0 5.7-2.5 5.7-5.6 0-3.1-2.56-5.6-5.7-5.6zm.01 9.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.59 1.6 3.59 3.6 0 2-1.61 3.6-3.59 3.6zM9.7 14.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.6 1.6 3.6 3.6 0 2-1.61 3.6-3.6 3.6z"/>
+                                    </svg>
+                                    <span>Meta Ads Partner &bull; Excellence Impact Leader &rarr;</span>
+                                </Link>
                             </div>
 
                             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
@@ -507,10 +566,6 @@ export default function HomeLandingClient() {
                             })}
                         </div>
 
-                        {/* ── ACTIVE SERVICE CONTENT ── */}
-                        <div className="flex justify-center mb-8">
-                        </div>
-
                         <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
                             {services.map((svc, sIdx) => {
                                 const isActive = activeTab === sIdx;
@@ -539,15 +594,15 @@ export default function HomeLandingClient() {
                                         </div>
 
                                         {/* Service details and CTA */}
-                                        <div className="p-8 md:p-12">
+                                        <div className="p-6 md:p-8">
                                             <div className="max-w-3xl mx-auto text-center">
-                                                <h4 className="text-2xl font-bold text-slate-900 mb-2">Ready to start your {svc.title} project?</h4>
-                                                <p className="text-slate-600 text-base mb-6">
+                                                <h4 className="text-2xl font-bold text-slate-900 mb-1">Ready to start your {svc.title} project?</h4>
+                                                <p className="text-slate-600 text-sm mb-4">
                                                     We don&apos;t believe in one-size-fits-all. Choose a package tier below to view features, or request a custom-tailored quote.
                                                 </p>
                                                 
                                                 {/* Space-wise Package Selector Pills */}
-                                                <div className="inline-flex p-1 bg-slate-100 rounded-xl mb-8 border border-slate-200">
+                                                <div className="inline-flex p-1 bg-slate-100 rounded-xl mb-6 border border-slate-200">
                                                     {svc.packages.map((pkg, pIdx) => {
                                                         const isPkgActive = activePkgIndex === pIdx;
                                                         return (
@@ -567,37 +622,37 @@ export default function HomeLandingClient() {
                                                     })}
                                                 </div>
                                                 
-                                                <div className="grid sm:grid-cols-2 gap-4 mb-10 text-left">
+                                                <div className="grid sm:grid-cols-2 gap-3 mb-6 text-left">
                                                     {svc.packages[activePkgIndex].features.map((f, i) => (
-                                                        <div key={i} className="flex items-start gap-3 p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                                                            <CheckCircle2 size={20} className={`${svc.lightText} shrink-0 mt-0.5`} />
-                                                            <span className="text-slate-700 font-medium text-sm">{f}</span>
+                                                        <div key={i} className="flex items-start gap-2.5 p-3.5 bg-slate-50 rounded-2xl border border-slate-100">
+                                                            <CheckCircle2 size={18} className={`${svc.lightText} shrink-0 mt-0.5`} />
+                                                            <span className="text-slate-700 font-medium text-xs sm:text-sm">{f}</span>
                                                         </div>
                                                     ))}
                                                 </div>
 
-                                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                                <div className="flex flex-col sm:flex-row gap-3 justify-center">
                                                     <button 
                                                         onClick={() => setModal({ svc: svc })}
-                                                        className={`inline-flex items-center justify-center gap-2 px-10 py-4 rounded-2xl font-bold text-white text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 bg-gradient-to-r ${svc.color}`}
+                                                        className={`inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-2xl font-bold text-white text-base transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 bg-gradient-to-r ${svc.color}`}
                                                     >
-                                                        <Sparkles size={20} /> Request a Custom Quote
+                                                        <Sparkles size={18} /> Request a Custom Quote
                                                     </button>
                                                     <a 
                                                         href={`https://wa.me/${WA}?text=Hi, I&apos;m interested in ${encodeURIComponent(svc.title)} (${svc.packages[activePkgIndex].name} Package)`}
                                                         target="_blank" rel="noopener noreferrer"
-                                                        className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-2xl font-bold text-slate-900 bg-white border-2 border-slate-200 text-lg hover:bg-slate-50 transition-all hover:border-slate-300"
+                                                        className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-2xl font-bold text-slate-900 bg-white border-2 border-slate-200 text-base hover:bg-slate-50 transition-all hover:border-slate-300"
                                                     >
-                                                        <MessageSquare size={20} /> Chat on WhatsApp
+                                                        <MessageSquare size={18} /> Chat on WhatsApp
                                                     </a>
                                                 </div>
                                                 
-                                                <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-slate-500">
-                                                    <div className="flex items-center gap-2"><Clock size={16} className="text-blue-500" /> {svc.packages[activePkgIndex].duration} Average Delivery</div>
-                                                    <div className="flex items-center gap-2"><Shield size={16} className="text-green-500" /> 100% Satisfaction Guarantee</div>
+                                                <div className="mt-6 flex flex-wrap justify-center gap-4 text-xs sm:text-sm text-slate-500">
+                                                    <div className="flex items-center gap-1.5"><Clock size={14} className="text-blue-500" /> {svc.packages[activePkgIndex].duration} Average Delivery</div>
+                                                    <div className="flex items-center gap-1.5"><Shield size={14} className="text-green-500" /> 100% Satisfaction Guarantee</div>
                                                 </div>
 
-                                                <div className="mt-8 pt-8 border-t border-slate-100">
+                                                <div className="mt-6 pt-5 border-t border-slate-100">
                                                     <Link
                                                         href={svc.href}
                                                         className={`text-center text-sm font-semibold flex items-center justify-center gap-1.5 transition-colors ${svc.lightText} hover:underline`}
@@ -727,56 +782,101 @@ export default function HomeLandingClient() {
                             ))}
                         </div>
 
-                        {/* Video Testimonial + Leave a Review CTA */}
-                        <div className="grid md:grid-cols-2 gap-8">
+                        {/* Interactive Video Reviews Selector */}
+                        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
 
-                            {/* Real Client Video Testimonial */}
-                            <div className="bg-slate-900 rounded-3xl overflow-hidden shadow-lg border border-slate-800 flex flex-col pt-5">
-                                <div className="px-6 mb-4 flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
-                                        <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                                        </svg>
+                            {/* Left part: Video Player Card (takes 7 cols on lg) */}
+                            <div className="lg:col-span-7 bg-slate-900 rounded-3xl overflow-hidden shadow-xl border border-slate-800 flex flex-col pt-5">
+                                <div className="px-6 mb-4 flex justify-between items-center">
+                                    <div className="flex items-center gap-3">
+                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shrink-0 bg-gradient-to-br ${successVideos[activeVideo].color} text-white`}>
+                                            {successVideos[activeVideo].avatar}
+                                        </div>
+                                        <div className="text-left">
+                                            <h3 className="text-white font-bold text-base leading-tight">{successVideos[activeVideo].title}</h3>
+                                            <p className="text-slate-400 text-xs">{successVideos[activeVideo].industry}</p>
+                                        </div>
                                     </div>
-                                    <div className="text-left">
-                                        <h3 className="text-white font-bold text-sm leading-tight">Featured Case Study</h3>
-                                        <p className="text-slate-400 text-xs">View on LinkedIn</p>
-                                    </div>
+                                    <span className={`text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider ${
+                                        successVideos[activeVideo].platform === 'Instagram'
+                                        ? 'bg-pink-500/10 text-pink-400 border border-pink-500/20'
+                                        : successVideos[activeVideo].platform === 'LinkedIn'
+                                        ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
+                                        : 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20'
+                                    }`}>
+                                        {successVideos[activeVideo].platform}
+                                    </span>
                                 </div>
-                                <div className="flex-1 bg-black flex items-center justify-center relative min-h-[399px]">
+                                <div className="flex-1 bg-black flex items-center justify-center relative min-h-[420px] sm:min-h-[500px]">
                                     <iframe
-                                        src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7310298732124606464?compact=1"
-                                        height="399"
-                                        width="504"
-                                        frameBorder={0}
+                                        key={activeVideo}
+                                        src={successVideos[activeVideo].embedUrl}
+                                        className="w-full h-full min-h-[420px] sm:min-h-[500px] border-none rounded-b-2xl"
                                         allowFullScreen
-                                        title="Embedded post"
-                                        className="w-full max-w-full rounded-b-2xl border-none"
+                                        scrolling="no"
+                                        allowTransparency={true}
+                                        allow="encrypted-media"
                                     />
                                 </div>
                             </div>
 
-                            {/* Leave a Review CTA */}
-                            <div className="bg-white border-2 border-slate-100 rounded-3xl p-8 flex flex-col items-center justify-center text-center">
-                                <div className="flex gap-1 mb-4">
-                                    {[1, 2, 3, 4, 5].map(s => <Star key={s} size={28} className="text-yellow-400 fill-yellow-400" />)}
+                            {/* Right part: Selector List + Google Review CTA (takes 5 cols on lg) */}
+                            <div className="lg:col-span-5 flex flex-col justify-between gap-5">
+                                {/* Video Selector Options */}
+                                <div className="space-y-3">
+                                    <h3 className="text-slate-900 font-bold text-lg mb-3">Watch Client Success Stories</h3>
+                                    {successVideos.map((video, idx) => {
+                                        const isActive = activeVideo === idx;
+                                        return (
+                                            <button
+                                                key={idx}
+                                                onClick={() => setActiveVideo(idx)}
+                                                className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3 ${
+                                                    isActive 
+                                                    ? 'bg-blue-50 border-blue-500 shadow-md shadow-blue-500/5 ring-1 ring-blue-500/30' 
+                                                    : 'bg-white hover:bg-slate-50 border-slate-200 hover:border-slate-300'
+                                                }`}
+                                            >
+                                                <div className={`w-10 h-10 rounded-full shrink-0 flex items-center justify-center font-bold text-sm bg-gradient-to-br ${video.color} text-white`}>
+                                                    {video.avatar}
+                                                </div>
+                                                <div className="flex-1 min-w-0">
+                                                    <div className="flex justify-between items-start gap-1">
+                                                        <p className="font-bold text-slate-900 text-sm leading-tight truncate">{video.title}</p>
+                                                        <span className="text-[10px] text-slate-400 shrink-0">{video.platform}</span>
+                                                    </div>
+                                                    <p className="text-slate-500 text-xs truncate mt-0.5">{video.industry}</p>
+                                                    <span className={`inline-block text-[10px] font-bold px-2 py-0.5 rounded-full mt-2 ${video.bgLight}`}>
+                                                        {video.result}
+                                                    </span>
+                                                </div>
+                                            </button>
+                                        );
+                                    })}
                                 </div>
-                                <h3 className="text-slate-900 font-bold text-xl mb-2">Happy with our work?</h3>
-                                <p className="text-slate-500 text-sm mb-6 max-w-xs">Your Google review helps other businesses find and trust us. It takes less than 60 seconds!</p>
-                                <a
-                                    href="https://g.page/r/CbetrSe6znc4EAI/review"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-700 text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:scale-105 shadow-lg text-sm"
-                                >
-                                    <svg className="w-4 h-4" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M43.6 20.5H24v7.6h11.3C33.9 33.3 29.5 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.3 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c11 0 19.6-7.7 19.6-20 0-1.2-.1-2.4-.4-3.5z" fill="#FFC107" />
-                                        <path d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.3 29.3 4 24 4 16.3 4 9.6 8.3 6.3 14.7z" fill="#FF3D00" />
-                                        <path d="M24 44c5.2 0 9.9-1.9 13.5-5l-6.2-5.2C29.5 35.3 26.9 36 24 36c-5.5 0-9.8-3.6-11.3-8.6L6 32.3C9.3 39 16 44 24 44z" fill="#4CAF50" />
-                                        <path d="M43.6 20.5H24v7.6h11.3C34.5 31 31.8 33.1 29.3 34.8l6.2 5.2C40.5 36.5 44 30.8 44 24c0-1.2-.1-2.4-.4-3.5z" fill="#1565C0" />
-                                    </svg>
-                                    Write a Google Review
-                                </a>
+
+                                {/* Google Review Card */}
+                                <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-5 flex flex-col items-center justify-center text-center">
+                                    <div className="flex gap-1 mb-2">
+                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={20} className="text-yellow-400 fill-yellow-400" />)}
+                                    </div>
+                                    <h4 className="text-slate-900 font-bold text-sm mb-1">Happy with our work?</h4>
+                                    <p className="text-slate-500 text-xs mb-3 max-w-xs">Your Google review helps other businesses find and trust us. It takes less than 60 seconds!</p>
+                                    <a
+                                        href="https://g.page/r/CbetrSe6znc4EAI/review"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-white font-bold px-5 py-2.5 rounded-xl transition-all text-xs hover:scale-[1.02] shadow-sm"
+                                    >
+                                        <svg className="w-3.5 h-3.5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M43.6 20.5H24v7.6h11.3C33.9 33.3 29.5 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.3 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c11 0 19.6-7.7 19.6-20 0-1.2-.1-2.4-.4-3.5z" fill="#FFC107" />
+                                            <path d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.3 29.3 4 24 4 16.3 4 9.6 8.3 6.3 14.7z" fill="#FF3D00" />
+                                            <path d="M24 44c5.2 0 9.9-1.9 13.5-5l-6.2-5.2C29.5 35.3 26.9 36 24 36c-5.5 0-9.8-3.6-11.3-8.6L6 32.3C9.3 39 16 44 24 44z" fill="#4CAF50" />
+                                            <path d="M43.6 20.5H24v7.6h11.3C34.5 31 31.8 33.1 29.3 34.8l6.2 5.2C40.5 36.5 44 30.8 44 24c0-1.2-.1-2.4-.4-3.5z" fill="#1565C0" />
+                                        </svg>
+                                        Write a Google Review
+                                    </a>
+                                </div>
                             </div>
                         </div>
 

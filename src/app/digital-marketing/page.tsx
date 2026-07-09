@@ -36,9 +36,9 @@ const beforeAfterCards = [
 ];
 
 const reels = [
-  { title: "Rainbow Pediatric - Patient Inquiries", embedUrl: "https://www.instagram.com/p/DZ65VRWxQbZ/embed", views: "150k+", likes: "1.2k+" },
-  { title: "Divine Interior - Lead Gen Success", embedUrl: "https://www.instagram.com/p/DZxITQLzYDj/embed", views: "185k+", likes: "980+" },
-  { title: "Epsilon 24/7 Client Machine", embedUrl: "https://www.instagram.com/p/DaQbftaoOVC/embed", views: "200k+", likes: "2.4k+" },
+  { title: "Pulse Hospital - Body Checkup", embedUrl: "https://www.instagram.com/p/DXof6H-k3Ql/embed", views: "150k+", likes: "1.2k+" },
+  { title: "Ayurvedic Weight Loss Plan", embedUrl: "https://www.instagram.com/reel/DTZrdukE3Dx/embed", views: "185k+", likes: "980+" },
+  { title: "Shreeji Hospital - Free OPD", embedUrl: "https://www.instagram.com/p/DRW99htjAex/embed", views: "200k+", likes: "2.4k+" },
   { title: "Viral Medical Reel", embedUrl: "https://www.instagram.com/reel/DFX0HANA3e3/embed", views: "1.1M+", likes: "1.4k+" },
   { title: "Health Awareness", embedUrl: "https://www.instagram.com/reel/DO_M0fLkrm0/embed", views: "420k+", likes: "15.2k+" },
 ];

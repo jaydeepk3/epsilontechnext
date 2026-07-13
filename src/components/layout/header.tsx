@@ -40,7 +40,7 @@ const services = [
     },
     {
         name: 'Digital Marketing',
-        href: '/lead-generation',
+        href: '/digital-marketing/gujarat',
         icon: Activity,
         desc: 'Social media growth for business',
     },
@@ -173,11 +173,11 @@ export function Header() {
                             Verify Recognition &rarr;
                         </Link>
                     </div>
-                    <button 
+                    <button
                         onClick={() => {
                             localStorage.setItem('meta-banner-closed', 'true');
                             setShowBanner(false);
-                        }} 
+                        }}
                         className="text-white/70 hover:text-white ml-2 transition-colors cursor-pointer shrink-0"
                         aria-label="Dismiss banner"
                     >
@@ -197,214 +197,214 @@ export function Header() {
                         : 'bg-white/80 backdrop-blur-md py-5 border-b border-slate-100/60'
                     }`}
             >
-            <div className="container mx-auto px-4 md:px-8 lg:px-12 flex items-center justify-between">
+                <div className="container mx-auto px-4 md:px-8 lg:px-12 flex items-center justify-between">
 
-                {/* Logo */}
-                <Link href="/" className="flex items-center group">
-                    <div className="relative h-9 w-36 md:h-11 md:w-48 transition-transform duration-300 group-hover:scale-105 active:scale-95">
-                        <Image
-                            src="/logo.webp"
-                            alt="Epsilon Technology"
-                            fill
-                            className={`object-contain object-left transition-all duration-500 ${logoFilter}`}
-                            priority
-                        />
-                    </div>
-                </Link>
-
-
-                {/* Desktop Nav */}
-                <nav className="hidden lg:flex items-center gap-8">
-                    <NavDropdown label="Services" items={services} textColor={textColor} scrolled={isScrolled} />
-                    <NavDropdown label="Products" items={products} textColor={textColor} scrolled={isScrolled} />
-
-
-
-
-                    <Link
-                        href="/portfolio/"
-                        className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/portfolio' || pathname === '/portfolio/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
-                    >
-                        Portfolio
-                        <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/portfolio') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
-                    </Link>
-
-                    <Link
-                        href="/blog/"
-                        className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/blog' || pathname === '/blog/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
-                    >
-                        Blog
-                        <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/blog') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
-                    </Link>
-
-                    <Link
-                        href="/about-us/"
-                        className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/about-us' || pathname === '/about-us/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
-                    >
-                        About
-                        <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/about-us') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
-                    </Link>
-
-                    <Link
-                        href="/contacts/"
-                        className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/contacts' || pathname === '/contacts/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
-                    >
-                        Contact
-                        <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/contacts') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
-                    </Link>
-
-                    <Button
-                        size="sm"
-                        className={`ml-2 px-6 py-5 rounded-2xl font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5 active:translate-y-0 ${!isScrolled && isDarkHero
-                            ? 'bg-white text-blue-600 hover:bg-blue-50'
-                            : 'bg-blue-600 text-white hover:bg-blue-700'
-                            }`}
-                        onClick={() => {
-                            const booking = document.getElementById('booking') || document.getElementById('contact');
-                            booking?.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                    >
-                        Get Free Quote
-                    </Button>
-                </nav>
-
-                {/* Mobile Toggle */}
-                <button
-                    className={`lg:hidden p-2 rounded-2xl transition-all duration-300 ${!isScrolled && isDarkHero
-                        ? 'bg-white/10 text-white hover:bg-white/20'
-                        : 'bg-slate-100 text-slate-800 hover:bg-slate-200'
-                        }`}
-                    aria-label="Toggle menu"
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                >
-                    {mobileMenuOpen ? <X size={22} strokeWidth={2.5} /> : <Menu size={22} strokeWidth={2.5} />}
-                </button>
-            </div>
-
-
-            {/* Mobile Menu */}
-            <AnimatePresence>
-                {mobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95, y: -20 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                        transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-                        className="lg:hidden absolute top-[calc(100%+0.8rem)] left-4 right-4 bg-white/95 backdrop-blur-2xl rounded-[2.5rem] shadow-[0_25px_60px_rgba(0,0,0,0.2)] border border-slate-100 overflow-hidden z-50 max-h-[80vh] overflow-y-auto"
-                    >
-                        <div className="p-6 flex flex-col gap-2">
-
-                            {/* Services accordion */}
-                            <div className="bg-slate-50/50 rounded-3xl overflow-hidden border border-slate-100/50">
-                                <button
-                                    className="flex items-center justify-between w-full text-left text-[15px] font-bold text-slate-900 py-4 px-5 transition-colors"
-                                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                                >
-                                    Services
-                                    <ChevronDown size={18} className={`transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
-                                </button>
-                                <AnimatePresence>
-                                    {mobileServicesOpen && (
-                                        <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: 'auto', opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            className="overflow-hidden px-3 pb-3"
-                                        >
-                                            <div className="grid grid-cols-1 gap-1">
-                                                {services.map((item) => (
-                                                    <Link
-                                                        key={item.name}
-                                                        href={item.href}
-                                                        className="flex items-center gap-4 py-3 px-4 rounded-2xl text-slate-700 hover:bg-blue-600 hover:text-white transition-all group"
-                                                        onClick={() => setMobileMenuOpen(false)}
-                                                    >
-                                                        <div className="w-9 h-9 rounded-xl bg-blue-100 flex items-center justify-center shrink-0 group-hover:bg-blue-500 transition-colors">
-                                                            <item.icon size={18} className="text-blue-600 group-hover:text-white transition-colors" />
-                                                        </div>
-                                                        <span className="font-semibold text-sm">{item.name}</span>
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
-
-                            {/* Products accordion */}
-                            <div className="bg-slate-50/50 rounded-3xl overflow-hidden border border-slate-100/50">
-                                <button
-                                    className="flex items-center justify-between w-full text-left text-[15px] font-bold text-slate-900 py-4 px-5 transition-colors"
-                                    onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-                                >
-                                    Products
-                                    <ChevronDown size={18} className={`transition-transform duration-300 ${mobileProductsOpen ? 'rotate-180' : ''}`} />
-                                </button>
-                                <AnimatePresence>
-                                    {mobileProductsOpen && (
-                                        <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: 'auto', opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            className="overflow-hidden px-3 pb-3"
-                                        >
-                                            <div className="grid grid-cols-1 gap-1">
-                                                {products.map((item) => (
-                                                    <Link
-                                                        key={item.name}
-                                                        href={item.href}
-                                                        className="flex items-center gap-4 py-3 px-4 rounded-2xl text-slate-700 hover:bg-blue-600 hover:text-white transition-all group"
-                                                        onClick={() => setMobileMenuOpen(false)}
-                                                    >
-                                                        <div className="w-9 h-9 rounded-xl bg-blue-100 flex items-center justify-center shrink-0 group-hover:bg-blue-500 transition-colors">
-                                                            <item.icon size={18} className="text-blue-600 group-hover:text-white transition-colors" />
-                                                        </div>
-                                                        <span className="font-semibold text-sm">{item.name}</span>
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
-
-                            {/* Flat links */}
-                            <div className="grid grid-cols-2 gap-2 mt-2">
-                                {[
-                                    { name: 'Portfolio', href: '/portfolio/' },
-                                    { name: 'Blog', href: '/blog/' },
-                                    { name: 'About', href: '/about-us/' },
-                                    { name: 'Contact', href: '/contacts/' },
-                                ].map((link) => (
-                                    <Link
-                                        key={link.name}
-                                        href={link.href}
-                                        className="text-sm font-bold text-slate-800 py-4 px-5 rounded-3xl bg-slate-50 border border-slate-100/50 hover:bg-blue-600 hover:text-white transition-all text-center"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                        {link.name}
-                                    </Link>
-                                ))}
-                            </div>
-
-                            <Button
-                                className="w-full mt-4 h-14 rounded-3xl font-bold text-base shadow-lg shadow-blue-500/25 bg-blue-600 hover:bg-blue-700 active:scale-[0.98] transition-all"
-                                onClick={() => {
-                                    setMobileMenuOpen(false);
-                                    setTimeout(() => {
-                                        const el = document.getElementById('booking') || document.getElementById('contact');
-                                        el?.scrollIntoView({ behavior: 'smooth' });
-                                    }, 150);
-                                }}
-                            >
-                                Get Free Quote
-                            </Button>
+                    {/* Logo */}
+                    <Link href="/" className="flex items-center group">
+                        <div className="relative h-9 w-36 md:h-11 md:w-48 transition-transform duration-300 group-hover:scale-105 active:scale-95">
+                            <Image
+                                src="/logo.webp"
+                                alt="Epsilon Technology"
+                                fill
+                                className={`object-contain object-left transition-all duration-500 ${logoFilter}`}
+                                priority
+                            />
                         </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                    </Link>
 
-        </header>
+
+                    {/* Desktop Nav */}
+                    <nav className="hidden lg:flex items-center gap-8">
+                        <NavDropdown label="Services" items={services} textColor={textColor} scrolled={isScrolled} />
+                        <NavDropdown label="Products" items={products} textColor={textColor} scrolled={isScrolled} />
+
+
+
+
+                        <Link
+                            href="/portfolio/"
+                            className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/portfolio' || pathname === '/portfolio/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
+                        >
+                            Portfolio
+                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/portfolio') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
+                        </Link>
+
+                        <Link
+                            href="/blog/"
+                            className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/blog' || pathname === '/blog/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
+                        >
+                            Blog
+                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/blog') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
+                        </Link>
+
+                        <Link
+                            href="/about-us/"
+                            className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/about-us' || pathname === '/about-us/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
+                        >
+                            About
+                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/about-us') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
+                        </Link>
+
+                        <Link
+                            href="/contacts/"
+                            className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/contacts' || pathname === '/contacts/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
+                        >
+                            Contact
+                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/contacts') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
+                        </Link>
+
+                        <Button
+                            size="sm"
+                            className={`ml-2 px-6 py-5 rounded-2xl font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5 active:translate-y-0 ${!isScrolled && isDarkHero
+                                ? 'bg-white text-blue-600 hover:bg-blue-50'
+                                : 'bg-blue-600 text-white hover:bg-blue-700'
+                                }`}
+                            onClick={() => {
+                                const booking = document.getElementById('booking') || document.getElementById('contact');
+                                booking?.scrollIntoView({ behavior: 'smooth' });
+                            }}
+                        >
+                            Get Free Quote
+                        </Button>
+                    </nav>
+
+                    {/* Mobile Toggle */}
+                    <button
+                        className={`lg:hidden p-2 rounded-2xl transition-all duration-300 ${!isScrolled && isDarkHero
+                            ? 'bg-white/10 text-white hover:bg-white/20'
+                            : 'bg-slate-100 text-slate-800 hover:bg-slate-200'
+                            }`}
+                        aria-label="Toggle menu"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    >
+                        {mobileMenuOpen ? <X size={22} strokeWidth={2.5} /> : <Menu size={22} strokeWidth={2.5} />}
+                    </button>
+                </div>
+
+
+                {/* Mobile Menu */}
+                <AnimatePresence>
+                    {mobileMenuOpen && (
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: -20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: -20 }}
+                            transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
+                            className="lg:hidden absolute top-[calc(100%+0.8rem)] left-4 right-4 bg-white/95 backdrop-blur-2xl rounded-[2.5rem] shadow-[0_25px_60px_rgba(0,0,0,0.2)] border border-slate-100 overflow-hidden z-50 max-h-[80vh] overflow-y-auto"
+                        >
+                            <div className="p-6 flex flex-col gap-2">
+
+                                {/* Services accordion */}
+                                <div className="bg-slate-50/50 rounded-3xl overflow-hidden border border-slate-100/50">
+                                    <button
+                                        className="flex items-center justify-between w-full text-left text-[15px] font-bold text-slate-900 py-4 px-5 transition-colors"
+                                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                                    >
+                                        Services
+                                        <ChevronDown size={18} className={`transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                                    </button>
+                                    <AnimatePresence>
+                                        {mobileServicesOpen && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: 'auto', opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                className="overflow-hidden px-3 pb-3"
+                                            >
+                                                <div className="grid grid-cols-1 gap-1">
+                                                    {services.map((item) => (
+                                                        <Link
+                                                            key={item.name}
+                                                            href={item.href}
+                                                            className="flex items-center gap-4 py-3 px-4 rounded-2xl text-slate-700 hover:bg-blue-600 hover:text-white transition-all group"
+                                                            onClick={() => setMobileMenuOpen(false)}
+                                                        >
+                                                            <div className="w-9 h-9 rounded-xl bg-blue-100 flex items-center justify-center shrink-0 group-hover:bg-blue-500 transition-colors">
+                                                                <item.icon size={18} className="text-blue-600 group-hover:text-white transition-colors" />
+                                                            </div>
+                                                            <span className="font-semibold text-sm">{item.name}</span>
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+
+                                {/* Products accordion */}
+                                <div className="bg-slate-50/50 rounded-3xl overflow-hidden border border-slate-100/50">
+                                    <button
+                                        className="flex items-center justify-between w-full text-left text-[15px] font-bold text-slate-900 py-4 px-5 transition-colors"
+                                        onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+                                    >
+                                        Products
+                                        <ChevronDown size={18} className={`transition-transform duration-300 ${mobileProductsOpen ? 'rotate-180' : ''}`} />
+                                    </button>
+                                    <AnimatePresence>
+                                        {mobileProductsOpen && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: 'auto', opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                className="overflow-hidden px-3 pb-3"
+                                            >
+                                                <div className="grid grid-cols-1 gap-1">
+                                                    {products.map((item) => (
+                                                        <Link
+                                                            key={item.name}
+                                                            href={item.href}
+                                                            className="flex items-center gap-4 py-3 px-4 rounded-2xl text-slate-700 hover:bg-blue-600 hover:text-white transition-all group"
+                                                            onClick={() => setMobileMenuOpen(false)}
+                                                        >
+                                                            <div className="w-9 h-9 rounded-xl bg-blue-100 flex items-center justify-center shrink-0 group-hover:bg-blue-500 transition-colors">
+                                                                <item.icon size={18} className="text-blue-600 group-hover:text-white transition-colors" />
+                                                            </div>
+                                                            <span className="font-semibold text-sm">{item.name}</span>
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+
+                                {/* Flat links */}
+                                <div className="grid grid-cols-2 gap-2 mt-2">
+                                    {[
+                                        { name: 'Portfolio', href: '/portfolio/' },
+                                        { name: 'Blog', href: '/blog/' },
+                                        { name: 'About', href: '/about-us/' },
+                                        { name: 'Contact', href: '/contacts/' },
+                                    ].map((link) => (
+                                        <Link
+                                            key={link.name}
+                                            href={link.href}
+                                            className="text-sm font-bold text-slate-800 py-4 px-5 rounded-3xl bg-slate-50 border border-slate-100/50 hover:bg-blue-600 hover:text-white transition-all text-center"
+                                            onClick={() => setMobileMenuOpen(false)}
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    ))}
+                                </div>
+
+                                <Button
+                                    className="w-full mt-4 h-14 rounded-3xl font-bold text-base shadow-lg shadow-blue-500/25 bg-blue-600 hover:bg-blue-700 active:scale-[0.98] transition-all"
+                                    onClick={() => {
+                                        setMobileMenuOpen(false);
+                                        setTimeout(() => {
+                                            const el = document.getElementById('booking') || document.getElementById('contact');
+                                            el?.scrollIntoView({ behavior: 'smooth' });
+                                        }, 150);
+                                    }}
+                                >
+                                    Get Free Quote
+                                </Button>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+
+            </header>
         </>
     );
 }

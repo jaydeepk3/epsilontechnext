@@ -503,13 +503,28 @@ export default function HomeLandingClient() {
                                 <div key={pass} className="flex gap-10 items-center shrink-0">
                                     {[
                                         { src: "/clientlogo/FieldR Icon-(BLACK) 1.webp", name: "FieldR", bg: "bg-white", pad: "p-4" },
-                                        { src: "/clientlogo/Flique.webp", name: "Flique", bg: "bg-white", pad: "p-2" },
-                                        { src: "/clientlogo/Pistol.webp", name: "Pistol Films", bg: "bg-white", pad: "p-4" },
                                         { src: "/clientlogo/Sangani-Hospital-Logo-Gujarati 2 copy.webp", name: "Sangani Hospital", bg: "bg-white", pad: "p-3" },
                                         { src: "/clientlogo/aiow.webp", name: "Aiow", bg: "bg-white", pad: "p-2" },
                                         { src: "/clientlogo/dhartiagro.webp", name: "Dharti Agro", bg: "bg-white", pad: "p-3" },
-                                        { src: "/clientlogo/dotcube.webp", name: "DotCube", bg: "bg-white", pad: "p-3" },
                                         { src: "/clientlogo/trimurti_hospital.webp", name: "Trimurti Hospitals", bg: "bg-white", pad: "p-0 scale-125" },
+                                        { src: "/clientlogo/aan_group.webp", name: "AAN Group", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/bhadja_sir_logo_2.webp", name: "Bhadja Sir", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/bovican_logo.webp", name: "Bovican", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/cibos.webp", name: "Cibos", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/cvm.webp", name: "CVM", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/d_narayanji.webp", name: "D Narayanji", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/enicet.webp", name: "Enicet", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/gujarat_police.webp", name: "Gujarat Police", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/healthcare.webp", name: "Healthcare", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/lalkrupa_casting.webp", name: "Lalkrupa Casting", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/medicos_foundation.webp", name: "Medicos Foundation", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/motexo.webp", name: "Motexo", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/piyu_gruh_udhyog.webp", name: "Piyu Gruh Udhyog", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/rainbow_logo_3-02_-_copy-removebg-preview.webp", name: "Rainbow", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/swami_temple.webp", name: "Swami Temple", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/untitled_design__2_.webp", name: "Untitled Design", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/whatsapp_image_2026-01-02_at_11.45.17_pm.webp", name: "Client Logo", bg: "bg-white", pad: "p-2" },
+                                        { src: "/clientlogo/windson_solar.webp", name: "Windson Solar", bg: "bg-white", pad: "p-2" },
                                     ].map((logo) => (
                                         <div key={logo.name + pass}
                                             className={`flex items-center justify-center h-20 w-48 rounded-2xl bg-white shadow-sm border border-slate-200 ${logo.pad} shrink-0 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group`}>

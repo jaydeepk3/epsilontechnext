@@ -11,10 +11,10 @@ export function Hero() {
   };
 
   return (
-    <section className="relative pt-20 pb-24 lg:pt-36 lg:pb-32 overflow-hidden bg-slate-950 text-white">
+    <section className="relative pt-20 pb-24 lg:pt-36 lg:pb-32 overflow-hidden bg-slate-50 text-slate-900">
       {/* Background Ambient Glow */}
-      <div className="absolute top-0 right-1/4 -z-10 w-[500px] h-[500px] bg-blue-600/20 blur-[130px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 -z-10 w-[400px] h-[400px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-1/4 -z-10 w-[500px] h-[500px] bg-blue-400/10 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 -z-10 w-[400px] h-[400px] bg-emerald-400/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 text-center max-w-5xl relative z-10">
         
@@ -23,9 +23,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-blue-400 font-bold text-xs md:text-sm mb-8 shadow-xl"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-blue-700 font-bold text-xs md:text-sm mb-8 shadow-sm"
         >
-          <Zap className="w-4 h-4 text-amber-400 fill-amber-400" />
+          <Zap className="w-4 h-4 text-amber-500 fill-amber-500" />
           <span>Q3/Q4 Dedicated Squad Openings · $10k–$100k Fixed Scope Projects</span>
         </motion.div>
 
@@ -34,9 +34,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]"
+          className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.1]"
         >
-          We Build &amp; Scale High-Yield Software For Growth Companies That <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-emerald-400">Refuse to Fail</span>
+          We Build &amp; Scale High-Yield Software For Growth Companies That <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-600">Refuse to Fail</span>
         </motion.h1>
 
         {/* Customer-First Subheadline */}
@@ -44,7 +44,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-base md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed"
+          className="text-base md:text-xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed"
         >
           Replace agency delays, spaghetti code, and micromanagement with a dedicated squad of senior engineers. Guaranteed 2-week sprint releases, 100% code ownership, and enterprise NDA security.
         </motion.p>

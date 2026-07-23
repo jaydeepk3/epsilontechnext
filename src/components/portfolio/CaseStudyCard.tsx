@@ -27,22 +27,22 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
       <div className="flex flex-col md:flex-row bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 h-full">
         
         {/* Image Side */}
-        <div className="md:w-1/2 relative overflow-hidden">
+        <div className="md:w-1/2 relative overflow-hidden bg-slate-100 flex items-center justify-center min-h-[300px]">
           <img 
             src={imageUrl} 
             alt={title} 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 min-h-[300px]" 
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-          <div className="absolute bottom-6 left-6 right-6">
-            <div className="flex flex-wrap gap-2 mb-3">
-              <span className="px-3 py-1 text-xs font-semibold bg-white/20 backdrop-blur-md rounded-full text-white">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div className="absolute bottom-4 left-4 right-4">
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 text-xs font-semibold bg-slate-900/80 backdrop-blur-md rounded-full text-white">
                 {country}
               </span>
-              <span className="px-3 py-1 text-xs font-semibold bg-white/20 backdrop-blur-md rounded-full text-white">
+              <span className="px-3 py-1 text-xs font-semibold bg-slate-900/80 backdrop-blur-md rounded-full text-white">
                 {industry}
               </span>
-              <span className="px-3 py-1 text-xs font-semibold bg-blue-500/80 backdrop-blur-md rounded-full text-white">
+              <span className="px-3 py-1 text-xs font-semibold bg-blue-600 backdrop-blur-md rounded-full text-white">
                 {type}
               </span>
             </div>

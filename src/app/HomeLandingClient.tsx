@@ -24,7 +24,7 @@ export default function HomeLandingClient() {
   const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-blue-600 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-600 selection:text-white overflow-x-hidden">
       {/* Dynamic Header */}
       <Header />
 

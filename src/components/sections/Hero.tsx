@@ -17,7 +17,7 @@ export function Hero() {
       <div className="absolute bottom-0 left-1/4 -z-10 w-[400px] h-[400px] bg-emerald-400/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 text-center max-w-5xl relative z-10">
-        
+
         {/* Scarcity & Trust Tag */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -65,7 +65,7 @@ export function Hero() {
           </button>
 
           <a
-            href="https://wa.me/919904269904?text=Hi%20Epsilon%20Team%2C%20I%20would%20like%20to%20discuss%20a%20software%20project."
+            href="https://wa.me/918160881461?text=Hi%20Epsilon%20Team%2C%20I%20would%20like%20to%20discuss%20a%20software%20project."
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-8 py-4 bg-slate-900 border border-slate-700 hover:border-emerald-500/50 hover:bg-slate-800 font-extrabold text-base text-white rounded-2xl transition-all flex items-center justify-center gap-2 active:scale-95"

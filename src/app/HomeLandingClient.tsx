@@ -1,8 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
 import { StickyConversionBar } from '@/components/ui/StickyConversionBar';
 import { LeadMagnetModal } from '@/components/sections/LeadMagnetModal';
 import { FounderSection } from '@/components/sections/FounderSection';
@@ -25,10 +23,7 @@ export default function HomeLandingClient() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-600 selection:text-white overflow-x-hidden">
-      {/* Dynamic Header */}
-      <Header />
-
-      <main className="pt-16">
+      <main>
         {/* Outcome-Focused Hero */}
         <Hero />
 
@@ -73,9 +68,6 @@ export default function HomeLandingClient() {
         {/* High-Urgency Final CTA Section */}
         <FinalCtaSection />
       </main>
-
-      {/* Trust Footer */}
-      <Footer />
 
       {/* Desktop & Mobile Sticky Conversion Bar */}
       <StickyConversionBar onOpenAuditModal={() => setIsAuditModalOpen(true)} />

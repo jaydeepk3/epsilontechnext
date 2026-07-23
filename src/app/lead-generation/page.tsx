@@ -47,13 +47,13 @@ const testimonials = [
   {
     quote: "We generated 40+ high-quality project leads for our interior design and furniture business. Epsilon's lead generation strategy worked incredibly fast. Highly recommended!",
     author: "Heet Parekh", role: "Owner, Divine Interior", initials: "HP", color: "from-amber-400 to-orange-500",
-    photo: "", 
+    photo: "",
     metric: "40+", metricLabel: "Premium leads/month",
   },
   {
     quote: "Working with Epsilon for 2 years. Verified inquiries went up significantly after they started managing our ads and social media. They understand business growth like no other.",
     author: "Rahul M.", role: "CEO, Tech Solutions", initials: "RM", color: "from-orange-400 to-amber-500",
-    photo: "", 
+    photo: "",
     metric: "40+", metricLabel: "Inquiries/month",
   },
   {
@@ -184,10 +184,10 @@ function LeadForm({ dark = false }: { dark?: boolean }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
-      <input type="text" name="name" placeholder="👤 Your Name *" required value={formData.name} onChange={handleChange} className={inputClass} />
-      <input type="tel" name="whatsapp" placeholder="📱 WhatsApp Number *" required value={formData.whatsapp} onChange={handleChange} className={inputClass} />
-      <input type="text" name="businessType" placeholder="🏢 Business Type / Industry *" required value={formData.businessType} onChange={handleChange} className={inputClass} />
-      <input type="text" name="city" placeholder="📍 Your City *" required value={formData.city} onChange={handleChange} className={inputClass} />
+      <input type="text" name="name" placeholder="Your Name *" required value={formData.name} onChange={handleChange} className={inputClass} />
+      <input type="tel" name="whatsapp" placeholder="WhatsApp Number *" required value={formData.whatsapp} onChange={handleChange} className={inputClass} />
+      <input type="text" name="businessType" placeholder="Business Type / Industry *" required value={formData.businessType} onChange={handleChange} className={inputClass} />
+      <input type="text" name="city" placeholder="Your City *" required value={formData.city} onChange={handleChange} className={inputClass} />
       <button
         type="submit"
         disabled={status === 'loading'}
@@ -256,7 +256,7 @@ export default function LeadGenerationPage() {
                 </span>
                 <Link href="/meta-certified-partner/" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100 hover:border-indigo-200 text-indigo-600 hover:text-indigo-700 transition-all font-semibold text-sm group">
                   <svg className="w-4 h-4 text-blue-500 shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M16.92 5c-1.4 0-2.67.6-3.6 1.6C12.38 5.6 11.11 5 9.7 5c-3.13 0-5.69 2.5-5.69 5.6 0 3.1 2.56 5.6 5.69 5.6 1.4 0 2.67-.6 3.6-1.6.93 1 2.2 1.6 3.61 1.6 3.14 0 5.7-2.5 5.7-5.6 0-3.1-2.56-5.6-5.7-5.6zm.01 9.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.59 1.6 3.59 3.6 0 2-1.61 3.6-3.59 3.6zM9.7 14.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.6 1.6 3.6 3.6 0 2-1.61 3.6-3.6 3.6z"/>
+                    <path d="M16.92 5c-1.4 0-2.67.6-3.6 1.6C12.38 5.6 11.11 5 9.7 5c-3.13 0-5.69 2.5-5.69 5.6 0 3.1 2.56 5.6 5.69 5.6 1.4 0 2.67-.6 3.6-1.6.93 1 2.2 1.6 3.61 1.6 3.14 0 5.7-2.5 5.7-5.6 0-3.1-2.56-5.6-5.7-5.6zm.01 9.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.59 1.6 3.59 3.6 0 2-1.61 3.6-3.59 3.6zM9.7 14.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.6 1.6 3.6 3.6 0 2-1.61 3.6-3.6 3.6z" />
                   </svg>
                   <span>Meta Ads Partner &rarr;</span>
                 </Link>
@@ -346,7 +346,7 @@ export default function LeadGenerationPage() {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 bg-white border border-slate-150 rounded-[2.5rem] p-8 md:p-10 shadow-sm relative overflow-hidden">
           {/* Subtle Glow background */}
           <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500/5 blur-2xl rounded-full pointer-events-none" />
-          
+
           <div className="flex-1 space-y-4">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-xs">
               <Award size={13} /> Official Meta Recognition
@@ -358,7 +358,7 @@ export default function LeadGenerationPage() {
               Epsilon Technology has successfully achieved the <strong>Ads Partner Excellence Impact Leader</strong> status in the Meta ads partner excellence program. This recognition guarantees high-converting ad copy, brand-safe execution, and highly optimized ad spend for lead acquisition campaigns.
             </p>
             <div className="pt-2">
-              <Link 
+              <Link
                 href="/meta-certified-partner/"
                 className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:text-blue-700 transition-colors group"
               >
@@ -366,10 +366,10 @@ export default function LeadGenerationPage() {
               </Link>
             </div>
           </div>
-          
+
           <div className="shrink-0 w-full md:w-[260px] aspect-[1.8/1] relative rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-slate-50 group cursor-pointer">
             <Link href="/meta-certified-partner/">
-              <Image 
+              <Image
                 src="/meta-partner-certificate.png"
                 alt="Meta Certificate of Recognition"
                 fill

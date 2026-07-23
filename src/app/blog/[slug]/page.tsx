@@ -9,8 +9,7 @@ import {
     Bookmark, ThumbsUp, Eye, Send, Home, Info, HelpCircle
 } from 'lucide-react'
 import prisma from '@/lib/prisma'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import { MarkdownRenderer } from '@/components/ui/MarkdownRenderer'
 
 interface PageProps {
     params: Promise<{ slug: string }>
@@ -219,89 +218,7 @@ export default async function DynamicBlogPage({ params }: PageProps) {
                                 prose-hr:border-slate-100 prose-hr:my-24
                                 prose-strong:text-slate-900 prose-strong:font-black
                             ">
-                                <ReactMarkdown
-                                    remarkPlugins={[remarkGfm]}
-                                    components={{
-                                        h2: ({ node, ...props }) => {
-                                            const content = Array.isArray(props.children) 
-                                                ? props.children.join('') 
-                                                : props.children?.toString() || '';
-                                            const id = content.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                                            return (
-                                                <h2 id={id} className="text-3xl md:text-5xl mt-32 mb-12 scroll-mt-32 flex items-start gap-5 group font-black" {...props}>
-                                                    <span className="flex items-center justify-center w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 text-sm font-black shadow-sm group-hover:bg-sky-600 group-hover:text-white transition-all mt-1 shrink-0 rotate-3 group-hover:rotate-0">
-                                                        #
-                                                    </span>
-                                                    {props.children}
-                                                </h2>
-                                            )
-                                        },
-                                        h3: ({ node, ...props }) => (
-                                            <h3 className="text-2xl md:text-3xl mt-20 mb-8 text-slate-900 font-extrabold flex items-center gap-3" {...props}>
-                                                <div className="w-2 h-8 bg-sky-500 rounded-full" />
-                                                {props.children}
-                                            </h3>
-                                        ),
-                                        ul: ({ node, ...props }) => (
-                                            <ul className="grid gap-5 my-14" {...props} />
-                                        ),
-                                        li: ({ node, children, ...props }) => (
-                                            <li className="flex gap-5 p-6 md:p-8 rounded-[32px] bg-slate-50/50 border border-slate-100 hover:border-sky-200 hover:bg-white hover:shadow-xl hover:shadow-sky-100/50 transition-all duration-500 group" {...props}>
-                                                <div className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-sky-500 shrink-0 group-hover:bg-sky-600 group-hover:text-white group-hover:border-sky-600 transition-all">
-                                                    <ArrowRight size={20} className="group-hover:translate-x-0.5 transition-transform" />
-                                                </div>
-                                                <div className="text-slate-800 font-semibold text-lg md:text-xl leading-relaxed">{children}</div>
-                                            </li>
-                                        ),
-                                        blockquote: ({ node, ...props }) => (
-                                            <blockquote className="border-l-0 bg-gradient-to-br from-slate-950 to-slate-900 p-10 md:p-14 rounded-[48px] my-20 relative overflow-hidden group text-white shadow-2xl shadow-sky-900/20" {...props}>
-                                                <div className="absolute top-0 right-0 p-10 opacity-10 text-sky-400 group-hover:rotate-12 transition-transform duration-1000">
-                                                    <Sparkles size={120} />
-                                                </div>
-                                                <div className="relative z-10 text-2xl md:text-3xl font-black leading-tight italic tracking-tight">
-                                                    {props.children}
-                                                </div>
-                                                <div className="mt-8 flex items-center gap-4 relative z-10">
-                                                    <div className="w-10 h-1 bg-sky-500 rounded-full" />
-                                                    <span className="text-sky-400 text-xs font-black uppercase tracking-[0.2em]">Industry Standard Insight</span>
-                                                </div>
-                                            </blockquote>
-                                        ),
-                                        img: ({ node, ...props }) => (
-                                            <div className="my-20 flex flex-col items-center">
-                                                <img {...props} className="rounded-[40px] shadow-2xl border border-slate-100 max-h-[700px] object-cover hover:scale-[1.02] transition-transform duration-700" />
-                                                {props.alt && (
-                                                    <div className="mt-6 flex items-center gap-2 text-slate-400 font-bold text-xs uppercase tracking-widest bg-slate-50 px-4 py-2 rounded-full">
-                                                        <Info size={14} /> Caption: {props.alt}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        ),
-                                        p: ({ node, ...props }) => {
-                                            // Enhanced CTA component
-                                            const content = props.children?.toString() || '';
-                                            if (content.includes('Audit')) {
-                                                return (
-                                                    <div className="my-24 p-1 rounded-[48px] bg-gradient-to-tr from-sky-400 via-indigo-500 to-purple-600 shadow-2xl shadow-sky-200 animate-gradient-shift">
-                                                        <div className="bg-white rounded-[46px] p-12 md:p-20 text-center relative overflow-hidden">
-                                                            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(2,132,199,0.05),transparent)]" />
-                                                            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-8 relative z-10 tracking-tight leading-tight">
-                                                                Ready to stop<br /><span className="text-sky-600 underline decoration-sky-100 underline-offset-8">DIY struggles?</span>
-                                                            </h2>
-                                                            <p className="text-slate-500 text-lg mb-12 max-w-lg mx-auto relative z-10">Join 50+ partners who scaled their revenue by moving to professional, high-performance web development.</p>
-                                                            <Link href="/contacts" className="inline-flex items-center gap-3 px-10 py-5 bg-slate-900 text-white rounded-full font-black uppercase tracking-widest text-sm hover:bg-sky-600 transition-all shadow-xl hover:shadow-sky-200">
-                                                                Claim Your Free Audit <ArrowRight size={20} />
-                                                            </Link>
-                                                        </div>
-                                                    </div>
-                                                )
-                                            }
-                                            return <p {...props} />
-                                        }
-                                    }}
-                                >
-                                    {blog.content}
-                                </ReactMarkdown>
+                                <MarkdownRenderer content={blog.content} />
                             </div>
 
                             {/* Author Card - Enhanced */}

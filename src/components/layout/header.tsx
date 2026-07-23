@@ -43,13 +43,7 @@ const services = [
         href: '/digital-marketing/gujarat',
         icon: Activity,
         desc: 'Social media growth for business',
-    },
-    {
-        name: 'Digital Marketing for Doctors',
-        href: '/digital-marketing',
-        icon: Stethoscope,
-        desc: 'Social media growth for clinics',
-    },
+    }
 
 ];
 

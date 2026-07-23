@@ -19,18 +19,24 @@ export function FounderSection() {
           >
             <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-blue-100 to-slate-100 border border-slate-200 p-2 shadow-xl">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-slate-900">
-                {/* Embedded Founder Video or Portrait Preview */}
+                {/* Real Founder Portrait Photo */}
+                <img
+                  src="/images/jayde.webp"
+                  alt="Jaydeep Kataria - Founder & Principal Technical Strategist"
+                  className="w-full h-full object-cover object-center"
+                />
+                
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent z-10" />
                 
-                {/* Fallback stylized founder presentation */}
-                <div className="w-full h-full bg-slate-900 flex flex-col justify-end p-6 relative z-20">
-                  <div className="mb-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold w-fit">
-                    <Video className="w-3.5 h-3.5" /> Founder & Engineering Director
+                {/* Founder details overlay */}
+                <div className="w-full h-full bg-transparent flex flex-col justify-end p-6 absolute inset-0 z-20">
+                  <div className="mb-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/30 backdrop-blur-md border border-blue-400/40 text-blue-200 text-xs font-bold w-fit shadow-md">
+                    <UserCheck className="w-3.5 h-3.5" /> Founder & Engineering Director
                   </div>
-                  <h3 className="text-2xl font-extrabold text-white">Jaydeep K.</h3>
-                  <p className="text-sm text-blue-300 font-medium">Founder & Principal Technical Strategist</p>
+                  <h3 className="text-2xl font-extrabold text-white">Jaydeep Kataria</h3>
+                  <p className="text-sm text-blue-200 font-medium">Founder & Principal Technical Strategist</p>
                   
-                  <div className="mt-4 pt-4 border-t border-slate-700/60 flex items-center gap-3 text-xs text-slate-300">
+                  <div className="mt-4 pt-4 border-t border-white/20 flex items-center gap-3 text-xs text-slate-200">
                     <div className="flex -space-x-1">
                       {[1, 2, 3, 4, 5].map((s) => (
                         <Star key={s} className="w-4 h-4 fill-amber-400 text-amber-400" />

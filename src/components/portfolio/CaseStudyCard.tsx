@@ -24,53 +24,59 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
 }) => {
   return (
     <Link href={`/portfolio/${slug}`} className="group block h-full">
-      <div className="flex flex-col md:flex-row bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 h-full">
+      <div className="flex flex-col bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-slate-700 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 h-full">
         
-        {/* Image Side */}
-        <div className="md:w-1/2 relative overflow-hidden bg-slate-100 flex items-center justify-center min-h-[300px]">
-          <img 
-            src={imageUrl} 
-            alt={title} 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <div className="absolute bottom-4 left-4 right-4">
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 text-xs font-semibold bg-slate-900/80 backdrop-blur-md rounded-full text-white">
-                {country}
-              </span>
-              <span className="px-3 py-1 text-xs font-semibold bg-slate-900/80 backdrop-blur-md rounded-full text-white">
-                {industry}
-              </span>
-              <span className="px-3 py-1 text-xs font-semibold bg-blue-600 backdrop-blur-md rounded-full text-white">
-                {type}
+        {/* Top Image Banner / Preview */}
+        <div className="relative w-full h-64 sm:h-72 overflow-hidden bg-slate-950 p-4 flex items-center justify-center">
+          <div className="w-full h-full relative rounded-xl overflow-hidden border border-slate-800 shadow-inner">
+            <img 
+              src={imageUrl} 
+              alt={title} 
+              className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+          </div>
+          
+          <div className="absolute bottom-6 left-6 right-6 flex flex-wrap gap-2 z-10">
+            <span className="px-3 py-1 text-xs font-semibold bg-slate-900/90 backdrop-blur-md rounded-full text-white border border-slate-700">
+              {country}
+            </span>
+            <span className="px-3 py-1 text-xs font-semibold bg-slate-900/90 backdrop-blur-md rounded-full text-white border border-slate-700">
+              {industry}
+            </span>
+            <span className="px-3 py-1 text-xs font-semibold bg-blue-600 backdrop-blur-md rounded-full text-white">
+              {type}
+            </span>
+          </div>
+        </div>
+
+        {/* Content Section Below */}
+        <div className="p-6 md:p-8 flex flex-col justify-between flex-grow bg-slate-900">
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+              {title}
+            </h3>
+            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+              {description}
+            </p>
+          </div>
+          
+          <div>
+            <div className="bg-blue-950/40 border border-blue-800/40 rounded-xl p-4 mb-6">
+              <p className="text-blue-300 text-xs md:text-sm font-semibold flex items-center gap-2">
+                <span className="text-lg">🏆</span> {headlineResult}
+              </p>
+            </div>
+
+            <div className="flex items-center justify-between text-xs md:text-sm text-white font-bold pt-2 border-t border-slate-800">
+              <span>Read Case Story</span> 
+              <span className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-blue-600 group-hover:translate-x-1 transition-all">
+                →
               </span>
             </div>
           </div>
         </div>
 
-        {/* Content Side */}
-        <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-          <h3 className="text-3xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-            {title}
-          </h3>
-          <p className="text-gray-400 mb-6 text-lg">
-            {description}
-          </p>
-          
-          <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-5 mb-8">
-            <p className="text-blue-300 font-medium flex items-center gap-3">
-              <span className="text-2xl">🏆</span> {headlineResult}
-            </p>
-          </div>
-
-          <div className="mt-auto flex items-center text-white font-semibold">
-            Read Full Case Study 
-            <span className="ml-2 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-blue-500 group-hover:translate-x-2 transition-all">
-              →
-            </span>
-          </div>
-        </div>
       </div>
     </Link>
   );

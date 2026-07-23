@@ -82,7 +82,7 @@ export default function ContactPage() {
                                     <MessageSquare className="shrink-0 mt-1" />
                                     <div>
                                         <p className="text-sky-100 text-sm">WhatsApp</p>
-                                        <p className="font-bold">+91 91066 98776</p>
+                                        <p className="font-bold">+91 73593 15576</p>
                                     </div>
                                 </div>
                             </div>

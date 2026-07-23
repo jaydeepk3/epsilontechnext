@@ -8,25 +8,9 @@ const offices = [
         city: "Junagadh",
         country: "India (HQ)",
         address: "Epsilon Technology, Junagadh, Gujarat, India - 362001",
-        phone: "+91 91066 98776",
+        phone: "+91 73593 15576",
         email: "contact@epsilon-technology.com",
         type: "Headquarters"
-    },
-    {
-        city: "Ahmedabad",
-        country: "India",
-        address: "Sindhu Bhavan Road, Bodakdev, Ahmedabad, Gujarat - 380054",
-        phone: "",
-        email: "ahmedabad@epsilon-technology.com",
-        type: "Development Center"
-    },
-    {
-        city: "Amsterdam",
-        country: "Netherlands",
-        address: "Strawinskylaan 3051, 1077 ZX Amsterdam, Netherlands",
-        phone: "",
-        email: "europe@epsilon-technology.com",
-        type: "European Sales Office"
     }
 ];
 
@@ -72,12 +56,14 @@ export function ContactDetails() {
                                     <span>{office.address}</span>
                                 </p>
 
-                                <p className="flex items-center gap-3">
-                                    <Mail size={18} className="shrink-0 text-slate-400" />
-                                    <a href={`mailto:${office.email}`} className="hover:text-sky-600 transition-colors lowercase">
-                                        {office.email}
-                                    </a>
-                                </p>
+                                {office.city !== "Junagadh" && (
+                                    <p className="flex items-center gap-3">
+                                        <Mail size={18} className="shrink-0 text-slate-400" />
+                                        <a href={`mailto:${office.email}`} className="hover:text-sky-600 transition-colors lowercase">
+                                            {office.email}
+                                        </a>
+                                    </p>
+                                )}
                             </div>
                         </motion.div>
                     ))}

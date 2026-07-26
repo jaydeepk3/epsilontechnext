@@ -49,6 +49,7 @@ import {
   Sparkle,
   Layers,
   Activity,
+  Play,
 } from 'lucide-react';
 
 export default function OpdGrowthSystemClient() {
@@ -107,6 +108,30 @@ export default function OpdGrowthSystemClient() {
     { title: 'Testimonials', desc: 'Build confidence through authentic patient experiences and reviews.', icon: ThumbsUp, color: 'bg-teal-500/10 text-teal-600' },
     { title: 'Clinic Gallery', desc: 'Help patients feel familiar with your clinic environment before they arrive.', icon: ImageIcon, color: 'bg-indigo-500/10 text-indigo-600' },
     { title: 'Treatment Expertise', desc: 'Communicate specialized procedures and care approaches in reassuring detail.', icon: Stethoscope, color: 'bg-cyan-500/10 text-cyan-600' },
+  ];
+
+  // Doctor Reel Videos
+  const doctorReels = [
+    {
+      name: 'Dr. Devam Dave',
+      specialty: 'Orthopaedic Surgeon',
+      youtubeId: 'GDB0PBFJfW0',
+    },
+    {
+      name: 'Dr. Malhar Madariya',
+      specialty: 'Diabetes Specialist',
+      youtubeId: '7WOBASECbNU',
+    },
+    {
+      name: 'Dr. Priyank Bagthariya',
+      specialty: 'Orthopaedic Surgeon',
+      youtubeId: 'ETEAH13GaaE',
+    },
+    {
+      name: 'Dr. Siddhraj Divraniya',
+      specialty: 'ICU Head',
+      youtubeId: 'WAQ1x0TlfD4',
+    },
   ];
 
   // Step 4: Perfect For Categories
@@ -242,6 +267,9 @@ export default function OpdGrowthSystemClient() {
             </a>
             <a href="#reputation" className="hover:text-[#0F6FFF] transition-colors">
               Digital Reputation
+            </a>
+            <a href="#doctor-reels" className="hover:text-[#0F6FFF] transition-colors">
+              Doctor Reels
             </a>
             <a href="#perfect-for" className="hover:text-[#0F6FFF] transition-colors">
               Perfect For
@@ -791,6 +819,61 @@ export default function OpdGrowthSystemClient() {
               <h4 className="font-bold text-slate-900 text-sm">Certifications</h4>
               <p className="text-xs text-slate-500 mt-1">Google & Meta Certified Partner</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Doctor Video Reels (Reel Format Testimonials) */}
+      <section id="doctor-reels" className="py-20 bg-slate-900 text-white relative overflow-hidden">
+        {/* Soft Background Blur */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-600/20 via-teal-500/10 to-purple-600/20 blur-3xl rounded-full pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
+              <Play className="w-3.5 h-3.5 text-[#00C2A8] fill-current" />
+              Doctor Video Reels & Reviews
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+              Hear From Doctor Practice Owners
+            </h2>
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+              Watch real reel video testimonials from doctors, surgeons, and department heads partnering with us for digital growth.
+            </p>
+          </div>
+
+          {/* 4 Doctor Video Reels Grid (9:16 Vertical Reel Format) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {doctorReels.map((reel, idx) => (
+              <div
+                key={idx}
+                className="bg-slate-800/90 rounded-3xl border border-slate-700/80 overflow-hidden shadow-2xl hover:border-[#0F6FFF] hover:shadow-blue-500/20 transition-all duration-300 flex flex-col group"
+              >
+                {/* Reel Frame Container (9:16 aspect ratio vertical reel) */}
+                <div className="relative w-full aspect-[9/16] bg-black">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${reel.youtubeId}`}
+                    title={`${reel.name} - ${reel.specialty}`}
+                    className="w-full h-full border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+
+                {/* Doctor Meta Footer */}
+                <div className="p-4 bg-slate-900 border-t border-slate-800 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-bold text-white text-base group-hover:text-[#00C2A8] transition-colors">
+                      {reel.name}
+                    </h3>
+                    <span className="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 text-[10px] font-bold uppercase">
+                      Reel
+                    </span>
+                  </div>
+                  <p className="text-xs text-blue-400 font-semibold">{reel.specialty}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

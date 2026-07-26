@@ -37,7 +37,7 @@ export function Booking() {
             if (response.ok) {
                 setStatus('success');
                 setFormData({ whatsapp: '', specialty: '', city: '' });
-                setTimeout(() => setStatus('idle'), 4000);
+                window.location.href = 'https://calendly.com/jaydeepkataria/30min';
             } else {
                 setStatus('error');
             }
@@ -92,7 +92,7 @@ export function Booking() {
                                 <input
                                     type="tel"
                                     name="whatsapp"
-                                    placeholder="📱 Your WhatsApp Number *"
+                                    placeholder="Your WhatsApp Number *"
                                     required
                                     value={formData.whatsapp}
                                     onChange={handleChange}
@@ -102,7 +102,7 @@ export function Booking() {
                                 <input
                                     type="text"
                                     name="specialty"
-                                    placeholder="🩺 Your Specialty (e.g. Orthopedic, Pediatric)"
+                                    placeholder="Your Specialty (e.g. Orthopedic, Pediatric)"
                                     required
                                     value={formData.specialty}
                                     onChange={handleChange}
@@ -112,7 +112,7 @@ export function Booking() {
                                 <input
                                     type="text"
                                     name="city"
-                                    placeholder="📍 Your City & Country"
+                                    placeholder="Your City & Country"
                                     required
                                     value={formData.city}
                                     onChange={handleChange}
@@ -134,7 +134,7 @@ export function Booking() {
                                 )}
 
                                 <p className="text-center text-xs text-slate-400 mt-3">
-                                    🔒 No spam. We reply on WhatsApp within 4 hours. Available for doctors worldwide.
+                                    No spam. We reply on WhatsApp within 4 hours. Available for doctors worldwide.
                                 </p>
                             </form>
                         </div>

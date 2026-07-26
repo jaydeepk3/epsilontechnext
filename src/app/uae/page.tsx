@@ -90,7 +90,7 @@ export default function UAEPage() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://calendly.com/jaydeepkataria" target="_blank" rel="noopener noreferrer"
+                            <a href="https://calendly.com/jaydeepkataria/30min" target="_blank" rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-9 py-4 rounded-2xl text-lg transition-all hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-0.5">
                                 Book Free UAE Consultation
                             </a>
@@ -421,7 +421,7 @@ export default function UAEPage() {
                     <p className="text-xl text-blue-100/80 mb-10 max-w-2xl mx-auto">Free 30-minute consultation. No commitment. We reply within 4 hours during UAE business hours.</p>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
-                        <a href="https://calendly.com/jaydeepkataria" target="_blank" rel="noopener noreferrer"
+                        <a href="https://calendly.com/jaydeepkataria/30min" target="_blank" rel="noopener noreferrer"
                             className="bg-white hover:bg-blue-50 text-slate-900 font-bold px-8 py-4 rounded-xl transition-colors shadow-lg text-lg">
                             Book Free Consultation
                         </a>

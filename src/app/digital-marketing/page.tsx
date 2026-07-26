@@ -156,7 +156,7 @@ function LeadForm({ dark = false }: { dark?: boolean }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: formData.name, mobile: formData.whatsapp, specialty: formData.specialty, city: formData.city, clinic: '' }),
       });
-      if (res.ok) { setStatus('success'); setFormData({ name: '', whatsapp: '', specialty: '', city: '' }); setTimeout(() => setStatus('idle'), 6000); }
+      if (res.ok) { setStatus('success'); setFormData({ name: '', whatsapp: '', specialty: '', city: '' }); window.location.href = 'https://calendly.com/jaydeepkataria/30min'; }
       else setStatus('error');
     } catch { setStatus('error'); }
   };

@@ -80,31 +80,31 @@ export function Hero() {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-16 pt-10 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center"
+          className="mt-16 pt-10 border-t border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center"
         >
           <div>
-            <span className="text-3xl md:text-4xl font-extrabold text-white block">$50M+</span>
-            <span className="text-xs text-slate-400 font-semibold mt-1 block">Client Revenue Scaled</span>
+            <span className="text-3xl md:text-4xl font-extrabold text-slate-900 block">$50M+</span>
+            <span className="text-xs text-slate-600 font-semibold mt-1 block">Client Revenue Scaled</span>
           </div>
           <div>
-            <span className="text-3xl md:text-4xl font-extrabold text-blue-400 block">99.4%</span>
-            <span className="text-xs text-slate-400 font-semibold mt-1 block">On-Time Sprint Delivery</span>
+            <span className="text-3xl md:text-4xl font-extrabold text-blue-600 block">99.4%</span>
+            <span className="text-xs text-slate-600 font-semibold mt-1 block">On-Time Sprint Delivery</span>
           </div>
           <div>
-            <span className="text-3xl md:text-4xl font-extrabold text-emerald-400 block">100%</span>
-            <span className="text-xs text-slate-400 font-semibold mt-1 block">IP &amp; Code Ownership</span>
+            <span className="text-3xl md:text-4xl font-extrabold text-emerald-600 block">100%</span>
+            <span className="text-xs text-slate-600 font-semibold mt-1 block">IP &amp; Code Ownership</span>
           </div>
           <div>
-            <span className="text-3xl md:text-4xl font-extrabold text-amber-400 block">4.9 ★</span>
-            <span className="text-xs text-slate-400 font-semibold mt-1 block">Verified Client Rating</span>
+            <span className="text-3xl md:text-4xl font-extrabold text-amber-500 block">4.9 ★</span>
+            <span className="text-xs text-slate-600 font-semibold mt-1 block">Verified Client Rating</span>
           </div>
         </motion.div>
 
         {/* Trust Badges */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs font-semibold text-slate-400">
-          <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5 text-blue-400" /> Mutual NDA Before Call</span>
-          <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> ISO / SOC2 Compliant</span>
-          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-amber-400" /> Senior Engineers Only</span>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs font-semibold text-slate-700">
+          <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5 text-blue-600" /> Mutual NDA Before Call</span>
+          <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> ISO / SOC2 Compliant</span>
+          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-amber-500" /> Senior Engineers Only</span>
         </div>
 
       </div>

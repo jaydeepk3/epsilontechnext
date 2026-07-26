@@ -10,7 +10,7 @@ import { Menu, X, ChevronDown, Globe, Smartphone, ShoppingCart, MessageSquare, S
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Pages whose hero sections have a dark/navy background — header needs light text
-const DARK_HERO_PATHS = ['/', '/uae/', '/it-services/'];
+const DARK_HERO_PATHS = ['/uae/', '/it-services/'];
 
 const services = [
     {

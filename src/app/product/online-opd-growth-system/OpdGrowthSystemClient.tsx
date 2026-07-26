@@ -700,8 +700,3 @@ export default function OpdGrowthSystemClient() {
   );
 }
 
-        </div>
-      )}
-    </div>
-  );
-}

@@ -36,13 +36,16 @@ import {
   ChevronRight,
   Send,
   SlidersHorizontal,
+  ArrowDown,
+  UserPlus,
+  ThumbsUp,
+  User,
 } from 'lucide-react';
 
 export default function OpdGrowthSystemClient() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<'all' | 'trust' | 'conversion' | 'tech'>('all');
 
   // Form State for Audit Modal
   const [formData, setFormData] = useState({
@@ -74,16 +77,99 @@ export default function OpdGrowthSystemClient() {
     }, 1500);
   };
 
-  const specialties = [
-    { label: 'Doctors & Specialists', icon: Stethoscope },
-    { label: 'Clinics & PolyClinics', icon: Building2 },
-    { label: 'Dental Clinics', icon: Sparkles },
-    { label: 'Skin & Cosmetic Clinics', icon: UserCheck },
-    { label: 'IVF & Maternity Centers', icon: Users },
-    { label: 'Eye Hospitals', icon: Target },
-    { label: 'Orthopedic & Joint Care', icon: ShieldCheck },
-    { label: 'Physiotherapy Clinics', icon: TrendingUp },
-    { label: 'Multispecialty Hospitals', icon: Building2 },
+  const healthcareCategories = [
+    { label: 'Dental Clinics', desc: 'Patient trust & cosmetic treatment showcase', icon: Sparkles },
+    { label: 'Skin Clinics', desc: 'Dermatology & procedure trust frameworks', icon: UserCheck },
+    { label: 'Eye Hospitals', desc: 'Surgical authority & cataract/LASIK flows', icon: Target },
+    { label: 'IVF Clinics', desc: 'Empathy-driven maternity & fertility positioning', icon: Users },
+    { label: 'Orthopedic Clinics', desc: 'Joint care & surgical expertise showcase', icon: ShieldCheck },
+    { label: 'Physiotherapy Clinics', desc: 'Recovery programs & rehab booking', icon: TrendingUp },
+    { label: 'Multispecialty Hospitals', desc: 'Departmental hierarchy & specialist profiles', icon: Building2 },
+    { label: 'Healthcare Clinics', desc: 'General OPD & diagnostic appointment flows', icon: Stethoscope },
+  ];
+
+  const patientJourneySteps = [
+    {
+      step: '1',
+      title: 'Google Search',
+      desc: 'Patient searches for top specialists or clinics in your city.',
+      icon: Search,
+      color: 'bg-blue-50 text-[#0F6FFF]',
+    },
+    {
+      step: '2',
+      title: 'Visit Your Website',
+      desc: 'First impression formed within 3 seconds of opening the page.',
+      icon: Globe,
+      color: 'bg-[#00C2A8]/10 text-[#00C2A8]',
+    },
+    {
+      step: '3',
+      title: 'Build Trust',
+      desc: 'Patient reviews credentials, awards, & verified success stories.',
+      icon: ShieldCheck,
+      color: 'bg-indigo-50 text-indigo-600',
+    },
+    {
+      step: '4',
+      title: 'View Doctor Profile',
+      desc: 'Understands your clinical experience and treatment approach.',
+      icon: User,
+      color: 'bg-amber-50 text-amber-600',
+    },
+    {
+      step: '5',
+      title: 'Click WhatsApp / Book',
+      desc: 'Frictionless 1-click inquiry sent directly to reception.',
+      icon: MessageSquare,
+      color: 'bg-emerald-50 text-emerald-600',
+    },
+    {
+      step: '6',
+      title: 'Visit Clinic',
+      desc: 'Patient arrives confident and reassured for consultation.',
+      icon: Building2,
+      color: 'bg-cyan-50 text-cyan-600',
+    },
+  ];
+
+  const whyDoctorsChoose = [
+    { title: 'Healthcare-Focused', desc: '100% built around doctor-patient relationship dynamics.', icon: Stethoscope },
+    { title: 'Conversion-Focused', desc: 'Engineered specifically to convert visitors into OPD appointments.', icon: TrendingUp },
+    { title: 'Mobile Optimized', desc: 'Sub-second loading on smartphones for 85%+ of visitors.', icon: Smartphone },
+    { title: 'Appointment Focused', desc: 'Zero distractions—direct path to booking & WhatsApp.', icon: Calendar },
+    { title: 'Transparent Pricing', desc: '₹49,999 + GST flat one-time rate with no hidden lock-ins.', icon: ShieldCheck },
+    { title: 'Fast Delivery', desc: 'Complete done-for-you system delivered in 15 days.', icon: Zap },
+    { title: 'Professional Branding', desc: 'Award-winning SaaS aesthetics adapted for medical practice.', icon: Award },
+  ];
+
+  const whoIsPerfectFor = [
+    'Doctors opening a new clinic',
+    'Clinics with outdated websites',
+    'Healthcare brands wanting premium positioning',
+    'Doctors relying mainly on referrals',
+    'Clinics wanting more appointment enquiries',
+  ];
+
+  const whoIsNotFor = [
+    'Businesses looking for the cheapest website',
+    'Companies needing custom ERP/Hospital Software',
+    'Projects requiring unlimited revisions',
+    'Businesses wanting a generic website',
+  ];
+
+  const investmentValueStack = [
+    'Strategy Session',
+    'Patient Trust Framework',
+    'Premium Healthcare Website',
+    'Appointment Booking System',
+    'WhatsApp Integration',
+    'Google Business Profile Integration',
+    'Google Analytics + Meta Pixel Setup',
+    'Basic SEO Foundation',
+    'Speed Optimization',
+    'Security Setup',
+    '30-Day Launch Support',
   ];
 
   const benefits = [
@@ -131,7 +217,7 @@ export default function OpdGrowthSystemClient() {
     },
     {
       title: 'Zero Tech Headaches (Done-For-You)',
-      desc: 'We handle everything from domain setup, cloud server hosting, SSL security, content layout to final launch in 7-10 days.',
+      desc: 'We handle everything from domain setup, cloud server hosting, SSL security, content layout to final launch in 15 days.',
       icon: Zap,
       color: 'bg-purple-500/10 text-purple-600',
     },
@@ -181,58 +267,31 @@ export default function OpdGrowthSystemClient() {
       step: '01',
       title: 'Discovery & Practice Audit',
       desc: 'We map your target patient persona, clinic specialties, unique strengths, and competitive advantage in your locality.',
-      time: 'Day 1 - 2',
+      time: 'Day 1 - 3',
     },
     {
       step: '02',
       title: 'High-Trust Content & Architecture',
       desc: 'Our direct-response healthcare copywriters build patient-centered text that resolves doubts and builds immediate authority.',
-      time: 'Day 3 - 4',
+      time: 'Day 4 - 6',
     },
     {
       step: '03',
       title: 'Bespoke Modern Design & UI',
       desc: 'Crafting award-winning, clean SaaS-inspired UI customized with your clinic branding, color scheme, and doctor profiles.',
-      time: 'Day 5 - 7',
+      time: 'Day 7 - 10',
     },
     {
       step: '04',
       title: 'Engineered Development & Speed Polish',
       desc: 'Building high-performance React/Next code with sub-second page loads, SEO schemas, and mobile responsiveness.',
-      time: 'Day 8 - 9',
+      time: 'Day 11 - 13',
     },
     {
       step: '05',
       title: 'Launch & OPD Growth Engine Activation',
       desc: 'Final security audits, domain linking, WhatsApp & Analytics setup, and handing over a fully operational OPD pipeline.',
-      time: 'Day 10',
-    },
-  ];
-
-  const bonuses = [
-    {
-      title: 'Google Business Profile OPD Optimization Framework',
-      value: '₹15,000 Value',
-      desc: 'Complete optimization of your Google Maps listing to boost local map pack rankings and drive organic walk-in calls.',
-      icon: Search,
-    },
-    {
-      title: 'WhatsApp OPD Automated Greeting & Patient Flow Kit',
-      value: '₹10,000 Value',
-      desc: 'Pre-written scripts and automated WhatsApp message flows for fast patient response and appointment confirmation.',
-      icon: MessageSquare,
-    },
-    {
-      title: 'Print-Ready Patient Review QR Code Kit',
-      value: '₹7,500 Value',
-      desc: 'Custom designed high-resolution QR stands for your clinic reception to easily collect 5-star Google patient reviews.',
-      icon: Star,
-    },
-    {
-      title: '30-Day VIP Priority Technical Support & Maintenance',
-      value: '₹12,500 Value',
-      desc: 'Direct dedicated access to our engineering team for any content updates, tweaks, or technical assistance post-launch.',
-      icon: ShieldCheck,
+      time: 'Day 14 - 15',
     },
   ];
 
@@ -243,7 +302,7 @@ export default function OpdGrowthSystemClient() {
     },
     {
       q: 'How much time will I need to invest as a busy practicing doctor?',
-      a: 'Less than 45 minutes total. We respect your medical schedule. You simply fill out our 10-minute practice intake form or share existing brochures/photos. Our healthcare content and engineering team handles 98% of the heavy lifting, presentation, copywriting, and technical setup.',
+      a: 'Less than 45 minutes total. We respect your medical schedule. You simply fill out our intake form or share existing brochures/photos. Our healthcare content and engineering team handles 98% of the heavy lifting, presentation, copywriting, and technical setup.',
     },
     {
       q: 'Is this system suitable for my specific medical specialty?',
@@ -266,12 +325,12 @@ export default function OpdGrowthSystemClient() {
       a: 'Yes. We bake in core local SEO foundations, medical Schema markup (Specialty, Address, Doctor Credentials, OPD Hours), geotargeted H1/H2 structures, and fast page loading which are key ranking signals for Google Local Search.',
     },
     {
-      q: 'What happens after the initial 30 days of VIP Support?',
-      a: 'You can host with us on our fast ultra-secure healthcare cloud server (optional ₹4,999/year including SSL and backups) or host it on your own server. You are never forced into recurring contracts.',
+      q: 'What happens after the initial 30 days of Launch Support?',
+      a: 'You can host with us on our fast ultra-secure healthcare cloud server or host it on your own server. You are never forced into recurring contracts.',
     },
     {
       q: 'How fast can my new OPD System be live?',
-      a: 'Our standard turnaround is 7 to 10 working days from the day we receive your basic clinic details.',
+      a: 'Our standard delivery is 15 days from the day we receive your basic clinic details.',
     },
     {
       q: 'What is the "Free Website Growth Audit"?',
@@ -309,17 +368,17 @@ export default function OpdGrowthSystemClient() {
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
-            <a href="#problem" className="hover:text-[#0F6FFF] transition-colors">
+            <a href="#why-fail" className="hover:text-[#0F6FFF] transition-colors">
               Why Websites Fail
+            </a>
+            <a href="#patient-journey" className="hover:text-[#0F6FFF] transition-colors">
+              Patient Journey
+            </a>
+            <a href="#healthcare-specialties" className="hover:text-[#0F6FFF] transition-colors">
+              Specialties
             </a>
             <a href="#solution" className="hover:text-[#0F6FFF] transition-colors">
               The System
-            </a>
-            <a href="#whats-included" className="hover:text-[#0F6FFF] transition-colors">
-              What&apos;s Included
-            </a>
-            <a href="#comparison" className="hover:text-[#0F6FFF] transition-colors">
-              Comparison
             </a>
             <a href="#pricing" className="hover:text-[#0F6FFF] transition-colors">
               Investment
@@ -355,7 +414,7 @@ export default function OpdGrowthSystemClient() {
                 <BadgeCheck className="w-4 h-4 text-[#00C2A8]" />
                 <span>The Online OPD Growth System™</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00C2A8]" />
-                <span className="text-slate-500 font-normal">₹49,999 All-Inclusive</span>
+                <span className="text-slate-500 font-normal">₹49,999 + GST</span>
               </div>
 
               {/* Main Headline */}
@@ -368,7 +427,7 @@ export default function OpdGrowthSystemClient() {
 
               {/* Subheadline Copy */}
               <p className="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                A premium, high-converting healthcare website engine engineered to build instant patient trust, showcase doctor authority, and convert digital traffic into booked OPD appointments.
+                A premium, high-converting healthcare website engine engineered to help doctors build trust and get more online OPD appointments.
               </p>
 
               {/* Dual Action CTAs */}
@@ -392,7 +451,7 @@ export default function OpdGrowthSystemClient() {
               <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm text-slate-500 font-medium">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#00C2A8]" />
-                  <span>Done-For-You in 7-10 Days</span>
+                  <span>Delivered in 15 Days</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#00C2A8]" />
@@ -400,7 +459,7 @@ export default function OpdGrowthSystemClient() {
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#00C2A8]" />
-                  <span>Trusted by 50+ Doctors</span>
+                  <span>Trusted by Leading Clinics</span>
                 </div>
               </div>
             </div>
@@ -417,7 +476,7 @@ export default function OpdGrowthSystemClient() {
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900 text-sm sm:text-base">Dr. Rajesh Varma, MD</h4>
-                      <p className="text-xs text-slate-500">Senior Cardiology Specialist</p>
+                      <p className="text-xs text-slate-500">Senior Specialist</p>
                     </div>
                   </div>
                   <span className="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full border border-emerald-200 flex items-center gap-1">
@@ -450,7 +509,7 @@ export default function OpdGrowthSystemClient() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="p-3 bg-slate-50 rounded-2xl border border-slate-200/70">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-[11px] font-semibold text-slate-500">OPD Conversion Rate</span>
+                      <span className="text-[11px] font-semibold text-slate-500">OPD Conversion</span>
                       <TrendingUp className="w-4 h-4 text-emerald-600" />
                     </div>
                     <p className="text-xl font-extrabold text-slate-900">+240%</p>
@@ -458,7 +517,7 @@ export default function OpdGrowthSystemClient() {
                   </div>
                   <div className="p-3 bg-slate-50 rounded-2xl border border-slate-200/70">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-[11px] font-semibold text-slate-500">Page Load Time</span>
+                      <span className="text-[11px] font-semibold text-slate-500">Page Load Speed</span>
                       <Zap className="w-4 h-4 text-[#0F6FFF]" />
                     </div>
                     <p className="text-xl font-extrabold text-slate-900">0.8 Sec</p>
@@ -476,7 +535,7 @@ export default function OpdGrowthSystemClient() {
                     </div>
                     <span className="text-slate-800 ml-1">4.9/5 Trust Rating</span>
                   </div>
-                  <span className="text-slate-500">50+ Clinics Transformed</span>
+                  <span className="text-slate-500">Healthcare Specialized</span>
                 </div>
               </div>
             </div>
@@ -484,160 +543,158 @@ export default function OpdGrowthSystemClient() {
         </div>
       </section>
 
-      {/* Trusted By Healthcare Categories */}
-      <section className="py-10 bg-white border-y border-slate-200/80">
+      {/* NEW SECTION 2: Why Most Clinic Websites Don't Generate Appointments */}
+      <section id="why-fail" className="py-20 bg-slate-50 relative border-t border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">
-            Engineered Specifically For Busy Healthcare Professionals & Practice Owners
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-9 gap-3">
-            {specialties.map((item, idx) => {
-              const Icon = item.icon;
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="px-3.5 py-1.5 rounded-full bg-red-100 text-red-700 text-xs font-bold uppercase tracking-wide">
+              Patient Decision Psychology
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Why Most Clinic Websites Don&apos;t Generate Appointments
+            </h2>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+              Patients judge a doctor&apos;s credibility online before ever visiting the clinic. If your website fails to build immediate confidence, they walk away to competitors.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-5 gap-6 mb-12">
+            <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 hover:shadow-md transition-all text-center">
+              <div className="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center font-bold mx-auto">
+                <XCircle className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900">Look Outdated</h3>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                Old design layouts project poor care quality and unmaintained facilities.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 hover:shadow-md transition-all text-center">
+              <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold mx-auto">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900">Build Little Trust</h3>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                Missing doctor qualifications, clear treatment photos, and patient reviews.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 hover:shadow-md transition-all text-center">
+              <div className="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center font-bold mx-auto">
+                <Smartphone className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900">Are Slow on Mobile</h3>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                Sluggish load times frustrate mobile users, forcing 80%+ to press back.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 hover:shadow-md transition-all text-center">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold mx-auto">
+                <SlidersHorizontal className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900">Make Booking Difficult</h3>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                Hidden contact details and multi-step forms create high booking friction.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 hover:shadow-md transition-all text-center">
+              <div className="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold mx-auto">
+                <TrendingUp className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900">Miss OPD Conversions</h3>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                Fails to turn digital visitors into verified patient consultation enquiries.
+              </p>
+            </div>
+          </div>
+
+          <div className="max-w-3xl mx-auto p-6 rounded-2xl bg-blue-50 border border-blue-200/80 text-center">
+            <p className="text-base sm:text-lg font-extrabold text-[#0F6FFF]">
+              &ldquo;Your website shouldn&apos;t just look good—it should help patients choose your clinic.&rdquo;
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION 3: How Patients Choose a Doctor Today */}
+      <section id="patient-journey" className="py-20 bg-white relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0F6FFF] text-xs font-bold uppercase tracking-wider">
+              The Digital Patient Journey
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              How Patients Choose a Doctor Today
+            </h2>
+            <p className="text-slate-600 text-base">
+              Every single step in this journey directly influences a patient&apos;s final decision to visit your clinic.
+            </p>
+          </div>
+
+          {/* Visual Journey Steps */}
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4 relative">
+            {patientJourneySteps.map((step, idx) => {
+              const Icon = step.icon;
               return (
-                <div
-                  key={idx}
-                  className="flex flex-col items-center justify-center p-3 rounded-2xl bg-slate-50 border border-slate-200/60 text-center hover:border-[#0F6FFF]/40 hover:bg-blue-50/30 transition-all group"
-                >
-                  <Icon className="w-5 h-5 text-slate-500 group-hover:text-[#0F6FFF] mb-2 transition-colors" />
-                  <span className="text-xs font-semibold text-slate-700 leading-tight">
-                    {item.label}
+                <div key={idx} className="flex flex-col items-center text-center relative group">
+                  <div className={`w-16 h-16 rounded-2xl ${step.color} flex items-center justify-center font-bold mb-4 shadow-sm border border-slate-200/60 group-hover:scale-105 transition-transform`}>
+                    <Icon className="w-7 h-7" />
+                  </div>
+                  <span className="text-[10px] font-black uppercase text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full mb-1">
+                    Step 0{step.step}
                   </span>
+                  <h3 className="text-sm font-extrabold text-slate-900 mb-1">{step.title}</h3>
+                  <p className="text-xs text-slate-500 leading-snug">{step.desc}</p>
+
+                  {idx < patientJourneySteps.length - 1 && (
+                    <div className="hidden md:block absolute top-8 -right-3 text-slate-300 z-10">
+                      <ChevronRight className="w-5 h-5 text-slate-400" />
+                    </div>
+                  )}
                 </div>
               );
             })}
           </div>
+
+          <div className="mt-12 text-center text-sm text-slate-600 font-medium">
+            <p>Our system is engineered to eliminate drop-off at every stage of this decision process.</p>
+          </div>
         </div>
       </section>
 
-      {/* Problem Section: Why Most Clinic Websites Fail */}
-      <section id="problem" className="py-20 bg-slate-50 relative">
+      {/* NEW SECTION 4: Built Specifically for Healthcare */}
+      <section id="healthcare-specialties" className="py-20 bg-slate-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="px-3.5 py-1.5 rounded-full bg-red-100 text-red-700 text-xs font-bold uppercase tracking-wide">
-              The Reality Check
+            <span className="px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+              Tailored Medical Architectures
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              Why 90% of Clinic Websites Lose OPD Patients Every Single Day
+              Built Specifically for Healthcare
             </h2>
-            <p className="text-base sm:text-lg text-slate-600">
-              Patients today judge your clinical expertise and medical authority within 3 seconds of visiting your website. If your site looks outdated, slow, or generic, they hit back and book with your competitor.
+            <p className="text-slate-600 text-base">
+              The Online OPD Growth System™ is designed around healthcare patient psychology, doctor-patient empathy, and medical trust principles.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center font-bold">
-                <XCircle className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900">Zero Patient Trust Signals</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Generic stock images, hidden doctor qualifications, missing patient reviews, and static brochures fail to reassure anxious patients looking for an expert doctor.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
-                <Clock className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900">Slow & Broken Mobile Experience</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Over 85% of local patient searches happen on mobile phones. Clunky layouts, tiny text, and slow loading force patients to abandon your clinic website immediately.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-2xl bg-slate-100 text-slate-700 flex items-center justify-center font-bold">
-                <SlidersHorizontal className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900">Frictionful OPD Booking Flow</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                No direct WhatsApp routing, hidden clinic phone numbers, and complicated multi-step forms create high friction, killing your online appointment conversion rate.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pain Amplification Section */}
-      <section className="py-16 bg-slate-900 text-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <span className="px-3.5 py-1 bg-red-500/20 text-red-300 text-xs font-bold uppercase rounded-full border border-red-500/30">
-                Hidden Cost of Inaction
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                An Outdated Website Costs You Lakhs in Lost OPD Consultations Every Month
-              </h2>
-              <p className="text-slate-300 text-base leading-relaxed">
-                While you are busy caring for patients in your clinic, local patients are actively searching Google for specialists in your city. If your digital front door isn’t performing, those high-value patients are quietly walking into rival practices.
-              </p>
-              <div className="space-y-3 pt-2">
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold text-xs mt-0.5">
-                    ✕
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {healthcareCategories.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-xs hover:shadow-lg hover:border-[#0F6FFF]/40 transition-all space-y-3"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#0F6FFF] flex items-center justify-center font-bold">
+                    <Icon className="w-6 h-6" />
                   </div>
-                  <span className="text-slate-300 text-sm">
-                    <strong>Empty OPD Slots:</strong> High overhead costs with unfilled consultation hours.
-                  </span>
+                  <h3 className="text-lg font-bold text-slate-900">{item.label}</h3>
+                  <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold text-xs mt-0.5">
-                    ✕
-                  </div>
-                  <span className="text-slate-300 text-sm">
-                    <strong>Competitor Dominance:</strong> Competitors ranking higher on Google Maps and Google Search.
-                  </span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold text-xs mt-0.5">
-                    ✕
-                  </div>
-                  <span className="text-slate-300 text-sm">
-                    <strong>Over-reliance on Referrals:</strong> Vulnerable practice revenue depending only on word-of-mouth.
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* High Impact Visual Card */}
-            <div className="bg-slate-800/80 p-8 rounded-3xl border border-slate-700/80 backdrop-blur-xl space-y-6">
-              <div className="flex items-center justify-between border-b border-slate-700 pb-4">
-                <span className="text-sm font-bold text-slate-400 uppercase tracking-wider">
-                  The Revenue Opportunity Gap
-                </span>
-                <span className="text-xs px-2.5 py-1 bg-red-500/20 text-red-400 font-semibold rounded-full">
-                  Leaking Revenue
-                </span>
-              </div>
-
-              <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between text-xs font-semibold mb-1">
-                    <span className="text-slate-300">Generic Agency Website</span>
-                    <span className="text-red-400">12% OPD Enquiry Conversion</span>
-                  </div>
-                  <div className="w-full bg-slate-700 h-3 rounded-full overflow-hidden">
-                    <div className="bg-red-500 h-full w-[12%]" />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between text-xs font-semibold mb-1">
-                    <span className="text-slate-300">Online OPD Growth System™</span>
-                    <span className="text-[#00C2A8]">48% OPD Enquiry Conversion</span>
-                  </div>
-                  <div className="w-full bg-slate-700 h-3 rounded-full overflow-hidden">
-                    <div className="bg-gradient-to-r from-[#0F6FFF] to-[#00C2A8] h-full w-[48%]" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-4 bg-slate-900/80 rounded-2xl border border-slate-700 text-center">
-                <p className="text-xs text-slate-400 mb-1">Estimated Net Return on System Investment</p>
-                <p className="text-2xl font-extrabold text-white">4x to 10x ROI in 90 Days</p>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -686,7 +743,7 @@ export default function OpdGrowthSystemClient() {
               Complete Deliverable Stack
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              Everything Included in The ₹49,999 Package
+              Everything Included in The OPD System Package
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">
               Organized into three core pillars: Trust Architecture, Conversion Funnel, and Tech/SEO Infrastructure.
@@ -788,14 +845,241 @@ export default function OpdGrowthSystemClient() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-5 font-semibold text-slate-900">Doctor Time Commitment</td>
-                  <td className="p-5 text-slate-500 bg-slate-50/30">Hours of endless meetings, content writing & back-and-forth</td>
+                  <td className="p-5 font-semibold text-slate-900">Delivery Speed & Time</td>
+                  <td className="p-5 text-slate-500 bg-slate-50/30">Endless back-and-forth lasting 2-3 months</td>
                   <td className="p-5 text-slate-900 font-bold bg-blue-50/20 text-[#0F6FFF]">
-                    Done-For-You (Less than 45 mins total doctor time)
+                    Done-For-You Delivery in 15 Days
                   </td>
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW SECTIONS 6 & 7: Who This Is Perfect For / NOT For */}
+      <section className="py-20 bg-slate-50 relative border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0F6FFF] text-xs font-bold uppercase tracking-wider">
+              Ideal Practice Fit
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Is The OPD Growth System™ Right For Your Practice?
+            </h2>
+            <p className="text-slate-600">
+              We work exclusively with healthcare practice owners committed to building long-term digital authority and patient trust.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Who This Is Perfect For */}
+            <div className="bg-white p-8 rounded-3xl border border-emerald-200/80 shadow-md space-y-6 relative overflow-hidden">
+              <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
+                  <CheckCircle2 className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-extrabold text-slate-900">Who This Is Perfect For</h3>
+                  <p className="text-xs text-slate-500">Ideal healthcare practices</p>
+                </div>
+              </div>
+
+              <ul className="space-y-4">
+                {whoIsPerfectFor.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm text-slate-800 font-semibold">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Who This Is NOT For */}
+            <div className="bg-white p-8 rounded-3xl border border-red-200/80 shadow-md space-y-6 relative overflow-hidden">
+              <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div className="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold">
+                  <XCircle className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-extrabold text-slate-900">Who This Is NOT For</h3>
+                  <p className="text-xs text-slate-500">Unsuitable projects</p>
+                </div>
+              </div>
+
+              <ul className="space-y-4">
+                {whoIsNotFor.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm text-slate-800 font-semibold">
+                    <XCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Verified Client Reviews Section */}
+      <section className="py-20 bg-white relative border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+              5.0 ★ Verified Doctor Reviews
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Trusted by Doctors & Multispecialty Hospitals
+            </h2>
+            <p className="text-slate-600">
+              Read direct feedback from healthcare professionals and hospital directors working with Jaydeep Kataria & the Epsilon team.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Devam Dave - Shreeji Multispecialty hospital */}
+            <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex text-emerald-500 font-bold text-sm items-center gap-1">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-current text-emerald-500" />
+                      ))}
+                    </div>
+                    <span className="ml-1 text-slate-900 font-extrabold">5.0</span>
+                  </div>
+                  <span className="text-[11px] text-slate-400 font-medium">Verified Google Review</span>
+                </div>
+                <p className="text-slate-700 text-sm leading-relaxed italic">
+                  &ldquo;Mr Jaydeep is well experienced in Digital marketing. Shreeji Multispecialty hospital tie up with Epsilon for last couple of years. He help us in patient&apos;s foot fall. Highly recommend for social media & Website development 👍&rdquo;
+                </p>
+              </div>
+              <div className="flex items-center gap-3 pt-4 border-t border-slate-200/80">
+                <div className="w-10 h-10 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-sm shadow-sm">
+                  DD
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-sm">Devam Dave</h4>
+                  <p className="text-xs text-[#0F6FFF] font-semibold">Shreeji Multispecialty Hospital</p>
+                </div>
+              </div>
+            </div>
+
+            {/* dr. hiral */}
+            <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex text-emerald-500 font-bold text-sm items-center gap-1">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-current text-emerald-500" />
+                      ))}
+                    </div>
+                    <span className="ml-1 text-slate-900 font-extrabold">5.0</span>
+                  </div>
+                  <span className="text-[11px] text-slate-400 font-medium">Verified Google Review</span>
+                </div>
+                <p className="text-slate-700 text-sm leading-relaxed italic">
+                  &ldquo;Epsilon Technology is a one-stop solution for all digital marketing needs. From managing our social media to providing bulk WhatsApp and email tools, they&apos;ve helped our business scale like never before. Their attention to detail and results-oriented approach set them apart!&rdquo;
+                </p>
+              </div>
+              <div className="flex items-center gap-3 pt-4 border-t border-slate-200/80">
+                <div className="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm shadow-sm">
+                  DH
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-sm">dr. hiral</h4>
+                  <p className="text-xs text-slate-500 font-medium">Doctor & Practice Owner</p>
+                </div>
+              </div>
+            </div>
+
+            {/* healthcare physiotherapy clinic */}
+            <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex text-emerald-500 font-bold text-sm items-center gap-1">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-current text-emerald-500" />
+                      ))}
+                    </div>
+                    <span className="ml-1 text-slate-900 font-extrabold">5.0</span>
+                  </div>
+                  <span className="text-[11px] text-slate-400 font-medium">Verified Google Review</span>
+                </div>
+                <p className="text-slate-700 text-sm leading-relaxed italic">
+                  &ldquo;I went forward with online marketing for my clinic. I received a very great experience with the services provided by epsilon&apos;s team. They provided very accurate approach and also gave good ideas and guidance for how to go forward. Thank you so much jaydeepbhai and team.&rdquo;
+                </p>
+              </div>
+              <div className="flex items-center gap-3 pt-4 border-t border-slate-200/80">
+                <div className="w-10 h-10 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-sm shadow-sm">
+                  HP
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-sm">Healthcare Physiotherapy Clinic</h4>
+                  <p className="text-xs text-slate-500 font-medium">Physiotherapy Specialist</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Dr VORA */}
+            <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex text-emerald-500 font-bold text-sm items-center gap-1">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-current text-emerald-500" />
+                      ))}
+                    </div>
+                    <span className="ml-1 text-slate-900 font-extrabold">5.0</span>
+                  </div>
+                  <span className="text-[11px] text-slate-400 font-medium">2+ Years Client</span>
+                </div>
+                <p className="text-slate-700 text-sm leading-relaxed italic">
+                  &ldquo;Excellent work. Working with this guys for 2 years.&rdquo;
+                </p>
+              </div>
+              <div className="flex items-center gap-3 pt-4 border-t border-slate-200/80">
+                <div className="w-10 h-10 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center text-sm shadow-sm">
+                  DV
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-sm">Dr. Vora</h4>
+                  <p className="text-xs text-slate-500 font-medium">Long-term Client</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Dr Dharmesh */}
+            <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex text-emerald-500 font-bold text-sm items-center gap-1">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-current text-emerald-500" />
+                      ))}
+                    </div>
+                    <span className="ml-1 text-slate-900 font-extrabold">5.0</span>
+                  </div>
+                  <span className="text-[11px] text-slate-400 font-medium">Verified Review</span>
+                </div>
+                <p className="text-slate-700 text-sm leading-relaxed italic">
+                  &ldquo;Expert and easy to work with. Thoroughly enjoyed working with Mr Jaydeep and team.&rdquo;
+                </p>
+              </div>
+              <div className="flex items-center gap-3 pt-4 border-t border-slate-200/80">
+                <div className="w-10 h-10 rounded-full bg-amber-600 text-white font-bold flex items-center justify-center text-sm shadow-sm">
+                  DD
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-sm">Dr. Dharmesh</h4>
+                  <p className="text-xs text-slate-500 font-medium">Doctor & Practice Owner</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -805,10 +1089,10 @@ export default function OpdGrowthSystemClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="px-3.5 py-1 bg-blue-500/20 text-blue-300 text-xs font-bold uppercase rounded-full border border-blue-500/30">
-              5-Step Done-For-You Process
+              15-Day Done-For-You Process
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              From Discovery to Live OPD Appointments in 10 Days
+              From Discovery to Live OPD Appointments in 15 Days
             </h2>
             <p className="text-slate-400">
               A frictionless execution methodology designed specifically around your busy clinical schedule.
@@ -835,205 +1119,63 @@ export default function OpdGrowthSystemClient() {
         </div>
       </section>
 
-      {/* Bonus Stack Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-50/50 to-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wide">
-              Included Fast-Action Bonuses
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              Get ₹45,000 Worth of OPD Growth Assets Included Free
-            </h2>
-            <p className="text-slate-600">
-              When you order your Online OPD Growth System™ today, you get our complete medical practice acceleration stack.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {bonuses.map((b, idx) => {
-              const Icon = b.icon;
-              return (
-                <div
-                  key={idx}
-                  className="bg-white p-6 rounded-3xl border border-slate-200 shadow-md space-y-4 relative flex flex-col justify-between hover:shadow-xl transition-all"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <span className="text-xs font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
-                        {b.value}
-                      </span>
-                    </div>
-                    <h3 className="text-base font-bold text-slate-900 mb-2">{b.title}</h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">{b.desc}</p>
-                  </div>
-                  <div className="pt-2 text-[11px] font-bold text-emerald-600 flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> Included Free in ₹49,999 Stack
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Doctor Testimonials / Case Studies */}
-      <section className="py-20 bg-slate-50 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0F6FFF] text-xs font-bold uppercase tracking-wider">
-              Doctor Case Studies
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              Trusted by Leading Doctors & Practice Owners
-            </h2>
-            <p className="text-slate-600">
-              Here is what practicing doctors experience after upgrading to The Online OPD Growth System™.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="flex text-amber-400">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-current" />
-                  ))}
-                </div>
-                <p className="text-slate-700 text-sm leading-relaxed italic">
-                  &ldquo;Before Epsilon built our OPD System, we relied completely on word-of-mouth. Within 30 days of launch, our online WhatsApp enquiries jumped 3x. Highly recommended for busy doctors.&rdquo;
-                </p>
-              </div>
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-                <div className="w-10 h-10 rounded-full bg-blue-100 text-[#0F6FFF] font-bold flex items-center justify-center text-sm">
-                  Dr
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 text-sm">Dr. Amit Patel</h4>
-                  <p className="text-xs text-slate-500">Orthopedic Surgeon, Gujarat</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="flex text-amber-400">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-current" />
-                  ))}
-                </div>
-                <p className="text-slate-700 text-sm leading-relaxed italic">
-                  &ldquo;The mobile speed and WhatsApp direct booking flow are game changers. Patients continuously compliment our clinic&apos;s clean online presentation.&rdquo;
-                </p>
-              </div>
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-                <div className="w-10 h-10 rounded-full bg-teal-100 text-[#00C2A8] font-bold flex items-center justify-center text-sm">
-                  Dr
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 text-sm">Dr. Neha Shah</h4>
-                  <p className="text-xs text-slate-500">Dermatologist & Laser Specialist</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="flex text-amber-400">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-current" />
-                  ))}
-                </div>
-                <p className="text-slate-700 text-sm leading-relaxed italic">
-                  &ldquo;They handled everything from copywriting to local Google Maps optimization. I only spent 30 minutes in total. Outstanding ROI for our hospital.&rdquo;
-                </p>
-              </div>
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-                <div className="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm">
-                  Dr
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 text-sm">Dr. K. Mehta</h4>
-                  <p className="text-xs text-slate-500">Director, IVF & Women Care Center</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing & Offer Section */}
+      {/* RENAMED SECTION 1: Pricing -> Your Investment in Practice Growth */}
       <section id="pricing" className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 text-white p-8 sm:p-12 shadow-2xl border border-slate-800 relative overflow-hidden">
             {/* Background Glow */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#0F6FFF]/20 blur-3xl rounded-full pointer-events-none" />
 
-            <div className="grid lg:grid-cols-12 gap-8 items-center">
-              {/* Offer Info */}
-              <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold uppercase border border-blue-500/30">
-                  <Sparkles className="w-3.5 h-3.5 text-[#00C2A8]" />
-                  <span>Transparent Complete Package</span>
-                </div>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                  The Online OPD Growth System™
-                </h2>
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  Everything you need to turn digital search traffic into predictable, high-value OPD patient appointments. Zero hidden charges.
-                </p>
+            <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+              <span className="px-3.5 py-1.5 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold uppercase border border-blue-500/30">
+                Transparent All-Inclusive
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                Your Investment in Practice Growth
+              </h2>
+              <div className="pt-2">
+                <span className="text-4xl sm:text-5xl font-black text-white">₹49,999</span>
+                <span className="text-base text-slate-400 font-semibold ml-2">+ GST</span>
+              </div>
+              <p className="text-sm text-[#00C2A8] font-extrabold flex items-center justify-center gap-1">
+                <Clock className="w-4 h-4" /> Delivered in 15 Days
+              </p>
+            </div>
 
-                <div className="space-y-3 pt-2">
-                  <div className="flex items-center gap-2 text-sm text-slate-200">
-                    <CheckCircle2 className="w-5 h-5 text-[#00C2A8]" />
-                    <span>Complete Done-For-You Medical Website Engine</span>
+            {/* Premium Value Stack */}
+            <div className="bg-slate-800/80 p-6 sm:p-8 rounded-3xl border border-slate-700 space-y-6 mb-8 backdrop-blur-xl">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 text-center">
+                Included Premium Value Stack
+              </h3>
+
+              <div className="grid sm:grid-cols-2 gap-3.5">
+                {investmentValueStack.map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3 p-3 bg-slate-900/60 rounded-xl border border-slate-700/60">
+                    <CheckCircle2 className="w-5 h-5 text-[#00C2A8] shrink-0" />
+                    <span className="text-xs sm:text-sm font-semibold text-slate-200">{item}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-200">
-                    <CheckCircle2 className="w-5 h-5 text-[#00C2A8]" />
-                    <span>Direct-Response Healthcare Copywriting</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-200">
-                    <CheckCircle2 className="w-5 h-5 text-[#00C2A8]" />
-                    <span>1-Tap WhatsApp & Phone Booking System</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-200">
-                    <CheckCircle2 className="w-5 h-5 text-[#00C2A8]" />
-                    <span>All 4 Bonuses Included Free (₹45,000 Value)</span>
-                  </div>
-                </div>
+                ))}
               </div>
 
-              {/* Price Action Box */}
-              <div className="lg:col-span-5 bg-slate-800/90 p-8 rounded-3xl border border-slate-700 text-center space-y-6 backdrop-blur-xl">
-                <div>
-                  <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-1">
-                    One-Time Investment
-                  </span>
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="text-4xl sm:text-5xl font-black text-white">₹49,999</span>
-                    <span className="text-xs text-slate-400 font-semibold align-bottom">
-                      INR + GST
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-emerald-400 font-medium mt-1">
-                    No Monthly Software Subscription Fees
-                  </p>
-                </div>
+              <div className="pt-4 text-center border-t border-slate-700/80">
+                <p className="text-sm sm:text-base font-bold text-slate-200">
+                  &ldquo;Everything your clinic needs to build trust online and make it easier for patients to book appointments.&rdquo;
+                </p>
+              </div>
+            </div>
 
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="w-full py-4 px-6 text-base font-bold text-white bg-gradient-to-r from-[#0F6FFF] via-blue-600 to-[#00C2A8] rounded-2xl shadow-xl shadow-[#0F6FFF]/30 hover:shadow-2xl hover:scale-[1.02] transition-all"
-                >
-                  Book Free Growth Audit
-                </button>
-
-                <div className="pt-2 text-slate-400 text-xs flex items-center justify-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                  <span>100% Satisfaction & Speed Guarantee</span>
-                </div>
+            {/* CTA Trigger */}
+            <div className="text-center space-y-4">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white bg-gradient-to-r from-[#0F6FFF] via-blue-600 to-[#00C2A8] rounded-2xl shadow-xl shadow-[#0F6FFF]/30 hover:shadow-2xl hover:scale-105 transition-all"
+              >
+                Book Your Free Website Growth Audit
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </button>
+              <div className="flex items-center justify-center gap-2 text-xs text-slate-400">
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <span>Zero Risk • Done-For-You Execution</span>
               </div>
             </div>
           </div>
@@ -1086,27 +1228,28 @@ export default function OpdGrowthSystemClient() {
         </div>
       </section>
 
-      {/* Emotional Final CTA Section */}
+      {/* SECTION 8: Strengthened Final CTA */}
       <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
           <div className="w-16 h-16 rounded-3xl bg-[#0F6FFF]/20 text-[#00C2A8] flex items-center justify-center mx-auto border border-[#0F6FFF]/30">
             <Stethoscope className="w-8 h-8" />
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-            Ready to Build Immediate Patient Trust & Fill Your OPD Schedule?
-          </h2>
-
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Schedule a free 20-minute Website Growth Audit with our senior healthcare team. We will show you exact layout fixes to turn your online presence into a high-converting patient acquisition engine.
-          </p>
+          <div className="space-y-4">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-relaxed">
+              &ldquo;Your next patient will search online before they visit your clinic.&rdquo;
+            </h2>
+            <p className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              Make sure they find a website that builds confidence, answers their questions, and makes booking an appointment effortless.
+            </p>
+          </div>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => setIsModalOpen(true)}
               className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white bg-gradient-to-r from-[#0F6FFF] via-blue-600 to-[#00C2A8] rounded-2xl shadow-2xl shadow-[#0F6FFF]/40 hover:scale-105 transition-all"
             >
-              Book Your Free Website Growth Audit Now
+              Book Your Free Website Growth Audit
               <ArrowRight className="w-5 h-5 ml-2" />
             </button>
           </div>

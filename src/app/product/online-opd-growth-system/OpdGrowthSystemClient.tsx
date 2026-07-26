@@ -66,7 +66,8 @@ export default function OpdGrowthSystemClient() {
     return () => clearInterval(interval);
   }, []);
 
-  // Form State for Audit Modal
+  // Form State for Audit & PDF Access Modal
+  const [modalType, setModalType] = useState<'audit' | 'pdf'>('audit');
   const [formData, setFormData] = useState({
     doctorName: '',
     clinicName: '',
@@ -77,12 +78,61 @@ export default function OpdGrowthSystemClient() {
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const PDF_URL = 'https://docs.google.com/document/d/1nflXCYHzzuVMvVkyVLMEOuLZqPXqXhJRN0Z2Z3X0HnA/edit?usp=sharing';
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormSubmitted(true);
-    setTimeout(() => {
-      window.open('https://calendly.com/jaydeepkataria/30min', '_blank');
-    }, 1500);
+
+    const isPdf = modalType === 'pdf';
+    const eventContentName = isPdf
+      ? 'OPD Growth for Doctors PDF Download'
+      : 'Online OPD Growth System Audit Lead';
+
+    // Send Meta Conversions API (CAPI) & Pixel Lead Event
+    try {
+      if (typeof window !== 'undefined' && (window as any).fbq) {
+        (window as any).fbq('track', 'Lead', {
+          content_name: eventContentName,
+          currency: 'INR',
+          value: isPdf ? 0 : 49999,
+        });
+      }
+
+      fetch('/api/meta-capi', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          eventName: 'Lead',
+          eventSourceUrl: typeof window !== 'undefined' ? window.location.href : '',
+          user: {
+            phone: formData.phone,
+            firstName: formData.doctorName,
+            city: formData.city,
+          },
+          customData: {
+            content_name: eventContentName,
+            clinic_name: formData.clinicName,
+            specialty: formData.specialty,
+            website: formData.website,
+            value: isPdf ? 0 : 49999,
+            currency: 'INR',
+          },
+        }),
+      }).catch((err) => console.error('CAPI fetch error:', err));
+    } catch (err) {
+      console.error('CAPI / Pixel trigger error:', err);
+    }
+
+    if (isPdf) {
+      setTimeout(() => {
+        window.open(PDF_URL, '_blank');
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        window.open('https://calendly.com/jaydeepkataria/30min', '_blank');
+      }, 1500);
+    }
   };
 
   // What Doctors Get in ₹49,999 Package Breakdown (Worth ₹1.30 Lakh+)
@@ -286,18 +336,52 @@ export default function OpdGrowthSystemClient() {
           {/* CTAs */}
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
-              onClick={() => setIsModalOpen(true)}
+              onClick={() => {
+                setModalType('audit');
+                setFormSubmitted(false);
+                setIsModalOpen(true);
+              }}
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-[#0F6FFF] via-blue-600 to-[#2563EB] rounded-2xl shadow-xl shadow-[#0F6FFF]/30 hover:shadow-2xl hover:-translate-y-0.5 transition-all group"
             >
               Book Your Free Website Growth Audit
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </button>
-            <a
-              href="#package"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-slate-700 bg-white border border-slate-300 rounded-2xl hover:bg-slate-50 transition-all shadow-xs"
+            <button
+              onClick={() => {
+                setModalType('pdf');
+                setFormSubmitted(false);
+                setIsModalOpen(true);
+              }}
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-800 bg-gradient-to-r from-amber-100 to-amber-200 border border-amber-300 rounded-2xl hover:from-amber-200 hover:to-amber-300 transition-all shadow-md group"
             >
-              See What You Get (₹49,999)
-            </a>
+              Download OPD Growth Guide (PDF)
+            </button>
+          </div>
+
+          {/* OPD Growth PDF Lead Banner */}
+          <div className="max-w-3xl mx-auto mt-6 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-900 via-slate-900 to-indigo-950 text-white shadow-xl border border-blue-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
+            <div className="space-y-1">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-[11px] font-bold uppercase tracking-wider">
+                Free Doctor Growth Guide (PDF)
+              </div>
+              <h4 className="text-base sm:text-lg font-bold text-white">
+                "OPD Growth Strategy Guide for Private Doctors & Clinics"
+              </h4>
+              <p className="text-xs sm:text-sm text-slate-300">
+                Learn how top clinics build 3x patient volume through digital reputation & 1-click booking systems.
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                setModalType('pdf');
+                setFormSubmitted(false);
+                setIsModalOpen(true);
+              }}
+              className="w-full sm:w-auto shrink-0 px-5 py-3 text-xs sm:text-sm font-extrabold text-slate-900 bg-amber-400 hover:bg-amber-300 rounded-xl transition-colors shadow-lg flex items-center justify-center gap-1.5"
+            >
+              Get Free PDF Copy
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
 
           {/* Minimal Highlights for Doctor */}
@@ -500,9 +584,8 @@ export default function OpdGrowthSystemClient() {
                   >
                     <span className="font-bold text-slate-900 text-base sm:text-lg">{faq.q}</span>
                     <ChevronDown
-                      className={`w-5 h-5 text-[#0F6FFF] shrink-0 transition-transform duration-200 ${
-                        isOpen ? 'rotate-180' : ''
-                      }`}
+                      className={`w-5 h-5 text-[#0F6FFF] shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''
+                        }`}
                     />
                   </button>
                   {isOpen && (
@@ -579,13 +662,21 @@ export default function OpdGrowthSystemClient() {
                 <div>
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0F6FFF] text-xs font-bold mb-2">
                     <Sparkles className="w-3.5 h-3.5" />
-                    <span>Special ₹49,999 Rate Valid Till 31st August</span>
+                    <span>
+                      {modalType === 'pdf'
+                        ? 'Instant PDF Access'
+                        : 'Special ₹49,999 Rate Valid Till 31st August'}
+                    </span>
                   </div>
                   <h3 className="text-2xl font-extrabold text-slate-900">
-                    Book Your Website Growth Audit
+                    {modalType === 'pdf'
+                      ? 'Download OPD Growth Guide for Doctors'
+                      : 'Book Your Website Growth Audit'}
                   </h3>
                   <p className="text-xs text-slate-500 mt-1">
-                    Fill in your details below to schedule your 20-minute consultation.
+                    {modalType === 'pdf'
+                      ? 'Please enter your details below to instantly access and read the OPD Growth PDF guide.'
+                      : 'Fill in your details below to schedule your 20-minute consultation.'}
                   </p>
                 </div>
 
@@ -678,7 +769,9 @@ export default function OpdGrowthSystemClient() {
                     type="submit"
                     className="w-full py-4 text-base font-bold text-white bg-gradient-to-r from-[#0F6FFF] to-[#2563EB] rounded-xl shadow-lg shadow-[#0F6FFF]/30 hover:shadow-xl transition-all mt-2"
                   >
-                    Confirm & Select Audit Time Slot
+                    {modalType === 'pdf'
+                      ? 'Submit & Open OPD Growth PDF'
+                      : 'Confirm & Select Audit Time Slot'}
                   </button>
                 </form>
               </div>
@@ -687,10 +780,26 @@ export default function OpdGrowthSystemClient() {
                 <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <h3 className="text-2xl font-extrabold text-slate-900">Request Confirmed!</h3>
+                <h3 className="text-2xl font-extrabold text-slate-900">
+                  {modalType === 'pdf' ? 'Access Granted!' : 'Request Confirmed!'}
+                </h3>
                 <p className="text-sm text-slate-600">
-                  Redirecting you to our live calendar to choose your preferred 20-minute time slot...
+                  {modalType === 'pdf'
+                    ? 'Opening your OPD Growth Strategy PDF guide in a new tab...'
+                    : 'Redirecting you to our live calendar to choose your preferred 20-minute time slot...'}
                 </p>
+                {modalType === 'pdf' && (
+                  <div className="pt-2">
+                    <a
+                      href={PDF_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm font-bold text-[#0F6FFF] hover:underline"
+                    >
+                      Click here if the PDF did not open automatically →
+                    </a>
+                  </div>
+                )}
               </div>
             )}
           </div>

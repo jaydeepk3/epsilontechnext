@@ -90,13 +90,15 @@ export async function POST(request: Request) {
       try {
         const rawPhone = normalizePhone(user.phone) || user.phone;
         const formattedPhone = rawPhone.length === 10 ? `91${rawPhone}` : rawPhone;
+        const leadType = customData.lead_type || customData.content_name || 'Online OPD Lead';
         const messageDetails = [
+          `Lead Type: ${leadType}`,
           user.firstName ? `Doctor Name: ${user.firstName}` : '',
           user.city ? `City: ${user.city}` : '',
           customData.clinic_name ? `Clinic: ${customData.clinic_name}` : '',
           customData.specialty ? `Specialty: ${customData.specialty}` : '',
           customData.website ? `Website: ${customData.website}` : '',
-          'Source: Online OPD Growth System Audit Form',
+          'Source: Online OPD Growth System Form',
         ].filter(Boolean).join(' | ');
 
         const crmPayload = {

@@ -27,6 +27,7 @@ import {
   HelpCircle,
   Smartphone,
   TrendingUp,
+  FileText,
 } from 'lucide-react';
 
 export default function OpdGrowthSystemClient() {
@@ -99,6 +100,15 @@ export default function OpdGrowthSystemClient() {
         });
       }
 
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'generate_lead', {
+          event_category: 'Engagement',
+          event_label: eventContentName,
+          value: isPdf ? 0 : 49999,
+          currency: 'INR',
+        });
+      }
+
       fetch('/api/meta-capi', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -112,6 +122,7 @@ export default function OpdGrowthSystemClient() {
           },
           customData: {
             content_name: eventContentName,
+            lead_type: isPdf ? 'PDF Lead Magnet' : 'Growth Audit Lead',
             clinic_name: formData.clinicName,
             specialty: formData.specialty,
             website: formData.website,
@@ -352,23 +363,27 @@ export default function OpdGrowthSystemClient() {
                 setFormSubmitted(false);
                 setIsModalOpen(true);
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-800 bg-gradient-to-r from-amber-100 to-amber-200 border border-amber-300 rounded-2xl hover:from-amber-200 hover:to-amber-300 transition-all shadow-md group"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-extrabold text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-400 border-2 border-amber-400 rounded-2xl hover:from-amber-400 hover:to-yellow-500 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 group animate-pulse"
             >
-              Download OPD Growth Guide (PDF)
+              <FileText className="w-5 h-5 mr-2 text-amber-900" />
+              Download Free OPD Growth Guide (PDF)
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
           {/* OPD Growth PDF Lead Banner */}
-          <div className="max-w-3xl mx-auto mt-6 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-900 via-slate-900 to-indigo-950 text-white shadow-xl border border-blue-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
-            <div className="space-y-1">
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-[11px] font-bold uppercase tracking-wider">
-                Free Doctor Growth Guide (PDF)
+          <div className="max-w-3xl mx-auto mt-8 p-6 sm:p-7 rounded-3xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 text-slate-950 shadow-2xl border-4 border-amber-300 flex flex-col sm:flex-row items-center justify-between gap-6 text-left relative overflow-hidden group">
+            <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/20 rounded-full blur-2xl group-hover:scale-150 transition-transform pointer-events-none" />
+            <div className="space-y-2 relative z-10">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950 text-amber-300 text-xs font-black uppercase tracking-wider shadow-md">
+                <FileText className="w-3.5 h-3.5" />
+                FREE DOCTOR GUIDE (PDF) • NO COST
               </div>
-              <h4 className="text-base sm:text-lg font-bold text-white">
+              <h4 className="text-lg sm:text-xl font-black text-slate-950 leading-tight">
                 "OPD Growth Strategy Guide for Private Doctors & Clinics"
               </h4>
-              <p className="text-xs sm:text-sm text-slate-300">
-                Learn how top clinics build 3x patient volume through digital reputation & 1-click booking systems.
+              <p className="text-xs sm:text-sm text-slate-900 font-medium leading-relaxed">
+                Discover the exact 5-step blueprint top doctors use to 3x OPD appointment bookings through digital reputation and WhatsApp integration.
               </p>
             </div>
             <button
@@ -377,10 +392,11 @@ export default function OpdGrowthSystemClient() {
                 setFormSubmitted(false);
                 setIsModalOpen(true);
               }}
-              className="w-full sm:w-auto shrink-0 px-5 py-3 text-xs sm:text-sm font-extrabold text-slate-900 bg-amber-400 hover:bg-amber-300 rounded-xl transition-colors shadow-lg flex items-center justify-center gap-1.5"
+              className="w-full sm:w-auto shrink-0 px-7 py-4 text-sm sm:text-base font-black text-white bg-slate-950 hover:bg-slate-900 rounded-2xl transition-all shadow-2xl flex items-center justify-center gap-2 relative z-10 hover:scale-105"
             >
-              Get Free PDF Copy
-              <ArrowRight className="w-4 h-4" />
+              <FileText className="w-5 h-5 text-amber-400" />
+              Get Free PDF Now
+              <ArrowRight className="w-5 h-5 text-amber-400" />
             </button>
           </div>
 

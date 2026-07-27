@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { trackMetaCapiEvent } from '@/lib/meta-capi';
 import {
   ShieldCheck,
   CheckCircle2,
@@ -91,49 +92,23 @@ export default function OpdGrowthSystemClient() {
       : 'Online OPD Growth System Audit Lead';
 
     // Send Meta Conversions API (CAPI) & Pixel Lead Event
-    try {
-      if (typeof window !== 'undefined' && (window as any).fbq) {
-        (window as any).fbq('track', 'Lead', {
-          content_name: eventContentName,
-          currency: 'INR',
-          value: isPdf ? 0 : 49999,
-        });
-      }
-
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'generate_lead', {
-          event_category: 'Engagement',
-          event_label: eventContentName,
-          value: isPdf ? 0 : 49999,
-          currency: 'INR',
-        });
-      }
-
-      fetch('/api/meta-capi', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          eventName: 'Lead',
-          eventSourceUrl: typeof window !== 'undefined' ? window.location.href : '',
-          user: {
-            phone: formData.phone,
-            firstName: formData.doctorName,
-            city: formData.city,
-          },
-          customData: {
-            content_name: eventContentName,
-            lead_type: isPdf ? 'PDF Lead Magnet' : 'Growth Audit Lead',
-            clinic_name: formData.clinicName,
-            specialty: formData.specialty,
-            website: formData.website,
-            value: isPdf ? 0 : 49999,
-            currency: 'INR',
-          },
-        }),
-      }).catch((err) => console.error('CAPI fetch error:', err));
-    } catch (err) {
-      console.error('CAPI / Pixel trigger error:', err);
-    }
+    trackMetaCapiEvent({
+      eventName: 'Lead',
+      user: {
+        phone: formData.phone,
+        firstName: formData.doctorName,
+        city: formData.city,
+      },
+      customData: {
+        content_name: eventContentName,
+        lead_type: isPdf ? 'PDF Lead Magnet' : 'Growth Audit Lead',
+        clinic_name: formData.clinicName,
+        specialty: formData.specialty,
+        website: formData.website,
+        value: isPdf ? 0 : 49999,
+        currency: 'INR',
+      },
+    });
 
     if (isPdf) {
       setTimeout(() => {
@@ -310,36 +285,71 @@ export default function OpdGrowthSystemClient() {
 
           {/* Subheadline Copy */}
           <p className="text-base sm:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl mx-auto">
-            A complete, done-for-you website system engineered for busy doctors. We handle 98% of the work—copywriting, design, WhatsApp setup, and local SEO—in just 15 days.
+            A complete, done-for-you website system engineered for busy doctors. We handle{' '}
+            <span className="font-semibold text-slate-900 bg-blue-50/80 px-2 py-0.5 rounded-md border border-blue-100 text-blue-600 inline-block">
+              98% of the work
+            </span>
+            —copywriting, design, WhatsApp setup, and local SEO—in just{' '}
+            <span className="font-semibold text-slate-900 bg-emerald-50/80 px-2 py-0.5 rounded-md border border-emerald-100 text-emerald-600 inline-block">
+              15 days
+            </span>
+            .
           </p>
 
           {/* Live Countdown Card */}
-          <div className="max-w-md mx-auto p-4 rounded-2xl bg-white border border-slate-200 shadow-lg space-y-2">
-            <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-              ⚡ Offer Price Expires On 31st August
-            </p>
-            <div className="grid grid-cols-4 gap-2 text-center">
-              <div className="bg-slate-900 text-white p-2.5 rounded-xl">
-                <span className="text-xl font-black block leading-none">{timeLeft.days}</span>
-                <span className="text-[10px] text-slate-400 font-medium">Days</span>
-              </div>
-              <div className="bg-slate-900 text-white p-2.5 rounded-xl">
-                <span className="text-xl font-black block leading-none">
-                  {String(timeLeft.hours).padStart(2, '0')}
+          <div className="relative max-w-lg mx-auto my-6">
+            {/* Ambient Background Glow */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/20 via-blue-600/20 to-teal-500/20 rounded-3xl blur-xl opacity-75 pointer-events-none" />
+            
+            <div className="relative rounded-3xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-2xl p-4 sm:p-5 space-y-3">
+              {/* Header Badge & Pulse */}
+              <div className="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 text-amber-400 text-xs font-extrabold uppercase tracking-wider shadow-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
                 </span>
-                <span className="text-[10px] text-slate-400 font-medium">Hours</span>
-              </div>
-              <div className="bg-slate-900 text-white p-2.5 rounded-xl">
-                <span className="text-xl font-black block leading-none">
-                  {String(timeLeft.minutes).padStart(2, '0')}
+                <span className="flex items-center gap-1">
+                  ⚡ Offer Price Expires On 31st August
                 </span>
-                <span className="text-[10px] text-slate-400 font-medium">Mins</span>
               </div>
-              <div className="bg-slate-900 text-[#00C2A8] p-2.5 rounded-xl">
-                <span className="text-xl font-black block leading-none">
-                  {String(timeLeft.seconds).padStart(2, '0')}
-                </span>
-                <span className="text-[10px] text-slate-400 font-medium">Secs</span>
+
+              {/* Grid of Digits */}
+              <div className="grid grid-cols-4 gap-2 sm:gap-3 text-center pt-1">
+                <div className="relative group bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white p-3 rounded-2xl border border-slate-800 shadow-md">
+                  <span className="text-2xl sm:text-3xl font-black block leading-none tracking-tight text-white">
+                    {timeLeft.days}
+                  </span>
+                  <span className="text-[10px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider block mt-1.5">
+                    Days
+                  </span>
+                </div>
+
+                <div className="relative group bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white p-3 rounded-2xl border border-slate-800 shadow-md">
+                  <span className="text-2xl sm:text-3xl font-black block leading-none tracking-tight text-white">
+                    {String(timeLeft.hours).padStart(2, '0')}
+                  </span>
+                  <span className="text-[10px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider block mt-1.5">
+                    Hours
+                  </span>
+                </div>
+
+                <div className="relative group bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white p-3 rounded-2xl border border-slate-800 shadow-md">
+                  <span className="text-2xl sm:text-3xl font-black block leading-none tracking-tight text-white">
+                    {String(timeLeft.minutes).padStart(2, '0')}
+                  </span>
+                  <span className="text-[10px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider block mt-1.5">
+                    Mins
+                  </span>
+                </div>
+
+                <div className="relative group bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 p-3 rounded-2xl border border-[#00C2A8]/30 shadow-md shadow-[#00C2A8]/10">
+                  <span className="text-2xl sm:text-3xl font-black block leading-none tracking-tight text-[#00C2A8] drop-shadow-[0_0_10px_rgba(0,194,168,0.5)]">
+                    {String(timeLeft.seconds).padStart(2, '0')}
+                  </span>
+                  <span className="text-[10px] sm:text-xs text-[#00C2A8]/80 font-bold uppercase tracking-wider block mt-1.5">
+                    Secs
+                  </span>
+                </div>
               </div>
             </div>
           </div>

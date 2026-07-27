@@ -72,6 +72,7 @@ export const metadata: Metadata = {
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
+import { MicrosoftClarity } from '@/components/analytics/MicrosoftClarity';
 
 export default function RootLayout({
   children,
@@ -165,7 +166,7 @@ export default function RootLayout({
           }}
         />
         <GoogleAnalytics gaId="G-JD0HV8PBLB" />
-
+        <MicrosoftClarity />
         <SpeedInsights />
       </body>
     </html>

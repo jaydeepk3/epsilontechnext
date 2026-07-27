@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { CheckCircle, AlertCircle } from "lucide-react";
+import { trackMetaCapiEvent } from "@/lib/meta-capi";
 
 export function GeneralContactForm() {
     const [formData, setFormData] = useState({
@@ -32,6 +33,23 @@ export function GeneralContactForm() {
 
             if (response.ok) {
                 setStatus('success');
+
+                // Trigger Meta CAPI & Pixel 'Contact' / 'Lead' event for Contact Us page
+                trackMetaCapiEvent({
+                    eventName: 'Contact',
+                    user: {
+                        firstName: formData.firstName,
+                        lastName: formData.lastName,
+                        email: formData.email,
+                        phone: formData.mobile,
+                    },
+                    customData: {
+                        content_name: 'Contact Us Form Submission',
+                        lead_type: 'General Contact Lead',
+                        page_path: '/contacts',
+                    },
+                });
+
                 setFormData({ firstName: '', lastName: '', mobile: '', email: '', message: '' });
 
             } else {

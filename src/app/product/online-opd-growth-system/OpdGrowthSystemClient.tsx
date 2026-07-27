@@ -222,46 +222,6 @@ export default function OpdGrowthSystemClient() {
         </span>
       </div>
 
-      {/* Header Navigation */}
-      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-slate-200 transition-all">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:h-18 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-[#0F6FFF] to-[#00C2A8] flex items-center justify-center text-white shadow-md shadow-[#0F6FFF]/20 group-hover:scale-105 transition-transform shrink-0">
-              <Stethoscope className="w-5 h-5 sm:w-6 sm:h-6" />
-            </div>
-            <div>
-              <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 leading-none">Epsilon</span>
-              </div>
-              <p className="text-[9px] sm:text-[10px] tracking-wider uppercase text-slate-500 font-medium mt-0.5">
-                Technology for Practice Growth
-              </p>
-            </div>
-          </Link>
-
-          {/* Essential Quick Links */}
-          <nav className="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600">
-            <a href="#package" className="hover:text-[#0F6FFF] transition-colors">
-              What You Get
-            </a>
-            <a href="#doctor-reels" className="hover:text-[#0F6FFF] transition-colors">
-              Doctor Reviews
-            </a>
-            <a href="#faq" className="hover:text-[#0F6FFF] transition-colors">
-              FAQ
-            </a>
-          </nav>
-
-          {/* Header CTA */}
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center justify-center px-3.5 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-bold text-white transition-all bg-gradient-to-r from-[#0F6FFF] to-[#2563EB] rounded-full shadow-lg shadow-[#0F6FFF]/25 hover:shadow-xl hover:shadow-[#0F6FFF]/40 hover:-translate-y-0.5 active:translate-y-0 shrink-0 whitespace-nowrap"
-          >
-            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1 sm:mr-1.5 animate-pulse" />
-            Book Free Audit
-          </button>
-        </div>
-      </header>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-10 pb-16 md:pt-16 md:pb-20 bg-gradient-to-b from-white via-slate-50 to-blue-50/30">
@@ -297,7 +257,7 @@ export default function OpdGrowthSystemClient() {
           <div className="relative max-w-lg mx-auto my-6">
             {/* Ambient Background Glow */}
             <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/20 via-blue-600/20 to-teal-500/20 rounded-3xl blur-xl opacity-75 pointer-events-none" />
-            
+
             <div className="relative rounded-3xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-2xl p-4 sm:p-5 space-y-3">
               {/* Header Badge & Pulse */}
               <div className="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 text-amber-400 text-xs font-extrabold uppercase tracking-wider shadow-sm">

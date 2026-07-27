@@ -131,6 +131,7 @@ export function Header() {
     const isDarkHero = DARK_HERO_PATHS.some(p =>
         p === pathname || (p !== '/' && pathname.startsWith(p))
     );
+    const isLandingPage = pathname.startsWith('/opd-growth-system-free-audit');
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -155,7 +156,7 @@ export function Header() {
 
     return (
         <>
-            {showBanner && (
+            {!isLandingPage && showBanner && (
                 <div className="fixed top-0 left-0 right-0 z-50 h-9 bg-gradient-to-r from-blue-700 via-indigo-800 to-blue-900 text-white text-xs md:text-sm font-semibold flex items-center justify-between px-4 border-b border-blue-500/20">
                     <div className="flex-1 flex items-center justify-center gap-2 truncate">
                         <span className="bg-blue-500 text-white text-[9px] uppercase font-extrabold tracking-wider px-2 py-0.5 rounded-full border border-blue-400">Recognition</span>
@@ -181,7 +182,7 @@ export function Header() {
             )}
             <header
                 style={{
-                    transform: showBanner ? 'translateY(36px)' : 'translateY(0px)',
+                    transform: (!isLandingPage && showBanner) ? 'translateY(36px)' : 'translateY(0px)',
                     transition: 'transform 0.3s ease, background-color 0.5s ease, padding 0.5s ease'
                 }}
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
@@ -206,73 +207,90 @@ export function Header() {
                         </div>
                     </Link>
 
+                    {isLandingPage ? (
+                        <div className="flex items-center gap-3">
+                            <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-emerald-50 border border-emerald-200 rounded-full text-xs font-semibold text-emerald-800">
+                                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                Free Doctor Audit Reserved
+                            </div>
+                            <Button
+                                size="sm"
+                                className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 text-xs md:text-sm rounded-xl shadow-md"
+                                onClick={() => {
+                                    const formEl = document.getElementById('audit-form');
+                                    formEl?.scrollIntoView({ behavior: 'smooth' });
+                                }}
+                            >
+                                Claim Audit Below
+                            </Button>
+                        </div>
+                    ) : (
+                        <>
+                            {/* Desktop Nav */}
+                            <nav className="hidden lg:flex items-center gap-8">
+                                <NavDropdown label="Services" items={services} textColor={textColor} scrolled={isScrolled} />
+                                <NavDropdown label="Products" items={products} textColor={textColor} scrolled={isScrolled} />
 
-                    {/* Desktop Nav */}
-                    <nav className="hidden lg:flex items-center gap-8">
-                        <NavDropdown label="Services" items={services} textColor={textColor} scrolled={isScrolled} />
-                        <NavDropdown label="Products" items={products} textColor={textColor} scrolled={isScrolled} />
+                                <Link
+                                    href="/portfolio/"
+                                    className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/portfolio' || pathname === '/portfolio/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
+                                >
+                                    Portfolio
+                                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/portfolio') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
+                                </Link>
 
+                                <Link
+                                    href="/blog/"
+                                    className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/blog' || pathname === '/blog/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
+                                >
+                                    Blog
+                                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/blog') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
+                                </Link>
 
+                                <Link
+                                    href="/about-us/"
+                                    className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/about-us' || pathname === '/about-us/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
+                                >
+                                    About
+                                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/about-us') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
+                                </Link>
 
+                                <Link
+                                    href="/contacts/"
+                                    className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/contacts' || pathname === '/contacts/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
+                                >
+                                    Contact
+                                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/contacts') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
+                                </Link>
 
-                        <Link
-                            href="/portfolio/"
-                            className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/portfolio' || pathname === '/portfolio/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
-                        >
-                            Portfolio
-                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/portfolio') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
-                        </Link>
+                                <Button
+                                    size="sm"
+                                    className={`ml-2 px-6 py-5 rounded-2xl font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5 active:translate-y-0 ${!isScrolled && isDarkHero
+                                        ? 'bg-white text-blue-600 hover:bg-blue-50'
+                                        : 'bg-blue-600 text-white hover:bg-blue-700'
+                                        }`}
+                                    onClick={() => {
+                                        const booking = document.getElementById('booking') || document.getElementById('contact');
+                                        booking?.scrollIntoView({ behavior: 'smooth' });
+                                    }}
+                                >
+                                    Get Free Quote
+                                </Button>
+                            </nav>
 
-                        <Link
-                            href="/blog/"
-                            className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/blog' || pathname === '/blog/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
-                        >
-                            Blog
-                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/blog') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
-                        </Link>
-
-                        <Link
-                            href="/about-us/"
-                            className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/about-us' || pathname === '/about-us/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
-                        >
-                            About
-                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/about-us') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
-                        </Link>
-
-                        <Link
-                            href="/contacts/"
-                            className={`font-semibold text-[13px] tracking-wide transition-all duration-300 relative group/nav ${pathname === '/contacts' || pathname === '/contacts/' ? 'text-blue-600 opacity-100' : `${textColor} opacity-80 hover:opacity-100`}`}
-                        >
-                            Contact
-                            <span className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 transition-all duration-300 ${pathname.startsWith('/contacts') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} />
-                        </Link>
-
-                        <Button
-                            size="sm"
-                            className={`ml-2 px-6 py-5 rounded-2xl font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5 active:translate-y-0 ${!isScrolled && isDarkHero
-                                ? 'bg-white text-blue-600 hover:bg-blue-50'
-                                : 'bg-blue-600 text-white hover:bg-blue-700'
-                                }`}
-                            onClick={() => {
-                                const booking = document.getElementById('booking') || document.getElementById('contact');
-                                booking?.scrollIntoView({ behavior: 'smooth' });
-                            }}
-                        >
-                            Get Free Quote
-                        </Button>
-                    </nav>
-
-                    {/* Mobile Toggle */}
-                    <button
-                        className={`lg:hidden p-2 rounded-2xl transition-all duration-300 ${!isScrolled && isDarkHero
-                            ? 'bg-white/10 text-white hover:bg-white/20'
-                            : 'bg-slate-100 text-slate-800 hover:bg-slate-200'
-                            }`}
-                        aria-label="Toggle menu"
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    >
-                        {mobileMenuOpen ? <X size={22} strokeWidth={2.5} /> : <Menu size={22} strokeWidth={2.5} />}
-                    </button>
+                            {/* Mobile Toggle */}
+                            <button
+                                className={`lg:hidden p-2 rounded-2xl transition-all duration-300 ${!isScrolled && isDarkHero
+                                    ? 'bg-white/10 text-white hover:bg-white/20'
+                                    : 'bg-slate-100 text-slate-800 hover:bg-slate-200'
+                                    }`}
+                                aria-label="Toggle menu"
+                                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            >
+                                {mobileMenuOpen ? <X size={22} strokeWidth={2.5} /> : <Menu size={22} strokeWidth={2.5} />}
+                            </button>
+                        </>
+                    )}
                 </div>
 
 

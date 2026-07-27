@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: 'Epsilon Technology',
     images: [
       {
-        url: 'https://epsilon-technology.com/logo.png',
+        url: 'https://epsilon-technology.com/logo.webp',
         width: 1200,
         height: 630,
         alt: 'The Online OPD Growth System - Epsilon Technology',
@@ -47,7 +47,7 @@ export default function OnlineOpdGrowthSystemPage() {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'The Online OPD Growth System™',
-    image: 'https://epsilon-technology.com/logo.png',
+    image: 'https://epsilon-technology.com/logo.webp',
     description:
       'A complete online patient acquisition foundation and premium medical website built for doctors, clinics, and multispecialty hospitals to maximize OPD appointment bookings.',
     brand: {

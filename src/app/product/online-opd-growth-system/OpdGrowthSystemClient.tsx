@@ -206,16 +206,16 @@ export default function OpdGrowthSystemClient() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-[#0F6FFF] selection:text-white">
       {/* Top Scarcity Bar */}
-      <div className="bg-gradient-to-r from-red-600 via-amber-600 to-red-600 text-white py-2.5 px-4 text-center text-xs sm:text-sm font-extrabold shadow-md flex items-center justify-center gap-2 flex-wrap">
-        <span className="flex items-center gap-1 bg-white/20 px-2.5 py-0.5 rounded-full uppercase tracking-wider text-[11px]">
-          <Flame className="w-3.5 h-3.5 text-yellow-300 animate-pulse fill-current" /> Limited Offer
+      <div className="bg-gradient-to-r from-red-600 via-amber-600 to-red-600 text-white py-2 px-3 text-center text-xs sm:text-sm font-extrabold shadow-md flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
+        <span className="flex items-center gap-1 bg-white/20 px-2 py-0.5 rounded-full uppercase tracking-wider text-[10px] sm:text-[11px]">
+          <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-300 animate-pulse fill-current" /> Limited Offer
         </span>
-        <span>
+        <span className="text-[11px] sm:text-sm">
           Special Rate ₹49,999 (Total Worth ₹1,30,000+) Valid Till <strong>31st August</strong>
         </span>
         <span className="hidden sm:inline">•</span>
-        <span className="bg-slate-900/40 px-3 py-1 rounded-lg border border-white/20 font-mono text-yellow-300 flex items-center gap-1 text-xs">
-          <Clock className="w-3.5 h-3.5 text-yellow-300" />
+        <span className="bg-slate-900/40 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg border border-white/20 font-mono text-yellow-300 flex items-center gap-1 text-[11px] sm:text-xs">
+          <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-300" />
           <span>{timeLeft.days}d</span>:<span>{String(timeLeft.hours).padStart(2, '0')}h</span>:
           <span>{String(timeLeft.minutes).padStart(2, '0')}m</span>:
           <span>{String(timeLeft.seconds).padStart(2, '0')}s</span>
@@ -224,19 +224,16 @@ export default function OpdGrowthSystemClient() {
 
       {/* Header Navigation */}
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-slate-200 transition-all">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#0F6FFF] to-[#00C2A8] flex items-center justify-center text-white shadow-md shadow-[#0F6FFF]/20 group-hover:scale-105 transition-transform">
-              <Stethoscope className="w-6 h-6" />
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:h-18 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-[#0F6FFF] to-[#00C2A8] flex items-center justify-center text-white shadow-md shadow-[#0F6FFF]/20 group-hover:scale-105 transition-transform shrink-0">
+              <Stethoscope className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-xl tracking-tight text-slate-900">Epsilon</span>
-                <span className="text-[#0F6FFF] font-semibold text-xs px-2 py-0.5 rounded-full bg-blue-50 border border-blue-200">
-                  HEALTHCARE
-                </span>
+                <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 leading-none">Epsilon</span>
               </div>
-              <p className="text-[10px] tracking-wider uppercase text-slate-500 font-medium">
+              <p className="text-[9px] sm:text-[10px] tracking-wider uppercase text-slate-500 font-medium mt-0.5">
                 Technology for Practice Growth
               </p>
             </div>
@@ -258,9 +255,9 @@ export default function OpdGrowthSystemClient() {
           {/* Header CTA */}
           <button
             onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center justify-center px-5 py-2.5 text-xs sm:text-sm font-bold text-white transition-all bg-gradient-to-r from-[#0F6FFF] to-[#2563EB] rounded-full shadow-lg shadow-[#0F6FFF]/25 hover:shadow-xl hover:shadow-[#0F6FFF]/40 hover:-translate-y-0.5 active:translate-y-0"
+            className="inline-flex items-center justify-center px-3.5 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-bold text-white transition-all bg-gradient-to-r from-[#0F6FFF] to-[#2563EB] rounded-full shadow-lg shadow-[#0F6FFF]/25 hover:shadow-xl hover:shadow-[#0F6FFF]/40 hover:-translate-y-0.5 active:translate-y-0 shrink-0 whitespace-nowrap"
           >
-            <Sparkles className="w-4 h-4 mr-1.5 animate-pulse" />
+            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1 sm:mr-1.5 animate-pulse" />
             Book Free Audit
           </button>
         </div>
@@ -355,17 +352,17 @@ export default function OpdGrowthSystemClient() {
           </div>
 
           {/* CTAs */}
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <button
               onClick={() => {
                 setModalType('audit');
                 setFormSubmitted(false);
                 setIsModalOpen(true);
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-[#0F6FFF] via-blue-600 to-[#2563EB] rounded-2xl shadow-xl shadow-[#0F6FFF]/30 hover:shadow-2xl hover:-translate-y-0.5 transition-all group"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-lg font-bold text-white bg-gradient-to-r from-[#0F6FFF] via-blue-600 to-[#2563EB] rounded-2xl shadow-xl shadow-[#0F6FFF]/30 hover:shadow-2xl hover:-translate-y-0.5 transition-all group"
             >
               Book Your Free Website Growth Audit
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform shrink-0" />
             </button>
             <button
               onClick={() => {
@@ -373,23 +370,23 @@ export default function OpdGrowthSystemClient() {
                 setFormSubmitted(false);
                 setIsModalOpen(true);
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-extrabold text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-400 border-2 border-amber-400 rounded-2xl hover:from-amber-400 hover:to-yellow-500 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 group animate-pulse"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 sm:px-8 sm:py-4 text-xs sm:text-base font-extrabold text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-400 border-2 border-amber-400 rounded-2xl hover:from-amber-400 hover:to-yellow-500 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 group animate-pulse"
             >
-              <FileText className="w-5 h-5 mr-2 text-amber-900" />
+              <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2 text-amber-900 shrink-0" />
               Download Free OPD Growth Guide (PDF)
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1.5 sm:ml-2 group-hover:translate-x-1 transition-transform shrink-0" />
             </button>
           </div>
 
           {/* OPD Growth PDF Lead Banner */}
-          <div className="max-w-3xl mx-auto mt-8 p-6 sm:p-7 rounded-3xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 text-slate-950 shadow-2xl border-4 border-amber-300 flex flex-col sm:flex-row items-center justify-between gap-6 text-left relative overflow-hidden group">
+          <div className="max-w-3xl mx-auto mt-6 sm:mt-8 p-5 sm:p-7 rounded-3xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 text-slate-950 shadow-2xl border-2 sm:border-4 border-amber-300 flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 text-left relative overflow-hidden group">
             <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/20 rounded-full blur-2xl group-hover:scale-150 transition-transform pointer-events-none" />
-            <div className="space-y-2 relative z-10">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950 text-amber-300 text-xs font-black uppercase tracking-wider shadow-md">
-                <FileText className="w-3.5 h-3.5" />
+            <div className="space-y-2 relative z-10 w-full sm:w-auto">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950 text-amber-300 text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-md">
+                <FileText className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 FREE DOCTOR GUIDE (PDF) • NO COST
               </div>
-              <h4 className="text-lg sm:text-xl font-black text-slate-950 leading-tight">
+              <h4 className="text-base sm:text-xl font-black text-slate-950 leading-tight">
                 "OPD Growth Strategy Guide for Private Doctors & Clinics"
               </h4>
               <p className="text-xs sm:text-sm text-slate-900 font-medium leading-relaxed">
@@ -402,11 +399,11 @@ export default function OpdGrowthSystemClient() {
                 setFormSubmitted(false);
                 setIsModalOpen(true);
               }}
-              className="w-full sm:w-auto shrink-0 px-7 py-4 text-sm sm:text-base font-black text-white bg-slate-950 hover:bg-slate-900 rounded-2xl transition-all shadow-2xl flex items-center justify-center gap-2 relative z-10 hover:scale-105"
+              className="w-full sm:w-auto shrink-0 px-6 py-3.5 sm:px-7 sm:py-4 text-xs sm:text-base font-black text-white bg-slate-950 hover:bg-slate-900 rounded-2xl transition-all shadow-2xl flex items-center justify-center gap-2 relative z-10 hover:scale-105"
             >
-              <FileText className="w-5 h-5 text-amber-400" />
+              <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
               Get Free PDF Now
-              <ArrowRight className="w-5 h-5 text-amber-400" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
             </button>
           </div>
 
@@ -831,6 +828,29 @@ export default function OpdGrowthSystemClient() {
           </div>
         </div>
       )}
+      {/* Sticky Mobile Bottom CTA Bar */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] flex items-center justify-between gap-2.5">
+        <div className="flex flex-col min-w-0">
+          <span className="text-[10px] font-black text-amber-600 uppercase tracking-wider flex items-center gap-1 truncate">
+            <Flame className="w-3 h-3 fill-current shrink-0" />
+            ₹49,999 Till Aug 31
+          </span>
+          <span className="text-xs font-bold text-slate-900 truncate">
+            Done-For-You OPD System
+          </span>
+        </div>
+        <button
+          onClick={() => {
+            setModalType('audit');
+            setFormSubmitted(false);
+            setIsModalOpen(true);
+          }}
+          className="shrink-0 px-4 py-2.5 bg-gradient-to-r from-[#0F6FFF] to-[#2563EB] text-white text-xs font-extrabold rounded-xl shadow-md shadow-[#0F6FFF]/30 flex items-center gap-1.5 active:scale-95 transition-transform"
+        >
+          <Sparkles className="w-3.5 h-3.5 animate-pulse shrink-0" />
+          <span>Book Audit</span>
+        </button>
+      </div>
     </div>
   );
 }

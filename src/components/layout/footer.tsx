@@ -156,12 +156,12 @@ export function Footer() {
 
                         {/* Meta Partner Badge */}
                         <div className="mb-8">
-                            <Link 
-                                href="/meta-certified-partner/" 
+                            <Link
+                                href="/meta-certified-partner/"
                                 className="inline-flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-blue-950/50 to-indigo-950/40 border border-blue-500/25 hover:border-blue-500/50 hover:from-blue-950/70 hover:to-indigo-950/60 transition-all group"
                             >
                                 <svg className="w-5 h-5 text-blue-400 shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M16.92 5c-1.4 0-2.67.6-3.6 1.6C12.38 5.6 11.11 5 9.7 5c-3.13 0-5.69 2.5-5.69 5.6 0 3.1 2.56 5.6 5.69 5.6 1.4 0 2.67-.6 3.6-1.6.93 1 2.2 1.6 3.61 1.6 3.14 0 5.7-2.5 5.7-5.6 0-3.1-2.56-5.6-5.7-5.6zm.01 9.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.59 1.6 3.59 3.6 0 2-1.61 3.6-3.59 3.6zM9.7 14.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.6 1.6 3.6 3.6 0 2-1.61 3.6-3.6 3.6z"/>
+                                    <path d="M16.92 5c-1.4 0-2.67.6-3.6 1.6C12.38 5.6 11.11 5 9.7 5c-3.13 0-5.69 2.5-5.69 5.6 0 3.1 2.56 5.6 5.69 5.6 1.4 0 2.67-.6 3.6-1.6.93 1 2.2 1.6 3.61 1.6 3.14 0 5.7-2.5 5.7-5.6 0-3.1-2.56-5.6-5.7-5.6zm.01 9.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.59 1.6 3.59 3.6 0 2-1.61 3.6-3.59 3.6zM9.7 14.2c-1.99 0-3.6-1.6-3.6-3.6 0-2 1.61-3.6 3.6-3.6 1.98 0 3.6 1.6 3.6 3.6 0 2-1.61 3.6-3.6 3.6z" />
                                 </svg>
                                 <div className="flex flex-col text-left">
                                     <span className="text-[11px] font-extrabold text-blue-400 tracking-wider uppercase leading-none">Meta Ads Partner</span>
@@ -210,7 +210,7 @@ export function Footer() {
                                 <span className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center flex-shrink-0 group-hover:border-sky-500/50 transition-colors">
                                     <MessageCircle size={13} className="text-sky-500" />
                                 </span>
-                                +91 81608 81461 (WhatsApp)
+                                +91 73593 15576 (WhatsApp)
                             </a>
                             <div className="flex items-center gap-3 text-slate-400 pt-1">
                                 <span className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center flex-shrink-0">

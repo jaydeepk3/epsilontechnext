@@ -44,7 +44,7 @@ export default function OpdGrowthSystemClient() {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2026-08-31T23:59:59').getTime();
+    const targetDate = new Date('2026-07-31T23:59:59').getTime();
 
     const updateTimer = () => {
       const now = new Date().getTime();
@@ -190,8 +190,8 @@ export default function OpdGrowthSystemClient() {
       a: 'Less than 45 minutes total. We respect your clinical schedule. Simply share basic clinic details or brochures, and our healthcare team handles 98% of the design, copywriting, and technical setup.',
     },
     {
-      q: 'Why is this offer valid only till 31st August at ₹49,999?',
-      a: 'We only take 5 doctor website projects per month to maintain our high quality and speed of delivery. The current price of ₹49,999 (regular value ₹1,30,000+) will increase after August 31st.',
+      q: 'Why is this offer valid only till 31st July at ₹49,999?',
+      a: 'We only take 5 doctor website projects per month to maintain our high quality and speed of delivery. The current price of ₹49,999 (regular value ₹1,30,000+) will increase after July 31st.',
     },
     {
       q: 'Do I get complete ownership of my website and domain?',
@@ -206,15 +206,15 @@ export default function OpdGrowthSystemClient() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-[#0F6FFF] selection:text-white">
       {/* Top Scarcity Bar */}
-      <div className="bg-gradient-to-r from-red-600 via-amber-600 to-red-600 text-white py-2 px-3 text-center text-xs sm:text-sm font-extrabold shadow-md flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
-        <span className="flex items-center gap-1 bg-white/20 px-2 py-0.5 rounded-full uppercase tracking-wider text-[10px] sm:text-[11px]">
-          <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-300 animate-pulse fill-current" /> Limited Offer
+      <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white py-2 px-3 text-center text-xs sm:text-sm font-extrabold shadow-md flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap border-b border-blue-500/30">
+        <span className="flex items-center gap-1 bg-amber-500 text-slate-950 px-2.5 py-0.5 rounded-full uppercase tracking-wider text-[10px] sm:text-[11px] font-black shadow-xs">
+          <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current text-slate-950" /> 1.30 Lakh Value Offer
         </span>
         <span className="text-[11px] sm:text-sm">
-          Special Rate ₹49,999 (Total Worth ₹1,30,000+) Valid Till <strong>31st August</strong>
+          Total Value Stack: <span className="text-amber-300 underline font-black">₹1,30,000 (1.30 Lakh)</span> • Available for <span className="bg-emerald-500/30 text-emerald-300 px-1.5 py-0.5 rounded font-black">₹49,999</span> Till <strong>31st July</strong>
         </span>
         <span className="hidden sm:inline">•</span>
-        <span className="bg-slate-900/40 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg border border-white/20 font-mono text-yellow-300 flex items-center gap-1 text-[11px] sm:text-xs">
+        <span className="bg-slate-800/80 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg border border-slate-700 font-mono text-yellow-300 flex items-center gap-1 text-[11px] sm:text-xs">
           <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-300" />
           <span>{timeLeft.days}d</span>:<span>{String(timeLeft.hours).padStart(2, '0')}h</span>:
           <span>{String(timeLeft.minutes).padStart(2, '0')}m</span>:
@@ -227,9 +227,9 @@ export default function OpdGrowthSystemClient() {
       <section className="relative overflow-hidden pt-10 pb-16 md:pt-16 md:pb-20 bg-gradient-to-b from-white via-slate-50 to-blue-50/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           {/* Scarcity Banner Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs sm:text-sm font-bold shadow-xs">
-            <Flame className="w-4 h-4 text-amber-600 fill-current" />
-            <span>Total Worth ₹1,30,000+ • Only ₹49,999 Till 31st August</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-amber-500/10 via-amber-400/20 to-amber-500/10 border-2 border-amber-400 text-amber-950 text-xs sm:text-sm font-extrabold shadow-md">
+            <Sparkles className="w-4 h-4 text-amber-600 shrink-0 animate-pulse" />
+            <span>Total Stack Worth ₹1,30,000 (1.30 Lakh) • Pay Only ₹49,999 Till 31st July</span>
           </div>
 
           {/* Main Headline */}
@@ -266,7 +266,7 @@ export default function OpdGrowthSystemClient() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
                 </span>
                 <span className="flex items-center gap-1">
-                  ⚡ Offer Price Expires On 31st August
+                  Offer Price Expires On 31st July
                 </span>
               </div>
 
@@ -312,16 +312,16 @@ export default function OpdGrowthSystemClient() {
           </div>
 
           {/* CTAs */}
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-xl sm:max-w-none mx-auto">
             <button
               onClick={() => {
                 setModalType('audit');
                 setFormSubmitted(false);
                 setIsModalOpen(true);
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-lg font-bold text-white bg-gradient-to-r from-[#0F6FFF] via-blue-600 to-[#2563EB] rounded-2xl shadow-xl shadow-[#0F6FFF]/30 hover:shadow-2xl hover:-translate-y-0.5 transition-all group"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-lg font-bold text-white bg-gradient-to-r from-[#0F6FFF] via-blue-600 to-[#2563EB] rounded-2xl shadow-xl shadow-[#0F6FFF]/30 hover:shadow-2xl hover:-translate-y-0.5 transition-all group"
             >
-              Book Your Free Website Growth Audit
+              <span>Book Your Free Website Growth Audit</span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform shrink-0" />
             </button>
             <button
@@ -330,10 +330,10 @@ export default function OpdGrowthSystemClient() {
                 setFormSubmitted(false);
                 setIsModalOpen(true);
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 sm:px-8 sm:py-4 text-xs sm:text-base font-extrabold text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-400 border-2 border-amber-400 rounded-2xl hover:from-amber-400 hover:to-yellow-500 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 group animate-pulse"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-3.5 sm:px-7 sm:py-4 text-xs sm:text-base font-extrabold text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-400 border border-amber-400/50 rounded-2xl hover:from-amber-400 hover:to-yellow-500 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 group"
             >
               <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2 text-amber-900 shrink-0" />
-              Download Free OPD Growth Guide (PDF)
+              <span>Download Free OPD Growth Guide (PDF)</span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1.5 sm:ml-2 group-hover:translate-x-1 transition-transform shrink-0" />
             </button>
           </div>
@@ -386,18 +386,34 @@ export default function OpdGrowthSystemClient() {
       </section>
 
       {/* CORE SECTION 1: WHAT YOU GET IN THE ₹49,999 PACKAGE (TOTAL WORTH ₹1.30 LAKH+) */}
-      <section id="package" className="py-16 sm:py-20 bg-white relative border-t border-slate-200">
+      <section id="package" className="py-16 sm:py-20 bg-gradient-to-b from-white via-slate-50 to-white relative border-t border-slate-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-            <span className="px-3.5 py-1.5 rounded-full bg-blue-100 text-[#0F6FFF] text-xs font-bold uppercase tracking-wider">
-              Complete Package Breakdown
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              What You Get in the ₹49,999 Package
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-950 text-xs font-extrabold shadow-sm">
+              <Sparkles className="w-4 h-4 text-amber-600 shrink-0" />
+              <span>Full Stack Breakdown • Standalone Market Value: ₹1,30,000 (1.30 Lakh)</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+              See Exactly Why This System is Worth{' '}
+              <span className="bg-gradient-to-r from-[#0F6FFF] to-[#00C2A8] bg-clip-text text-transparent underline decoration-amber-400">
+                ₹1,30,000 (1.30 Lakh)
+              </span>
             </h2>
-            <p className="text-slate-600 text-base">
-              Total standalone value is <strong>₹1,30,000+</strong>, available at an all-inclusive price of <strong>₹49,999</strong> till <strong>31st August</strong>.
+            <p className="text-slate-600 text-base sm:text-lg">
+              Here is the itemized value breakdown of everything built into your complete Online OPD Growth System. If purchased separately, agency costs total <strong>₹1,30,000</strong>.
             </p>
+          </div>
+
+          {/* Value Math Banner */}
+          <div className="mb-8 p-4 sm:p-5 rounded-2xl bg-slate-900 text-white border border-slate-800 shadow-lg flex flex-wrap items-center justify-between gap-3 text-center sm:text-left">
+            <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-300">
+              <span className="bg-amber-500 text-slate-950 px-2 py-0.5 rounded text-[11px] font-black uppercase">Itemized Math</span>
+              <span>₹45k + ₹25k + ₹20k + ₹15k + ₹15k + ₹10k</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-xs text-slate-400 font-medium">Total Market Price:</span>
+              <span className="text-lg sm:text-xl font-black text-amber-300 line-through">₹1,30,000 (1.30 Lakh)</span>
+            </div>
           </div>
 
           {/* Package Deliverables Grid */}
@@ -405,46 +421,82 @@ export default function OpdGrowthSystemClient() {
             {packageDeliverables.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-slate-50 p-6 rounded-3xl border border-slate-200/90 hover:border-[#0F6FFF]/40 hover:bg-blue-50/20 transition-all space-y-2 relative"
+                className="bg-white p-6 rounded-3xl border-2 border-slate-200/90 shadow-sm hover:border-[#0F6FFF] hover:shadow-md transition-all space-y-3 relative group"
               >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-[#00C2A8] shrink-0" />
-                    <h3 className="text-base font-bold text-slate-900">{item.title}</h3>
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#0F6FFF] flex items-center justify-center font-bold text-sm shrink-0">
+                      #{idx + 1}
+                    </div>
+                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0F6FFF] transition-colors">
+                      {item.title}
+                    </h3>
                   </div>
-                  <span className="text-xs font-extrabold text-slate-500 bg-white px-2.5 py-1 rounded-full border border-slate-200 line-through">
-                    {item.worth}
-                  </span>
+                  <div className="text-right shrink-0">
+                    <span className="text-xs font-black text-slate-900 bg-amber-100 text-amber-900 px-3 py-1 rounded-full border border-amber-300 block">
+                      Worth {item.worth}
+                    </span>
+                  </div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pl-7">{item.desc}</p>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pl-10">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          {/* Value Summary Card */}
-          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 border border-slate-800">
-            <div className="space-y-1 text-center sm:text-left">
-              <div className="flex items-center justify-center sm:justify-start gap-2 text-xs font-bold text-blue-300">
-                <span className="line-through text-slate-400">Total Value: ₹1,30,000+</span>
-                <span className="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full text-[10px] uppercase">
-                  Save 60%+
-                </span>
+          {/* Grand Value Summary & ROI Box */}
+          <div className="p-6 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white shadow-2xl space-y-6 border-2 border-blue-500/30 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#0F6FFF]/10 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
+              <div className="space-y-2 text-center lg:text-left">
+                <div className="inline-flex items-center gap-2 text-xs font-extrabold text-amber-300 uppercase tracking-wider">
+                  <Flame className="w-4 h-4 text-amber-400 fill-current" />
+                  <span>Exclusive Doctor Launch Offer</span>
+                </div>
+                <h3 className="text-2xl sm:text-4xl font-black text-white">
+                  Get ₹1,30,000 Total Value Stack
+                </h3>
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1">
+                  <span className="text-lg text-slate-400 line-through font-bold">Standalone Price: ₹1,30,000</span>
+                  <span className="bg-emerald-500 text-slate-950 font-black text-xs px-2.5 py-1 rounded-md uppercase">
+                    Save ₹80,001 (61% OFF)
+                  </span>
+                </div>
+                <p className="text-3xl sm:text-5xl font-black text-emerald-400 pt-2">
+                  Only ₹49,999 <span className="text-sm font-medium text-slate-300">+ GST</span>
+                </p>
+                <p className="text-xs sm:text-sm text-amber-300 font-semibold pt-1">
+                  ⚡ Offer rate ₹49,999 valid till 31st July only. Increases to regular price after.
+                </p>
               </div>
-              <p className="text-2xl sm:text-3xl font-black text-white">
-                Only ₹49,999 <span className="text-xs font-normal text-slate-300">+ GST</span>
-              </p>
-              <p className="text-xs text-amber-300 font-semibold">
-                ⚠️ Price increases after 31st August. Only 5 slots per month.
-              </p>
+
+              <div className="w-full lg:w-auto flex flex-col items-center gap-3 shrink-0 relative z-10">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-5 text-base sm:text-lg font-black text-white bg-gradient-to-r from-[#0F6FFF] via-blue-600 to-[#00C2A8] rounded-2xl shadow-xl shadow-[#0F6FFF]/40 hover:scale-105 transition-transform"
+                >
+                  <span>Claim Entire 1.30 Lakh System for ₹49,999</span>
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </button>
+                <span className="text-[11px] text-slate-400 font-medium">100% Done-For-You • Live in 15 Days</span>
+              </div>
             </div>
 
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-[#0F6FFF] to-[#00C2A8] rounded-2xl shadow-lg hover:scale-105 transition-transform shrink-0"
-            >
-              Lock In ₹49,999 Rate Now
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </button>
+            {/* Micro ROI Calculation Card inside Section */}
+            <div className="pt-6 border-t border-slate-800 grid sm:grid-cols-3 gap-4 text-center sm:text-left relative z-10">
+              <div className="bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60">
+                <span className="text-xs text-blue-300 font-bold block uppercase">How ROI Works</span>
+                <p className="text-sm font-bold text-white mt-1">15 Extra Patients = 100% Payback</p>
+              </div>
+              <div className="bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60">
+                <span className="text-xs text-emerald-300 font-bold block uppercase">Time Investment</span>
+                <p className="text-sm font-bold text-white mt-1">Under 45 Minutes of Doctor's Time</p>
+              </div>
+              <div className="bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60">
+                <span className="text-xs text-amber-300 font-bold block uppercase">Ownership</span>
+                <p className="text-sm font-bold text-white mt-1">100% Full Ownership & Zero Lock-in</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -595,7 +647,7 @@ export default function OpdGrowthSystemClient() {
               Claim Your Online OPD Growth System Today
             </h2>
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              Get the entire package worth <strong>₹1,30,000+</strong> for just <strong>₹49,999</strong> before the price increases on <strong>31st August</strong>.
+              Get the entire package worth <strong>₹1,30,000+</strong> for just <strong>₹49,999</strong> before the price increases on <strong>31st July</strong>.
             </p>
           </div>
 
@@ -610,7 +662,7 @@ export default function OpdGrowthSystemClient() {
           </div>
 
           <p className="text-xs text-amber-300 font-medium">
-            ⚡ Offer ends 31st August 2026 • 20 min strategy call • Zero obligation
+            ⚡ Offer ends 31st July 2026 • 20 min strategy call • Zero obligation
           </p>
         </div>
       </section>
@@ -648,7 +700,7 @@ export default function OpdGrowthSystemClient() {
                     <span>
                       {modalType === 'pdf'
                         ? 'Instant PDF Access'
-                        : 'Special ₹49,999 Rate Valid Till 31st August'}
+                        : 'Special ₹49,999 Rate Valid Till 31st July'}
                     </span>
                   </div>
                   <h3 className="text-2xl font-extrabold text-slate-900">
@@ -789,10 +841,10 @@ export default function OpdGrowthSystemClient() {
         </div>
       )}
       {/* Sticky Mobile Bottom CTA Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] flex items-center justify-between gap-2.5">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 p-2.5 sm:p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] flex items-center justify-between gap-2">
         <div className="flex flex-col min-w-0">
           <span className="text-[10px] font-black text-amber-600 uppercase tracking-wider flex items-center gap-1 truncate">
-            <Flame className="w-3 h-3 fill-current shrink-0" />
+            <Flame className="w-3 h-3 fill-current shrink-0 text-amber-500" />
             ₹49,999 Till Aug 31
           </span>
           <span className="text-xs font-bold text-slate-900 truncate">
@@ -805,7 +857,7 @@ export default function OpdGrowthSystemClient() {
             setFormSubmitted(false);
             setIsModalOpen(true);
           }}
-          className="shrink-0 px-4 py-2.5 bg-gradient-to-r from-[#0F6FFF] to-[#2563EB] text-white text-xs font-extrabold rounded-xl shadow-md shadow-[#0F6FFF]/30 flex items-center gap-1.5 active:scale-95 transition-transform"
+          className="shrink-0 px-3.5 py-2 sm:px-4 sm:py-2.5 bg-gradient-to-r from-[#0F6FFF] to-[#2563EB] text-white text-xs font-extrabold rounded-xl shadow-md shadow-[#0F6FFF]/20 flex items-center gap-1.5 active:scale-95 transition-transform"
         >
           <Sparkles className="w-3.5 h-3.5 animate-pulse shrink-0" />
           <span>Book Audit</span>

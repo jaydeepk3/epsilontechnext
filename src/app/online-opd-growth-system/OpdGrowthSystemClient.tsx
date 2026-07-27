@@ -113,11 +113,13 @@ export default function OpdGrowthSystemClient() {
     if (isPdf) {
       setTimeout(() => {
         window.open(PDF_URL, '_blank');
+        window.location.href = '/online-opd-growth-system/thank-you?type=pdf';
       }, 1000);
     } else {
       setTimeout(() => {
         window.open('https://calendly.com/jaydeepkataria/30min', '_blank');
-      }, 1500);
+        window.location.href = '/online-opd-growth-system/thank-you?type=audit';
+      }, 1200);
     }
   };
 

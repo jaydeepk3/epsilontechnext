@@ -1,9 +1,12 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { UserCheck, ShieldAlert, Award, Star, CheckCircle, Video } from 'lucide-react';
+import { UserCheck, ShieldAlert, Award, Star, CheckCircle, Video, Play } from 'lucide-react';
 
 export function FounderSection() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   return (
     <section className="py-20 md:py-28 bg-slate-50 text-slate-900 relative overflow-hidden border-b border-slate-200">
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
@@ -17,14 +20,24 @@ export function FounderSection() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-blue-100 to-slate-100 border border-slate-200 p-2 shadow-xl">
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-slate-900">
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-blue-100 to-slate-100 border border-slate-200 p-2 shadow-xl group">
+              <div 
+                className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-slate-900 cursor-pointer"
+                onClick={() => setIsVideoOpen(true)}
+              >
                 {/* Real Founder Portrait Photo */}
                 <img
                   src="/images/jayde.webp"
                   alt="Jaydeep Kataria - Founder & Principal Technical Strategist"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
+                
+                {/* Play Button Overlay */}
+                <div className="absolute inset-0 bg-slate-950/30 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center z-10">
+                  <div className="w-16 h-16 rounded-full bg-blue-600/90 group-hover:bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-600/50 group-hover:scale-110 transition-all duration-300 border border-white/20">
+                    <Play className="w-7 h-7 fill-white ml-1" />
+                  </div>
+                </div>
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent z-10" />
                 
@@ -102,7 +115,7 @@ export function FounderSection() {
               </div>
             </div>
 
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               <button
                 onClick={() => {
                   const booking = document.getElementById('booking') || document.getElementById('final-cta');
@@ -112,7 +125,42 @@ export function FounderSection() {
               >
                 Book a Strategy Call With Founder
               </button>
+
+              <button
+                onClick={() => setIsVideoOpen(true)}
+                className="px-6 py-3.5 bg-white hover:bg-slate-100 border border-slate-300 text-slate-800 font-bold text-sm rounded-xl transition-all shadow-sm flex items-center gap-2 active:scale-95"
+              >
+                <Video className="w-4 h-4 text-blue-600 fill-blue-600/20" /> Watch Video Intro
+              </button>
             </div>
+
+            {/* Video Modal Overlay */}
+            {isVideoOpen && (
+              <div 
+                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-200"
+                onClick={() => setIsVideoOpen(false)}
+              >
+                <div 
+                  className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-slate-800 aspect-video"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button
+                    onClick={() => setIsVideoOpen(false)}
+                    className="absolute top-3 right-3 z-10 p-2 bg-slate-900/80 hover:bg-slate-800 text-white rounded-full transition-colors border border-white/10"
+                    aria-label="Close modal"
+                  >
+                    ✕
+                  </button>
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/QXlDya4Iu30?autoplay=1"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            )}
           </motion.div>
 
         </div>

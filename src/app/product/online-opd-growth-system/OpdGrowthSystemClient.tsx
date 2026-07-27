@@ -35,7 +35,7 @@ export default function OpdGrowthSystemClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Scarcity Countdown Timer (Target: Aug 31, 2026 23:59:59)
+  // Scarcity Countdown Timer (Target: July 31, 2026 23:59:59)
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -229,7 +229,7 @@ export default function OpdGrowthSystemClient() {
           {/* Scarcity Banner Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-amber-500/10 via-amber-400/20 to-amber-500/10 border-2 border-amber-400 text-amber-950 text-xs sm:text-sm font-extrabold shadow-md">
             <Sparkles className="w-4 h-4 text-amber-600 shrink-0 animate-pulse" />
-            <span>Total Stack Worth ₹1,30,000 (1.30 Lakh) • Pay Only ₹49,999 Till 31st July</span>
+            <span>Free OPD Growth Strategy Guide for Private Doctors & Clinics</span>
           </div>
 
           {/* Main Headline */}
@@ -840,29 +840,7 @@ export default function OpdGrowthSystemClient() {
           </div>
         </div>
       )}
-      {/* Sticky Mobile Bottom CTA Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 p-2.5 sm:p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] flex items-center justify-between gap-2">
-        <div className="flex flex-col min-w-0">
-          <span className="text-[10px] font-black text-amber-600 uppercase tracking-wider flex items-center gap-1 truncate">
-            <Flame className="w-3 h-3 fill-current shrink-0 text-amber-500" />
-            ₹49,999 Till Aug 31
-          </span>
-          <span className="text-xs font-bold text-slate-900 truncate">
-            Done-For-You OPD System
-          </span>
-        </div>
-        <button
-          onClick={() => {
-            setModalType('audit');
-            setFormSubmitted(false);
-            setIsModalOpen(true);
-          }}
-          className="shrink-0 px-3.5 py-2 sm:px-4 sm:py-2.5 bg-gradient-to-r from-[#0F6FFF] to-[#2563EB] text-white text-xs font-extrabold rounded-xl shadow-md shadow-[#0F6FFF]/20 flex items-center gap-1.5 active:scale-95 transition-transform"
-        >
-          <Sparkles className="w-3.5 h-3.5 animate-pulse shrink-0" />
-          <span>Book Audit</span>
-        </button>
-      </div>
+
     </div>
   );
 }

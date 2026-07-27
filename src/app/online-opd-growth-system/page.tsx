@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: 'The Online OPD Growth System™ | Build Patient Trust & Double OPD Enquiries',
     description:
       'A premium website system designed specifically for doctors, clinics, and hospitals to convert digital visitors into booked OPD appointments. Priced at ₹49,999.',
-    url: 'https://epsilon-technology.com/product/online-opd-growth-system',
+    url: 'https://epsilon-technology.com/online-opd-growth-system',
     siteName: 'Epsilon Technology',
     images: [
       {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
       'Turn clinic website traffic into verified OPD patient appointments. Designed for busy doctors who want predictable growth.',
   },
   alternates: {
-    canonical: 'https://epsilon-technology.com/product/online-opd-growth-system',
+    canonical: 'https://epsilon-technology.com/online-opd-growth-system',
   },
 };
 
@@ -59,7 +59,7 @@ export default function OnlineOpdGrowthSystemPage() {
       price: '49999',
       priceCurrency: 'INR',
       availability: 'https://schema.org/InStock',
-      url: 'https://epsilon-technology.com/product/online-opd-growth-system',
+      url: 'https://epsilon-technology.com/online-opd-growth-system',
     },
     aggregateRating: {
       '@type': 'AggregateRating',

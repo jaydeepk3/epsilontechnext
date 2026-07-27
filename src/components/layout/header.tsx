@@ -131,7 +131,9 @@ export function Header() {
     const isDarkHero = DARK_HERO_PATHS.some(p =>
         p === pathname || (p !== '/' && pathname.startsWith(p))
     );
-    const isLandingPage = pathname.startsWith('/opd-growth-system-free-audit');
+    const isLandingPage =
+        pathname.startsWith('/opd-growth-system-free-audit') ||
+        pathname.startsWith('/online-opd-growth-system');
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 10);

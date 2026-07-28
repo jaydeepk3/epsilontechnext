@@ -2,22 +2,22 @@ import { Metadata } from 'next';
 import OpdGrowthSystemClient from './OpdGrowthSystemClient';
 
 export const metadata: Metadata = {
-  title: 'The Online OPD Growth System™ | Premium Website & OPD Engine for Doctors',
+  title: 'Free OPD Growth Blueprint for Doctors | Double Patient Appointments',
   description:
-    'Transform your medical practice with The Online OPD Growth System™. Premium website, high-converting appointment engine, WhatsApp integration, and local SEO foundation engineered for doctors and healthcare centers.',
+    'Download the Free OPD Growth Blueprint (PDF) for doctors & clinic owners. Learn how to rank higher on Google Maps, build patient trust, automate WhatsApp appointment enquiries, and grow your daily OPD.',
   keywords: [
-    'Online OPD Growth System',
-    'Doctor Website Design',
+    'Free OPD Growth Blueprint',
+    'Doctor Marketing Guide PDF',
     'Clinic Patient Acquisition',
-    'Medical Website Development',
-    'OPD Appointment System',
-    'Healthcare Digital Marketing',
-    'Epsilon Technology Doctor Growth',
+    'OPD Growth System',
+    'Doctor Google Maps Ranking',
+    'Clinic WhatsApp Automation',
+    'Epsilon Technology Doctor Marketing',
   ],
   openGraph: {
-    title: 'The Online OPD Growth System™ | Build Patient Trust & Double OPD Enquiries',
+    title: 'Free OPD Growth Blueprint for Doctors | Double Patient Appointments',
     description:
-      'A premium website system designed specifically for doctors, clinics, and hospitals to convert digital visitors into booked OPD appointments. Priced at ₹49,999.',
+      'Download the free 5-step strategy guide engineered for doctors & clinic owners to attract predictable OPD patient enquiries.',
     url: 'https://epsilon-technology.com/online-opd-growth-system',
     siteName: 'Epsilon Technology',
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: 'https://epsilon-technology.com/logo.webp',
         width: 1200,
         height: 630,
-        alt: 'The Online OPD Growth System - Epsilon Technology',
+        alt: 'Free OPD Growth Blueprint - Epsilon Technology',
       },
     ],
     locale: 'en_IN',
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Online OPD Growth System™ | Premium Doctor Website Engine',
+    title: 'Free OPD Growth Blueprint for Doctors (PDF)',
     description:
-      'Turn clinic website traffic into verified OPD patient appointments. Designed for busy doctors who want predictable growth.',
+      'Turn online searches into verified OPD patient appointments. Designed for busy practicing doctors.',
   },
   alternates: {
     canonical: 'https://epsilon-technology.com/online-opd-growth-system',
@@ -45,21 +45,20 @@ export const metadata: Metadata = {
 export default function OnlineOpdGrowthSystemPage() {
   const jsonLdSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: 'The Online OPD Growth System™',
+    '@type': 'DigitalDocument',
+    name: 'Free OPD Growth Blueprint for Doctors',
     image: 'https://epsilon-technology.com/logo.webp',
     description:
-      'A complete online patient acquisition foundation and premium medical website built for doctors, clinics, and multispecialty hospitals to maximize OPD appointment bookings.',
-    brand: {
-      '@type': 'Brand',
+      'A practical 5-step growth blueprint for doctors and clinic owners to rank higher on Google, automate WhatsApp enquiries, and double OPD consultations.',
+    author: {
+      '@type': 'Organization',
       name: 'Epsilon Technology',
     },
     offers: {
       '@type': 'Offer',
-      price: '49999',
+      price: '0',
       priceCurrency: 'INR',
       availability: 'https://schema.org/InStock',
-      url: 'https://epsilon-technology.com/online-opd-growth-system',
     },
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -74,26 +73,42 @@ export default function OnlineOpdGrowthSystemPage() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Is this just another web development service?',
+        name: 'Is the guide really 100% free?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'No. Traditional agencies build static digital brochures. The Online OPD Growth System™ is an engineered patient-acquisition machine combining healthcare positioning, doctor trust-building frameworks, direct WhatsApp conversion, speed optimization, and local SEO foundations.',
+          text: 'Yes, 100% free. There are zero hidden costs, mandatory credit cards, or catch. We created this blueprint to help practicing doctors understand modern digital patient acquisition.',
         },
       },
       {
         '@type': 'Question',
-        name: 'How long does it take to launch my clinic system?',
+        name: 'How will I receive the OPD Growth Blueprint?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'We respect your busy clinical schedule. Our complete done-for-you process takes 7 to 10 working days, requiring less than 45 minutes total of your time for discovery and final approval.',
+          text: 'Instantly! As soon as you enter your name and WhatsApp number, the PDF opens immediately in your browser, and a direct download link is sent to your WhatsApp.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Will this work for my specific specialty?',
+        name: 'Is this blueprint useful for my specific medical specialty?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. We have customized frameworks for Dental, Skin & Dermatology, IVF & Gynecological centers, Orthopedics, Eye Hospitals, Physiotherapy, General Surgery, and Multispecialty Hospitals.',
+          text: 'Yes. The strategy applies directly to Orthopedics, Gynecology & IVF, Dermatology, Dental Clinics, Ophthalmology, Pediatrics, General Surgery, General Medicine, and Multispecialty Clinics.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How long does it take to read and implement?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The blueprint is concise and fluff-free. It takes under 12 minutes to read and features step-by-step checklists you can put into action right away.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Will someone contact me after downloading?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We respect your time. We will send your PDF link and invite you to our exclusive Doctors OPD Growth WhatsApp Community. No pushy sales calls.',
         },
       },
     ],
@@ -113,3 +128,4 @@ export default function OnlineOpdGrowthSystemPage() {
     </>
   );
 }
+

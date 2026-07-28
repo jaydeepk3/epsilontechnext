@@ -34,7 +34,7 @@ export default function ThankYouPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Main Card */}
         <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-12 shadow-2xl backdrop-blur-xl text-center space-y-8">
-          
+
           {/* Header Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-semibold">
             <CheckCircle2 className="w-5 h-5 text-emerald-400" />
@@ -98,26 +98,29 @@ export default function ThankYouPage() {
             </div>
           </div>
 
-          {/* Fast Track / Direct Contact Box */}
-          <div className="bg-gradient-to-r from-blue-950/40 to-slate-900 border border-blue-900/40 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
+          {/* Fast Track & WhatsApp Community Join Box */}
+          <div className="bg-gradient-to-r from-emerald-950/60 via-slate-900 to-blue-950/60 border border-emerald-500/40 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-left shadow-lg">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/30">
                 <MessageSquare className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="text-base font-bold text-white">Need Urgent OPD Assistance?</h4>
-                <p className="text-xs text-slate-400">
-                  Connect directly with our Healthcare Growth Specialist via WhatsApp.
+                <span className="text-[10px] font-black uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                  Exclusive Doctor Network
+                </span>
+                <h4 className="text-base font-bold text-white mt-1">Join 500+ Doctors in Private WhatsApp Community</h4>
+                <p className="text-xs text-slate-300">
+                  Get daily OPD growth strategies, case studies, and digital marketing insights.
                 </p>
               </div>
             </div>
             <a
-              href="https://wa.me/919904222000?text=Hi%20Epsilon%20Team,%20I%20just%20submitted%20my%20details%20on%20The%20Online%20OPD%20Growth%20System."
+              href="https://wa.me/917359315576?text=Hi%20Epsilon%20Team,%20I%20want%20to%20join%20the%20Doctors%20OPD%20Growth%20WhatsApp%20Community."
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-xl transition-all whitespace-nowrap text-center"
+              className="w-full sm:w-auto px-6 py-3 bg-[#00C2A8] hover:bg-teal-500 text-slate-950 font-black text-sm rounded-xl transition-all whitespace-nowrap text-center shadow-lg shadow-teal-500/20"
             >
-              Chat on WhatsApp Now
+              Join WhatsApp Community Now →
             </a>
           </div>
 

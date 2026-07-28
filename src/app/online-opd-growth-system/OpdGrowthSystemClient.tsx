@@ -274,7 +274,7 @@ export default function OpdGrowthSystemClient() {
     },
     {
       q: 'Will someone contact me after downloading?',
-      a: 'We respect your time. We will send your PDF access link and invite you to our exclusive Doctors OPD Growth WhatsApp Community. No aggressive sales calls.',
+      a: 'We respect your time. We will send your PDF access link directly to you. No aggressive sales calls.',
     },
   ];
 

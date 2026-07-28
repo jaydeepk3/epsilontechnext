@@ -49,7 +49,7 @@ const testimonials = [
     {
         quote: "Mr Jaydeep helped our hospital scale patient footfall like never before. Highly recommend for social media & website development. OPD is 3× what it was.",
         author: "Devam Dave", role: "Shreeji Multispecialty Hospital, Gujarat", initials: "DD", color: "from-blue-500 to-indigo-500",
-        photo: "/images/doctors/dr%20devam%20dave.png",
+        photo: "/images/doctors/dr%20devam%20dave.webp",
         metric: "3×", metricLabel: "OPD growth in 60d",
     },
     {
@@ -61,7 +61,7 @@ const testimonials = [
     {
         quote: "Epsilon Technology is a one-stop solution for all digital marketing needs. They've helped our clinic scale like never before. Highly recommend for any doctor.",
         author: "Dr. Hiral Vasani", role: "Cosmetologist, Gujarat", initials: "HV", color: "from-purple-500 to-violet-500",
-        photo: "/images/doctors/dr%20hiral%20vasani.png",
+        photo: "/images/doctors/dr%20hiral%20vasani.webp",
         metric: "30–50", metricLabel: "Inquiries/month",
     },
     {

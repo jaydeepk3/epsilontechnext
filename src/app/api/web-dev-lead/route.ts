@@ -1,5 +1,14 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+
+const WORTAL_WEBHOOK_URL = process.env.WORTAL_WEBHOOK_URL || 'https://api.wortal.co/webhook/api/incoming_webhook/qqmo3LH9_732';
+const WHATSAPP_CRM_URL = 'https://whatsapp.epsilon-technology.com/api/public/leads';
+const WHATSAPP_API_KEY = 'epsilon_27e088fcf7f74e041691653c8f4a1005';
+
+function formatPhone(phone: string): string {
+    const digits = (phone || '').replace(/\D/g, '');
+    if (digits.length === 10) return `91${digits}`;
+    return digits || phone;
+}
 
 export async function POST(request: Request) {
     try {
@@ -13,49 +22,7 @@ export async function POST(request: Request) {
             );
         }
 
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
-            },
-        });
-
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: 'contact@epsilon-technology.com',
-            subject: ` New Web Dev Lead: ${name} — Package: ${pkg || 'Not specified'}`,
-            html: `
-                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f8fafc; border-radius: 12px;">
-                    <h2 style="color: #1e40af; border-bottom: 2px solid #3b82f6; padding-bottom: 10px;">🌐 New Website Development Lead</h2>
-                    
-                    <div style="background: white; border-radius: 8px; padding: 20px; margin-top: 16px; border: 1px solid #e2e8f0;">
-                        <p><strong style="color: #334155;">👤 Name:</strong> ${name}</p>
-                        <p><strong style="color: #334155;">📱 Mobile:</strong> <a href="tel:${mobile}">${mobile}</a></p>
-                        ${email ? `<p><strong style="color: #334155;">📧 Email:</strong> <a href="mailto:${email}">${email}</a></p>` : ''}
-                        ${business ? `<p><strong style="color: #334155;">🏢 Business:</strong> ${business}</p>` : ''}
-                        <p><strong style="color: #334155;">📦 Package Selected:</strong> <span style="background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-weight: bold;">${pkg || 'Not specified'}</span></p>
-                        ${budget ? `<p><strong style="color: #334155;">💰 Budget:</strong> ${budget}</p>` : ''}
-                        ${message ? `<p><strong style="color: #334155;">💬 Message:</strong> ${message}</p>` : ''}
-                    </div>
-
-                    <p style="color: #64748b; font-size: 13px; margin-top: 16px; text-align: center;">
-                        This lead came from the Web Development Landing Page — Facebook Ad Campaign
-                    </p>
-                </div>
-            `,
-        };
-
-        try {
-            await transporter.sendMail(mailOptions);
-            console.log("Email sent successfully.");
-        } catch (emailError) {
-            console.error("Failed to send email:", emailError);
-            // We do NOT throw an error here, so we still send the lead to Wortal 
-            // and return a success response to the user.
-        }
-
-        // ─── Fire Wortal CRM Webhook (non-blocking) ───────────────────────────
+        const formattedPhone = formatPhone(mobile);
         const remarks = [
             `Package: ${pkg || 'Not specified'}`,
             budget ? `Budget: ${budget}` : '',
@@ -64,6 +31,7 @@ export async function POST(request: Request) {
             'Source: Web Development Landing Page (Facebook Ad)',
         ].filter(Boolean).join(' | ');
 
+        // 1. Wortal CRM Payload
         const wortalPayload = {
             name: name,
             email: email || '',
@@ -80,28 +48,58 @@ export async function POST(request: Request) {
             address_2: '',
             desc: remarks,
             remark: remarks,
+            received_from: 'Supports Form',
         };
 
-        const WORTAL_WEBHOOK_URL = process.env.WORTAL_WEBHOOK_URL || 'https://api.wortal.co/webhook/api/incoming_webhook/qqmo3LH9_732';
+        // 2. WhatsApp CRM Payload
+        const whatsappPayload = {
+            name: name,
+            number: formattedPhone,
+            email: email || '',
+            message: remarks,
+        };
 
-
-        // ─── Fire Wortal CRM Webhook (blocking await) ────────────────────────
-        try {
-            const response = await fetch(WORTAL_WEBHOOK_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(wortalPayload),
-            });
-
-            if (!response.ok) {
-                const errText = await response.text();
-                console.error('[Wortal] Webhook responded with error:', response.status, errText);
-            } else {
-                console.log('[Wortal] Lead pushed successfully:', name);
+        // ─── Fire Both CRMs Concurrently ───────────────────────────────────────
+        const wortalPromise = (async () => {
+            try {
+                const res = await fetch(WORTAL_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(wortalPayload),
+                });
+                if (!res.ok) {
+                    const errText = await res.text();
+                    console.error('[Wortal CRM] Error status:', res.status, errText);
+                } else {
+                    console.log('[Wortal CRM] Lead pushed successfully:', name);
+                }
+            } catch (e) {
+                console.error('[Wortal CRM] Failed:', (e as Error).message);
             }
-        } catch (e) {
-            console.error('[Wortal] Webhook failed:', (e as Error).message);
-        }
+        })();
+
+        const whatsappPromise = (async () => {
+            try {
+                const res = await fetch(WHATSAPP_CRM_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-api-key': WHATSAPP_API_KEY,
+                    },
+                    body: JSON.stringify(whatsappPayload),
+                });
+                if (!res.ok) {
+                    const errText = await res.text();
+                    console.error('[WhatsApp CRM] Error status:', res.status, errText);
+                } else {
+                    console.log('[WhatsApp CRM] Lead pushed successfully:', name);
+                }
+            } catch (e) {
+                console.error('[WhatsApp CRM] Failed:', (e as Error).message);
+            }
+        })();
+
+        await Promise.allSettled([wortalPromise, whatsappPromise]);
         // ──────────────────────────────────────────────────────────────────────
 
         return NextResponse.json(
@@ -112,7 +110,7 @@ export async function POST(request: Request) {
     } catch (error) {
         console.error('Web Dev Lead error:', error);
         return NextResponse.json(
-            { status: 'error', message: 'Failed to send email. Please try calling us directly.' },
+            { status: 'error', message: 'Failed to process request.' },
             { status: 500 }
         );
     }

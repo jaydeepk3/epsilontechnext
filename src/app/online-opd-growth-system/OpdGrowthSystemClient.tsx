@@ -91,6 +91,25 @@ export default function OpdGrowthSystemClient() {
       ? 'OPD Growth for Doctors PDF Download'
       : 'Online OPD Growth System Audit Lead';
 
+    // Submit lead data to contact API (sends Email + pushes to Wortal CRM)
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.doctorName,
+          clinic: formData.clinicName,
+          specialty: formData.specialty,
+          mobile: formData.phone,
+          city: formData.city,
+          website: formData.website,
+          leadType: isPdf ? 'OPD Growth PDF Guide Download' : 'OPD Growth System Audit Request',
+        }),
+      });
+    } catch (err) {
+      console.error('Failed to submit contact form data:', err);
+    }
+
     // Send Meta Conversions API (CAPI) & Pixel Lead Event
     trackMetaCapiEvent({
       eventName: 'Lead',

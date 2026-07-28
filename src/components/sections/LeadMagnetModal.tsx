@@ -24,10 +24,17 @@ export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch('/api/lead-audit', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          mobile: formData.phone,
+          website: formData.website,
+          specialty: formData.projectScope,
+          leadType: 'Free 48-Hour Technical Audit Request',
+        }),
       });
       if (res.ok) {
         setSubmitted(true);

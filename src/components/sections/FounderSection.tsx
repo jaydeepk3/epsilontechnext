@@ -134,37 +134,38 @@ export function FounderSection() {
               </button>
             </div>
 
-            {/* Video Modal Overlay */}
-            {isVideoOpen && (
-              <div 
-                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-200"
-                onClick={() => setIsVideoOpen(false)}
-              >
-                <div 
-                  className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-slate-800 aspect-video"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <button
-                    onClick={() => setIsVideoOpen(false)}
-                    className="absolute top-3 right-3 z-10 p-2 bg-slate-900/80 hover:bg-slate-800 text-white rounded-full transition-colors border border-white/10"
-                    aria-label="Close modal"
-                  >
-                    ✕
-                  </button>
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/QXlDya4Iu30?autoplay=1"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
-            )}
           </motion.div>
 
         </div>
       </div>
+
+      {/* Video Modal Overlay — rendered at section root so position:fixed is not clipped by motion transforms */}
+      {isVideoOpen && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm"
+          onClick={() => setIsVideoOpen(false)}
+        >
+          <div 
+            className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-slate-800 aspect-video"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsVideoOpen(false)}
+              className="absolute top-3 right-3 z-10 p-2 bg-slate-900/80 hover:bg-slate-800 text-white rounded-full transition-colors border border-white/10"
+              aria-label="Close modal"
+            >
+              ✕
+            </button>
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/QXlDya4Iu30?autoplay=1"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

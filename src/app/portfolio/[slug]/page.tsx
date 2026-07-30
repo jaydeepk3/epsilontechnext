@@ -139,8 +139,13 @@ const CASE_STUDIES: Record<string, CaseStudyPageProps> = {
   }
 };
 
-export default function CaseStudyDetail({ params }: { params: { slug: string } }) {
-  const data = CASE_STUDIES[params.slug];
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export default async function CaseStudyDetail({ params }: PageProps) {
+  const { slug } = await params;
+  const data = CASE_STUDIES[slug];
   
   if (!data) {
     notFound();

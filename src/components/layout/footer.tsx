@@ -27,9 +27,6 @@ const footerLinks = [
             { label: 'Pediatric Doctors', href: '/digital-marketing-for-pediatric-doctors' },
             { label: 'Surgeon Doctors', href: '/digital-marketing-for-surgeon-doctors' },
             { label: 'Orthopedic Doctors', href: '/digital-marketing-for-orthopedic-doctors' },
-            { label: 'Digital Marketing Junagadh', href: '/digital-marketing-in-junagadh' },
-            { label: 'Doctor Marketing Rajkot', href: '/doctor-marketing-in-rajkot' },
-            { label: 'Doctor Marketing Morbi', href: '/doctor-marketing-in-morbi' },
         ],
     },
     {

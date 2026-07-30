@@ -213,7 +213,7 @@ export function Footer() {
                                 <span className="w-7 h-7 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center flex-shrink-0">
                                     <Clock size={13} className="text-sky-500" />
                                 </span>
-                                9AM–7PM IST · Reply within 4 hrs
+                                10AM–7PM IST · Reply within 4 hrs
                             </div>
                         </div>
                     </div>

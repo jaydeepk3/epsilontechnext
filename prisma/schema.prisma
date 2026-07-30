@@ -10,6 +10,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model AiKitOrder {
+  id                String   @id @default(cuid())
+  createdAt         DateTime @default(now())
+  name              String
+  email             String
+  mobile            String
+  clinicName        String?
+  specialty         String?
+  razorpayOrderId   String?
+  razorpayPaymentId String?
+  razorpaySignature String?
+  amount            Int      @default(9900)
+  currency          String   @default("INR")
+  status            String   @default("pending")
+}
+
 model Blog {
   id              String   @id @default(cuid())
   title           String

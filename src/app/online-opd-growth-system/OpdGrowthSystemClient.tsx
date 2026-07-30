@@ -24,7 +24,24 @@ import {
   BookOpen,
   CheckSquare,
   Zap,
+  Brain,
+  Clock,
+  Video,
+  Palette,
+  Globe,
+  BadgeCheck,
+  IndianRupee,
+  Bot,
+  Download,
 } from 'lucide-react';
+
+// ─── Razorpay type augmentation (loaded via script tag) ───────────────────
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    Razorpay: any;
+  }
+}
 
 export default function OpdGrowthSystemClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -35,8 +52,107 @@ export default function OpdGrowthSystemClient() {
     doctorName: '',
     whatsappNumber: '',
   });
+  const [isPaidBookChecked, setIsPaidBookChecked] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // ─── AI Kit Order Form State ─────────────────────────────────────────────
+  const [aiKitForm, setAiKitForm] = useState({
+    name: '',
+    email: '',
+    mobile: '',
+    clinicName: '',
+    specialty: '',
+  });
+  const [aiKitSubmitting, setAiKitSubmitting] = useState(false);
+  const [aiKitError, setAiKitError] = useState('');
+  const [openAiKitFaq, setOpenAiKitFaq] = useState<number | null>(0);
+
+  const handleAiKitPayment = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setAiKitError('');
+    setAiKitSubmitting(true);
+
+    try {
+      // Load Razorpay checkout script if not already loaded
+      if (!window.Razorpay) {
+        await new Promise<void>((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+          script.onload = () => resolve();
+          script.onerror = () => reject(new Error('Failed to load Razorpay'));
+          document.head.appendChild(script);
+        });
+      }
+
+      // Create order server-side
+      const orderRes = await fetch('/api/razorpay-order', { method: 'POST' });
+      if (!orderRes.ok) throw new Error('Could not create payment order.');
+      const { orderId, amount, currency, keyId } = await orderRes.json();
+
+      // Open Razorpay checkout
+      const rzp = new window.Razorpay({
+        key: keyId,
+        amount,
+        currency,
+        order_id: orderId,
+        name: 'Epsilon Technology',
+        description: 'AI Growth Kit for Doctors',
+        image: '/logo.webp',
+        prefill: {
+          name: aiKitForm.name,
+          email: aiKitForm.email,
+          contact: aiKitForm.mobile,
+        },
+        notes: {
+          clinic: aiKitForm.clinicName,
+          specialty: aiKitForm.specialty,
+        },
+        theme: { color: '#0F6FFF' },
+        handler: async (response: {
+          razorpay_order_id: string;
+          razorpay_payment_id: string;
+          razorpay_signature: string;
+        }) => {
+          try {
+            // Verify payment + save to DB + send email
+            const verifyRes = await fetch('/api/ai-kit-payment-success', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                ...response,
+                name: aiKitForm.name,
+                email: aiKitForm.email,
+                mobile: aiKitForm.mobile,
+                clinicName: aiKitForm.clinicName,
+                specialty: aiKitForm.specialty,
+              }),
+            });
+
+            if (verifyRes.ok) {
+              window.location.href = '/online-opd-growth-system/ai-kit/thank-you';
+            } else {
+              setAiKitError('Payment received but verification failed. Please contact support.');
+              setAiKitSubmitting(false);
+            }
+          } catch {
+            setAiKitError('Payment received but an error occurred. Please WhatsApp us.');
+            setAiKitSubmitting(false);
+          }
+        },
+        modal: {
+          ondismiss: () => {
+            setAiKitSubmitting(false);
+          },
+        },
+      });
+
+      rzp.open();
+    } catch (err) {
+      setAiKitError((err as Error).message || 'Something went wrong. Please try again.');
+      setAiKitSubmitting(false);
+    }
+  };
 
   const PDF_URL =
     'https://docs.google.com/document/d/1nflXCYHzzuVMvVkyVLMEOuLZqPXqXhJRN0Z2Z3X0HnA/edit?usp=sharing';
@@ -46,11 +162,12 @@ export default function OpdGrowthSystemClient() {
     if (!formData.whatsappNumber || isSubmitting) return;
 
     setIsSubmitting(true);
-    setFormSubmitted(true);
 
-    const eventContentName = 'OPD Growth Strategy Blueprint PDF Download';
+    const leadType = isPaidBookChecked
+      ? 'OPD Growth Paid Book Purchase (₹99)'
+      : 'OPD Growth Blueprint PDF Download (Lead Magnet)';
 
-    // Submit lead data to API (Sends Email notification + pushes to Wortal CRM & WhatsApp CRM)
+    // Submit lead data to API (Sends Email notification + pushes to CRM)
     try {
       await fetch('/api/contact', {
         method: 'POST',
@@ -58,14 +175,93 @@ export default function OpdGrowthSystemClient() {
         body: JSON.stringify({
           name: formData.doctorName || 'Doctor Lead',
           mobile: formData.whatsappNumber,
-          leadType: 'OPD Growth Blueprint PDF Download (Lead Magnet)',
+          leadType,
         }),
       });
     } catch (err) {
       console.error('Failed to log lead data to CRM:', err);
     }
 
-    // Trigger Meta Conversions API & Pixel Lead Event
+    if (isPaidBookChecked) {
+      // ── ₹99 Paid Book Upgrade Payment Flow ──
+      try {
+        if (!window.Razorpay) {
+          await new Promise<void>((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+            script.onload = () => resolve();
+            script.onerror = () => reject(new Error('Failed to load Razorpay'));
+            document.head.appendChild(script);
+          });
+        }
+
+        const orderRes = await fetch('/api/razorpay-order', { method: 'POST' });
+        if (!orderRes.ok) throw new Error('Could not create payment order.');
+        const { orderId, amount, currency, keyId } = await orderRes.json();
+
+        const rzp = new window.Razorpay({
+          key: keyId,
+          amount,
+          currency,
+          order_id: orderId,
+          name: 'Epsilon Technology',
+          description: 'Paid OPD Growth & AI Book for Doctors',
+          image: '/logo.webp',
+          prefill: {
+            name: formData.doctorName,
+            contact: formData.whatsappNumber,
+          },
+          notes: {
+            leadType: 'Order Bump ₹99 Book',
+          },
+          theme: { color: '#0F6FFF' },
+          handler: async (response: {
+            razorpay_order_id: string;
+            razorpay_payment_id: string;
+            razorpay_signature: string;
+          }) => {
+            try {
+              const verifyRes = await fetch('/api/ai-kit-payment-success', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  ...response,
+                  name: formData.doctorName || 'Doctor',
+                  mobile: formData.whatsappNumber,
+                  email: '',
+                  clinicName: '',
+                  specialty: '',
+                }),
+              });
+
+              if (verifyRes.ok) {
+                window.location.href = '/online-opd-growth-system/ai-kit/thank-you';
+              } else {
+                alert('Payment received! Redirecting to access page...');
+                window.location.href = '/online-opd-growth-system/ai-kit/thank-you';
+              }
+            } catch {
+              window.location.href = '/online-opd-growth-system/ai-kit/thank-you';
+            }
+          },
+          modal: {
+            ondismiss: () => {
+              setIsSubmitting(false);
+            },
+          },
+        });
+
+        rzp.open();
+      } catch (err) {
+        alert((err as Error).message || 'Payment initialization failed. Please try again.');
+        setIsSubmitting(false);
+      }
+      return;
+    }
+
+    // ── Free PDF Download Flow ──
+    setFormSubmitted(true);
+
     try {
       trackMetaCapiEvent({
         eventName: 'Lead',
@@ -74,7 +270,7 @@ export default function OpdGrowthSystemClient() {
           firstName: formData.doctorName,
         },
         customData: {
-          content_name: eventContentName,
+          content_name: 'OPD Growth Strategy Blueprint PDF Download',
           lead_type: 'PDF Lead Magnet',
           value: 0,
           currency: 'INR',
@@ -418,15 +614,60 @@ export default function OpdGrowthSystemClient() {
                     />
                   </div>
 
+                  {/* Order Bump Checkbox: Upgrade to Paid Book ₹99 */}
+                  <div
+                    className={`p-3.5 rounded-xl border transition-all ${
+                      isPaidBookChecked
+                        ? 'bg-amber-500/10 border-amber-400 shadow-md ring-2 ring-amber-400/25'
+                        : 'bg-amber-50/60 border-amber-200/80 hover:border-amber-400/80'
+                    }`}
+                  >
+                    <label className="flex items-start gap-3 cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        checked={isPaidBookChecked}
+                        onChange={(e) => setIsPaidBookChecked(e.target.checked)}
+                        className="mt-1 w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500 cursor-pointer accent-amber-600 shrink-0"
+                      />
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <span className="text-xs font-black text-slate-900">
+                            YES! Upgrade to Paid Book (₹99)
+                          </span>
+                          <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-amber-500 text-slate-950 shadow-xs">
+                            Best Results
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-slate-600 font-medium leading-snug">
+                          Check this box to get the full paid book with step-by-step AI growth strategies, templates &amp; prompts for real OPD results.
+                        </p>
+                      </div>
+                    </label>
+                  </div>
+
                   {/* High Contrast Action CTA Button */}
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 text-base font-black text-white bg-gradient-to-r from-[#0F6FFF] via-blue-600 to-[#00C2A8] rounded-xl shadow-xl shadow-[#0F6FFF]/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group"
+                    className={`w-full py-4 text-base font-black text-white rounded-xl shadow-xl transition-all flex items-center justify-center gap-2 group ${
+                      isPaidBookChecked
+                        ? 'bg-gradient-to-r from-amber-500 via-orange-500 to-[#0F6FFF] shadow-amber-500/25 hover:scale-[1.02] active:scale-[0.98]'
+                        : 'bg-gradient-to-r from-[#0F6FFF] via-blue-600 to-[#00C2A8] shadow-[#0F6FFF]/30 hover:scale-[1.02] active:scale-[0.98]'
+                    }`}
                   >
-                    <FileText className="w-5 h-5 text-amber-300" />
-                    <span>{isSubmitting ? 'Opening Blueprint...' : 'Download Free Blueprint (PDF)'}</span>
-                    <ArrowRight className="w-5 h-5 text-amber-300 group-hover:translate-x-1 transition-transform" />
+                    {isPaidBookChecked ? (
+                      <>
+                        <Download className="w-5 h-5 text-white" />
+                        <span>{isSubmitting ? 'Opening Payment...' : 'Pay ₹99 & Download Paid Book'}</span>
+                        <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
+                      </>
+                    ) : (
+                      <>
+                        <FileText className="w-5 h-5 text-amber-300" />
+                        <span>{isSubmitting ? 'Opening Blueprint...' : 'Download Free Blueprint (PDF)'}</span>
+                        <ArrowRight className="w-5 h-5 text-amber-300 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
                   </button>
                 </form>
 
@@ -437,7 +678,9 @@ export default function OpdGrowthSystemClient() {
                     <span>Your information is 100% secure. No spam.</span>
                   </div>
                   <p className="text-[11px] text-slate-400 font-medium">
-                    Instant PDF Delivery • 100% Free • No Credit Card Required
+                    {isPaidBookChecked
+                      ? 'Instant PDF Delivery • Secured by Razorpay • UPI / Card Accepted'
+                      : 'Instant PDF Delivery • 100% Free • No Credit Card Required'}
                   </p>
                 </div>
               </div>
@@ -905,19 +1148,68 @@ export default function OpdGrowthSystemClient() {
                     />
                   </div>
 
+                  {/* Order Bump Checkbox: Upgrade to Paid Book ₹99 */}
+                  <div
+                    className={`p-3.5 rounded-xl border transition-all ${
+                      isPaidBookChecked
+                        ? 'bg-amber-500/10 border-amber-400 shadow-md ring-2 ring-amber-400/25'
+                        : 'bg-amber-50/60 border-amber-200/80 hover:border-amber-400/80'
+                    }`}
+                  >
+                    <label className="flex items-start gap-3 cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        checked={isPaidBookChecked}
+                        onChange={(e) => setIsPaidBookChecked(e.target.checked)}
+                        className="mt-1 w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500 cursor-pointer accent-amber-600 shrink-0"
+                      />
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <span className="text-xs font-black text-slate-900">
+                            YES! Upgrade to Paid Book (₹99)
+                          </span>
+                          <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-amber-500 text-slate-950 shadow-xs">
+                            Best Results
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-slate-600 font-medium leading-snug">
+                          Check this box to get the full paid book with step-by-step AI growth strategies, templates &amp; prompts for real OPD results.
+                        </p>
+                      </div>
+                    </label>
+                  </div>
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 text-base font-black text-white bg-gradient-to-r from-[#0F6FFF] via-blue-600 to-[#00C2A8] rounded-xl shadow-lg hover:shadow-xl transition-all"
+                    className={`w-full py-4 text-base font-black text-white rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 group ${
+                      isPaidBookChecked
+                        ? 'bg-gradient-to-r from-amber-500 via-orange-500 to-[#0F6FFF]'
+                        : 'bg-gradient-to-r from-[#0F6FFF] via-blue-600 to-[#00C2A8]'
+                    }`}
                   >
-                    {isSubmitting ? 'Opening PDF...' : 'Download Free Blueprint (PDF)'}
+                    {isPaidBookChecked ? (
+                      <>
+                        <Download className="w-5 h-5 text-white" />
+                        <span>{isSubmitting ? 'Opening Payment...' : 'Pay ₹99 & Download Paid Book'}</span>
+                        <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
+                      </>
+                    ) : (
+                      <>
+                        <FileText className="w-5 h-5 text-amber-300" />
+                        <span>{isSubmitting ? 'Opening PDF...' : 'Download Free Blueprint (PDF)'}</span>
+                        <ArrowRight className="w-5 h-5 text-amber-300 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
                   </button>
                 </form>
 
                 <div className="pt-1 text-center">
                   <span className="text-[11px] text-slate-500 font-semibold flex items-center justify-center gap-1">
                     <Lock className="w-3 h-3 text-emerald-600" />
-                    Your information is 100% secure. No spam.
+                    {isPaidBookChecked
+                      ? 'Secured by Razorpay • Instant Access'
+                      : 'Your information is 100% secure. No spam.'}
                   </span>
                 </div>
               </div>

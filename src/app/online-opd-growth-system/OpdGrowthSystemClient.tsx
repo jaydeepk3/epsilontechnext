@@ -114,6 +114,28 @@ export default function OpdGrowthSystemClient() {
           razorpay_payment_id: string;
           razorpay_signature: string;
         }) => {
+          // Track Paid Purchase Event for Meta Ads & Google Analytics
+          try {
+            trackMetaCapiEvent({
+              eventName: 'Purchase',
+              user: {
+                phone: aiKitForm.mobile,
+                firstName: aiKitForm.name,
+                email: aiKitForm.email,
+              },
+              customData: {
+                content_name: 'AI Growth Kit for Doctors (₹99)',
+                value: 99,
+                currency: 'INR',
+                transaction_id: response.razorpay_payment_id || `pay_${Date.now()}`,
+                clinic_name: aiKitForm.clinicName,
+                specialty: aiKitForm.specialty,
+              },
+            });
+          } catch (trackErr) {
+            console.error('Tracking Purchase event error:', trackErr);
+          }
+
           try {
             // Verify payment + save to DB + send email
             const verifyRes = await fetch('/api/ai-kit-payment-success', {
@@ -220,6 +242,26 @@ export default function OpdGrowthSystemClient() {
             razorpay_payment_id: string;
             razorpay_signature: string;
           }) => {
+            // Track Paid Purchase Event for Meta Ads & Google Analytics
+            try {
+              trackMetaCapiEvent({
+                eventName: 'Purchase',
+                user: {
+                  phone: formData.whatsappNumber,
+                  firstName: formData.doctorName,
+                },
+                customData: {
+                  content_name: 'Paid OPD AI Growth Book (₹99 Upgrade)',
+                  value: 99,
+                  currency: 'INR',
+                  transaction_id: response.razorpay_payment_id || `pay_${Date.now()}`,
+                  lead_type: 'Order Bump ₹99 Book',
+                },
+              });
+            } catch (trackErr) {
+              console.error('Tracking Purchase event error:', trackErr);
+            }
+
             try {
               const verifyRes = await fetch('/api/ai-kit-payment-success', {
                 method: 'POST',

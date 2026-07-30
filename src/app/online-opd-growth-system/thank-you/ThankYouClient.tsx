@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { trackMetaCapiEvent } from '@/lib/meta-capi';
 import {
   Calendar,
   FileText,
@@ -139,6 +140,28 @@ export default function ThankYouClient() {
           razorpay_payment_id: string;
           razorpay_signature: string;
         }) => {
+          // Track Paid Purchase Event for Meta Ads & Google Analytics
+          try {
+            trackMetaCapiEvent({
+              eventName: 'Purchase',
+              user: {
+                phone: aiKitForm.mobile,
+                firstName: aiKitForm.name,
+                email: aiKitForm.email,
+              },
+              customData: {
+                content_name: 'AI Growth Kit for Doctors (₹99)',
+                value: 99,
+                currency: 'INR',
+                transaction_id: response.razorpay_payment_id || `pay_${Date.now()}`,
+                clinic_name: aiKitForm.clinicName,
+                specialty: aiKitForm.specialty,
+              },
+            });
+          } catch (trackErr) {
+            console.error('Tracking Purchase event error:', trackErr);
+          }
+
           try {
             const verifyRes = await fetch('/api/ai-kit-payment-success', {
               method: 'POST',

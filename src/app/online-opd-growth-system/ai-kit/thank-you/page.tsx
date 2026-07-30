@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import AiKitPurchaseTracker from './AiKitPurchaseTracker';
 import {
   CheckCircle2,
   Download,
@@ -44,6 +45,7 @@ const AI_KIT_PDF_URL =
 export default function AiKitThankYouPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-[#0F6FFF] selection:text-white pt-16 pb-20 relative overflow-hidden">
+      <AiKitPurchaseTracker />
       {/* Background glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-b from-[#0F6FFF]/10 via-[#00C2A8]/8 to-transparent blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#00C2A8]/5 blur-[100px] rounded-full pointer-events-none" />

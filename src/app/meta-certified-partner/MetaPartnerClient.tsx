@@ -8,6 +8,7 @@ import {
   ArrowRight, CheckCircle, Shield, Award, Sparkles, TrendingUp, 
   Target, BarChart2, Star, Check, Users, MessageSquare, Phone, Globe, HelpCircle, ChevronDown, Eye
 } from 'lucide-react';
+import { trackMetaCapiEvent } from '@/lib/meta-capi';
 
 const stats = [
   { value: "50+", label: "Happy Clients", icon: Users },
@@ -26,12 +27,20 @@ const faqs = [
     a: "As a recognized leader, we have deep experience in setting up high-conversion sales funnels, compliance-friendly copy, and advanced tracking. You get optimal ad budgets, lower cost-per-lead (CPL), and higher return on ad spend (ROAS) compared to uncertified agencies."
   },
   {
-    q: "Do you work with a specific industry or ad budget?",
-    a: "We manage ad campaigns for a wide range of industries including healthcare (doctors, clinics), eCommerce stores, B2B SaaS, and local service providers. Our campaign strategies scale from budget-friendly local ads to large-scale national/international campaigns."
+    q: "Why hire a Meta Partner over doing ads myself?",
+    a: "Meta Partners receive direct channel support, advanced blueprint strategies, priority ad review, and early access to new ad products. We eliminate wasted spend and maximize ROI."
   },
   {
-    q: "What is included in your Meta Ads Management service?",
-    a: "We handle the complete cycle: audience research, creative design (images & reels), high-converting landing page creation, ad copy compliance, A/B testing, pixel/conversion tracking setup, and detailed bi-weekly analytics reports."
+    q: "How fast can we launch campaigns?",
+    a: "Once onboarding is completed, our team launches fully compliant ad creatives and tracking infrastructure within 48 to 72 hours."
+  },
+  {
+    q: "Do you guarantee results?",
+    a: "We work with data-backed strategies, ROI targets, and real-time dashboard analytics to consistently improve performance month-over-month."
+  },
+  {
+    q: "What industries do you specialize in?",
+    a: "Healthcare (Doctors, Clinics, OPDs), E-commerce, Real Estate, B2B Lead Gen, and Local Services across India and globally."
   }
 ];
 
@@ -49,6 +58,20 @@ export default function MetaPartnerClient() {
     e.preventDefault();
     setStatus('loading');
     try {
+      trackMetaCapiEvent({
+        eventName: 'Lead',
+        user: {
+          firstName: formData.name,
+          phone: formData.phone,
+          city: formData.city,
+        },
+        customData: {
+          content_name: 'Meta Partner Lead Form',
+          lead_type: 'Meta Certified Partner Lead',
+          clinic_name: formData.company,
+        },
+      });
+
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

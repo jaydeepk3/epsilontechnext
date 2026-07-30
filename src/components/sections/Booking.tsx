@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { MessageCircle, Calendar } from 'lucide-react';
+import { trackMetaCapiEvent } from '@/lib/meta-capi';
 
 export function Booking() {
     const [formData, setFormData] = useState({
@@ -22,6 +23,19 @@ export function Booking() {
         setStatus('loading');
 
         try {
+            trackMetaCapiEvent({
+                eventName: 'Lead',
+                user: {
+                    phone: formData.whatsapp,
+                    city: formData.city,
+                },
+                customData: {
+                    content_name: 'Book Strategy Call Lead',
+                    lead_type: 'Booking Section Form',
+                    specialty: formData.specialty,
+                },
+            });
+
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

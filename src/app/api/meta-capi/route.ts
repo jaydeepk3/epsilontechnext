@@ -26,14 +26,18 @@ export async function POST(request: Request) {
 
     const {
       eventName = 'Lead',
+      eventId,
       eventSourceUrl,
       user = {},
       customData = {},
       eventTime,
+      fbp,
+      fbc,
     } = body;
 
     const currentTimestamp = Math.floor(Date.now() / 1000);
     const event_time = eventTime || currentTimestamp;
+    const event_id = eventId || `evt_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
 
     const hashedEmail = hashData(user.email);
     const hashedPhone = hashData(normalizePhone(user.phone));
@@ -59,6 +63,7 @@ export async function POST(request: Request) {
         {
           event_name: eventName,
           event_time: event_time,
+          event_id: event_id,
           action_source: 'website',
           event_source_url: eventSourceUrl || undefined,
           user_data: {
@@ -67,6 +72,8 @@ export async function POST(request: Request) {
             fn: hashedFn ? [hashedFn] : undefined,
             ln: hashedLn ? [hashedLn] : undefined,
             ct: hashedCity ? [hashedCity] : undefined,
+            fbp: fbp || undefined,
+            fbc: fbc || undefined,
             client_ip_address: clientIp,
             client_user_agent: userAgent,
           },

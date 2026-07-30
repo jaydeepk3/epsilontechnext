@@ -12,6 +12,7 @@ import { ScarcityReplacement } from '@/components/ui/ScarcityReplacement';
 import { AvailabilityBanner } from '@/components/ui/AvailabilityBanner';
 import Link from 'next/link';
 import Image from 'next/image';
+import { trackMetaCapiEvent } from '@/lib/meta-capi';
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -151,6 +152,20 @@ function LeadForm({ dark = false }: { dark?: boolean }) {
     e.preventDefault();
     setStatus('loading');
     try {
+      trackMetaCapiEvent({
+        eventName: 'Lead',
+        user: {
+          firstName: formData.name,
+          phone: formData.whatsapp,
+          city: formData.city,
+        },
+        customData: {
+          content_name: 'Digital Marketing Landing Page Form',
+          lead_type: 'Digital Marketing Doctor Lead',
+          specialty: formData.specialty,
+        },
+      });
+
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

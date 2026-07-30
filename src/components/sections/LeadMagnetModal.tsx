@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, CheckCircle, Shield, Clock, FileSearch, ArrowRight, Loader2 } from 'lucide-react';
+import { trackMetaCapiEvent } from '@/lib/meta-capi';
 
 interface LeadMagnetModalProps {
   isOpen: boolean;
@@ -24,6 +25,21 @@ export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
     e.preventDefault();
     setLoading(true);
     try {
+      trackMetaCapiEvent({
+        eventName: 'Lead',
+        user: {
+          firstName: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+        },
+        customData: {
+          content_name: 'Free 48-Hour Technical Audit Request',
+          lead_type: 'Lead Magnet Modal',
+          website: formData.website,
+          specialty: formData.projectScope,
+        },
+      });
+
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

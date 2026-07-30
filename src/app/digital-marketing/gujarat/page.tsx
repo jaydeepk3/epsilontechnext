@@ -8,6 +8,7 @@ import {
     BarChart3, Eye, Heart, BadgeCheck, Phone, X, MapPin, Search
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { trackMetaCapiEvent } from '@/lib/meta-capi';
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -148,6 +149,19 @@ function LeadForm({ dark = false }: { dark?: boolean }) {
         e.preventDefault();
         setStatus('loading');
         try {
+            trackMetaCapiEvent({
+                eventName: 'Lead',
+                user: {
+                    firstName: formData.name,
+                    phone: formData.whatsapp,
+                    city: formData.city || 'Gujarat',
+                },
+                customData: {
+                    content_name: 'Gujarat Digital Marketing Landing Page Form',
+                    lead_type: 'Gujarat Doctor Lead',
+                    specialty: formData.specialty,
+                },
+            });
             const res = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

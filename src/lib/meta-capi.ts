@@ -19,14 +19,39 @@ export interface CapiCustomData {
 
 export interface TrackEventOptions {
   eventName?: string; // Standard Meta events: 'Lead', 'Contact', 'SubmitApplication', 'ViewContent', etc.
+  eventId?: string; // Unique deduplication key matching Pixel and CAPI
   eventSourceUrl?: string;
   user?: CapiUserData;
   customData?: CapiCustomData;
 }
 
+function getCookie(name: string): string | undefined {
+  if (typeof document === 'undefined') return undefined;
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop()?.split(';').shift();
+  return undefined;
+}
+
+function getFbcFromUrl(): string | undefined {
+  if (typeof window === 'undefined') return undefined;
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const fbclid = urlParams.get('fbclid');
+    if (fbclid) {
+      return `fb.1.${Date.now()}.${fbclid}`;
+    }
+  } catch {
+    // Ignore URL parsing errors
+  }
+  return undefined;
+}
+
 /**
  * Helper to trigger Meta Pixel (browser), Google Analytics (GA4 + GTM dataLayer),
  * and Meta Conversions API (server) with custom event details, user attributes & values.
+ *
+ * Implements Meta deduplication using matched eventID keys and _fbp / _fbc cookie tracking.
  */
 export function trackMetaCapiEvent(options: TrackEventOptions = {}) {
   const {
@@ -43,14 +68,26 @@ export function trackMetaCapiEvent(options: TrackEventOptions = {}) {
     const contentName = customData.content_name || eventName;
     const transactionId = customData.transaction_id || `tx_${Date.now()}`;
 
-    // 1. Browser Meta Pixel Event (Facebook / Meta Ads)
+    // Unique deduplication ID for Meta Pixel + Conversions API
+    const eventId = options.eventId || `evt_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
+
+    // Read Meta Click & Browser Cookies for Advanced Event Matching
+    const fbp = getCookie('_fbp');
+    const fbc = getCookie('_fbc') || getFbcFromUrl();
+
+    // 1. Browser Meta Pixel Event (Facebook / Meta Ads) with eventID for Deduplication
     if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', isPurchase ? 'Purchase' : eventName, {
-        content_name: contentName,
-        currency,
-        value,
-        ...customData,
-      });
+      (window as any).fbq(
+        'track',
+        isPurchase ? 'Purchase' : eventName,
+        {
+          content_name: contentName,
+          currency,
+          value,
+          ...customData,
+        },
+        { eventID: eventId }
+      );
     }
 
     // 2. Google Analytics (gtag) & GTM dataLayer
@@ -119,8 +156,11 @@ export function trackMetaCapiEvent(options: TrackEventOptions = {}) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         eventName: isPurchase ? 'Purchase' : eventName,
+        eventId,
         eventSourceUrl,
         user,
+        fbp,
+        fbc,
         customData: {
           ...customData,
           value,
@@ -133,3 +173,4 @@ export function trackMetaCapiEvent(options: TrackEventOptions = {}) {
     console.error('[Meta/GA Tracking Exception]:', err);
   }
 }
+

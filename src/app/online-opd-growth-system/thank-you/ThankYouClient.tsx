@@ -42,17 +42,18 @@ const PDF_URL =
   'https://docs.google.com/document/d/1nflXCYHzzuVMvVkyVLMEOuLZqPXqXhJRN0Z2Z3X0HnA/edit?usp=sharing';
 
 const aiKitIncludes = [
-  'How to Use AI to Grow Your Medical Practice (Full Book)',
-  '7 Chapters — Future of Healthcare Marketing to AI Growth System',
-  'AI Prompts for Patient Education Content',
-  'Gemini Prompt Library for Doctors',
-  'Claude Strategy Templates',
-  'Google Flow Video Scripts Guide',
-  'Canva AI Design Guide for Clinics',
-  'Google Business Profile AI Templates',
-  'WhatsApp Message Templates',
-  '30-Day AI Marketing Plan',
-  'Lifetime Access',
+  'How to Use AI to Grow Your Medical Practice (Full 50+ Page Book)',
+  '150+ Copy-Paste AI Prompts (50 Gemini + 100 Bonus Prompts)',
+  'Complete 9-Tool AI Stack (Gemini, Claude, Google Flow, Canva AI)',
+  'Google Flow Video Script Prompts (Reels & Waiting-Room Loops)',
+  'Canva AI Design System (Clinic Posters & Festival Creatives)',
+  'The RGCAOTR Prompting Blueprint (Sounds like a doctor, not a robot)',
+  '13 Claude Strategic Workflows (SWOT, Personas, 90-Day Plan)',
+  'Google Business Profile & Review Automation Prompts',
+  'WhatsApp Follow-up & Patient Communication Scripts',
+  '30-Minute Weekly AI Content Batching System',
+  'Medical Compliance, HIPAA & Privacy Safety Rules',
+  'Lifetime Access + Free Future Updates',
 ];
 
 const guidePoints = [

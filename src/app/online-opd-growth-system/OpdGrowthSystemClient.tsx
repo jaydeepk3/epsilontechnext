@@ -861,6 +861,199 @@ export default function OpdGrowthSystemClient() {
       </section>
 
 
+      {/* FREE VS PAID BOOK COMPARISON SECTION */}
+      <section className="py-14 sm:py-20 bg-gradient-to-b from-slate-50 via-blue-50/30 to-white border-b border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-950 text-xs font-black uppercase tracking-wider">
+              <Sparkles className="w-4 h-4 text-amber-600" />
+              Free Blueprint vs. Paid AI Playbook
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+              Why Top Doctors Upgrade to the{' '}
+              <span className="bg-gradient-to-r from-amber-600 via-orange-600 to-[#0F6FFF] bg-clip-text text-transparent">
+                Paid AI Book (₹99)
+              </span>
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-medium">
+              The Free Blueprint tells you <strong>WHAT</strong> to do manually. The Paid AI Playbook gives you <strong>150+ copy-paste prompts &amp; AI workflows</strong> to automate 90% of your practice growth in 30 mins/week.
+            </p>
+          </div>
+
+          {/* Side by Side Cards Comparison */}
+          <div className="grid md:grid-cols-2 gap-8 items-stretch">
+            {/* Free Blueprint Card */}
+            <div className="bg-white border-2 border-slate-200 rounded-3xl p-7 sm:p-8 space-y-6 flex flex-col justify-between shadow-xs">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-black uppercase tracking-wider text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+                    Free Guide
+                  </span>
+                  <span className="text-2xl font-black text-slate-800">₹0</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-black text-slate-900">
+                  OPD Growth Blueprint
+                </h3>
+                <p className="text-xs text-slate-600 font-medium leading-relaxed">
+                  A 4-page practical checklist introducing the 5 digital pillars of healthcare growth. Ideal for understanding basic setup steps manually.
+                </p>
+
+                <div className="border-t border-slate-100 pt-4 space-y-3">
+                  {[
+                    { text: '4-Page Quick OPD Checklist', included: true },
+                    { text: 'Manual setup instructions (GBP, IG, WhatsApp)', included: true },
+                    { text: '10–15 Hours/Week manual marketing effort required', included: true },
+                    { text: '0 Copy-Paste AI Prompts', included: false },
+                    { text: 'No AI tool workflows (Gemini, Claude, Google Flow)', included: false },
+                    { text: 'No automated video or poster creation scripts', included: false },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm font-medium">
+                      {item.included ? (
+                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      ) : (
+                        <span className="w-4 h-4 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center text-xs shrink-0 mt-0.5 font-black">✕</span>
+                      )}
+                      <span className={item.included ? 'text-slate-800' : 'text-slate-400 line-through'}>
+                        {item.text}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <button
+                onClick={openFormModal}
+                className="w-full py-3.5 px-6 rounded-xl font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 text-sm transition-all flex items-center justify-center gap-2"
+              >
+                <FileText className="w-4 h-4" />
+                <span>Download Free PDF Only</span>
+              </button>
+            </div>
+
+            {/* Paid AI Playbook Card (Highlighted) */}
+            <div className="bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 border-2 border-amber-400/80 rounded-3xl p-7 sm:p-8 space-y-6 flex flex-col justify-between text-white shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-gradient-to-l from-amber-500 to-orange-500 text-slate-950 font-black text-[11px] uppercase tracking-wider px-4 py-1.5 rounded-bl-2xl shadow-md">
+                🔥 Highly Recommended Upgrade
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center justify-between pt-2">
+                  <span className="text-xs font-black uppercase tracking-wider text-amber-300 bg-amber-500/20 px-3 py-1 rounded-full border border-amber-500/30">
+                    Paid AI Playbook
+                  </span>
+                  <div className="text-right">
+                    <span className="text-xs text-slate-400 line-through mr-2">₹999</span>
+                    <span className="text-3xl font-black text-amber-300">₹99</span>
+                  </div>
+                </div>
+
+                <h3 className="text-xl sm:text-2xl font-black text-white">
+                  How to Use AI to Grow Your Medical Practice
+                </h3>
+                <p className="text-xs text-slate-300 font-medium leading-relaxed">
+                  The complete 50+ page practical playbook to automate content, patient communication, video creation, and marketing in under 30 minutes a week.
+                </p>
+
+                <div className="border-t border-slate-800 pt-4 space-y-3">
+                  {[
+                    '150+ Ready-to-Use Copy-Paste AI Prompts (Gemini + 100 Bonus)',
+                    'Complete 9-Tool AI Stack (Gemini, Claude, Google Flow, Canva AI)',
+                    'Google Flow Video Script Prompts for Reels & Waiting-Room Loops',
+                    'Canva AI Design Workflow for Clinic Posters & Carousels',
+                    'The RGCAOTR Prompting Blueprint (Sounds like a doctor, not a robot)',
+                    '13 Claude Strategic Workflows (SWOT, Personas, 90-Day Plan)',
+                    'Save 10+ Hours Every Week (30-Minute Sunday Batching System)',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-amber-100">
+                      <BadgeCheck className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-2 pt-2">
+                <button
+                  onClick={() => {
+                    setIsPaidBookChecked(true);
+                    openFormModal();
+                  }}
+                  className="w-full py-4 px-6 rounded-2xl font-black text-slate-950 bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-400 hover:scale-[1.02] active:scale-[0.98] text-base transition-all shadow-xl shadow-amber-500/20 flex items-center justify-center gap-2 group"
+                >
+                  <Download className="w-5 h-5 text-slate-950" />
+                  <span>Upgrade to Paid Book (₹99)</span>
+                  <ArrowRight className="w-5 h-5 text-slate-950 group-hover:translate-x-1 transition-transform" />
+                </button>
+                <p className="text-[11px] text-center text-slate-400 font-medium">
+                  Instant PDF Access • Secured by Razorpay • Lifetime Updates
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature Breakdown Table */}
+          <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-6 shadow-xs">
+            <div className="text-center space-y-2">
+              <h3 className="text-2xl font-extrabold text-slate-900">
+                Detailed Feature Comparison Table
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-500">
+                See exactly what you unlock when upgrading from the Free Blueprint to the Paid AI Book.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse">
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <th className="py-3.5 px-4 font-bold text-slate-700">Feature / Capability</th>
+                    <th className="py-3.5 px-4 font-bold text-slate-500 text-center">Free PDF Guide</th>
+                    <th className="py-3.5 px-4 font-black text-[#0F6FFF] text-center bg-blue-50/50">Paid AI Book (₹99)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {[
+                    { feature: 'Page Length & Format', free: '4-Page Checklist', paid: '50+ Page Execution Playbook' },
+                    { feature: 'Core Focus', free: 'Basic Manual Setup (WHAT)', paid: 'AI Automation System (HOW)' },
+                    { feature: 'Weekly Time Required', free: '10–15 Hours Manual', paid: '< 30 Minutes via AI Batching' },
+                    { feature: 'Doctor AI Prompt Library', free: '0 Prompts', paid: '150+ Copy-Paste Prompts' },
+                    { feature: 'AI Tool Workflows', free: 'None', paid: '9 Tools (Gemini, Claude, Flow, Canva)' },
+                    { feature: 'AI Video Creation Prompts', free: 'None', paid: 'Google Flow Prompts Included' },
+                    { feature: 'Strategy Workflows', free: 'Basic overview', paid: '13 Claude Strategic Frameworks' },
+                    { feature: 'Canva AI Design System', free: 'None', paid: 'Step-by-step Clinic Brand Kit' },
+                    { feature: 'Medical Compliance & Privacy', free: 'Basic rules', paid: 'Complete HIPAA/Safety Guide' },
+                  ].map((row, idx) => (
+                    <tr key={idx} className="hover:bg-slate-50/80 transition-colors">
+                      <td className="py-3 px-4 font-semibold text-slate-900">{row.feature}</td>
+                      <td className="py-3 px-4 text-center text-slate-500 font-medium">{row.free}</td>
+                      <td className="py-3 px-4 text-center font-bold text-[#0F6FFF] bg-blue-50/30">{row.paid}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="pt-4 text-center">
+              <button
+                onClick={() => {
+                  setIsPaidBookChecked(true);
+                  openFormModal();
+                }}
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-black text-white bg-gradient-to-r from-amber-500 via-orange-500 to-[#0F6FFF] rounded-2xl shadow-xl hover:scale-105 transition-all group"
+              >
+                <Download className="w-5 h-5 mr-2" />
+                <span>Get The Full AI Book for ₹99 Only</span>
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
       {/* BENEFITS SECTION (Outcome-Focused as requested) */}
       <section className="py-14 sm:py-20 bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">

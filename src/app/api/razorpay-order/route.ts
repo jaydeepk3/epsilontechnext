@@ -1,13 +1,24 @@
 import { NextResponse } from 'next/server';
 import Razorpay from 'razorpay';
 
-const razorpay = new Razorpay({
-  key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || '',
-  key_secret: process.env.RAZORPAY_KEY_SECRET || '',
-});
-
 export async function POST() {
   try {
+    const keyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || process.env.RAZORPAY_KEY_ID;
+    const keySecret = process.env.RAZORPAY_KEY_SECRET;
+
+    if (!keyId || !keySecret) {
+      console.error('[Razorpay Order] Missing Razorpay credentials.');
+      return NextResponse.json(
+        { status: 'error', message: 'Razorpay payment credentials are not configured.' },
+        { status: 500 }
+      );
+    }
+
+    const razorpay = new Razorpay({
+      key_id: keyId,
+      key_secret: keySecret,
+    });
+
     const order = await razorpay.orders.create({
       amount: 9900, // ₹99 in paise
       currency: 'INR',
@@ -22,7 +33,7 @@ export async function POST() {
       orderId: order.id,
       amount: order.amount,
       currency: order.currency,
-      keyId: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || '',
+      keyId: keyId,
     });
   } catch (error) {
     console.error('[Razorpay Order] Failed to create order:', error);
@@ -32,3 +43,4 @@ export async function POST() {
     );
   }
 }
+

@@ -1,0 +1,3 @@
+epsilon-technology.com, www.epsilon-technology.com {
+    reverse_proxy app:3000
+}

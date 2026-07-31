@@ -1,0 +1,33 @@
+name: Deploy to InterServer VPS
+
+on:
+  push:
+    branches:
+      - main
+      - interserver
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: SSH and Deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/epsilontechnext
+            
+            git reset --hard
+            git pull origin main
+            
+            # Restart containers with fresh build
+            docker compose build --no-cache
+            docker compose up -d
+            
+            # Clean up old images to save space
+            docker image prune -f

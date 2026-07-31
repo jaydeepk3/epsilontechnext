@@ -4,16 +4,17 @@ import { verifyToken } from './lib/auth'
 
 export async function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl
-    const host = request.headers.get('host');
+    const host = request.headers.get('host') || '';
+    const hostname = host.split(':')[0]; // get domain without port
 
-    // 1. Enforce non-www redirect for SEO consolidation
-    if (host?.startsWith('www.')) {
+    // 1. Enforce non-www redirect for main domain
+    if (host.startsWith('www.')) {
         const url = request.nextUrl.clone();
         url.host = host.replace('www.', '');
         return NextResponse.redirect(url, 301);
     }
 
-    // 2. Protect all /admin routes except /admin/login
+    // 4. Protect all /admin routes except /admin/login
     if (pathname.startsWith('/admin') && !pathname.startsWith('/admin/login')) {
         const token = request.cookies.get('adminToken')?.value
         if (!token) {
@@ -46,4 +47,5 @@ export const config = {
         '/((?!api|_next/static|_next/image|favicon.ico).*)',
     ],
 }
+
 

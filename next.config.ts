@@ -34,6 +34,16 @@ const nextConfig: NextConfig = {
         permanent: true, // 301 redirect (Good for SEO)
       },
       {
+        source: '/online-opd-growth-system',
+        destination: 'https://doctor.epsilon-technology.com',
+        permanent: true,
+      },
+      {
+        source: '/online-opd-growth-system/',
+        destination: 'https://doctor.epsilon-technology.com',
+        permanent: true,
+      },
+      {
         source: '/item/:path*',
         destination: '/',
         permanent: true,

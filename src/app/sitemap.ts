@@ -217,6 +217,12 @@ const STATIC_ROUTES: MetadataRoute.Sitemap = [
         changeFrequency: 'weekly',
         priority: 0.9,
     },
+    {
+        url: 'https://epsilon-technology.com/performance-marketing-company-in-junagadh/',
+        lastModified: STABLE_DATE,
+        changeFrequency: 'weekly',
+        priority: 0.9,
+    },
 ];
 
 

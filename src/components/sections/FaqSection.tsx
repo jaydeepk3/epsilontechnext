@@ -9,28 +9,32 @@ export function FaqSection() {
 
   const faqs = [
     {
+      q: "Do you offer Digital Marketing alongside custom software development?",
+      a: "Yes! Epsilon is both a software engineering agency and an official Meta Certified Partner. We handle end-to-end digital marketing including Facebook & Instagram Meta Ads, viral Reels scriptwriting/editing, local & technical SEO, and lead funnel automation to drive customer inquiries for your business."
+    },
+    {
       q: "What is your typical project scope and budget requirement?",
-      a: "Our core engineering engagements range between $10,000 and $100,000 depending on platform complexity, integration requirements, and timeline. We specialize in fixed-scope milestone deliverables so you know your exact investment upfront with zero billing surprises."
+      a: "Our core engineering and growth engagements range between $5,000 and $100,000 depending on platform complexity, marketing budget, and scope. We specialize in fixed-scope milestone deliverables so you know your exact investment upfront with zero billing surprises."
     },
     {
       q: "Do we get full intellectual property (IP) and source code ownership?",
-      a: "Yes, 100%. Under our legal agreement, all code, Git repositories, architectural designs, dynamic assets, and database schemas are completely owned by your company upon payment. We sign strict mutual NDAs before work begins."
+      a: "Yes, 100%. Under our legal agreement, all code, Git repositories, architectural designs, ad creatives, dynamic assets, and database schemas are completely owned by your company upon payment. We sign strict mutual NDAs before work begins."
     },
     {
-      q: "How fast can you deliver our software project?",
-      a: "Typical MVP builds or full website re-architectures take 4 to 12 weeks. We operate in rapid 2-week agile sprints where you review working staging software every 14 days."
+      q: "How fast can you deliver software or launch marketing campaigns?",
+      a: "Digital marketing campaigns and Meta ads can be launched in as little as 5 to 7 days. Software MVP builds or full web platform re-architectures take 4 to 12 weeks with live demo releases every 2 weeks."
     },
     {
-      q: "What happens if we already have an existing legacy code base?",
-      a: "We perform a thorough 48-hour code and architecture audit. We can either incrementally refactor your legacy stack without downtime or execute a clean headless migration to Next.js."
+      q: "What happens if we already have an existing legacy code base or active ad account?",
+      a: "We perform a thorough technical and marketing audit. We can optimize your existing ad setups, integrate Meta Server-Side Conversion API (CAPI), and refactor your legacy stack without downtime."
     },
     {
-      q: "Who actually builds our software? Are work items offshore outsourced?",
-      a: "No unverified freelancers. Your project is led directly by our senior software architect and executed by our dedicated in-house squad of developers (5+ years average experience)."
+      q: "Who actually handles our account? Are tasks offshore outsourced?",
+      a: "No unverified freelancers. Your project is managed directly by senior software architects and Meta-certified performance marketers with dedicated transparent reporting."
     },
     {
-      q: "What support and warranty do you offer after go-live?",
-      a: "Every engagement includes a 30-day bug-free warranty and full technical documentation handoff. We also offer dedicated monthly SLA maintenance squads for ongoing feature development."
+      q: "What support and performance reporting do you offer after go-live?",
+      a: "Every tech engagement includes a 30-day bug-free warranty and full technical documentation handoff. Marketing clients receive bi-weekly transparent reporting showing exact lead acquisition, cost per lead (CPL), and ROI."
     }
   ];
 

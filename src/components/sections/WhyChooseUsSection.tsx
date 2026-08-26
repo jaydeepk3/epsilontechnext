@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Target, Trophy, Clock, Cpu, HeartHandshake, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Target, Trophy, Clock, Cpu, HeartHandshake, ShieldCheck, ArrowRight, TrendingUp } from 'lucide-react';
 
 export function WhyChooseUsSection() {
   const pillars = [
@@ -11,14 +11,19 @@ export function WhyChooseUsSection() {
       desc: "We don't just build features; we build software architected to drive conversion rates, reduce churn, and maximize lifetime ROI."
     },
     {
+      icon: TrendingUp,
+      title: "Performance Digital Marketing",
+      desc: "Meta Certified Partner team driving social media growth, viral Instagram reels, local SEO, and low-CPL lead generation funnels."
+    },
+    {
       icon: Trophy,
       title: "Top 1% Senior Talent",
-      desc: "Your project is handled strictly by senior engineers who have built systems handling millions of users and high-throughput transactions."
+      desc: "Your project is handled strictly by senior engineers and growth specialists who deliver measurable revenue growth."
     },
     {
       icon: Clock,
       title: "Rapid 2-Week Sprints",
-      desc: "Fast, transparent iterations. You see real working code on live staging environments every 14 days without delays."
+      desc: "Fast, transparent iterations. You see real working code and live campaign analytics delivered consistently every 14 days."
     },
     {
       icon: Cpu,
@@ -26,14 +31,9 @@ export function WhyChooseUsSection() {
       desc: "Built with Next.js App Router, React Native, Node.js, and Cloud Native AI infrastructure for ultimate performance and security."
     },
     {
-      icon: HeartHandshake,
-      title: "Dedicated Product Ownership",
-      desc: "A dedicated Tech Lead & Product Manager manages your roadmap so you spend zero hours babysitting developers."
-    },
-    {
       icon: ShieldCheck,
       title: "Transparent Fixed Pricing",
-      desc: "Clear scope, predictable pricing ($10k - $100k), and explicit milestones. No hidden invoice surprises."
+      desc: "Clear scope, predictable milestone-based pricing, and full ownership of code and campaign assets. No hidden invoice surprises."
     }
   ];
 
@@ -108,7 +108,7 @@ export function WhyChooseUsSection() {
             }}
             className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-base rounded-2xl transition-all shadow-xl shadow-blue-600/25 active:scale-95"
           >
-            Start Your Custom Engineering Project <ArrowRight className="w-5 h-5" />
+            Start Your Tech &amp; Growth Campaign <ArrowRight className="w-5 h-5" />
           </button>
         </motion.div>
       </div>

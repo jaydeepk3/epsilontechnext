@@ -73,10 +73,10 @@ export function Booking() {
                     <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                                Ready to Grow Your Clinic?
+                                Ready to Scale Your Business or Clinic?
                             </h2>
                             <p className="text-slate-400 text-lg mb-8">
-                                Book a free strategy call to see how we can help you get more patients. No obligation.
+                                Book a free strategy call to discuss custom software development, web &amp; mobile app build, or performance digital marketing growth.
                             </p>
 
                             <div className="space-y-4">
@@ -85,8 +85,8 @@ export function Booking() {
                                         <Calendar size={20} />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-white">Free Growth Consultation</p>
-                                        <p className="text-sm">30-minute strategy session via Zoom/Meet</p>
+                                        <p className="font-bold text-white">Free Strategy &amp; Architecture Audit</p>
+                                        <p className="text-sm">30-minute consultation session via Zoom/Meet</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4 text-slate-300">
@@ -95,7 +95,7 @@ export function Booking() {
                                     </div>
                                     <div>
                                         <p className="font-bold text-white">Direct WhatsApp Support</p>
-                                        <p className="text-sm">Get instant answers to your questions</p>
+                                        <p className="text-sm">Get instant answers to your project questions</p>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@ export function Booking() {
                                 <input
                                     type="text"
                                     name="specialty"
-                                    placeholder="Your Specialty (e.g. Orthopedic, Pediatric)"
+                                    placeholder="Project Type (e.g. Web App, Mobile App, Digital Marketing)"
                                     required
                                     value={formData.specialty}
                                     onChange={handleChange}
@@ -126,7 +126,7 @@ export function Booking() {
                                 <input
                                     type="text"
                                     name="city"
-                                    placeholder="Your City & Country"
+                                    placeholder="Your City &amp; Country"
                                     required
                                     value={formData.city}
                                     onChange={handleChange}
@@ -138,7 +138,7 @@ export function Booking() {
                                     size="lg"
                                     disabled={status === 'loading' || status === 'success'}
                                 >
-                                    {status === 'loading' ? 'Sending...' : status === 'success' ? '✅ Request Sent!' : 'Book My Free Growth Call →'}
+                                    {status === 'loading' ? 'Sending...' : status === 'success' ? '✅ Request Sent!' : 'Book My Free Strategy Call →'}
                                 </Button>
 
                                 {status === 'error' && (
@@ -148,7 +148,7 @@ export function Booking() {
                                 )}
 
                                 <p className="text-center text-xs text-slate-400 mt-3">
-                                    No spam. We reply on WhatsApp within 4 hours. Available for doctors worldwide.
+                                    🔒 No spam. We reply on WhatsApp within 4 hours. Available for clients worldwide.
                                 </p>
                             </form>
                         </div>

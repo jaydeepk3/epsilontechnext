@@ -5,9 +5,29 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, TrendingUp, CheckCircle, Clock, ExternalLink } from 'lucide-react';
 
 export function CaseStudiesSection() {
-  const [activeCategory, setActiveCategory] = useState<'all' | 'ecommerce' | 'saas' | 'healthcare'>('all');
+  const [activeCategory, setActiveCategory] = useState<'all' | 'marketing' | 'ecommerce' | 'saas' | 'healthcare'>('all');
 
   const caseStudies = [
+    {
+      id: 'doctor-marketing',
+      category: 'marketing',
+      client: 'Multi-Specialty & Doctor Clinics',
+      title: 'Scaling OPD Appointments & Patient Inquiries via Meta Ads & Instagram Reels',
+      problem: 'Clinic relied solely on word-of-mouth and expensive aggregator platforms, struggling to get direct patient inquiries.',
+      solution: 'Deployed Meta-Certified Ads framework combined with viral healthcare Reels, automated Meta CAPI tracking, and direct WhatsApp lead funnels.',
+      technologies: ['Meta Ads Manager', 'Meta CAPI', 'Instagram Reels', 'WhatsApp Business API', 'Landing Page CRO'],
+      timeline: '60 Days Campaign',
+      metrics: [
+        { label: 'Reel Views Generated', value: '1.1M+' },
+        { label: 'Monthly WhatsApp Inquiries', value: '40+ Direct' },
+        { label: 'OPD Footfall Growth', value: '3× Increase' }
+      ],
+      testimonial: {
+        quote: "Patient inquiries went up significantly after Epsilon started managing our social media and Meta ads. Jaydeep and his team understand healthcare growth inside out.",
+        author: "Dr. D.P. Vora",
+        company: "Orthopaedic Surgeon"
+      }
+    },
     {
       id: 'ontapp',
       category: 'ecommerce',
@@ -102,13 +122,14 @@ export function CaseStudiesSection() {
             transition={{ delay: 0.2 }}
             className="mt-4 text-base md:text-lg text-slate-600 leading-relaxed"
           >
-            How we help startups and enterprise brands turn complex software challenges into measurable revenue growth.
+            How we help growth-stage businesses turn complex software and marketing challenges into measurable revenue.
           </motion.p>
 
           {/* Category Tabs */}
           <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
             {[
               { id: 'all', label: 'All Success Stories' },
+              { id: 'marketing', label: 'Digital Marketing & Growth' },
               { id: 'ecommerce', label: 'eCommerce Brands' },
               { id: 'saas', label: 'SaaS Platforms' },
               { id: 'healthcare', label: 'Healthcare & Medical' },

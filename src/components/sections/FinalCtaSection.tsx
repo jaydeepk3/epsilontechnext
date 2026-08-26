@@ -28,7 +28,7 @@ export function FinalCtaSection() {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight"
           >
-            Ready to Build Software That Drives Real Revenue?
+            Ready to Build High-Performance Tech &amp; Scale Customer Growth?
           </motion.h2>
 
           <motion.p
@@ -38,7 +38,7 @@ export function FinalCtaSection() {
             transition={{ delay: 0.2 }}
             className="mt-6 text-base md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed"
           >
-            Book a 15-minute technical discovery call directly with our engineering leadership. No aggressive sales pitch. Just honest architecture advice and a fixed-price proposal.
+            Book a 15-minute strategy call directly with our team. Whether you need custom software development or data-driven Meta ads &amp; social marketing, we deliver transparent execution and fixed proposals.
           </motion.p>
 
           {/* Action CTAs */}

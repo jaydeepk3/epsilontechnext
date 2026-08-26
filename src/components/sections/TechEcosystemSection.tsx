@@ -2,12 +2,23 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Cpu, Globe, Server, Database, Smartphone, ShieldCheck, Zap } from 'lucide-react';
+import { Cpu, Globe, Server, Database, Smartphone, ShieldCheck, Zap, TrendingUp } from 'lucide-react';
 
 export function TechEcosystemSection() {
-  const [activeCategory, setActiveCategory] = useState<'frontend' | 'backend' | 'cloud' | 'mobile'>('frontend');
+  const [activeCategory, setActiveCategory] = useState<'marketing' | 'frontend' | 'backend' | 'cloud' | 'mobile'>('marketing');
 
   const techData = {
+    marketing: {
+      category: "Digital Marketing & Performance Growth",
+      icon: TrendingUp,
+      description: "Data-driven performance campaigns, viral Instagram reels, Meta Ads, and automated lead funnels.",
+      items: [
+        { name: "Meta Ads & CAPI Integration", desc: "Meta Certified Partner campaigns with server-side Conversion API tracking & low CPL" },
+        { name: "Instagram Reel & Content Production", desc: "End-to-end viral scriptwriting, shooting, and video editing driving 1.1M+ views" },
+        { name: "Search Engine Optimization (SEO)", desc: "Technical, local Google Maps, and high-intent keyphrase ranking strategies" },
+        { name: "WhatsApp & CRM Lead Automation", desc: "Instant automated lead capture, instant appointment booking & retargeting" }
+      ]
+    },
     frontend: {
       category: "Frontend Engineering",
       icon: Globe,
@@ -66,7 +77,7 @@ export function TechEcosystemSection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 font-bold text-xs uppercase tracking-wider mb-4"
           >
-            <Cpu className="w-4 h-4" /> Production-Grade Stack
+            <Cpu className="w-4 h-4" /> Full-Stack Capability
           </motion.div>
 
           <motion.h2
@@ -76,7 +87,7 @@ export function TechEcosystemSection() {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl font-extrabold tracking-tight text-white"
           >
-            Our Modern Technology Ecosystem
+            Technology &amp; Digital Marketing Stack
           </motion.h2>
 
           <motion.p
@@ -86,13 +97,14 @@ export function TechEcosystemSection() {
             transition={{ delay: 0.2 }}
             className="mt-4 text-base md:text-lg text-slate-400 leading-relaxed"
           >
-            We build exclusively with industry-standard, future-proof technologies engineered for high performance, maintainability, and security.
+            We combine high-performance software engineering with proven digital marketing methodologies to build systems that attract, convert, and retain clients.
           </motion.p>
 
           {/* Navigation Category Buttons */}
           <div className="flex flex-wrap justify-center gap-2 mt-8">
             {[
-              { id: 'frontend', label: 'Frontend' },
+              { id: 'marketing', label: 'Digital Marketing' },
+              { id: 'frontend', label: 'Frontend Tech' },
               { id: 'backend', label: 'Backend & APIs' },
               { id: 'cloud', label: 'Cloud & AI' },
               { id: 'mobile', label: 'Mobile Apps' },
